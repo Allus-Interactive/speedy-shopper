@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://bi33b0507ys12"]
+
+[ext_resource type="PackedScene" uid="uid://cjsrfjrg00vbp" path="res://scenes/player.tscn" id="1_vi15o"]
+[ext_resource type="PackedScene" uid="uid://bbwe7nwmupg07" path="res://scenes/supermarket/shelf.tscn" id="2_07jrh"]
+[ext_resource type="PackedScene" uid="uid://bmlc78lkwp64d" path="res://scenes/supermarket/products/cereal_box.tscn" id="3_gt2a7"]
+[ext_resource type="PackedScene" uid="uid://8odhf1doirmq" path="res://scenes/supermarket/products/single_drink_can.tscn" id="4_reuu7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_rwgxs"]
+sky_material = SubResource("ProceduralSkyMaterial_nnsk1")
+
+[sub_resource type="Environment" id="Environment_4wyf3"]
+background_mode = 2
+sky = SubResource("Sky_rwgxs")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_glehq"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oxsi0"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[node name="Supermarket" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4wyf3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_vi15o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_glehq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_oxsi0")
+
+[node name="ShelfCereal" parent="." instance=ExtResource("2_07jrh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+shelf_levels = 3
+products_per_level = 8
+product_placement_offset = 0.2
+product_scenes = Array[PackedScene]([ExtResource("3_gt2a7")])
+
+[node name="ShelfDrinks" parent="." instance=ExtResource("2_07jrh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
+shelf_levels = 6
+products_per_level = 20
+product_placement_offset = 0.1
+product_scenes = Array[PackedScene]([ExtResource("4_reuu7")])

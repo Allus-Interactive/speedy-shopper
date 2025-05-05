@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmlc78lkwp64d"]
+
+[ext_resource type="Script" uid="uid://gouyvrfn1jk5" path="res://scripts/product.gd" id="1_nny5p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pmrnw"]
+size = Vector3(0.3, 0.4, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pmrnw"]
+data = PackedVector3Array(-0.2, 0.25, 0.1, 0.2, 0.25, 0.1, -0.2, -0.25, 0.1, 0.2, 0.25, 0.1, 0.2, -0.25, 0.1, -0.2, -0.25, 0.1, 0.2, 0.25, -0.1, -0.2, 0.25, -0.1, 0.2, -0.25, -0.1, -0.2, 0.25, -0.1, -0.2, -0.25, -0.1, 0.2, -0.25, -0.1, 0.2, 0.25, 0.1, 0.2, 0.25, -0.1, 0.2, -0.25, 0.1, 0.2, 0.25, -0.1, 0.2, -0.25, -0.1, 0.2, -0.25, 0.1, -0.2, 0.25, -0.1, -0.2, 0.25, 0.1, -0.2, -0.25, -0.1, -0.2, 0.25, 0.1, -0.2, -0.25, 0.1, -0.2, -0.25, -0.1, 0.2, 0.25, 0.1, -0.2, 0.25, 0.1, 0.2, 0.25, -0.1, -0.2, 0.25, 0.1, -0.2, 0.25, -0.1, 0.2, 0.25, -0.1, -0.2, -0.25, 0.1, 0.2, -0.25, 0.1, -0.2, -0.25, -0.1, 0.2, -0.25, 0.1, 0.2, -0.25, -0.1, -0.2, -0.25, -0.1)
+
+[node name="CerealBox" type="Node3D"]
+script = ExtResource("1_nny5p")
+product_name = "Cereal"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_pmrnw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pmrnw")
