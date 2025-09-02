@@ -1,3 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Documentation
+documentation/.obsidian
+documentation/To Do.md
+
+# Do not push any documentation just yet
+documentation/
