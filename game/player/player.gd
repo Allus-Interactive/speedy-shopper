@@ -5,6 +5,7 @@ const JUMP_VELOCITY: float = 4.5
 
 @onready var neck: Node3D = $Neck
 @onready var camera: Camera3D = $Neck/Camera3D
+@onready var ray_cast_3d: RayCast3D = $Neck/RayCast3D
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Capture mouse input
@@ -27,14 +28,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	## TODO: do we need the player to jump?
-	# Handle jump.
-	# if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	# 	velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	
 	var input_dir := Input.get_vector("left", "right", "forwards", "backwards")
 	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -45,3 +39,10 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact"):
+		if ray_cast_3d.is_colliding():
+			var obj = ray_cast_3d.get_collider()
+			if obj.has_method("interact"):
+				obj.interact()
