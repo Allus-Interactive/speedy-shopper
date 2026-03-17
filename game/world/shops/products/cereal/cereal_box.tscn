@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmlc78lkwp64d"]
+[gd_scene format=3 uid="uid://bmlc78lkwp64d"]
 
-[ext_resource type="Script" uid="uid://gouyvrfn1jk5" path="res://scripts/product.gd" id="1_nny5p"]
+[ext_resource type="Script" uid="uid://gouyvrfn1jk5" path="res://game/world/shops/products/product.gd" id="1_nny5p"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pmrnw"]
 size = Vector3(0.3, 0.4, 0.2)

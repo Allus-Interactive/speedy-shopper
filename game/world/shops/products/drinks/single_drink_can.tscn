@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://8odhf1doirmq"]
+[gd_scene format=3 uid="uid://8odhf1doirmq"]
 
-[ext_resource type="Script" uid="uid://gouyvrfn1jk5" path="res://scripts/product.gd" id="1_6ojj8"]
+[ext_resource type="Script" uid="uid://gouyvrfn1jk5" path="res://game/world/shops/products/product.gd" id="1_6ojj8"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ubxy8"]
 top_radius = 0.05

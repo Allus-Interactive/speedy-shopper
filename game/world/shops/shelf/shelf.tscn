@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbwe7nwmupg07"]
+
+[ext_resource type="Script" uid="uid://hgk013psiemo" path="res://game/world/shops/shelf/shelf.gd" id="1_lsj8h"]
+
+[node name="Shelf" type="Node3D"]
+script = ExtResource("1_lsj8h")

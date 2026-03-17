@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bi33b0507ys12"]
+[gd_scene format=3 uid="uid://bi33b0507ys12"]
 
-[ext_resource type="PackedScene" uid="uid://cjsrfjrg00vbp" path="res://scenes/player.tscn" id="1_vi15o"]
-[ext_resource type="PackedScene" uid="uid://bbwe7nwmupg07" path="res://scenes/supermarket/shelf.tscn" id="2_07jrh"]
-[ext_resource type="PackedScene" uid="uid://bmlc78lkwp64d" path="res://scenes/supermarket/products/cereal_box.tscn" id="3_gt2a7"]
-[ext_resource type="PackedScene" uid="uid://8odhf1doirmq" path="res://scenes/supermarket/products/single_drink_can.tscn" id="4_reuu7"]
+[ext_resource type="PackedScene" uid="uid://cjsrfjrg00vbp" path="res://game/player/player.tscn" id="1_vi15o"]
+[ext_resource type="PackedScene" uid="uid://bbwe7nwmupg07" path="res://game/world/shops/shelf/shelf.tscn" id="2_07jrh"]
+[ext_resource type="PackedScene" uid="uid://bmlc78lkwp64d" path="res://game/world/shops/products/cereal/cereal_box.tscn" id="3_gt2a7"]
+[ext_resource type="PackedScene" uid="uid://8odhf1doirmq" path="res://game/world/shops/products/drinks/single_drink_can.tscn" id="4_reuu7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -24,34 +24,34 @@ size = Vector2(20, 20)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oxsi0"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
-[node name="Supermarket" type="Node3D"]
+[node name="Shop" type="Node3D" unique_id=511540468]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=966634090]
 environment = SubResource("Environment_4wyf3")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1045975033]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_vi15o")]
+[node name="Player" parent="." unique_id=1580564335 instance=ExtResource("1_vi15o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=474674896]
 mesh = SubResource("PlaneMesh_glehq")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1289202370]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=666815595]
 shape = SubResource("ConcavePolygonShape3D_oxsi0")
 
-[node name="ShelfCereal" parent="." instance=ExtResource("2_07jrh")]
+[node name="ShelfCereal" parent="." unique_id=1589566915 instance=ExtResource("2_07jrh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
 shelf_levels = 3
 products_per_level = 8
 product_placement_offset = 0.2
 product_scenes = Array[PackedScene]([ExtResource("3_gt2a7")])
 
-[node name="ShelfDrinks" parent="." instance=ExtResource("2_07jrh")]
+[node name="ShelfDrinks" parent="." unique_id=1563158416 instance=ExtResource("2_07jrh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
 shelf_levels = 6
 products_per_level = 20
