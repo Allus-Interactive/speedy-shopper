@@ -1,7 +1,12 @@
 extends CharacterBody3D
 
+class_name Player
+
 const SPEED: float = 5.0
 const JUMP_VELOCITY: float = 4.5
+
+var vehicle : Vehicle = null
+var is_in_vehicle : bool = false
 
 @onready var neck: Node3D = $Neck
 @onready var camera: Camera3D = $Neck/Camera3D
@@ -25,6 +30,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
+	if is_in_vehicle:
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -41,8 +49,48 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_released("interact"):
 		if ray_cast_3d.is_colliding():
 			var obj = ray_cast_3d.get_collider()
+			print("Player interacts with: ", obj)
 			if obj.has_method("interact"):
-				obj.interact()
+				obj.interact(self)
+
+func enter_vehicle(v: Vehicle) -> void:
+	is_in_vehicle = true
+	
+	vehicle = v
+	v.is_player_inside = true
+	
+	# hide player
+	visible = false
+	
+	# move player to vehicle
+	var seat_position = v.get_node("SeatPosition").global_position
+	if seat_position:
+		global_position = seat_position
+	else:
+		global_position = v.global_position
+	
+	# switch camera
+	var van_camera = v.get_node("ThirdPersonCam")
+	if v.get_node("ThirdPersonCam"):
+		camera.current = false
+		van_camera.current = true
+	else:
+		push_error("No Van Camera found")
+
+func exit_vehicle(v: Vehicle) -> void:
+	is_in_vehicle = false
+	visible = true
+	
+	# move player beside veihcle
+	#global_position = v.global_position + Vector3(2, 0, 0)
+	
+	# restore player camera
+	var van_camera = v.get_node("ThirdPersonCam")
+	if v.get_node("ThirdPersonCam"):
+		van_camera.current = false
+		camera.current = true
+	else:
+		push_error("No Van Camera found")

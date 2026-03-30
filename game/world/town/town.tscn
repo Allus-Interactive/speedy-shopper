@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hdoipf1qndch"]
 
 [ext_resource type="PackedScene" uid="uid://cjsrfjrg00vbp" path="res://game/player/player.tscn" id="1_jotaf"]
+[ext_resource type="PackedScene" uid="uid://ds7v30np22sn7" path="res://game/vehicle/vehicle.tscn" id="2_74d5v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -16,10 +17,10 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_glehq"]
-size = Vector2(20, 20)
+size = Vector2(100, 100)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oxsi0"]
-data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_74d5v"]
+size = Vector3(100, 1, 100)
 
 [node name="Town" type="Node3D" unique_id=1894934032]
 
@@ -36,7 +37,10 @@ mesh = SubResource("PlaneMesh_glehq")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=793564619]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1456260005]
-shape = SubResource("ConcavePolygonShape3D_oxsi0")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_74d5v")
 
 [node name="Player" parent="." unique_id=932964266 instance=ExtResource("1_jotaf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Vehicle" parent="." unique_id=1201802725 instance=ExtResource("2_74d5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.18813884, 0)

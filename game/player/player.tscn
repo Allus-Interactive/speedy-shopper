@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dn4d35dl1g4im" path="res://game/player/player.gd" id="1_3vyb7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
+radius = 0.4
+height = 1.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_obar5"]
 radius = 0.4
@@ -13,7 +15,6 @@ script = ExtResource("1_3vyb7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=7696061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-visible = false
 mesh = SubResource("CapsuleMesh_u8vuu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1313398334]
@@ -24,6 +25,7 @@ shape = SubResource("CapsuleShape3D_obar5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck" unique_id=904531325]
+current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="Neck" unique_id=924524563]
 target_position = Vector3(0, 0, -3)

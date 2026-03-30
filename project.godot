@@ -15,9 +15,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Delivery Driver Simulator"
-run/main_scene="uid://bi33b0507ys12"
+run/main_scene="uid://hdoipf1qndch"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1728
+window/size/viewport_height=972
 
 [input]
 
