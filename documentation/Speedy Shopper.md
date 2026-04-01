@@ -1,0 +1,1 @@
+This is the documentation for Speedy Shopper, a new Shopper and Delivery Driver Simulator game from Allus Interactive!
