@@ -156,11 +156,9 @@ func spawn_product_row(slot: Marker3D, product: Product) -> void:
 			
 			if quantity > 1:
 				var t = float(i) / float(quantity - 1)
-				#print("t: ", str(t))
 				x_offset = lerp(-row_width * 0.6, row_width * 0.6, t)
-				#print("x_offset: ", str(x_offset))
+			
 			var product_y = placeholder.position.y
 			placeholder.position = Vector3(row_depth_offset, product_y, x_offset)
-			print("Set Placeholder Position at: ", str(placeholder.position))
 			placeholder.rotation = Vector3.ZERO
 		
