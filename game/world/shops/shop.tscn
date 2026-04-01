@@ -48,6 +48,7 @@ shape = SubResource("BoxShape3D_74d5v")
 [node name="Player" parent="." unique_id=932964266 instance=ExtResource("1_ggo8a")]
 
 [node name="ShelfUnit" parent="." unique_id=214161151 instance=ExtResource("2_4o56f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
 product_placeholder_scene = ExtResource("3_6k1ee")
-stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf")])
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x")])
+slots_per_shelf = 5

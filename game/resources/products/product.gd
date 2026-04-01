@@ -13,3 +13,5 @@ class_name Product
 @export var shelf_offset: Vector3 = Vector3.ZERO
 
 @export var default_shelf_quantity: int = 4
+
+@export var product_colour: Color = Color(0.8, 0.8, 0.4)

@@ -7,7 +7,7 @@ class_name ShelfUnit
 # List of products set in the inspector
 @export var stocked_products: Array[Product] = []
 
-# number of shelves in the unity
+# number of shelves in the unit
 @export var shelf_count: int = 4
 # vertical space between shelves
 @export var shelf_spacing: float = 0.6
@@ -15,6 +15,8 @@ class_name ShelfUnit
 @export var shelf_width: float = 2.0
 # depth of the shelves
 @export var shelf_depth: float = 1.0
+# colour of the shelf unit
+@export var shelf_colour: Color = Color(0.4, 0.4, 0.4)
 
 # height of the bottom shelf from the floor
 var bottom_shelf_height: float = 0.3
@@ -27,7 +29,7 @@ var side_thickness: float = 0.05
 
 # number of products per shelf
 @export var slots_per_shelf: int = 4
-@export var slot_margin_x: float = 0.15
+@export var slot_margin_x: float = 0.3
 
 # product row
 @export var row_width: float = 0.6
@@ -101,6 +103,11 @@ func _build_slots() -> void:
 func _create_box_mesh(width: float, height: float, depth: float) -> BoxMesh:
 	var box := BoxMesh.new()
 	box.size = Vector3(width, height, depth)
+	
+	var material := StandardMaterial3D.new()
+	material.albedo_color = shelf_colour
+	box.material = material
+	
 	return box
 
 func get_product_slots() -> Array[Marker3D]:

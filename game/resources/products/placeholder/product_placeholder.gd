@@ -26,6 +26,10 @@ func _rebuild() -> void:
 	var box := BoxMesh.new()
 	box.size = size
 	
+	var material := StandardMaterial3D.new()
+	material.albedo_color = product_data.product_colour
+	box.material = material
+	
 	mesh_instance = MeshInstance3D.new()
 	mesh_instance.mesh = box
 	visual_root.add_child(mesh_instance)
@@ -35,7 +39,7 @@ func _rebuild() -> void:
 	collision_shape.shape = shape
 	
 	# TODO: improve label placement
-	# _setup_label(size)
+	_setup_label(size)
 	
 	position = product_data.shelf_offset
 	rotation_degrees = product_data.shelf_rotation_degrees
