@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://q1llllqwatrb"]
+
+[ext_resource type="Script" uid="uid://co02m0802gb4x" path="res://game/resources/products/placeholder/product_placeholder.gd" id="1_vyu40"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oc3nb"]
+
+[node name="ProductPlaceholder" type="StaticBody3D" unique_id=243213475]
+script = ExtResource("1_vyu40")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=642379223]
+shape = SubResource("BoxShape3D_oc3nb")
+
+[node name="VisualRoot" type="Node3D" parent="." unique_id=1017789505]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1312714041]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://bnc10fdwnxv"]
+
+[ext_resource type="PackedScene" uid="uid://q1llllqwatrb" path="res://game/resources/products/placeholder/product_placeholder.tscn" id="1_1t3t3"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="2_6fqxl"]
+
+[resource]
+script = ExtResource("2_6fqxl")
+product_id = "2"
+product_name = "Standard  Cereal"
+barcode_value = "2"
+mesh_scene = ExtResource("1_1t3t3")
+shelf_offset = Vector3(0, 0.15, 0)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

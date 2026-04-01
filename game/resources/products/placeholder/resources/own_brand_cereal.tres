@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://cwcswyx1gpss5"]
+
+[ext_resource type="PackedScene" uid="uid://q1llllqwatrb" path="res://game/resources/products/placeholder/product_placeholder.tscn" id="1_2uk4n"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="1_fy8yc"]
+
+[resource]
+script = ExtResource("1_fy8yc")
+product_id = "1"
+product_name = "Own Brand Cereal"
+barcode_value = "1"
+mesh_scene = ExtResource("1_2uk4n")
+shelf_offset = Vector3(0, 0.15, 0)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"
