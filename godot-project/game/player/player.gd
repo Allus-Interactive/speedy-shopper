@@ -15,6 +15,7 @@ var held_product: Node3D = null
 var held_product_original_parent: Node = null
 var held_product_original_transform: Transform3D
 var is_inspecting_product: bool = false
+@export var inspect_rotation_speed: float = 2.0
 @onready var hold_point: Marker3D = $Neck/Camera3D/HoldPoint
 
 # Camera
@@ -31,15 +32,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		# Make the mouse visible again
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	# Listen to mouse motion to rotate player view or inspect item
-	if is_inspecting_product:
-		handle_product_inspection_input(event)
-	else:
+	# Listen to mouse motion if not inspecting product
+	if not is_inspecting_product:
 		handle_player_look_input(event)
-	
-	# If holding product, replace on shelf
-	if is_inspecting_product and event.is_action_pressed("replace"):
-		return_held_product()
 
 func handle_player_look_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -49,13 +44,30 @@ func handle_player_look_input(event: InputEvent) -> void:
 			# clamp rotation
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
-func handle_product_inspection_input(event: InputEvent) -> void:
+func handle_product_inspection_input(delta: float) -> void:
 	if held_product == null:
 		return
 	
-	if event is InputEventMouseMotion:
-		held_product.rotate_y(-event.relative.x * 0.01)
-		held_product.rotate_x(-event.relative.y * 0.01)
+	var yaw: float = 0.0
+	var pitch: float = 0.0
+	var roll: float = 0.0
+	
+	if Input.is_action_pressed("product_rotate_left"):
+		yaw += 1.0
+	if Input.is_action_pressed("product_rotate_right"):
+		yaw -= 1.0
+	if Input.is_action_pressed("product_rotate_up"):
+		pitch += 1.0
+	if Input.is_action_pressed("product_rotate_down"):
+		pitch -= 1.0
+	if Input.is_action_pressed("product_roll_left"):
+		roll += 1.0
+	if Input.is_action_pressed("product_roll_right"):
+		roll -= 1.0
+	
+	held_product.rotate_y(yaw * inspect_rotation_speed * delta)
+	held_product.rotate_x(pitch * inspect_rotation_speed * delta)
+	held_product.rotate_z(roll * inspect_rotation_speed * delta)
 
 func _physics_process(delta: float) -> void:
 	if is_inspecting_product:
@@ -76,7 +88,14 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if is_inspecting_product:
+		handle_product_inspection_input(delta)
+	
+	# If holding product, replace on shelf
+	if is_inspecting_product and Input.is_action_pressed("replace"):
+		return_held_product()
+	
 	if Input.is_action_just_released("interact"):
 		if ray_cast_3d.is_colliding():
 			var obj = ray_cast_3d.get_collider()
