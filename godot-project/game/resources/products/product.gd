@@ -18,3 +18,5 @@ class_name Product
 
 @export var barcode_size: Vector2 = Vector2(0.12, 0.08)
 @export var barcode_offset: Vector3 = Vector3.ZERO
+
+@export var barcode_image: CompressedTexture2D
