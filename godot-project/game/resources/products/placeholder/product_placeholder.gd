@@ -10,10 +10,11 @@ var mesh_instance: MeshInstance3D
 @onready var label_3d: Label3D = $Label3D
 @onready var barcode_root: Node3D = $BarcodeRoot
 @onready var barcode_marker: Marker3D = $BarcodeMarker
+@onready var barcode_hitbox: StaticBody3D = $BarcodeHitbox
+@onready var barcode_collider: CollisionShape3D = $BarcodeHitbox/BarcodeCollider
 
 func interact(player: Player) -> void:
 	player.pick_up_product(self)
-
 
 func set_product_data(data: Product) -> void:
 	product_data = data
@@ -44,7 +45,6 @@ func _rebuild() -> void:
 	shape.size = size
 	collision_shape.shape = shape
 	
-	# TODO: improve label placement
 	_setup_label(size)
 	_setup_barcode_with_texture(size)
 	
@@ -57,6 +57,10 @@ func _setup_barcode_with_texture(size: Vector3) -> void:
 	
 	if product_data == null:
 		return
+	
+	barcode_hitbox.reparent(barcode_root)
+	barcode_hitbox.set_meta("is_barcode", true)
+	barcode_hitbox.set_meta("owner_product", self)
 	
 	var plane = MeshInstance3D.new()
 	var quad = QuadMesh.new()
@@ -94,6 +98,10 @@ func _setup_barcode_with_meshes(size: Vector3) -> void:
 	
 	if product_data == null:
 		return
+	
+	barcode_hitbox.reparent(barcode_root)
+	barcode_hitbox.set_meta("is_barcode", true)
+	barcode_hitbox.set_meta("owner_product", self)
 	
 	barcode_root.position = Vector3(
 		product_data.barcode_offset.x,
@@ -151,3 +159,6 @@ func _setup_label(size: Vector3) -> void:
 		0,
 		(size.z * 0.5) + 0.01
 	)
+
+func disable_barcode_hitbox(disabled: bool) -> void:
+	barcode_collider.disabled = disabled

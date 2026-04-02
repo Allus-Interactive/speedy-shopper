@@ -11,7 +11,7 @@ var vehicle: Vehicle = null
 var is_in_vehicle: bool = false
 
 # Product Inspect variables
-var held_product: Node3D = null
+var held_product: ProductPlaceholder = null
 var held_product_original_parent: Node = null
 var held_product_original_transform: Transform3D
 var is_inspecting_product: bool = false
@@ -24,13 +24,14 @@ var is_inspecting_product: bool = false
 @onready var ray_cast_3d: RayCast3D = $Neck/Camera3D/RayCast3D
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Capture mouse input
-	if event is InputEventMouseButton:
-		# Confine Mouse to screen
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	elif event.is_action_pressed("ui_cancel"):
-		# Make the mouse visible again
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	# Capture mouse input when not inspecting a product
+	if not is_inspecting_product:
+		if event is InputEventMouseButton:
+			# Confine Mouse to screen
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		elif event.is_action_pressed("ui_cancel"):
+			# Make the mouse visible again
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	# Listen to mouse motion if not inspecting product
 	if not is_inspecting_product:
@@ -96,6 +97,9 @@ func _process(delta: float) -> void:
 	if is_inspecting_product and Input.is_action_pressed("replace"):
 		return_held_product()
 	
+	if is_inspecting_product and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		scan_barcode()
+	
 	if Input.is_action_just_released("interact"):
 		if ray_cast_3d.is_colliding():
 			var obj = ray_cast_3d.get_collider()
@@ -103,7 +107,7 @@ func _process(delta: float) -> void:
 			if obj.has_method("interact"):
 				obj.interact(self)
 
-func pick_up_product(product: Node3D) -> void:	
+func pick_up_product(product: ProductPlaceholder) -> void:	
 	if is_inspecting_product:
 		return
 	
@@ -121,6 +125,11 @@ func pick_up_product(product: Node3D) -> void:
 	
 	# Reset local transform so it sits on the hold point
 	held_product.transform = Transform3D.IDENTITY
+	
+	# Make the mouse visible
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	product.disable_barcode_hitbox(false)
 
 func return_held_product() -> void:
 	if held_product == null:
@@ -128,14 +137,49 @@ func return_held_product() -> void:
 	
 	held_product.reparent(held_product_original_parent)
 	held_product.global_transform = held_product_original_transform
+	held_product.disable_barcode_hitbox(true)
 	
 	# enable collision shape
 	if held_product.has_node("CollisionShape3D"):
 		held_product.get_node("CollisionShape3D").disabled = false
 	
+	# Confine Mouse to screen
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	held_product = null
 	held_product_original_parent = null
 	is_inspecting_product = false
+
+func scan_barcode() -> void:
+	if held_product == null:
+		return
+	
+	var mouse_pos := get_viewport().get_mouse_position()
+	
+	var from = camera.project_ray_origin(mouse_pos)
+	var to = from + camera.project_ray_normal(mouse_pos) * 10.0
+	
+	var query := PhysicsRayQueryParameters3D.create(from, to)
+	query.collide_with_areas = true
+	query.collide_with_bodies = true
+	
+	var result := get_world_3d().direct_space_state.intersect_ray(query)
+	
+	if result.is_empty():
+		return
+	
+	var collider = result["collider"]
+	
+	if collider != null and collider.has_meta("is_barcode") and collider.get_meta("is_barcode") == true:
+		var owner_product = collider.get_meta("owner_product")
+		if owner_product == held_product:
+			on_barcode_clicked()
+
+func on_barcode_clicked() -> void:
+	print("Scan the barcode!")
+	
+	# TODO: logic to add product to cart
+	return_held_product()
 
 func enter_vehicle(v: Vehicle) -> void:
 	is_in_vehicle = true
