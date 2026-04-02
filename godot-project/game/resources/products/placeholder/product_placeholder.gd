@@ -9,6 +9,10 @@ var mesh_instance: MeshInstance3D
 @onready var visual_root: Node3D = $VisualRoot
 @onready var label_3d: Label3D = $Label3D
 
+func interact(player: Player) -> void:
+	player.pick_up_product(self)
+
+
 func set_product_data(data: Product) -> void:
 	product_data = data
 	_rebuild()
