@@ -11,4 +11,5 @@ barcode_value = "1"
 mesh_scene = ExtResource("1_2uk4n")
 placeholder_size = Vector3(0.3, 0.4, 0.2)
 shelf_offset = Vector3(0, 0.2, 0)
+barcode_offset = Vector3(-0.07, -0.12, 0)
 metadata/_custom_type_script = "uid://c485xiqer6nrc"

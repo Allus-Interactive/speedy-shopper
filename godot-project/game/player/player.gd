@@ -31,17 +31,31 @@ func _unhandled_input(event: InputEvent) -> void:
 		# Make the mouse visible again
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	# Listen to mouse motion to rotate player view
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion and not is_inspecting_product:
-			neck.rotate_y(-event.relative.x * 0.01)
-			camera.rotate_x(-event.relative.y * 0.01)
-			# clamp rotation
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+	# Listen to mouse motion to rotate player view or inspect item
+	if is_inspecting_product:
+		handle_product_inspection_input(event)
+	else:
+		handle_player_look_input(event)
 	
 	# If holding product, replace on shelf
 	if is_inspecting_product and event.is_action_pressed("replace"):
 		return_held_product()
+
+func handle_player_look_input(event: InputEvent) -> void:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			neck.rotate_y(-event.relative.x * 0.01)
+			camera.rotate_x(-event.relative.y * 0.01)
+			# clamp rotation
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+
+func handle_product_inspection_input(event: InputEvent) -> void:
+	if held_product == null:
+		return
+	
+	if event is InputEventMouseMotion:
+		held_product.rotate_y(-event.relative.x * 0.01)
+		held_product.rotate_x(-event.relative.y * 0.01)
 
 func _physics_process(delta: float) -> void:
 	if is_inspecting_product:
@@ -70,9 +84,7 @@ func _process(_delta: float) -> void:
 			if obj.has_method("interact"):
 				obj.interact(self)
 
-func pick_up_product(product: Node3D) -> void:
-	print("Picking up da product!")
-	
+func pick_up_product(product: Node3D) -> void:	
 	if is_inspecting_product:
 		return
 	
@@ -80,6 +92,10 @@ func pick_up_product(product: Node3D) -> void:
 	held_product_original_parent = product.get_parent()
 	held_product_original_transform = product.global_transform
 	is_inspecting_product = true
+	
+	# disable collision shape to avoid interference with raycasts or clipping
+	if product.has_node("CollisionShape3D"):
+		product.get_node("CollisionShape3D").disabled = true
 	
 	# Reparent to hold point
 	held_product.reparent(hold_point)
@@ -93,6 +109,10 @@ func return_held_product() -> void:
 	
 	held_product.reparent(held_product_original_parent)
 	held_product.global_transform = held_product_original_transform
+	
+	# enable collision shape
+	if held_product.has_node("CollisionShape3D"):
+		held_product.get_node("CollisionShape3D").disabled = false
 	
 	held_product = null
 	held_product_original_parent = null

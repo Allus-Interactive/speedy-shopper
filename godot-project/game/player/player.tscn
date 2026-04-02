@@ -32,4 +32,4 @@ target_position = Vector3(0, 0, -3)
 debug_shape_custom_color = Color(4.1392445e-06, 0.59182423, 1.92523e-07, 1)
 
 [node name="HoldPoint" type="Marker3D" parent="Neck/Camera3D" unique_id=318646590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)

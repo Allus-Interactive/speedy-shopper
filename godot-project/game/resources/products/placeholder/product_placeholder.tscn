@@ -20,3 +20,7 @@ font_size = 64
 outline_size = 2
 autowrap_mode = 2
 width = 100.0
+
+[node name="BarcodeRoot" type="Node3D" parent="." unique_id=1090311050]
+
+[node name="BarcodeMarker" type="Marker3D" parent="." unique_id=297330344]
