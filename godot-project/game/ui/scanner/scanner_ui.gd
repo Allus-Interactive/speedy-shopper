@@ -10,7 +10,6 @@ class_name ScannerUI
 @onready var title_label: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/TitleLabel
 @onready var shop_label: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/ShopLabel
 @onready var items_list: VBoxContainer = $ScannerContainer/Screen/MarginContainer/VBoxContainer/ScrollContainer/ItemsList
-#@onready var items_list: VBoxContainer = $ScannerContainer/Screen/MarginContainer/VBoxContainer/ItemsList
 
 @onready var scanner_theme = preload("res://assets/themes/scanner.tres")
 
@@ -19,6 +18,9 @@ var is_animating: bool = false
 
 func _ready() -> void:
 	scanner_container.position.y = closed_y
+	
+	if not TheOrderManager.order_updated.is_connected(refresh_from_order):
+		TheOrderManager.order_updated.is_connected(refresh_from_order)
 
 func toggle_scanner() -> void:
 	if is_animating:

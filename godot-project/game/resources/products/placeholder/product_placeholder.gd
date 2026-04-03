@@ -26,6 +26,17 @@ func get_interaction_tooltip() -> String:
 	
 	return "%s\nPress E to inspect" % product_data.product_name
 
+func on_barcode_clicked() -> void:
+	if product_data == null:
+		return
+	
+	var success = TheOrderManager.scan_product(product_data.product_id)
+	
+	if success:
+		print("Scanned: ", product_data.product_name)
+	else:
+		print("Failed to scan item or already scanned: ", product_data.product_name)
+
 func _rebuild() -> void:
 	if mesh_instance:
 		mesh_instance.queue_free()

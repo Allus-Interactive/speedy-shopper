@@ -204,8 +204,11 @@ func scan_barcode() -> void:
 	if collider != null and collider.has_meta("is_barcode") and collider.get_meta("is_barcode") == true:
 		var owner_product = collider.get_meta("owner_product")
 		if owner_product == held_product:
-			on_barcode_clicked()
+			held_product.on_barcode_clicked()
+			# TODO: logic to add product to cart
+			return_held_product()
 
+# Function replaced in ProductPlaceholder
 func on_barcode_clicked() -> void:
 	print("Scan the barcode!")
 	
