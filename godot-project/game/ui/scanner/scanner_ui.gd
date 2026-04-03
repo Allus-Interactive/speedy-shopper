@@ -13,6 +13,8 @@ class_name ScannerUI
 
 @onready var scanner_theme = preload("res://assets/themes/scanner.tres")
 
+@onready var item_label_scene = preload("res://game/ui/scanner/item_label/item_label.tscn")
+
 var is_open: bool = false
 var is_animating: bool = false
 
@@ -81,12 +83,13 @@ func _rebuild_items_list(items: Array) -> void:
 		child.queue_free()
 	
 	for item in items:
-		var row: Label = Label.new()
+		var row: ItemLabel = item_label_scene.instantiate()
 		
 		var item_name: String = item.get("product_name", "Unknown Item")
 		var required_qty = item.get("required_quantity")
 		var scanned_qty = item.get("scanned_quantity")
 		
-		row.text = "%s %d/%d" % [item_name, scanned_qty, required_qty]
-		row.theme = scanner_theme
+		# Add label to items list
 		items_list.add_child(row)
+		# populate label data
+		row.populate_data(item_name, required_qty, scanned_qty)
