@@ -84,9 +84,9 @@ func _rebuild_items_list(items: Array) -> void:
 		var row: Label = Label.new()
 		
 		var item_name: String = item.get("product_name", "Unknown Item")
-		var scanned: bool = item.get("scanned", false)
-		var status: String = "[X]" if scanned else "[ ]"
+		var required_qty = item.get("required_quantity")
+		var scanned_qty = item.get("scanned_quantity")
 		
-		row.text = "%s %s" % [status, item_name]
+		row.text = "%s %d/%d" % [item_name, scanned_qty, required_qty]
 		row.theme = scanner_theme
 		items_list.add_child(row)

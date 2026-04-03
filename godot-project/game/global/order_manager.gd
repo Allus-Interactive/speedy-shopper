@@ -10,9 +10,9 @@ var temp_order: Dictionary = {
 	"shop_name": "ScotMid",
 	"order_id": 1,
 	"items": [
-		{ "product_id": 1, "product_name": "Own Brand Cereal", "barcode_value": 1, "quantity": 1, "scanned": false },
-		{ "product_id": 2, "product_name": "Standard Cereal", "barcode_value": 2, "quantity": 1, "scanned": false },
-		{ "product_id": 3, "product_name": "Finest Cereal", "barcode_value": 3, "quantity": 1, "scanned": false }
+		{ "product_id": 1, "product_name": "Own Brand Cereal", "barcode_value": 1, "required_quantity": 1, "scanned_quantity": 0 },
+		{ "product_id": 2, "product_name": "Standard Cereal", "barcode_value": 2, "required_quantity": 2, "scanned_quantity": 0 },
+		{ "product_id": 3, "product_name": "Finest Cereal", "barcode_value": 3, "required_quantity": 3, "scanned_quantity": 0 }
 	],
 	"delivery_address": "Pickup",
 	"reward": 10
@@ -29,11 +29,15 @@ func scan_product(product_id: int) -> bool:
 	
 	for item in items:
 		if item.get("product_id") == product_id:
-			if item.get("scanned", false):
+			var product_name = item.get("product_name")
+			var required_qty = item.get("required_quantity")
+			var scanned_qty = item.get("scanned_quantity")
+			
+			if scanned_qty >= required_qty:
 				product_scanned.emit(product_id, false)
 				return false
 			
-			item["scanned"] = true
+			item["scanned_quantity"] = scanned_qty + 1
 			order_updated.emit()
 			product_scanned.emit(product_id, true)
 			return true
@@ -46,7 +50,10 @@ func is_active_order_completed() -> bool:
 		return false
 	
 	for item in active_order.get("items", []):
-		if not item.get("scanned", false):
+		var required_qty = item.get("required_quantity")
+		var scanned_qty = item.get("scanned_quantity")
+		
+		if scanned_qty < required_qty:
 			return false
 	
 	return true
