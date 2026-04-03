@@ -20,6 +20,12 @@ func set_product_data(data: Product) -> void:
 	product_data = data
 	_rebuild()
 
+func get_interaction_tooltip() -> String:
+	if product_data == null:
+		return "Press E to inspect"
+	
+	return "%s\nPress E to inspect" % product_data.product_name
+
 func _rebuild() -> void:
 	if mesh_instance:
 		mesh_instance.queue_free()

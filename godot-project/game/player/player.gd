@@ -23,6 +23,14 @@ var is_inspecting_product: bool = false
 @onready var camera: Camera3D = $Neck/Camera3D
 @onready var ray_cast_3d: RayCast3D = $Neck/Camera3D/RayCast3D
 
+# UI
+@onready var crosshair: ColorRect = $CanvasLayer/Control/Crosshair
+@onready var tooltip_panel: Panel = $CanvasLayer/Control/TooltipPanel
+@onready var tooltip_label: Label = $CanvasLayer/Control/TooltipPanel/TooltipLabel
+
+func _ready() -> void:
+	tooltip_panel.hide()
+
 func _unhandled_input(event: InputEvent) -> void:
 	# Capture mouse input when not inspecting a product
 	if not is_inspecting_product:
@@ -43,7 +51,7 @@ func handle_player_look_input(event: InputEvent) -> void:
 			neck.rotate_y(-event.relative.x * 0.01)
 			camera.rotate_x(-event.relative.y * 0.01)
 			# clamp rotation
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-45), deg_to_rad(45))
 
 func handle_product_inspection_input(delta: float) -> void:
 	if held_product == null:
@@ -86,7 +94,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
+	# Update the interaction tooltip
+	update_tooltip()
+	# Move the player
 	move_and_slide()
 
 func _process(delta: float) -> void:
@@ -97,6 +108,7 @@ func _process(delta: float) -> void:
 	if is_inspecting_product and Input.is_action_pressed("replace"):
 		return_held_product()
 	
+	# Scan the barcode when clicked
 	if is_inspecting_product and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		scan_barcode()
 	
@@ -129,6 +141,10 @@ func pick_up_product(product: ProductPlaceholder) -> void:
 	# Make the mouse visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
+	# Hide the crosshair and tooltip
+	crosshair.hide()
+	tooltip_panel.hide()
+	
 	product.disable_barcode_hitbox(false)
 
 func return_held_product() -> void:
@@ -145,6 +161,10 @@ func return_held_product() -> void:
 	
 	# Confine Mouse to screen
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	# Show the crosshair and tooltip
+	crosshair.show()
+	tooltip_panel.show()
 	
 	held_product = null
 	held_product_original_parent = null
@@ -180,6 +200,34 @@ func on_barcode_clicked() -> void:
 	
 	# TODO: logic to add product to cart
 	return_held_product()
+
+# Update tooltip text and crosshair colour
+func update_tooltip() -> void:
+	# If therer is no object
+	if not ray_cast_3d.is_colliding():
+		tooltip_panel.hide()
+		crosshair.modulate = Color.WHITE
+		return
+	
+	var obj = ray_cast_3d.get_collider()
+	
+	# if the obejct is null
+	if obj == null:
+		tooltip_panel.hide()
+		crosshair.modulate = Color.WHITE
+		return
+	
+	# If the object has the 'get_interaction_tooltip' function
+	if obj.has_method("get_interaction_tooltip"):
+		tooltip_label.text = obj.get_interaction_tooltip()
+		tooltip_panel.show()
+		crosshair.modulate = Color.DARK_GREEN
+		return
+	
+	# if the object has the 'interact' function
+	if obj.has_method("interact"):
+		crosshair.modulate = Color.DARK_GREEN
+		return
 
 func enter_vehicle(v: Vehicle) -> void:
 	is_in_vehicle = true
