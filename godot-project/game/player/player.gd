@@ -28,6 +28,9 @@ var is_inspecting_product: bool = false
 @onready var tooltip_panel: Panel = $CanvasLayer/Control/TooltipPanel
 @onready var tooltip_label: Label = $CanvasLayer/Control/TooltipPanel/TooltipLabel
 
+# Scanner
+@onready var scanner_ui: ScannerUI = $ScannerUI
+
 func _ready() -> void:
 	tooltip_panel.hide()
 
@@ -112,6 +115,10 @@ func _process(delta: float) -> void:
 	if is_inspecting_product and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		scan_barcode()
 	
+	if not is_inspecting_product and Input.is_action_just_pressed("toggle_scanner"):
+		scanner_ui.toggle_scanner()
+	
+	# Check raycast for interactable object
 	if Input.is_action_just_released("interact"):
 		if ray_cast_3d.is_colliding():
 			var obj = ray_cast_3d.get_collider()
@@ -122,6 +129,10 @@ func _process(delta: float) -> void:
 func pick_up_product(product: ProductPlaceholder) -> void:	
 	if is_inspecting_product:
 		return
+	
+	# if scanner is open, close it
+	if scanner_ui.is_open:
+		scanner_ui.toggle_scanner()
 	
 	held_product = product
 	held_product_original_parent = product.get_parent()

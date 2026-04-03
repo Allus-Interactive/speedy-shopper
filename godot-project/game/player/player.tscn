@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cjsrfjrg00vbp"]
 
 [ext_resource type="Script" uid="uid://dn4d35dl1g4im" path="res://game/player/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://c6m46wgh7wbdt" path="res://game/ui/scanner/scanner_ui.tscn" id="2_b2mth"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
 radius = 0.4
@@ -84,3 +85,7 @@ text = "Cereal
 Press E to Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ScannerUI" parent="." unique_id=267252903 instance=ExtResource("2_b2mth")]
+offset = Vector2(1220, 0)
+transform = Transform2D(1, 0, 0, 1, 1220, 0)
