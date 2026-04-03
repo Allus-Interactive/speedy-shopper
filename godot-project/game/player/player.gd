@@ -181,6 +181,27 @@ func return_held_product() -> void:
 	held_product_original_parent = null
 	is_inspecting_product = false
 
+func collect_held_product() -> void:
+	if held_product == null:
+		return
+	
+	var product_to_remove = held_product
+	
+	held_product = null
+	held_product_original_parent = null
+	is_inspecting_product = false
+	
+	# Confine Mouse to screen
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	# Show the crosshair and hide the tooltip
+	crosshair.show()
+	tooltip_panel.hide()
+	
+	# Remove the product
+	# TODO: move product to basket instead of deleting object
+	product_to_remove.queue_free()
+
 func scan_barcode() -> void:
 	if held_product == null:
 		return
@@ -204,9 +225,11 @@ func scan_barcode() -> void:
 	if collider != null and collider.has_meta("is_barcode") and collider.get_meta("is_barcode") == true:
 		var owner_product = collider.get_meta("owner_product")
 		if owner_product == held_product:
-			held_product.on_barcode_clicked()
-			# TODO: logic to add product to cart
-			return_held_product()
+			if held_product.on_barcode_clicked():
+				collect_held_product()
+			else:
+				print("Wrong Product!")
+				# TODO: play wrong product scanned beep
 
 # Function replaced in ProductPlaceholder
 func on_barcode_clicked() -> void:
