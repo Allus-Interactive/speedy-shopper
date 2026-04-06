@@ -87,5 +87,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScannerUI" parent="." unique_id=267252903 instance=ExtResource("2_b2mth")]
-offset = Vector2(1220, 0)
-transform = Transform2D(1, 0, 0, 1, 1220, 0)
+offset = Vector2(1320, 0)
+transform = Transform2D(1, 0, 0, 1, 1320, 0)

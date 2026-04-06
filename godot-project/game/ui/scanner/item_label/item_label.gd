@@ -10,8 +10,8 @@ func _ready() -> void:
 	pass
 
 func populate_data(product_name: String, required_qty: int, scanned_qty: int) -> void:
-	product_label.text = product_name
-	quantity_label.text = "%d/%d" % [scanned_qty, required_qty]
+	product_label.text = str(required_qty) + "x " + product_name
+	quantity_label.text = "%d/%d Items Picked" % [scanned_qty, required_qty]
 	
 	if scanned_qty >= required_qty:
 		item_label.color = Color.GRAY

@@ -2,33 +2,33 @@
 
 [ext_resource type="Theme" uid="uid://ch0elgt0g6a0j" path="res://assets/themes/scanner.tres" id="1_6jepp"]
 [ext_resource type="Script" uid="uid://bqsvxyw8n6xnq" path="res://game/ui/scanner/scanner_ui.gd" id="1_cor6b"]
+[ext_resource type="Texture2D" uid="uid://b78oy0ko31u6l" path="res://assets/ui/scanner/scanner_ui.png" id="2_pq742"]
 
 [node name="ScannerUI" type="CanvasLayer" unique_id=267252903]
 script = ExtResource("1_cor6b")
 
-[node name="ScannerContainer" type="ColorRect" parent="." unique_id=1870317863]
-custom_minimum_size = Vector2(450, 650)
-offset_right = 450.0
+[node name="ScannerContainer" type="TextureRect" parent="." unique_id=469263865]
+offset_right = 345.0
 offset_bottom = 650.0
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_pq742")
 
 [node name="Screen" type="ColorRect" parent="ScannerContainer" unique_id=863298307]
-custom_minimum_size = Vector2(400, 600)
+custom_minimum_size = Vector2(262, 430)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -300.0
-offset_right = 200.0
-offset_bottom = 300.0
+offset_left = -133.5
+offset_top = -220.0
+offset_right = 128.5
+offset_bottom = 210.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=1271660774]
-custom_minimum_size = Vector2(400, 600)
+custom_minimum_size = Vector2(262, 430)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,18 +48,24 @@ layout_mode = 2
 [node name="TitleLabel" type="Label" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer" unique_id=1794571013]
 layout_mode = 2
 theme = ExtResource("1_6jepp")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Current Order: 00001"
 
 [node name="ShopLabel" type="Label" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer" unique_id=1676859107]
 layout_mode = 2
 theme = ExtResource("1_6jepp")
-theme_override_font_sizes/font_size = 24
 text = "Shop Name"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer" unique_id=1416076793]
-custom_minimum_size = Vector2(0, 500)
+custom_minimum_size = Vector2(0, 365)
 layout_mode = 2
 
 [node name="ItemsList" type="VBoxContainer" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer/ScrollContainer" unique_id=497716111]
 layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1870317863]
+visible = false
+custom_minimum_size = Vector2(450, 650)
+offset_right = 450.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)

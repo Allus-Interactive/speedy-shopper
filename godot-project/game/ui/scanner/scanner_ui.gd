@@ -3,10 +3,10 @@ extends CanvasLayer
 class_name ScannerUI
 
 @export var closed_y: float = 1080.0
-@export var open_y: float = 630.0
-@export var slide_duration: float = 0.25
+@export var open_y: float = 450.0
+@export var slide_duration: float = 0.5
 
-@onready var scanner_container: ColorRect = $ScannerContainer
+@onready var scanner_container: TextureRect = $ScannerContainer
 @onready var title_label: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/TitleLabel
 @onready var shop_label: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/ShopLabel
 @onready var items_list: VBoxContainer = $ScannerContainer/Screen/MarginContainer/VBoxContainer/ScrollContainer/ItemsList
