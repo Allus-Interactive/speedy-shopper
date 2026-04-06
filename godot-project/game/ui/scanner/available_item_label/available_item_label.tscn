@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bypk6l6koeuup"]
+
+[ext_resource type="Script" uid="uid://do7cq6kemoav2" path="res://game/ui/scanner/available_item_label/available_item_label.gd" id="1_yn8xm"]
+
+[node name="AvailableItemLabel" type="ColorRect" unique_id=1635080303]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_yn8xm")

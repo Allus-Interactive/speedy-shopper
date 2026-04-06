@@ -21,7 +21,22 @@ var temp_order: Dictionary = {
 	"reward": 10
 }
 
+var temp_order_2: Dictionary = {
+	"shop_name": "ScotMid",
+	"order_id": 2,
+	"items": [
+		{ "product_id": 1, "product_name": "Own Brand Cereal", "barcode_value": 1, "required_quantity": 2, "scanned_quantity": 0 },
+		{ "product_id": 3, "product_name": "Finest Cereal", "barcode_value": 3, "required_quantity": 1, "scanned_quantity": 0 }
+	],
+	"delivery_address": "Pickup",
+	"customer": "Nami",
+	"order_placed": "10:30",
+	"delivery_time": "11:45",
+	"reward": 10
+}
+
 var active_order: Dictionary = temp_order # TODO: should be initalized as {}
+var accepted_orders: Array = [temp_order, temp_order_2] # TODO: should be initialized as []
 
 func scan_product(product_id: int) -> bool:
 	if active_order.is_empty():

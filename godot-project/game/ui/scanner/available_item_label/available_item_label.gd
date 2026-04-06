@@ -1,0 +1,3 @@
+extends ColorRect
+
+class_name AvailableItemLabel

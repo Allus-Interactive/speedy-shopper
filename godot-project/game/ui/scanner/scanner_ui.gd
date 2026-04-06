@@ -7,16 +7,26 @@ class_name ScannerUI
 @export var slide_duration: float = 0.5
 
 @onready var scanner_container: TextureRect = $ScannerContainer
-@onready var title_label: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/TitleLabel
-@onready var order_details_container: HBoxContainer = $ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer
-@onready var order_details: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxDelivery/OrderDetails
-@onready var delivery_details: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxDelivery/DeliveryDetails
-@onready var customer_details: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxCustomer/CustomerDetails
-@onready var items_list: VBoxContainer = $ScannerContainer/Screen/MarginContainer/VBoxContainer/ScrollContainer/ItemsList
+# View Containers
+@onready var current_order_view: MarginContainer = $ScannerContainer/Screen/CurrentOrderView
+@onready var accepted_orders_view: MarginContainer = $ScannerContainer/Screen/AcceptedOrdersView
+@onready var available_orders_view: MarginContainer = $ScannerContainer/Screen/AvailableOrdersView
+# Current Order View
+@onready var title_label: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/TitleLabel
+@onready var order_details_container: HBoxContainer = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer
+@onready var order_details: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery/OrderDetails
+@onready var delivery_details: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery/DeliveryDetails
+@onready var customer_details: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxCustomer/CustomerDetails
+@onready var items_list: VBoxContainer = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/ScrollContainer/ItemsList
+# Accepted Orders View
+@onready var accepted_items_list: VBoxContainer = $ScannerContainer/Screen/AcceptedOrdersView/VBoxContainer/AcceptedOrdersScroll/AcceptedItemsList
+# Available Orders View
+@onready var available_items_list: VBoxContainer = $ScannerContainer/Screen/AvailableOrdersView/VBoxContainer/AvailableOrdersScroll/AvailableItemsList
 
 @onready var scanner_theme = preload("res://assets/themes/scanner.tres")
 
 @onready var item_label_scene = preload("res://game/ui/scanner/item_label/item_label.tscn")
+@onready var accepted_item_label_scene = preload("res://game/ui/scanner/accepted_item_label/accepted_item_label.tscn")
 
 var is_open: bool = false
 var is_animating: bool = false
@@ -63,28 +73,58 @@ func _animate_to(target_y: float) -> void:
 	is_animating = false
 
 func refresh_from_order() -> void:
-	var order = TheOrderManager.active_order
-	#var order = {}
+	#var order = TheOrderManager.active_order
+	var order = {}
+	if order:
+		print("Show current Order")
+		# show current order view
+		current_order_view.visible = true
+		accepted_orders_view.visible = false
+		available_orders_view.visible = false
+		_build_current_order_view(order)
+	elif TheOrderManager.accepted_orders.size() > 0:
+		print("Show accepted Orders")
+		# show accepted order view
+		current_order_view.visible = false
+		accepted_orders_view.visible = true
+		available_orders_view.visible = false
+		_build_accepted_orders_view()
+	else:
+		print("Show available Orders")
+		# show available orders
+		current_order_view.visible = false
+		accepted_orders_view.visible = false
+		available_orders_view.visible = true
+		_build_available_orders_view()
 	
-	if order.is_empty():
-		_clear_ui()
-		return
+	# TODO: investigate if we need this
+	#if order.is_empty():
+		#_clear_ui()
+		#return
+
+func _clear_ui() -> void:
+	current_order_view.visible = false
+	accepted_orders_view.visible = false
+	available_orders_view.visible = true
 	
+	for child in items_list.get_children():
+		child.queue_free()
+	
+	for child in accepted_items_list.get_children():
+		child.queue_free()
+	
+	for child in available_items_list.get_children():
+		child.queue_free()
+
+func _build_current_order_view(order) -> void:
 	title_label.text = "Order #" + str(order.get("order_id")).pad_zeros(5)
 	order_details_container.visible = true
 	customer_details.text = order.get("customer")
 	order_details.text = "Ordered: " +order.get("order_placed")
-	delivery_details.text = "Due:" + order.get("delivery_time")
+	delivery_details.text = "Due: " + order.get("delivery_time")
 	
 	_rebuild_items_list(order.get("items", []))
-
-func _clear_ui() -> void:
-	title_label.text = "No Active Order"
-	order_details_container.visible = false
 	
-	for child in items_list.get_children():
-		child.queue_free()
-
 func _rebuild_items_list(items: Array) -> void:
 	for child in items_list.get_children():
 		child.queue_free()
@@ -100,3 +140,31 @@ func _rebuild_items_list(items: Array) -> void:
 		items_list.add_child(row)
 		# populate label data
 		row.populate_data(item_name, required_qty, scanned_qty)
+
+func _build_accepted_orders_view() -> void:
+	var items = TheOrderManager.accepted_orders
+	_rebuild_accepted_items_list(items)
+
+func _rebuild_accepted_items_list(items: Array) -> void:
+	for child in accepted_items_list.get_children():
+		child.queue_free()
+	
+	for item in items:
+		var row: AcceptedItemLabel = accepted_item_label_scene.instantiate()
+		
+		var order_number: int = item.get("order_id")
+		
+		# Add label to items list
+		items_list.add_child(row)
+		# populate label data
+		row.populate_data(order_number)
+
+func _build_available_orders_view() -> void:
+	print("Building the Accepted Orders view")
+
+func _rebuild_available_items_list(items: Array) -> void:
+	for child in accepted_items_list.get_children():
+		child.queue_free()
+	
+	for item in items:
+		print("Build the label")
