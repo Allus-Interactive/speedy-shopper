@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://bqsvxyw8n6xnq" path="res://game/ui/scanner/scanner_ui.gd" id="1_cor6b"]
 [ext_resource type="Texture2D" uid="uid://b78oy0ko31u6l" path="res://assets/ui/scanner/scanner_ui.png" id="2_pq742"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq742"]
+bg_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
+
 [node name="ScannerUI" type="CanvasLayer" unique_id=267252903]
 script = ExtResource("1_cor6b")
 
@@ -13,7 +16,7 @@ offset_bottom = 650.0
 texture = ExtResource("2_pq742")
 
 [node name="Screen" type="ColorRect" parent="ScannerContainer" unique_id=863298307]
-custom_minimum_size = Vector2(262, 430)
+custom_minimum_size = Vector2(264, 430)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,36 +31,80 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=1271660774]
-custom_minimum_size = Vector2(262, 430)
+custom_minimum_size = Vector2(264, 430)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -132.0
+offset_top = -215.0
+offset_right = 132.0
+offset_bottom = 215.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScannerContainer/Screen/MarginContainer" unique_id=1290389730]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="TitleLabel" type="Label" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer" unique_id=1794571013]
 layout_mode = 2
 theme = ExtResource("1_6jepp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "Current Order: 00001"
+theme_override_styles/normal = SubResource("StyleBoxFlat_pq742")
+text = "Order #00001"
 
-[node name="ShopLabel" type="Label" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer" unique_id=1676859107]
+[node name="OrderDetailsContainer" type="HBoxContainer" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer" unique_id=62385124]
+layout_mode = 2
+
+[node name="VBoxDelivery" type="VBoxContainer" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer" unique_id=821880702]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="DeliveryLabel" type="Label" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=1676859107]
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 theme = ExtResource("1_6jepp")
-text = "Shop Name"
+theme_override_font_sizes/font_size = 12
+text = "Order:"
+
+[node name="OrderDetails" type="Label" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=144819064]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("1_6jepp")
+theme_override_font_sizes/font_size = 12
+text = "Placed:"
+
+[node name="DeliveryDetails" type="Label" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=424528954]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("1_6jepp")
+theme_override_font_sizes/font_size = 12
+text = "Due:"
+
+[node name="VBoxCustomer" type="VBoxContainer" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer" unique_id=1488224293]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="CustomerLabel" type="Label" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxCustomer" unique_id=840604126]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("1_6jepp")
+theme_override_font_sizes/font_size = 12
+text = "Customer:"
+
+[node name="CustomerDetails" type="Label" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxCustomer" unique_id=1089211541]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("1_6jepp")
+theme_override_font_sizes/font_size = 12
+text = "Name"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer" unique_id=1416076793]
-custom_minimum_size = Vector2(0, 365)
+custom_minimum_size = Vector2(0, 340)
 layout_mode = 2
 
 [node name="ItemsList" type="VBoxContainer" parent="ScannerContainer/Screen/MarginContainer/VBoxContainer/ScrollContainer" unique_id=497716111]

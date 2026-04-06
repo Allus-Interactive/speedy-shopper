@@ -15,6 +15,9 @@ var temp_order: Dictionary = {
 		{ "product_id": 3, "product_name": "Finest Cereal", "barcode_value": 3, "required_quantity": 3, "scanned_quantity": 0 }
 	],
 	"delivery_address": "Pickup",
+	"customer": "Monkey D Luffy",
+	"order_placed": "10:00",
+	"delivery_time": "11:30",
 	"reward": 10
 }
 

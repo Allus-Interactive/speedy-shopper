@@ -8,7 +8,10 @@ class_name ScannerUI
 
 @onready var scanner_container: TextureRect = $ScannerContainer
 @onready var title_label: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/TitleLabel
-@onready var shop_label: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/ShopLabel
+@onready var order_details_container: HBoxContainer = $ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer
+@onready var order_details: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxDelivery/OrderDetails
+@onready var delivery_details: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxDelivery/DeliveryDetails
+@onready var customer_details: Label = $ScannerContainer/Screen/MarginContainer/VBoxContainer/OrderDetailsContainer/VBoxCustomer/CustomerDetails
 @onready var items_list: VBoxContainer = $ScannerContainer/Screen/MarginContainer/VBoxContainer/ScrollContainer/ItemsList
 
 @onready var scanner_theme = preload("res://assets/themes/scanner.tres")
@@ -61,19 +64,23 @@ func _animate_to(target_y: float) -> void:
 
 func refresh_from_order() -> void:
 	var order = TheOrderManager.active_order
+	#var order = {}
 	
 	if order.is_empty():
 		_clear_ui()
 		return
 	
-	title_label.text = "Current Order: " + str(order.get("order_id")).pad_zeros(5)
-	shop_label.text = order.get("shop_name")
+	title_label.text = "Order #" + str(order.get("order_id")).pad_zeros(5)
+	order_details_container.visible = true
+	customer_details.text = order.get("customer")
+	order_details.text = "Ordered: " +order.get("order_placed")
+	delivery_details.text = "Due:" + order.get("delivery_time")
 	
 	_rebuild_items_list(order.get("items", []))
 
 func _clear_ui() -> void:
 	title_label.text = "No Active Order"
-	shop_label.text = ""
+	order_details_container.visible = false
 	
 	for child in items_list.get_children():
 		child.queue_free()
