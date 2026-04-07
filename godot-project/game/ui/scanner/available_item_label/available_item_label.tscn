@@ -1,8 +1,28 @@
 [gd_scene format=3 uid="uid://bypk6l6koeuup"]
 
 [ext_resource type="Script" uid="uid://do7cq6kemoav2" path="res://game/ui/scanner/available_item_label/available_item_label.gd" id="1_yn8xm"]
+[ext_resource type="Theme" uid="uid://ch0elgt0g6a0j" path="res://assets/themes/scanner.tres" id="2_7gfbs"]
 
 [node name="AvailableItemLabel" type="ColorRect" unique_id=1635080303]
+custom_minimum_size = Vector2(262, 60)
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_yn8xm")
+
+[node name="OrderLabel" type="Label" parent="." unique_id=1210886563]
+custom_minimum_size = Vector2(262, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_7gfbs")
+text = "Order #12345"
+
+[node name="QuantityLabel" type="Label" parent="." unique_id=1815586305]
+custom_minimum_size = Vector2(262, 20)
+layout_mode = 0
+offset_top = 30.0
+offset_right = 262.0
+offset_bottom = 50.0
+theme = ExtResource("2_7gfbs")
+theme_override_font_sizes/font_size = 12
+text = "1/2 Items Picked"

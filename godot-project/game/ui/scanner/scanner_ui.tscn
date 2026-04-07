@@ -3,7 +3,6 @@
 [ext_resource type="Theme" uid="uid://ch0elgt0g6a0j" path="res://assets/themes/scanner.tres" id="1_6jepp"]
 [ext_resource type="Script" uid="uid://bqsvxyw8n6xnq" path="res://game/ui/scanner/scanner_ui.gd" id="1_cor6b"]
 [ext_resource type="Texture2D" uid="uid://b78oy0ko31u6l" path="res://assets/ui/scanner/scanner_ui.png" id="2_pq742"]
-[ext_resource type="PackedScene" uid="uid://d3a8u10betvmf" path="res://game/ui/scanner/accepted_item_label/accepted_item_label.tscn" id="4_v4kyo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq742"]
 bg_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
@@ -135,9 +134,6 @@ custom_minimum_size = Vector2(0, 395)
 layout_mode = 2
 
 [node name="AcceptedItemsList" type="VBoxContainer" parent="ScannerContainer/Screen/AcceptedOrdersView/VBoxContainer/AcceptedOrdersScroll" unique_id=996857292]
-layout_mode = 2
-
-[node name="AcceptedItemLabel" parent="ScannerContainer/Screen/AcceptedOrdersView/VBoxContainer/AcceptedOrdersScroll/AcceptedItemsList" unique_id=504880122 instance=ExtResource("4_v4kyo")]
 layout_mode = 2
 
 [node name="AvailableOrdersView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=1988843271]

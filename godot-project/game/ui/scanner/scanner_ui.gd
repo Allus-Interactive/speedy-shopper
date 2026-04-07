@@ -27,6 +27,7 @@ class_name ScannerUI
 
 @onready var item_label_scene = preload("res://game/ui/scanner/item_label/item_label.tscn")
 @onready var accepted_item_label_scene = preload("res://game/ui/scanner/accepted_item_label/accepted_item_label.tscn")
+@onready var available_item_label_scene = preload("res://game/ui/scanner/available_item_label/available_item_label.tscn")
 
 var is_open: bool = false
 var is_animating: bool = false
@@ -160,11 +161,21 @@ func _rebuild_accepted_items_list(items: Array) -> void:
 		row.populate_data(order_number)
 
 func _build_available_orders_view() -> void:
-	print("Building the Accepted Orders view")
+	var items = TheJobManager.available_orders
+	_rebuild_available_items_list(items)
 
 func _rebuild_available_items_list(items: Array) -> void:
 	for child in accepted_items_list.get_children():
 		child.queue_free()
 	
 	for item in items:
-		print("Build the label")
+		var row: AvailableItemLabel = available_item_label_scene.instantiate()
+		
+		var order_number: int = item.get("order_id")
+		var products: Array = item.get("items")
+		var item_qty: int = products.size()
+		
+		# Add label to items list
+		available_items_list.add_child(row)
+		# populate label data
+		row.populate_data(order_number, item_qty)

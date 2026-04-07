@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 TheGameManager="*uid://c4cktdpayevwu"
 TheOrderManager="*uid://8qw21rlqvxpy"
+TheJobManager="*uid://dqaoss102vl8k"
 
 [display]
 
