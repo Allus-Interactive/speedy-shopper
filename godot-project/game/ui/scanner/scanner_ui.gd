@@ -155,7 +155,7 @@ func _rebuild_accepted_items_list(items: Array) -> void:
 		var order_number: int = item.get("order_id")
 		
 		# Add label to items list
-		items_list.add_child(row)
+		accepted_items_list.add_child(row)
 		# populate label data
 		row.populate_data(order_number)
 

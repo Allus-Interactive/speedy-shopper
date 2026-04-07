@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://ch0elgt0g6a0j" path="res://assets/themes/scanner.tres" id="2_rxcdk"]
 
 [node name="AcceptedItemLabel" type="ColorRect" unique_id=504880122]
+custom_minimum_size = Vector2(262, 60)
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_qvax5")
@@ -14,9 +15,10 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme = ExtResource("2_rxcdk")
-text = "2x Skimmed Milk"
+text = "Order #12345"
 
 [node name="QuantityLabel" type="Label" parent="." unique_id=1306817961]
+visible = false
 custom_minimum_size = Vector2(262, 20)
 layout_mode = 0
 offset_top = 30.0

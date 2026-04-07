@@ -47,7 +47,7 @@ func scan_product(product_id: int) -> bool:
 	
 	for item in items:
 		if item.get("product_id") == product_id:
-			var product_name = item.get("product_name")
+			#var product_name = item.get("product_name")
 			var required_qty = item.get("required_quantity")
 			var scanned_qty = item.get("scanned_quantity")
 			
