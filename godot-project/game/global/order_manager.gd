@@ -5,24 +5,7 @@ class_name OrderManager
 signal order_updated
 signal product_scanned(product_id: String, success: bool)
 
-# TODO: remove temp order once order generation is working
-var temp_order: Dictionary = {
-	"shop_name": "ScotMid",
-	"order_id": 1,
-	"items": [
-		{ "product_id": 1, "product_name": "Own Brand Cereal", "barcode_value": 1, "required_quantity": 1, "scanned_quantity": 0 },
-		{ "product_id": 2, "product_name": "Standard Cereal", "barcode_value": 2, "required_quantity": 2, "scanned_quantity": 0 },
-		{ "product_id": 3, "product_name": "Finest Cereal", "barcode_value": 3, "required_quantity": 3, "scanned_quantity": 0 }
-	],
-	"delivery_address": "Pickup",
-	"customer": "Monkey D Luffy",
-	"order_placed": "10:00",
-	"delivery_time": "11:30",
-	"reward": 10
-}
-
 var active_order: Dictionary = {}
-var accepted_orders: Array = []
 
 func scan_product(product_id: int) -> bool:
 	if active_order.is_empty():
@@ -33,7 +16,6 @@ func scan_product(product_id: int) -> bool:
 	
 	for item in items:
 		if item.get("product_id") == product_id:
-			#var product_name = item.get("product_name")
 			var required_qty = item.get("required_quantity")
 			var scanned_qty = item.get("scanned_quantity")
 			
@@ -61,7 +43,3 @@ func is_active_order_completed() -> bool:
 			return false
 	
 	return true
-
-func start_new_order() -> void:
-	# move chosen order to active_order from accepted orders
-	pass

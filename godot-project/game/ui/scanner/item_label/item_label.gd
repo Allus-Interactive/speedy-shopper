@@ -13,7 +13,9 @@ func populate_data(product_name: String, required_qty: int, scanned_qty: int) ->
 	product_label.text = str(required_qty) + "x " + product_name
 	quantity_label.text = "%d/%d Items Picked" % [scanned_qty, required_qty]
 	
+	print("required: " + str(required_qty) + ", scanned: " + str(scanned_qty))
+	print(scanned_qty >= required_qty)
 	if scanned_qty >= required_qty:
 		label_background.color = Color.GRAY
 	else:
-		label_background.color = Color.TRANSPARENT
+		label_background.color = Color.WHITE

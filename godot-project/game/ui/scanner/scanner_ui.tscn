@@ -111,32 +111,6 @@ layout_mode = 2
 [node name="ItemsList" type="VBoxContainer" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/ScrollContainer" unique_id=497716111]
 layout_mode = 2
 
-[node name="AcceptedOrdersView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=971138079]
-visible = false
-custom_minimum_size = Vector2(264, 430)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScannerContainer/Screen/AcceptedOrdersView" unique_id=1917180338]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="TitleLabel" type="Label" parent="ScannerContainer/Screen/AcceptedOrdersView/VBoxContainer" unique_id=1735767547]
-layout_mode = 2
-theme = ExtResource("1_6jepp")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_pq742")
-text = "Accepted Orders"
-
-[node name="AcceptedOrdersScroll" type="ScrollContainer" parent="ScannerContainer/Screen/AcceptedOrdersView/VBoxContainer" unique_id=2072181914]
-custom_minimum_size = Vector2(0, 395)
-layout_mode = 2
-
-[node name="AcceptedItemsList" type="VBoxContainer" parent="ScannerContainer/Screen/AcceptedOrdersView/VBoxContainer/AcceptedOrdersScroll" unique_id=996857292]
-layout_mode = 2
-
 [node name="AvailableOrdersView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=1988843271]
 custom_minimum_size = Vector2(264, 430)
 layout_mode = 0
