@@ -231,14 +231,9 @@ func scan_barcode() -> void:
 				print("Wrong Product!")
 				# TODO: play wrong product scanned beep
 
-# Function replaced in ProductPlaceholder
-func on_barcode_clicked() -> void:
-	# TODO: logic to add product to cart
-	return_held_product()
-
 # Update tooltip text and crosshair colour
 func update_tooltip() -> void:
-	# If therer is no object
+	# If there is no object
 	if not ray_cast_3d.is_colliding():
 		tooltip_panel.hide()
 		crosshair.modulate = Color.WHITE
@@ -246,7 +241,7 @@ func update_tooltip() -> void:
 	
 	var obj = ray_cast_3d.get_collider()
 	
-	# if the obejct is null
+	# if the object is null
 	if obj == null:
 		tooltip_panel.hide()
 		crosshair.modulate = Color.WHITE

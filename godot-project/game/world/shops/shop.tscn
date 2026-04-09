@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cwcswyx1gpss5" path="res://game/resources/products/placeholder/resources/own_brand_cereal.tres" id="5_yhfbf"]
 [ext_resource type="Resource" uid="uid://s2w5b4bb6gcd" path="res://game/resources/products/placeholder/resources/finest_brand_cereal.tres" id="6_u503x"]
 [ext_resource type="Resource" uid="uid://bnc10fdwnxv" path="res://game/resources/products/placeholder/resources/standard_brand_cereal.tres" id="7_7cwmf"]
+[ext_resource type="PackedScene" uid="uid://bxp4n4mj5pm6w" path="res://game/world/shops/delivery_crate/delivery_crate.tscn" id="8_5qt63"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -52,3 +53,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
 product_placeholder_scene = ExtResource("3_6k1ee")
 stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x")])
 slots_per_shelf = 5
+
+[node name="DeliveryCrate" parent="ShelfUnit" unique_id=1490719446 instance=ExtResource("8_5qt63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)

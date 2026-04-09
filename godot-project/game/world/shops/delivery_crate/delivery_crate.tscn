@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bxp4n4mj5pm6w"]
+
+[ext_resource type="Script" uid="uid://bgb5fevx2rbma" path="res://game/world/shops/delivery_crate/delivery_crate.gd" id="1_oji6c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8aer7"]
+size = Vector3(1.5, 0.6, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oji6c"]
+albedo_color = Color(0, 0.14901961, 0.8745098, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oji6c"]
+material = SubResource("StandardMaterial3D_oji6c")
+size = Vector3(1.5, 0.6, 0.8)
+
+[node name="DeliveryCrate" type="StaticBody3D" unique_id=1490719446]
+script = ExtResource("1_oji6c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=845121518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_8aer7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1359171500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("BoxMesh_oji6c")

@@ -5,6 +5,7 @@ class_name OrderManager
 signal order_updated
 
 var active_order: Dictionary = {}
+var no_of_unique_items_in_order: int = 0
 
 func scan_product(product_id: int) -> bool:
 	if active_order.is_empty():

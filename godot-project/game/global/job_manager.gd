@@ -17,7 +17,9 @@ var available_orders: Array = [
 		"customer": "Monkey D Luffy",
 		"order_placed": "10:00",
 		"delivery_time": "11:30",
-		"reward": 10
+		"reward": 10,
+		"is_picked": false,
+		"is_completed": false
 	},
 	{
 		"shop_name": "ScotMid",
@@ -30,7 +32,9 @@ var available_orders: Array = [
 		"customer": "Zoro",
 		"order_placed": "10:30",
 		"delivery_time": "12:00",
-		"reward": 15
+		"reward": 15,
+		"is_picked": false,
+		"is_completed": false
 	},
 	{
 		"shop_name": "ScotMid",
@@ -42,13 +46,17 @@ var available_orders: Array = [
 		"customer": "Nami",
 		"order_placed": "13:00",
 		"delivery_time": "13:30",
-		"reward": 10
+		"reward": 10,
+		"is_picked": false,
+		"is_completed": false
 	},
 ]
 
 func select_order_by_id(id: int) -> void:
 	for order in available_orders:
 		if order.get("order_id") == id:
+			var items = order.get("items")
 			TheOrderManager.active_order = order
+			TheOrderManager.no_of_unique_items_in_order = items.size()
 			order_selected.emit()
 	# TODO: Handle order not found?
