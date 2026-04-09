@@ -2,6 +2,8 @@ extends Node
 
 class_name JobManager
 
+signal order_selected
+
 var available_orders: Array = [
 	{
 		"shop_name": "ScotMid",
@@ -48,4 +50,5 @@ func select_order_by_id(id: int) -> void:
 	for order in available_orders:
 		if order.get("order_id") == id:
 			TheOrderManager.active_order = order
+			order_selected.emit()
 	# TODO: Handle order not found?

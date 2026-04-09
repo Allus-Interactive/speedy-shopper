@@ -233,8 +233,6 @@ func scan_barcode() -> void:
 
 # Function replaced in ProductPlaceholder
 func on_barcode_clicked() -> void:
-	print("Scan the barcode!")
-	
 	# TODO: logic to add product to cart
 	return_held_product()
 

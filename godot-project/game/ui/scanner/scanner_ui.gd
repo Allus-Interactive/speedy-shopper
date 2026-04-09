@@ -33,7 +33,10 @@ func _ready() -> void:
 	initialize_scanner_ui()
 	
 	if not TheOrderManager.order_updated.is_connected(refresh_from_order):
-		TheOrderManager.order_updated.is_connected(refresh_from_order)
+		TheOrderManager.order_updated.connect(refresh_from_order)
+	
+	if not TheJobManager.order_selected.is_connected(refresh_from_order):
+		TheJobManager.order_selected.connect(refresh_from_order)
 
 func toggle_scanner() -> void:
 	if is_animating:
