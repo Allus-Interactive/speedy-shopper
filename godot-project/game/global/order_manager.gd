@@ -21,8 +21,8 @@ var temp_order: Dictionary = {
 	"reward": 10
 }
 
-var active_order: Dictionary = temp_order # TODO: should be initalized as {}
-var accepted_orders: Array = [] # TODO: should be initialized as []
+var active_order: Dictionary = {}
+var accepted_orders: Array = []
 
 func scan_product(product_id: int) -> bool:
 	if active_order.is_empty():

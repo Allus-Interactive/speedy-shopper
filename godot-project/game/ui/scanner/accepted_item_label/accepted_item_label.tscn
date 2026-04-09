@@ -3,13 +3,19 @@
 [ext_resource type="Script" uid="uid://bv0ynet7u3f6l" path="res://game/ui/scanner/accepted_item_label/accepted_item_label.gd" id="1_qvax5"]
 [ext_resource type="Theme" uid="uid://ch0elgt0g6a0j" path="res://assets/themes/scanner.tres" id="2_rxcdk"]
 
-[node name="AcceptedItemLabel" type="ColorRect" unique_id=504880122]
+[node name="AcceptedItemLabel" type="Button" unique_id=109380380]
 custom_minimum_size = Vector2(262, 60)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 8.0
+offset_bottom = 8.0
 script = ExtResource("1_qvax5")
 
-[node name="OrderLabel" type="Label" parent="." unique_id=638655724]
+[node name="LabelBackground" type="ColorRect" parent="." unique_id=504880122]
+custom_minimum_size = Vector2(262, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OrderLabel" type="Label" parent="LabelBackground" unique_id=638655724]
 custom_minimum_size = Vector2(262, 40)
 layout_mode = 0
 offset_right = 40.0
@@ -17,7 +23,7 @@ offset_bottom = 23.0
 theme = ExtResource("2_rxcdk")
 text = "Order #12345"
 
-[node name="QuantityLabel" type="Label" parent="." unique_id=1306817961]
+[node name="QuantityLabel" type="Label" parent="LabelBackground" unique_id=1306817961]
 visible = false
 custom_minimum_size = Vector2(262, 20)
 layout_mode = 0

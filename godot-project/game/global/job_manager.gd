@@ -44,6 +44,8 @@ var available_orders: Array = [
 	},
 ]
 
-func accept_available_job() -> void:
-	# move selected job to accepted_orders in order manager
-	pass
+func select_order_by_id(id: int) -> void:
+	for order in available_orders:
+		if order.get("order_id") == id:
+			TheOrderManager.active_order = order
+	# TODO: Handle order not found?

@@ -1,10 +1,10 @@
-extends ColorRect
+extends Button
 
 class_name ItemLabel
 
-@onready var item_label: ColorRect = $"."
-@onready var product_label: Label = $ProductLabel
-@onready var quantity_label: Label = $QuantityLabel
+@onready var label_background: ColorRect = $LabelBackground
+@onready var product_label: Label = $LabelBackground/ProductLabel
+@onready var quantity_label: Label = $LabelBackground/QuantityLabel
 
 func _ready() -> void:
 	pass
@@ -14,6 +14,6 @@ func populate_data(product_name: String, required_qty: int, scanned_qty: int) ->
 	quantity_label.text = "%d/%d Items Picked" % [scanned_qty, required_qty]
 	
 	if scanned_qty >= required_qty:
-		item_label.color = Color.GRAY
+		label_background.color = Color.GRAY
 	else:
-		item_label.color = Color.TRANSPARENT
+		label_background.color = Color.TRANSPARENT

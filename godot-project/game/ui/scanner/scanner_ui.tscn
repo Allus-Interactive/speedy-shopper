@@ -112,6 +112,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="AcceptedOrdersView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=971138079]
+visible = false
 custom_minimum_size = Vector2(264, 430)
 layout_mode = 0
 offset_right = 40.0

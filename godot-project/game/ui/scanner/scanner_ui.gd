@@ -34,6 +34,7 @@ var is_animating: bool = false
 
 func _ready() -> void:
 	scanner_container.position.y = closed_y
+	initialize_scanner_ui()
 	
 	if not TheOrderManager.order_updated.is_connected(refresh_from_order):
 		TheOrderManager.order_updated.is_connected(refresh_from_order)
@@ -51,7 +52,10 @@ func open() -> void:
 	if is_open:
 		return
 	
-	refresh_from_order()
+	var order = TheOrderManager.active_order
+	if order:
+		refresh_from_order()
+	
 	is_open = true
 	_animate_to(open_y)
 
@@ -74,29 +78,21 @@ func _animate_to(target_y: float) -> void:
 	is_animating = false
 
 func refresh_from_order() -> void:
-	#var order = TheOrderManager.active_order
-	var order = {}
+	var order = TheOrderManager.active_order
+	
 	if order:
-		print("Show current Order")
 		# show current order view
 		current_order_view.visible = true
 		accepted_orders_view.visible = false
 		available_orders_view.visible = false
 		_build_current_order_view(order)
-	elif TheOrderManager.accepted_orders.size() > 0:
-		print("Show accepted Orders")
-		# show accepted order view
-		current_order_view.visible = false
-		accepted_orders_view.visible = true
-		available_orders_view.visible = false
-		_build_accepted_orders_view()
-	else:
-		print("Show available Orders")
-		# show available orders
-		current_order_view.visible = false
-		accepted_orders_view.visible = false
-		available_orders_view.visible = true
-		_build_available_orders_view()
+
+func initialize_scanner_ui() -> void:
+	# show available orders list
+	current_order_view.visible = false
+	accepted_orders_view.visible = false
+	available_orders_view.visible = true
+	_build_available_orders_view()
 	
 	# TODO: investigate if we need this
 	#if order.is_empty():
@@ -165,8 +161,10 @@ func _build_available_orders_view() -> void:
 	_rebuild_available_items_list(items)
 
 func _rebuild_available_items_list(items: Array) -> void:
-	for child in accepted_items_list.get_children():
+	for child in available_items_list.get_children():
 		child.queue_free()
+	
+	var button_in_focus: bool = false
 	
 	for item in items:
 		var row: AvailableItemLabel = available_item_label_scene.instantiate()
@@ -179,3 +177,7 @@ func _rebuild_available_items_list(items: Array) -> void:
 		available_items_list.add_child(row)
 		# populate label data
 		row.populate_data(order_number, item_qty)
+		
+		if not button_in_focus:
+			row.focus_on_button()
+			button_in_focus = true

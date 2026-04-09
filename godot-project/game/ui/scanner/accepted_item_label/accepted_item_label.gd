@@ -1,8 +1,8 @@
-extends ColorRect
+extends Button
 
 class_name AcceptedItemLabel
 
-@onready var order_label: Label = $OrderLabel
+@onready var order_label: Label = $LabelBackground/OrderLabel
 
 func _ready() -> void:
 	pass
