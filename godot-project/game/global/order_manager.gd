@@ -23,6 +23,10 @@ func scan_product(product_id: int) -> bool:
 			
 			item["scanned_quantity"] = scanned_qty + 1
 			order_updated.emit()
+			
+			if is_active_order_fully_picked():
+				active_order.set("is_picked", true)
+			
 			return true
 	
 	return false
@@ -39,3 +43,22 @@ func is_active_order_completed() -> bool:
 			return false
 	
 	return true
+
+func is_active_order_fully_picked() -> bool:
+	if active_order.is_empty():
+		return false
+	
+	var items: Array = active_order.get("items", [])
+	
+	if items.is_empty():
+		return false
+	
+	for item in items:
+		var required_quantity: int = item.get("required_quantity", 0)
+		var scanned_quantity: int = item.get("scanned_quantity", 0)
+		
+		if scanned_quantity < required_quantity:
+			return false
+	
+	return true
+	

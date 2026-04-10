@@ -110,6 +110,7 @@ layout_mode = 2
 
 [node name="ItemsList" type="VBoxContainer" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/ScrollContainer" unique_id=497716111]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="AvailableOrdersView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=1988843271]
 custom_minimum_size = Vector2(264, 430)
