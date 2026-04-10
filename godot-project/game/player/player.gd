@@ -182,10 +182,6 @@ func pick_up_delivery_crate(crate: DeliveryCrate) -> void:
 func put_down_delivery_crate(kiosk: DeliveryKiosk) -> void:
 	is_carrying_crate = false
 	
-	# disable collision shape to avoid interference with raycasts or clipping
-	if delivery_crate.has_node("CollisionShape3D"):
-		delivery_crate.get_node("CollisionShape3D").disabled = true
-	
 	# Reparent to crate hold point and reset position and rotation
 	delivery_crate.reparent(kiosk.crate_hold_point)
 	delivery_crate.position = Vector3.ZERO
@@ -204,6 +200,10 @@ func complete_order() -> void:
 	TheGameManager.delivery_crate.reparent(TheGameManager.crate_hold_point)
 	TheGameManager.delivery_crate.position = Vector3.ZERO
 	TheGameManager.delivery_crate.rotation = Vector3.ZERO
+	
+	# re-enable collision shape
+	if TheGameManager.delivery_crate.has_node("CollisionShape3D"):
+		TheGameManager.delivery_crate.get_node("CollisionShape3D").disabled = false
 	
 	# Mark order as complete and clear active order
 	TheOrderManager.active_order.is_completed = true

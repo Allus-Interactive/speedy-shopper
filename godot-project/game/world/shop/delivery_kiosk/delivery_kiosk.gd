@@ -9,7 +9,7 @@ func interact(player: Player) -> void:
 		player.put_down_delivery_crate(self)
 
 func get_interaction_tooltip(player: Player) -> String:
-	if _order_is_picked():
+	if player.is_carrying_crate:
 		return "Press E to Complete the Order"
 	return "Delivery Kiosk"
 
