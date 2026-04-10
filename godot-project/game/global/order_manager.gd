@@ -7,14 +7,14 @@ signal order_updated
 var active_order: OrderData
 var no_of_unique_items_in_order: int = 0
 
-func scan_product(product_id: int) -> bool:
+func scan_product(barcode_value: int) -> bool:
 	if active_order == null:
 		return false
 	
 	var items: Array[OrderItemData] =  active_order.items
 	
 	for item in items:
-		if item.product_id == product_id:
+		if item.barcode_value == barcode_value:
 			var required_qty = item.required_quantity
 			var scanned_qty = item.scanned_quantity
 			

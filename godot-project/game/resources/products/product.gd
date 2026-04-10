@@ -2,10 +2,8 @@ extends Resource
 
 class_name Product
 
-@export var product_id: int
 @export var product_name: String
 @export var barcode_value: int
-@export var mesh_scene: PackedScene
 @export var inspect_rotation_speed: float = 0.01
 
 @export var placeholder_size: Vector3 = Vector3(0.3, 0.3, 0.2)

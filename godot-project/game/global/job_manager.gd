@@ -10,19 +10,16 @@ func _ready() -> void:
 	# Temp set up for available orders
 	# TODO: implement auto generation for orders
 	var item_1 := OrderItemData.new()
-	item_1.product_id = 1
 	item_1.product_name = "Own Brand Cereal"
 	item_1.barcode_value = 1
 	item_1.required_quantity = 1
 
 	var item_2 := OrderItemData.new()
-	item_2.product_id = 2
 	item_2.product_name = "Standard Cereal"
 	item_2.barcode_value = 2
 	item_2.required_quantity = 2
 
 	var item_3 := OrderItemData.new()
-	item_3.product_id = 3
 	item_3.product_name = "Finest Cereal"
 	item_3.barcode_value = 3
 	item_3.required_quantity = 2

@@ -194,15 +194,21 @@ func put_down_delivery_crate(kiosk: DeliveryKiosk) -> void:
 	complete_order()
 
 func complete_order() -> void:
-	TheOrderManager.active_order.is_completed = true
-	TheOrderManager.active_order = null
-	# TODO: pay the player
+	# Pay the player
+	TheGameManager.player_money += TheOrderManager.active_order.reward
 	
+	# Wait for a lil bit
 	await get_tree().create_timer(3.0).timeout
 	
+	# Reset the delivery crate (once order has been collected)
 	TheGameManager.delivery_crate.reparent(TheGameManager.crate_hold_point)
 	TheGameManager.delivery_crate.position = Vector3.ZERO
 	TheGameManager.delivery_crate.rotation = Vector3.ZERO
+	
+	# Mark order as complete and clear active order
+	TheOrderManager.active_order.is_completed = true
+	# TODO: store order in completed_orders array before clearing active order?
+	TheOrderManager.active_order = null
 
 func return_held_product() -> void:
 	if held_product == null:

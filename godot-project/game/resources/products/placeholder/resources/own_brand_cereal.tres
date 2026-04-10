@@ -1,12 +1,11 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://cwcswyx1gpss5"]
 
-[ext_resource type="PackedScene" uid="uid://q1llllqwatrb" path="res://game/resources/products/placeholder/product_placeholder.tscn" id="1_2uk4n"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="1_fy8yc"]
 
 [resource]
 script = ExtResource("1_fy8yc")
 product_name = "Own Brand Cereal"
-mesh_scene = ExtResource("1_2uk4n")
+barcode_value = 1
 placeholder_size = Vector3(0.3, 0.4, 0.2)
 shelf_offset = Vector3(0, 0.2, 0)
 barcode_offset = Vector3(-0.07, -0.12, 0)
