@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://btf72vp3ycnqe"]
+
+[ext_resource type="Script" uid="uid://bxrwp1c7olbe1" path="res://game/world/shop/delivery_kiosk/delivery_kiosk.gd" id="1_61r2j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edsll"]
+albedo_color = Color(0.38170326, 0.38170323, 0.38170323, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_61r2j"]
+material = SubResource("StandardMaterial3D_edsll")
+size = Vector3(4, 1.25, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_60cfh"]
+size = Vector3(4, 1.25, 2)
+
+[node name="DeliveryKiosk" type="StaticBody3D" unique_id=842880224]
+script = ExtResource("1_61r2j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1469883421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0)
+mesh = SubResource("BoxMesh_61r2j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1615142055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0)
+shape = SubResource("BoxShape3D_60cfh")
+
+[node name="CrateHoldPoint" type="Marker3D" parent="." unique_id=852174004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)

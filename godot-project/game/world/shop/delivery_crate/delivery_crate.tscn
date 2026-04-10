@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bxp4n4mj5pm6w"]
 
-[ext_resource type="Script" uid="uid://bgb5fevx2rbma" path="res://game/world/shops/delivery_crate/delivery_crate.gd" id="1_oji6c"]
+[ext_resource type="Script" uid="uid://bgb5fevx2rbma" path="res://game/world/shop/delivery_crate/delivery_crate.gd" id="1_oji6c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8aer7"]
 size = Vector3(1.5, 0.6, 0.8)

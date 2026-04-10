@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://ch7gd6ebp4842"]
 
 [ext_resource type="PackedScene" uid="uid://cjsrfjrg00vbp" path="res://game/player/player.tscn" id="1_ggo8a"]
-[ext_resource type="PackedScene" uid="uid://0q7k7agu1au5" path="res://game/world/shops/shelf_unit/shelf_unit.tscn" id="2_4o56f"]
+[ext_resource type="Script" uid="uid://c1ssp6exi0mw7" path="res://game/world/shop/shop.gd" id="1_u503x"]
+[ext_resource type="PackedScene" uid="uid://0q7k7agu1au5" path="res://game/world/shop/shelf_unit/shelf_unit.tscn" id="2_4o56f"]
 [ext_resource type="PackedScene" uid="uid://q1llllqwatrb" path="res://game/resources/products/placeholder/product_placeholder.tscn" id="3_6k1ee"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="4_5qt63"]
 [ext_resource type="Resource" uid="uid://cwcswyx1gpss5" path="res://game/resources/products/placeholder/resources/own_brand_cereal.tres" id="5_yhfbf"]
 [ext_resource type="Resource" uid="uid://s2w5b4bb6gcd" path="res://game/resources/products/placeholder/resources/finest_brand_cereal.tres" id="6_u503x"]
 [ext_resource type="Resource" uid="uid://bnc10fdwnxv" path="res://game/resources/products/placeholder/resources/standard_brand_cereal.tres" id="7_7cwmf"]
-[ext_resource type="PackedScene" uid="uid://bxp4n4mj5pm6w" path="res://game/world/shops/delivery_crate/delivery_crate.tscn" id="8_5qt63"]
+[ext_resource type="PackedScene" uid="uid://bxp4n4mj5pm6w" path="res://game/world/shop/delivery_crate/delivery_crate.tscn" id="8_5qt63"]
+[ext_resource type="PackedScene" uid="uid://btf72vp3ycnqe" path="res://game/world/shop/delivery_kiosk/delivery_kiosk.tscn" id="9_yhfbf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -29,6 +31,7 @@ size = Vector2(100, 100)
 size = Vector3(100, 1, 100)
 
 [node name="Shop" type="Node3D" unique_id=1894934032]
+script = ExtResource("1_u503x")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=894894205]
 environment = SubResource("Environment_4wyf3")
@@ -54,5 +57,10 @@ product_placeholder_scene = ExtResource("3_6k1ee")
 stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x")])
 slots_per_shelf = 5
 
-[node name="DeliveryCrate" parent="ShelfUnit" unique_id=1490719446 instance=ExtResource("8_5qt63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+[node name="DeliveryKiosk" parent="." unique_id=842880224 instance=ExtResource("9_yhfbf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="CrateHoldPoint" type="Marker3D" parent="." unique_id=141042229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4.2)
+
+[node name="DeliveryCrate" parent="CrateHoldPoint" unique_id=1490719446 instance=ExtResource("8_5qt63")]

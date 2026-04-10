@@ -10,6 +10,9 @@ const JUMP_VELOCITY: float = 4.5
 var vehicle: Vehicle = null
 var is_in_vehicle: bool = false
 
+var is_carrying_crate: bool = false
+var delivery_crate: DeliveryCrate = null
+
 # Product Inspect variables
 var held_product: ProductPlaceholder = null
 var held_product_original_parent: Node = null
@@ -164,6 +167,9 @@ func pick_up_delivery_crate(crate: DeliveryCrate) -> void:
 	if scanner_ui.is_open:
 		scanner_ui.toggle_scanner()
 	
+	delivery_crate = crate
+	is_carrying_crate = true
+	
 	# disable collision shape to avoid interference with raycasts or clipping
 	if crate.has_node("CollisionShape3D"):
 		crate.get_node("CollisionShape3D").disabled = true
@@ -173,8 +179,30 @@ func pick_up_delivery_crate(crate: DeliveryCrate) -> void:
 	crate.position = Vector3.ZERO
 	crate.rotation = Vector3.ZERO
 
-func put_down_delivery_crate() -> void:
-	pass
+func put_down_delivery_crate(kiosk: DeliveryKiosk) -> void:
+	is_carrying_crate = false
+	
+	# disable collision shape to avoid interference with raycasts or clipping
+	if delivery_crate.has_node("CollisionShape3D"):
+		delivery_crate.get_node("CollisionShape3D").disabled = true
+	
+	# Reparent to crate hold point and reset position and rotation
+	delivery_crate.reparent(kiosk.crate_hold_point)
+	delivery_crate.position = Vector3.ZERO
+	delivery_crate.rotation = Vector3.ZERO
+	
+	complete_order()
+
+func complete_order() -> void:
+	TheOrderManager.active_order.is_completed = true
+	TheOrderManager.active_order = null
+	# TODO: pay the player
+	
+	await get_tree().create_timer(3.0).timeout
+	
+	TheGameManager.delivery_crate.reparent(TheGameManager.crate_hold_point)
+	TheGameManager.delivery_crate.position = Vector3.ZERO
+	TheGameManager.delivery_crate.rotation = Vector3.ZERO
 
 func return_held_product() -> void:
 	if held_product == null:
@@ -267,7 +295,7 @@ func update_tooltip() -> void:
 	
 	# If the object has the 'get_interaction_tooltip' function
 	if obj.has_method("get_interaction_tooltip"):
-		tooltip_label.text = obj.get_interaction_tooltip()
+		tooltip_label.text = obj.get_interaction_tooltip(self)
 		tooltip_panel.show()
 		crosshair.modulate = Color.DARK_GREEN
 		return

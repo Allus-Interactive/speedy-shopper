@@ -54,6 +54,8 @@ func open() -> void:
 	var order = TheOrderManager.active_order
 	if order:
 		refresh_from_order()
+	else:
+		initialize_scanner_ui()
 	
 	is_open = true
 	_animate_to(open_y)

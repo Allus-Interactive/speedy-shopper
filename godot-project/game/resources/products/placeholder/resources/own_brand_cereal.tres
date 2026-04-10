@@ -5,9 +5,7 @@
 
 [resource]
 script = ExtResource("1_fy8yc")
-product_id = "1"
 product_name = "Own Brand Cereal"
-barcode_value = "1"
 mesh_scene = ExtResource("1_2uk4n")
 placeholder_size = Vector3(0.3, 0.4, 0.2)
 shelf_offset = Vector3(0, 0.2, 0)

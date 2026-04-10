@@ -20,7 +20,7 @@ func set_product_data(data: Product) -> void:
 	product_data = data
 	_rebuild()
 
-func get_interaction_tooltip() -> String:
+func get_interaction_tooltip(_player: Player) -> String:
 	if product_data == null:
 		return "Press E to inspect"
 	

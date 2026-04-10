@@ -64,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TooltipPanel" type="Panel" parent="CanvasLayer/Control" unique_id=556540204]
-custom_minimum_size = Vector2(220, 75)
+custom_minimum_size = Vector2(300, 75)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,13 +79,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TooltipLabel" type="Label" parent="CanvasLayer/Control/TooltipPanel" unique_id=1409749733]
-custom_minimum_size = Vector2(220, 75)
+custom_minimum_size = Vector2(300, 75)
 layout_mode = 0
 offset_right = 220.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 20
-text = "Cereal
-Press E to Interact"
+text = "Press E to Complete the Order"
 horizontal_alignment = 1
 vertical_alignment = 1
 

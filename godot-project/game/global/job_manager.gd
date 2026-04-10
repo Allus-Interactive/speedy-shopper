@@ -24,7 +24,7 @@ func _ready() -> void:
 	var item_3 := OrderItemData.new()
 	item_3.product_id = 3
 	item_3.product_name = "Finest Cereal"
-	item_3.barcode_value = 2
+	item_3.barcode_value = 3
 	item_3.required_quantity = 2
 
 	var order := OrderData.new()

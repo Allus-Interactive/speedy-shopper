@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0q7k7agu1au5"]
 
-[ext_resource type="Script" uid="uid://dts1yupfpceyp" path="res://game/world/shops/shelf_unit/shelf_unit.gd" id="1_18w67"]
+[ext_resource type="Script" uid="uid://dts1yupfpceyp" path="res://game/world/shop/shelf_unit/shelf_unit.gd" id="1_18w67"]
 
 [node name="ShelfUnit" type="Node3D" unique_id=214161151]
 script = ExtResource("1_18w67")

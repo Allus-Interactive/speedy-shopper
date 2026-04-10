@@ -31,19 +31,6 @@ func scan_product(product_id: int) -> bool:
 	
 	return false
 
-func is_active_order_completed() -> bool:
-	if active_order.is_empty():
-		return false
-	
-	for item in active_order.items:
-		var required_qty = item.required_quantity
-		var scanned_qty = item.scanned_quantity
-		
-		if scanned_qty < required_qty:
-			return false
-	
-	return true
-
 func is_active_order_fully_picked() -> bool:
 	if active_order == null:
 		return false
