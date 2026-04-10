@@ -50,6 +50,18 @@ func _ready() -> void:
 	order_2.reward = 15
 
 	available_orders.append(order_2)
+	
+	var order_3 := OrderData.new()
+	order_3.shop_name = "ScotMid"
+	order_3.order_id = 3
+	order_3.items = [item_1]
+	order_3.delivery_address = "Pickup"
+	order_3.customer = "Tony Stark"
+	order_3.order_placed = "13:00"
+	order_3.delivery_time = "14:00"
+	order_3.reward = 25
+
+	available_orders.append(order_3)
 
 func select_order_by_id(id: int) -> void:
 	for order in available_orders:

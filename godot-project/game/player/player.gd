@@ -17,6 +17,7 @@ var held_product_original_transform: Transform3D
 var is_inspecting_product: bool = false
 @export var inspect_rotation_speed: float = 2.0
 @onready var hold_point: Marker3D = $Neck/Camera3D/HoldPoint
+@onready var crate_hold_point: Marker3D = $Neck/Camera3D/CrateHoldPoint
 
 # Camera
 @onready var neck: Node3D = $Neck
@@ -157,6 +158,23 @@ func pick_up_product(product: ProductPlaceholder) -> void:
 	tooltip_panel.hide()
 	
 	product.disable_barcode_hitbox(false)
+
+func pick_up_delivery_crate(crate: DeliveryCrate) -> void:
+	# if scanner is open, close it
+	if scanner_ui.is_open:
+		scanner_ui.toggle_scanner()
+	
+	# disable collision shape to avoid interference with raycasts or clipping
+	if crate.has_node("CollisionShape3D"):
+		crate.get_node("CollisionShape3D").disabled = true
+	
+	# Reparent to crate hold point and reset position and rotation
+	crate.reparent(crate_hold_point)
+	crate.position = Vector3.ZERO
+	crate.rotation = Vector3.ZERO
+
+func put_down_delivery_crate() -> void:
+	pass
 
 func return_held_product() -> void:
 	if held_product == null:

@@ -8,7 +8,7 @@ var active_order: OrderData
 var no_of_unique_items_in_order: int = 0
 
 func scan_product(product_id: int) -> bool:
-	if active_order.is_empty():
+	if active_order == null:
 		return false
 	
 	var items: Array[OrderItemData] =  active_order.items
@@ -45,7 +45,7 @@ func is_active_order_completed() -> bool:
 	return true
 
 func is_active_order_fully_picked() -> bool:
-	if active_order.is_empty():
+	if active_order == null:
 		return false
 	
 	var items: Array[OrderItemData] = active_order.items

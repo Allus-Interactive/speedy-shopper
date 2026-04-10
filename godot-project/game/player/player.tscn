@@ -36,6 +36,9 @@ debug_shape_thickness = 1
 [node name="HoldPoint" type="Marker3D" parent="Neck/Camera3D" unique_id=318646590]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
+[node name="CrateHoldPoint" type="Marker3D" parent="Neck/Camera3D" unique_id=1080737540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.8)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=217225702]
 process_mode = 4
 
