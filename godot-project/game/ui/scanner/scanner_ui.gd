@@ -106,25 +106,25 @@ func _clear_ui() -> void:
 	for child in available_items_list.get_children():
 		child.queue_free()
 
-func _build_current_order_view(order) -> void:
-	title_label.text = "Order #" + str(order.get("order_id")).pad_zeros(5)
+func _build_current_order_view(order: OrderData) -> void:
+	title_label.text = "Order #" + str(order.order_id).pad_zeros(5)
 	order_details_container.visible = true
-	customer_details.text = order.get("customer")
-	order_details.text = "Ordered: " +order.get("order_placed")
-	delivery_details.text = "Due: " + order.get("delivery_time")
+	customer_details.text = order.customer
+	order_details.text = "Ordered: " +order.order_placed
+	delivery_details.text = "Due: " + order.delivery_time
 	
-	_rebuild_items_list(order.get("items", []))
+	_rebuild_items_list(order.items)
 	
-func _rebuild_items_list(items: Array) -> void:
+func _rebuild_items_list(items: Array[OrderItemData]) -> void:
 	for child in items_list.get_children():
 		child.queue_free()
 	
 	for item in items:
 		var row: ItemLabel = item_label_scene.instantiate()
 		
-		var item_name: String = item.get("product_name", "Unknown Item")
-		var required_qty = item.get("required_quantity")
-		var scanned_qty = item.get("scanned_quantity")
+		var item_name: String = item.product_name
+		var required_qty: int = item.required_quantity
+		var scanned_qty: int = item.scanned_quantity
 		
 		# Add label to items list
 		items_list.add_child(row)
@@ -132,10 +132,11 @@ func _rebuild_items_list(items: Array) -> void:
 		row.populate_data(item_name, required_qty, scanned_qty)
 
 func _build_available_orders_view() -> void:
-	var items = TheJobManager.available_orders
-	_rebuild_available_items_list(items)
+	var orders = TheJobManager.available_orders
+	var unpicked_orders = orders.filter(func(order): return not order.is_completed)
+	_rebuild_available_items_list(unpicked_orders)
 
-func _rebuild_available_items_list(items: Array) -> void:
+func _rebuild_available_items_list(items: Array[OrderData]) -> void:
 	for child in available_items_list.get_children():
 		child.queue_free()
 	
@@ -144,8 +145,8 @@ func _rebuild_available_items_list(items: Array) -> void:
 	for item in items:
 		var row: AvailableItemLabel = available_item_label_scene.instantiate()
 		
-		var order_number: int = item.get("order_id")
-		var products: Array = item.get("items")
+		var order_number: int = item.order_id
+		var products: Array[OrderItemData] = item.items
 		var item_qty: int = products.size()
 		
 		# Add label to items list
