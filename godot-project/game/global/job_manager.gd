@@ -13,16 +13,19 @@ func _ready() -> void:
 	order_1_item_1.product_name = "Own Brand Cereal"
 	order_1_item_1.barcode_value = 1
 	order_1_item_1.required_quantity = 1
+	order_1_item_1.product_price = 1.20
 	
 	var order_1_item_2 := OrderItemData.new()
 	order_1_item_2.product_name = "Standard Cereal"
 	order_1_item_2.barcode_value = 2
 	order_1_item_2.required_quantity = 2
+	order_1_item_2.product_price = 1.80
 	
 	var order_1_item_3 := OrderItemData.new()
 	order_1_item_3.product_name = "Finest Cereal"
 	order_1_item_3.barcode_value = 3
 	order_1_item_3.required_quantity = 2
+	order_1_item_3.product_price = 2.50
 	
 	var order := OrderData.new()
 	order.shop_name = "ScotMid"
@@ -32,7 +35,7 @@ func _ready() -> void:
 	order.customer = "Monkey D Luffy"
 	order.order_placed = "10:00"
 	order.delivery_time = "11:00"
-	order.price = 10
+	order.price = 8.60
 	
 	available_orders.append(order)
 	
@@ -40,11 +43,13 @@ func _ready() -> void:
 	order_2_item_1.product_name = "Standard Cereal"
 	order_2_item_1.barcode_value = 2
 	order_2_item_1.required_quantity = 2
+	order_2_item_1.product_price = 1.80
 	
 	var order_2_item_2 := OrderItemData.new()
 	order_2_item_2.product_name = "Own Brand Cereal"
 	order_2_item_2.barcode_value = 1
 	order_2_item_2.required_quantity = 1
+	order_2_item_2.product_price = 1.20
 	
 	var order_2 := OrderData.new()
 	order_2.shop_name = "ScotMid"
@@ -54,7 +59,7 @@ func _ready() -> void:
 	order_2.customer = "Bruce Wayne"
 	order_2.order_placed = "11:00"
 	order_2.delivery_time = "12:00"
-	order_2.price = 15
+	order_2.price = 4.80
 
 	available_orders.append(order_2)
 	
@@ -62,6 +67,7 @@ func _ready() -> void:
 	order_3_item_1.product_name = "Own Brand Cereal"
 	order_3_item_1.barcode_value = 1
 	order_3_item_1.required_quantity = 1
+	order_3_item_1.product_price = 1.20
 	
 	var order_3 := OrderData.new()
 	order_3.shop_name = "ScotMid"
@@ -71,7 +77,7 @@ func _ready() -> void:
 	order_3.customer = "Tony Stark"
 	order_3.order_placed = "13:00"
 	order_3.delivery_time = "14:00"
-	order_3.price = 25
+	order_3.price = 1.20
 	
 	available_orders.append(order_3)
 

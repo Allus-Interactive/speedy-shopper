@@ -31,6 +31,7 @@ var is_inspecting_product: bool = false
 @onready var crosshair: ColorRect = $CanvasLayer/Control/Crosshair
 @onready var tooltip_panel: Panel = $CanvasLayer/Control/TooltipPanel
 @onready var tooltip_label: Label = $CanvasLayer/Control/TooltipPanel/TooltipLabel
+@onready var earnings_label: Label = $UiPanel/EarningsLabel
 
 # Scanner
 @onready var scanner_ui: ScannerUI = $ScannerUI
@@ -191,7 +192,8 @@ func put_down_delivery_crate(kiosk: DeliveryKiosk) -> void:
 
 func complete_order() -> void:
 	# Pay the player
-	TheGameManager.player_money += calculate_player_tip()
+	TheGameManager.daily_earnings += calculate_player_tip()
+	earnings_label.text = "Today's Earnings: £" + str(TheGameManager.daily_earnings)
 	
 	# Wait for a lil bit
 	await get_tree().create_timer(3.0).timeout

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cjsrfjrg00vbp"]
 
 [ext_resource type="Script" uid="uid://dn4d35dl1g4im" path="res://game/player/player.gd" id="1_3vyb7"]
+[ext_resource type="Theme" uid="uid://cvwv36djqy7es" path="res://assets/themes/player_ui.tres" id="2_8soms"]
 [ext_resource type="PackedScene" uid="uid://c6m46wgh7wbdt" path="res://game/ui/scanner/scanner_ui.tscn" id="2_b2mth"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
@@ -38,6 +39,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="CrateHoldPoint" type="Marker3D" parent="Neck/Camera3D" unique_id=1080737540]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.8)
+
+[node name="UiPanel" type="Panel" parent="." unique_id=1552972375]
+custom_minimum_size = Vector2(400, 100)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = -100.0
+grow_vertical = 0
+
+[node name="EarningsLabel" type="Label" parent="UiPanel" unique_id=129312617]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.5
+offset_top = -22.5
+offset_right = 178.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8soms")
+text = "Today's Earnings: £0.00"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=217225702]
 process_mode = 4
