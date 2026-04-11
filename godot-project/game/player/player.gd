@@ -191,7 +191,7 @@ func put_down_delivery_crate(kiosk: DeliveryKiosk) -> void:
 
 func complete_order() -> void:
 	# Pay the player
-	TheGameManager.player_money += TheOrderManager.active_order.reward
+	TheGameManager.player_money += calculate_player_tip()
 	
 	# Wait for a lil bit
 	await get_tree().create_timer(3.0).timeout
@@ -209,6 +209,12 @@ func complete_order() -> void:
 	TheOrderManager.active_order.is_completed = true
 	# TODO: store order in completed_orders array before clearing active order?
 	TheOrderManager.active_order = null
+
+func calculate_player_tip() -> float:
+	var order_price: float = TheOrderManager.active_order.price
+	var tip_percentage: int = 15
+	var player_tip: float = (order_price / 100) * tip_percentage
+	return player_tip
 
 func return_held_product() -> void:
 	if held_product == null:

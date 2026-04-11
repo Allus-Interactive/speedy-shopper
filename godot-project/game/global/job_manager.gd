@@ -32,7 +32,7 @@ func _ready() -> void:
 	order.customer = "Monkey D Luffy"
 	order.order_placed = "10:00"
 	order.delivery_time = "11:00"
-	order.reward = 10
+	order.price = 10
 	
 	available_orders.append(order)
 	
@@ -54,7 +54,7 @@ func _ready() -> void:
 	order_2.customer = "Bruce Wayne"
 	order_2.order_placed = "11:00"
 	order_2.delivery_time = "12:00"
-	order_2.reward = 15
+	order_2.price = 15
 
 	available_orders.append(order_2)
 	
@@ -71,7 +71,7 @@ func _ready() -> void:
 	order_3.customer = "Tony Stark"
 	order_3.order_placed = "13:00"
 	order_3.delivery_time = "14:00"
-	order_3.reward = 25
+	order_3.price = 25
 	
 	available_orders.append(order_3)
 
