@@ -7,10 +7,10 @@ albedo_color = Color(0.38170326, 0.38170323, 0.38170323, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_61r2j"]
 material = SubResource("StandardMaterial3D_edsll")
-size = Vector3(4, 1.25, 2)
+size = Vector3(2.5, 1.25, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_60cfh"]
-size = Vector3(4, 1.25, 2)
+size = Vector3(2.5, 1.25, 1)
 
 [node name="DeliveryKiosk" type="StaticBody3D" unique_id=842880224]
 script = ExtResource("1_61r2j")
