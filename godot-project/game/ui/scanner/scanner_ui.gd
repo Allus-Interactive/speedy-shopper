@@ -127,11 +127,12 @@ func _rebuild_items_list(items: Array[OrderItemData]) -> void:
 		var item_name: String = item.product_name
 		var required_qty: int = item.required_quantity
 		var scanned_qty: int = item.scanned_quantity
+		var price: float = item.product_price
 		
 		# Add label to items list
 		items_list.add_child(row)
 		# populate label data
-		row.populate_data(item_name, required_qty, scanned_qty)
+		row.populate_data(item_name, required_qty, scanned_qty, price)
 
 func _build_available_orders_view() -> void:
 	var orders = TheJobManager.available_orders

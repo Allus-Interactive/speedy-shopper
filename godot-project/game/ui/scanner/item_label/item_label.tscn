@@ -19,7 +19,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme = ExtResource("1_0dti8")
-text = "2x Skimmed Milk"
+text = "2x Skimmed Milk (£2.20)"
 
 [node name="QuantityLabel" type="Label" parent="LabelBackground" unique_id=1619794723]
 custom_minimum_size = Vector2(262, 20)
