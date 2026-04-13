@@ -74,10 +74,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_74d5v")
 
 [node name="Player" parent="." unique_id=932964266 instance=ExtResource("1_ggo8a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 1)
 
 [node name="DeliveryKiosk" parent="." unique_id=842880224 instance=ExtResource("9_yhfbf")]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -1, 0, -1.75)
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -1, 0, 0)
 
 [node name="CrateHoldPoint" type="Marker3D" parent="." unique_id=141042229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -2.6)
@@ -87,7 +87,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -2.6)
 [node name="Building" type="Node3D" parent="." unique_id=1287546074]
 
 [node name="WallLeft" type="StaticBody3D" parent="Building" unique_id=121541901]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 2.5, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 2.5, -5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Building/WallLeft" unique_id=1111762670]
 mesh = SubResource("BoxMesh_bcl5y")
@@ -107,7 +107,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_bcl5y")
 
 [node name="WallRight" type="StaticBody3D" parent="Building" unique_id=1352498060]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Building/WallRight" unique_id=1513827500]
 mesh = SubResource("BoxMesh_bcl5y")
@@ -117,7 +117,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_bcl5y")
 
 [node name="WallFrontLeft" type="StaticBody3D" parent="Building" unique_id=1125300886]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.5, 2.5, -0.5)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.5, 2.5, 1.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Building/WallFrontLeft" unique_id=583715707]
 mesh = SubResource("BoxMesh_oqv7w")
@@ -127,7 +127,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_pudjp")
 
 [node name="WallFrontRight" type="StaticBody3D" parent="Building" unique_id=624154704]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5, 2.5, -0.5)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5, 2.5, 1.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Building/WallFrontRight" unique_id=244035110]
 mesh = SubResource("BoxMesh_oqv7w")
@@ -137,7 +137,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_pudjp")
 
 [node name="WallFrontTop" type="StaticBody3D" parent="Building" unique_id=1380142256]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 4, -0.5)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 4, 1.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Building/WallFrontTop" unique_id=1560747985]
 mesh = SubResource("BoxMesh_pudjp")
@@ -147,8 +147,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_4k7rs")
 
 [node name="Ceiling" type="StaticBody3D" parent="Building" unique_id=167690750]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 5.5, -6)
-visible = false
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 5.5, -5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Building/Ceiling" unique_id=1768445279]
 mesh = SubResource("BoxMesh_4k7rs")
@@ -161,7 +160,12 @@ shape = SubResource("BoxShape3D_c8ytq")
 
 [node name="Left" type="Node3D" parent="Aisle1" unique_id=1328090863]
 
-[node name="ShelfUnit" parent="Aisle1/Left" unique_id=1038147316 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnit0" parent="Aisle1/Left" unique_id=214161151 instance=ExtResource("2_4o56f")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, 0)
+product_placeholder_scene = ExtResource("3_6k1ee")
+slots_per_shelf = 5
+
+[node name="ShelfUnit1" parent="Aisle1/Left" unique_id=1038147316 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -2)
 product_placeholder_scene = ExtResource("3_6k1ee")
 slots_per_shelf = 5
@@ -176,7 +180,7 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 product_placeholder_scene = ExtResource("3_6k1ee")
 slots_per_shelf = 5
 
-[node name="ShelfUnit4" parent="Aisle1/Left" unique_id=214161151 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnit4" parent="Aisle1/Left" unique_id=358589094 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -8)
 product_placeholder_scene = ExtResource("3_6k1ee")
 slots_per_shelf = 5
@@ -224,6 +228,11 @@ stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("5_yhfbf"), ExtRes
 slots_per_shelf = 5
 
 [node name="Right" type="Node3D" parent="Aisle2" unique_id=2114417710]
+
+[node name="ShelfUnit0" parent="Aisle2/Right" unique_id=555619701 instance=ExtResource("2_4o56f")]
+transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -2)
+product_placeholder_scene = ExtResource("3_6k1ee")
+slots_per_shelf = 5
 
 [node name="ShelfUnit" parent="Aisle2/Right" unique_id=566735270 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -4)
