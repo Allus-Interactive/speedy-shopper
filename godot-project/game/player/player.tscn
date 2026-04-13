@@ -45,9 +45,8 @@ custom_minimum_size = Vector2(400, 100)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -200.0
+offset_top = -100.0
 offset_right = 400.0
-offset_bottom = -100.0
 grow_vertical = 0
 
 [node name="EarningsLabel" type="Label" parent="UiPanel" unique_id=129312617]
@@ -118,3 +117,6 @@ vertical_alignment = 1
 [node name="ScannerUI" parent="." unique_id=267252903 instance=ExtResource("2_b2mth")]
 offset = Vector2(1320, 0)
 transform = Transform2D(1, 0, 0, 1, 1320, 0)
+closed_y = null
+open_y = null
+slide_duration = null

@@ -193,7 +193,7 @@ func put_down_delivery_crate(kiosk: DeliveryKiosk) -> void:
 func complete_order() -> void:
 	# Pay the player
 	TheGameManager.daily_earnings += calculate_player_tip()
-	earnings_label.text = "Today's Earnings: £" + str(TheGameManager.daily_earnings)
+	earnings_label.text = "Today's Earnings: £" + "%0.2f" % TheGameManager.daily_earnings
 	
 	# Wait for a lil bit
 	await get_tree().create_timer(3.0).timeout
