@@ -3,8 +3,15 @@ extends CharacterBody3D
 class_name Player
 
 # Movement
-const SPEED: float = 5.0
+const WALK_SPEED: float = 5.0
+const CROUCH_SPEED: float = 2.0
 const JUMP_VELOCITY: float = 4.5
+
+# Crouching
+var is_crouching: bool = false
+var standing_neck_height: float = 1.6
+var crouching_neck_height: float = 1.0
+var crouch_lerp_speed: float = 10.0
 
 # Vehicle variables
 var vehicle: Vehicle = null
@@ -94,14 +101,20 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
+	is_crouching = Input.is_action_pressed("crouch")
+	
+	update_crouch(delta)
+	
+	var movement_speed = CROUCH_SPEED if is_crouching else WALK_SPEED
+	
 	var input_dir := Input.get_vector("left", "right", "forwards", "backwards")
 	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * movement_speed
+		velocity.z = direction.z * movement_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, movement_speed)
+		velocity.z = move_toward(velocity.z, 0, movement_speed)
 	
 	# Update the interaction tooltip
 	update_tooltip()
@@ -318,6 +331,10 @@ func update_tooltip() -> void:
 	if obj.has_method("interact"):
 		crosshair.modulate = Color.DARK_GREEN
 		return
+
+func update_crouch(delta: float) -> void:
+	var target_neck_y = crouching_neck_height if is_crouching else standing_neck_height
+	neck.position.y = lerp(neck.position.y, target_neck_y, crouch_lerp_speed * delta)
 
 func enter_vehicle(v: Vehicle) -> void:
 	is_in_vehicle = true
