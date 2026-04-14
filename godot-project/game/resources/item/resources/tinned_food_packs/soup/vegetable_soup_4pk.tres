@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://lhug1lu01huk"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_0r238"]
+
+[resource]
+script = ExtResource("1_0r238")
+product_name = "Vegetable Soup 4pk"
+barcode_value = 7493
+metadata/_custom_type_script = "uid://siedaem41o6s"

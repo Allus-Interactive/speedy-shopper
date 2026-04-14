@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://dm1gakpfkwf27"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_yocep"]
+[ext_resource type="Resource" uid="uid://k4a2u7y67454" path="res://game/resources/item/resources/tinned_food_packs/vegetables/mixed_vegetables_4pk.tres" id="2_ouqg4"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_kf0mn"]
+
+[resource]
+script = ExtResource("3_kf0mn")
+product_info = ExtResource("2_ouqg4")
+placeholder_size = Vector3(0.3, 0.2, 0.3)
+shelf_offset = Vector3(0, 0.1, 0)
+default_shelf_quantity = 3
+label_size = 1
+product_colour = Color(0.30338997, 0.46580285, 0.18573636, 1)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b2fhwutljtxny"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_deps8"]
+
+[resource]
+script = ExtResource("1_deps8")
+product_name = "Chicken Soup 4pk"
+barcode_value = 7490
+metadata/_custom_type_script = "uid://siedaem41o6s"

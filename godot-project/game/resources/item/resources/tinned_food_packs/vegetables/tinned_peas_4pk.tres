@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b82mq8w6ct8kq"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_2hg1s"]
+
+[resource]
+script = ExtResource("1_2hg1s")
+product_name = "Tinned Peas 4pk"
+barcode_value = 2619
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://bujkkqr3nyhh5"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_vhv86"]
+[ext_resource type="Resource" uid="uid://xkhxstjtoqjb" path="res://game/resources/item/resources/tinned_food_packs/soup/tomato_soup_4pk.tres" id="2_ci7ym"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_3o2th"]
+
+[resource]
+script = ExtResource("3_3o2th")
+product_info = ExtResource("2_ci7ym")
+placeholder_size = Vector3(0.3, 0.2, 0.3)
+shelf_offset = Vector3(0, 0.1, 0)
+default_shelf_quantity = 3
+label_size = 1
+product_colour = Color(0.7454975, 0.33986905, 0.03824922, 1)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

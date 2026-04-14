@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dupt8wc2rxwaf"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_1lhlf"]
+
+[resource]
+script = ExtResource("1_1lhlf")
+product_name = "Mushroom Soup 4pk"
+barcode_value = 7489
+metadata/_custom_type_script = "uid://siedaem41o6s"

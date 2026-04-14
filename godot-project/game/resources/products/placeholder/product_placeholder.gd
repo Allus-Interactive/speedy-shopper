@@ -185,9 +185,9 @@ func _set_label_font_size() -> void:
 	if product_data.label_size == Product.FONT_SIZE.L:
 		label_3d.font_size = 64
 	elif product_data.label_size == Product.FONT_SIZE.M:
-		label_3d.font_size = 32
+		label_3d.font_size = 48
 	elif product_data.label_size == Product.FONT_SIZE.S:
-		label_3d.font_size = 16
+		label_3d.font_size = 32
 
 func disable_barcode_hitbox(disabled: bool) -> void:
 	barcode_collider.disabled = disabled
