@@ -6,4 +6,6 @@
 script = ExtResource("1_21xmg")
 product_name = "Finest Cereal"
 barcode_value = 3
+product_price = 3.5
+product_type = 2
 metadata/_custom_type_script = "uid://siedaem41o6s"

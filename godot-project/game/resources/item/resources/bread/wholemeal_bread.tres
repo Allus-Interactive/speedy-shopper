@@ -6,4 +6,6 @@
 script = ExtResource("1_ectnb")
 product_name = "Wholemeal Bread 800g"
 barcode_value = 8552
+product_price = 1.49
+product_type = 1
 metadata/_custom_type_script = "uid://siedaem41o6s"

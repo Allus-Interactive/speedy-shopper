@@ -6,4 +6,6 @@
 script = ExtResource("1_dxjfe")
 product_name = "Cheesy Baked Beans"
 barcode_value = 6619
+product_price = 1.75
+product_type = 7
 metadata/_custom_type_script = "uid://siedaem41o6s"

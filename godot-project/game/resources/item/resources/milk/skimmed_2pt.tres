@@ -6,4 +6,6 @@
 script = ExtResource("1_fy15w")
 product_name = "Skimmed Milk 2Pt"
 barcode_value = 2003
+product_price = 1.2
+product_type = 5
 metadata/_custom_type_script = "uid://siedaem41o6s"

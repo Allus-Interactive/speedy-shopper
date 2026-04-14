@@ -6,4 +6,6 @@
 script = ExtResource("1_qaik7")
 product_name = "Reduced Salt Baked Beans 4pk"
 barcode_value = 9177
+product_price = 4.05
+product_type = 7
 metadata/_custom_type_script = "uid://siedaem41o6s"

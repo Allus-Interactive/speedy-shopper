@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bkhy43e2e5ulu"]
 
-[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_0dufv"]
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_nt1su"]
 
 [resource]
-script = ExtResource("1_0dufv")
+script = ExtResource("1_nt1su")
 product_name = "Farmhouse Bread 800g"
 barcode_value = 8464
+product_price = 1.6
+product_type = 1
 metadata/_custom_type_script = "uid://siedaem41o6s"

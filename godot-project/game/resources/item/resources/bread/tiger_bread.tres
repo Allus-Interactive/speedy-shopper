@@ -6,4 +6,6 @@
 script = ExtResource("1_oo2jf")
 product_name = "Tiger Bread 800g"
 barcode_value = 8746
+product_price = 1.65
+product_type = 1
 metadata/_custom_type_script = "uid://siedaem41o6s"

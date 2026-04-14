@@ -15,11 +15,11 @@ func _ready() -> void:
 	
 	order_1_product_info.product_name = "Finest Cereal"
 	order_1_product_info.barcode_value = 3
+	order_1_product_info.product_price = 2.50
+	order_1_product_info.product_type = Item.CATERGORY.CEREAL
 	
 	order_1_item_1.product_info = order_1_product_info
 	order_1_item_1.required_quantity = 2
-	order_1_item_1.product_price = 2.50
-	order_1_item_1.product_type = OrderItemData.CATERGORY.CEREAL
 	
 	var order := OrderData.new()
 	order.shop_name = "ScotMid"

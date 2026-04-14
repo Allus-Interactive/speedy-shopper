@@ -127,7 +127,7 @@ func _rebuild_items_list(items: Array[OrderItemData]) -> void:
 		var item_name: String = item.product_info.product_name
 		var required_qty: int = item.required_quantity
 		var scanned_qty: int = item.scanned_quantity
-		var price: float = item.product_price
+		var price: float = item.product_info.product_price
 		
 		# Add label to items list
 		items_list.add_child(row)

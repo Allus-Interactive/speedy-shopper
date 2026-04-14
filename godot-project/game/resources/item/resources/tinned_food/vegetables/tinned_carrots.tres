@@ -6,4 +6,6 @@
 script = ExtResource("1_fk0so")
 product_name = "Tinned Carrots"
 barcode_value = 1621
+product_price = 0.6
+product_type = 7
 metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -6,4 +6,6 @@
 script = ExtResource("1_wgox0")
 product_name = "Mixed Vegetables 4pk"
 barcode_value = 2622
+product_price = 2.05
+product_type = 7
 metadata/_custom_type_script = "uid://siedaem41o6s"
