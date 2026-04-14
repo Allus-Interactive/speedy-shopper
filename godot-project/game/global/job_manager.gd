@@ -19,6 +19,7 @@ func _ready() -> void:
 	order_1_item_1.product_info = order_1_product_info
 	order_1_item_1.required_quantity = 2
 	order_1_item_1.product_price = 2.50
+	order_1_item_1.product_type = OrderItemData.CATERGORY.CEREAL
 	
 	var order := OrderData.new()
 	order.shop_name = "ScotMid"
