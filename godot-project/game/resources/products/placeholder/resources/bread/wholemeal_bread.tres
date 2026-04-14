@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://b43ka1p2h1jdk"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_yqlbx"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="2_ea1gi"]
+[ext_resource type="Resource" uid="uid://bkn3p35o742pk" path="res://game/resources/item/resources/bread/wholemeal_bread.tres" id="2_eu3to"]
+
+[resource]
+script = ExtResource("2_ea1gi")
+product_info = ExtResource("2_eu3to")
+placeholder_size = Vector3(0.6, 0.2, 0.2)
+shelf_offset = Vector3(0, 0.1, 0)
+product_colour = Color(0.45904475, 0.2892106, 0.118304245, 1)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bfdwkm5r30xvu"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_oo2jf"]
+
+[resource]
+script = ExtResource("1_oo2jf")
+product_name = "Tiger Bread 800g"
+barcode_value = 8746
+metadata/_custom_type_script = "uid://siedaem41o6s"

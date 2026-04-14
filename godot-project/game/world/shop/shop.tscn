@@ -19,6 +19,10 @@
 [ext_resource type="Resource" uid="uid://4m1x6qgglb37" path="res://game/resources/products/placeholder/resources/milk/semi_skimmed_1pt.tres" id="14_k3a1u"]
 [ext_resource type="Resource" uid="uid://dgq11hedfj3ki" path="res://game/resources/products/placeholder/resources/milk/whole_1pt.tres" id="15_iirsv"]
 [ext_resource type="Resource" uid="uid://dmiomgq2gyprh" path="res://game/resources/products/placeholder/resources/milk/skimmed_1pt.tres" id="16_idgyd"]
+[ext_resource type="Resource" uid="uid://cvev8epa1k5fj" path="res://game/resources/products/placeholder/resources/bread/tiger_bread.tres" id="17_8noyx"]
+[ext_resource type="Resource" uid="uid://b43ka1p2h1jdk" path="res://game/resources/products/placeholder/resources/bread/wholemeal_bread.tres" id="17_iirsv"]
+[ext_resource type="Resource" uid="uid://dafpim7p4lb2q" path="res://game/resources/products/placeholder/resources/bread/white_bread.tres" id="19_vh3dg"]
+[ext_resource type="Resource" uid="uid://cediseir745lx" path="res://game/resources/products/placeholder/resources/bread/farmhouse_bread.tres" id="20_njqpr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -232,9 +236,10 @@ slots_per_shelf = 5
 [node name="ShelfUnitBread" parent="Aisle2/Left" unique_id=2046506246 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -6)
 product_placeholder_scene = ExtResource("3_6k1ee")
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("17_8noyx"), ExtResource("17_8noyx"), ExtResource("17_8noyx"), ExtResource("17_iirsv"), ExtResource("17_iirsv"), ExtResource("17_iirsv"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("20_njqpr"), ExtResource("20_njqpr"), ExtResource("20_njqpr")])
 shelf_count = 5
 shelf_spacing = 0.4
-slots_per_shelf = 5
+slots_per_shelf = 3
 
 [node name="ShelfUnitCereal" parent="Aisle2/Left" unique_id=1122229517 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -8)

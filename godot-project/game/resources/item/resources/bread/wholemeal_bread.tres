@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bkn3p35o742pk"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_ectnb"]
+
+[resource]
+script = ExtResource("1_ectnb")
+product_name = "Wholemeal Bread 800g"
+barcode_value = 8552
+metadata/_custom_type_script = "uid://siedaem41o6s"

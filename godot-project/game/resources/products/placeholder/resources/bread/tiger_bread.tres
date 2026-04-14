@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://cvev8epa1k5fj"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_dqfcx"]
+[ext_resource type="Resource" uid="uid://bfdwkm5r30xvu" path="res://game/resources/item/resources/bread/tiger_bread.tres" id="2_dqfcx"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_qktbl"]
+
+[resource]
+script = ExtResource("3_qktbl")
+product_info = ExtResource("2_dqfcx")
+placeholder_size = Vector3(0.6, 0.2, 0.2)
+shelf_offset = Vector3(0, 0.1, 0)
+product_colour = Color(0.95929915, 0.43469888, 0.17426544, 1)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"
