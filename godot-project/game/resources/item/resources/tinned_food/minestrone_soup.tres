@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://lx2a0n5tsynk"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_pywtf"]
+
+[resource]
+script = ExtResource("1_pywtf")
+product_name = "Minestrone Soup"
+barcode_value = 6491
+metadata/_custom_type_script = "uid://siedaem41o6s"

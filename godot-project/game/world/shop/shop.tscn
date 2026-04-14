@@ -21,8 +21,14 @@
 [ext_resource type="Resource" uid="uid://dmiomgq2gyprh" path="res://game/resources/products/placeholder/resources/milk/skimmed_1pt.tres" id="16_idgyd"]
 [ext_resource type="Resource" uid="uid://cvev8epa1k5fj" path="res://game/resources/products/placeholder/resources/bread/tiger_bread.tres" id="17_8noyx"]
 [ext_resource type="Resource" uid="uid://b43ka1p2h1jdk" path="res://game/resources/products/placeholder/resources/bread/wholemeal_bread.tres" id="17_iirsv"]
+[ext_resource type="Resource" uid="uid://b5rf6p1uh1dxk" path="res://game/resources/products/placeholder/resources/tinned_food/lentil_soup.tres" id="17_vh3dg"]
+[ext_resource type="Resource" uid="uid://dg0x752r6yjx5" path="res://game/resources/products/placeholder/resources/tinned_food/mushroom_soup.tres" id="18_njqpr"]
+[ext_resource type="Resource" uid="uid://bpgnwt003flig" path="res://game/resources/products/placeholder/resources/tinned_food/chicken_soup.tres" id="19_fseaq"]
 [ext_resource type="Resource" uid="uid://dafpim7p4lb2q" path="res://game/resources/products/placeholder/resources/bread/white_bread.tres" id="19_vh3dg"]
+[ext_resource type="Resource" uid="uid://dp8s5xj8itei7" path="res://game/resources/products/placeholder/resources/tinned_food/minestrone_soup.tres" id="20_fq2pm"]
 [ext_resource type="Resource" uid="uid://cediseir745lx" path="res://game/resources/products/placeholder/resources/bread/farmhouse_bread.tres" id="20_njqpr"]
+[ext_resource type="Resource" uid="uid://8hxhoavd6pf" path="res://game/resources/products/placeholder/resources/tinned_food/tomato_soup.tres" id="21_a5uy8"]
+[ext_resource type="Resource" uid="uid://dsu6dyafljsbd" path="res://game/resources/products/placeholder/resources/tinned_food/vegetable_soup.tres" id="22_2g26t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -214,15 +220,19 @@ transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.
 product_placeholder_scene = ExtResource("3_6k1ee")
 slots_per_shelf = 5
 
-[node name="ShelfUnit2" parent="Aisle1/Right" unique_id=479921248 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitMultipackTins" parent="Aisle1/Right" unique_id=479921248 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -6, 0, -6)
 product_placeholder_scene = ExtResource("3_6k1ee")
 slots_per_shelf = 5
 
-[node name="ShelfUnit3" parent="Aisle1/Right" unique_id=535337478 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitSingleTins" parent="Aisle1/Right" unique_id=535337478 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -6, 0, -8)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("17_vh3dg"), ExtResource("17_vh3dg"), ExtResource("17_vh3dg"), ExtResource("17_vh3dg"), ExtResource("17_vh3dg"), ExtResource("18_njqpr"), ExtResource("18_njqpr"), ExtResource("18_njqpr"), ExtResource("18_njqpr"), ExtResource("18_njqpr"), ExtResource("19_fseaq"), ExtResource("19_fseaq"), ExtResource("19_fseaq"), ExtResource("19_fseaq"), ExtResource("19_fseaq"), ExtResource("20_fq2pm"), ExtResource("20_fq2pm"), ExtResource("20_fq2pm"), ExtResource("20_fq2pm"), ExtResource("20_fq2pm"), ExtResource("21_a5uy8"), ExtResource("21_a5uy8"), ExtResource("21_a5uy8"), ExtResource("21_a5uy8"), ExtResource("21_a5uy8"), ExtResource("22_2g26t"), ExtResource("22_2g26t"), ExtResource("22_2g26t"), ExtResource("22_2g26t"), ExtResource("22_2g26t")])
+shelf_count = 7
+shelf_spacing = 0.3
+slots_per_shelf = 10
+slot_margin_x = 0.2
 
 [node name="Aisle2" type="Node3D" parent="." unique_id=1079474046]
 

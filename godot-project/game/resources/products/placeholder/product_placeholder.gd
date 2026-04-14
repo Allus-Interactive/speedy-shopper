@@ -172,12 +172,22 @@ func _setup_barcode_with_meshes(size: Vector3) -> void:
 func _setup_label(size: Vector3) -> void:
 	label_3d.text = product_data.product_info.product_name
 	
+	_set_label_font_size()
+	
 	# Put the label near the front face of the box
 	label_3d.position = Vector3(
 		0,
 		0,
 		(size.z * 0.5) + 0.01
 	)
+
+func _set_label_font_size() -> void:
+	if product_data.label_size == Product.FONT_SIZE.L:
+		label_3d.font_size = 64
+	elif product_data.label_size == Product.FONT_SIZE.M:
+		label_3d.font_size = 32
+	elif product_data.label_size == Product.FONT_SIZE.S:
+		label_3d.font_size = 16
 
 func disable_barcode_hitbox(disabled: bool) -> void:
 	barcode_collider.disabled = disabled

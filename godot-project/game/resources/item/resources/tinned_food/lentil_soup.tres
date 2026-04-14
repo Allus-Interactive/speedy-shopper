@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c5m3v2xrnjlm4"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_5n7vp"]
+
+[resource]
+script = ExtResource("1_5n7vp")
+product_name = "Lentil Soup"
+barcode_value = 6488
+metadata/_custom_type_script = "uid://siedaem41o6s"
