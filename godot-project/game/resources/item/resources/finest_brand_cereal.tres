@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://yply6q8k047l"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_21xmg"]
+
+[resource]
+script = ExtResource("1_21xmg")
+product_name = "Finest Cereal"
+barcode_value = 3
+metadata/_custom_type_script = "uid://siedaem41o6s"

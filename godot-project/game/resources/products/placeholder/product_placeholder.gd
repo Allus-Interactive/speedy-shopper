@@ -24,19 +24,19 @@ func get_interaction_tooltip(_player: Player) -> String:
 	if product_data == null:
 		return "Press E to inspect"
 	
-	return "%s\nPress E to inspect" % product_data.product_name
+	return "%s\nPress E to inspect" % product_data.product_info.product_name
 
 func on_barcode_clicked() -> bool:
 	if product_data == null:
 		return false
 	
-	var success = TheOrderManager.scan_product(product_data.barcode_value)
+	var success = TheOrderManager.scan_product(product_data.product_info.barcode_value)
 	
 	if success:
-		print("Scanned: ", product_data.product_name)
+		print("Scanned: ", product_data.product_info.product_name)
 		return true
 	else:
-		print("Failed to scan item or already scanned: ", product_data.product_name)
+		print("Failed to scan item or already scanned: ", product_data.product_info.product_name)
 		return false
 
 func _rebuild() -> void:
@@ -170,7 +170,7 @@ func _setup_barcode_with_meshes(size: Vector3) -> void:
 		barcode_root.add_child(stripe)
 
 func _setup_label(size: Vector3) -> void:
-	label_3d.text = product_data.product_name
+	label_3d.text = product_data.product_info.product_name
 	
 	# Put the label near the front face of the box
 	label_3d.position = Vector3(

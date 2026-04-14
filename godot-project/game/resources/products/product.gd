@@ -2,8 +2,7 @@ extends Resource
 
 class_name Product
 
-@export var product_name: String
-@export var barcode_value: int
+@export var product_info: Item
 @export var inspect_rotation_speed: float = 0.01
 
 @export var placeholder_size: Vector3 = Vector3(0.3, 0.3, 0.2)
@@ -17,4 +16,4 @@ class_name Product
 @export var barcode_size: Vector2 = Vector2(0.12, 0.08)
 @export var barcode_offset: Vector3 = Vector3.ZERO
 
-@export var barcode_image: CompressedTexture2D
+@export var barcode_image: CompressedTexture2D = preload("res://assets/barcodes/barcode.png")

@@ -14,7 +14,7 @@ func scan_product(barcode_value: int) -> bool:
 	var items: Array[OrderItemData] =  active_order.items
 	
 	for item in items:
-		if item.barcode_value == barcode_value:
+		if item.product_info.barcode_value == barcode_value:
 			var required_qty = item.required_quantity
 			var scanned_qty = item.scanned_quantity
 			

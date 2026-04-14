@@ -124,7 +124,7 @@ func _rebuild_items_list(items: Array[OrderItemData]) -> void:
 	for item in items:
 		var row: ItemLabel = item_label_scene.instantiate()
 		
-		var item_name: String = item.product_name
+		var item_name: String = item.product_info.product_name
 		var required_qty: int = item.required_quantity
 		var scanned_qty: int = item.scanned_quantity
 		var price: float = item.product_price

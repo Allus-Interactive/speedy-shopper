@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ry4gryg8cwx"
-path="res://.godot/imported/temp.jpg-f343ee2a5c26c759d1dabbaeb4c10f68.ctex"
+uid="uid://n5rta5y5njne"
+path="res://.godot/imported/barcode.png-d51c5a255562a97216b67c4ff27b36da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/barcodes/temp.jpg"
-dest_files=["res://.godot/imported/temp.jpg-f343ee2a5c26c759d1dabbaeb4c10f68.ctex"]
+source_file="res://assets/barcodes/barcode.png"
+dest_files=["res://.godot/imported/barcode.png-d51c5a255562a97216b67c4ff27b36da.ctex"]
 
 [params]
 
