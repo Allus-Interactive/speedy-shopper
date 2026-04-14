@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ded00ev3lntjr"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_dxjfe"]
+
+[resource]
+script = ExtResource("1_dxjfe")
+product_name = "Cheesy Baked Beans"
+barcode_value = 6619
+metadata/_custom_type_script = "uid://siedaem41o6s"

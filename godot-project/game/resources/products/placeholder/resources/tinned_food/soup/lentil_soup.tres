@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_2k7vo"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="2_mfg6n"]
-[ext_resource type="Resource" uid="uid://c5m3v2xrnjlm4" path="res://game/resources/item/resources/tinned_food/lentil_soup.tres" id="2_xvw5b"]
+[ext_resource type="Resource" uid="uid://c5m3v2xrnjlm4" path="res://game/resources/item/resources/tinned_food/soup/lentil_soup.tres" id="2_xvw5b"]
 
 [resource]
 script = ExtResource("2_mfg6n")

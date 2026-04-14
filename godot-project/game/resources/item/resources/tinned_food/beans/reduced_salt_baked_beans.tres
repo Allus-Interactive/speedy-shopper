@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://rgh3h8fltg7w"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_ics3m"]
+
+[resource]
+script = ExtResource("1_ics3m")
+product_name = "Reduced Salt Baked Beans"
+barcode_value = 9166
+metadata/_custom_type_script = "uid://siedaem41o6s"
