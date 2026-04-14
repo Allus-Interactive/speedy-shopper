@@ -1,14 +1,15 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://8hxhoavd6pf"]
 
-[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_1oivw"]
-[ext_resource type="Resource" uid="uid://bt0rj8er0hu44" path="res://game/resources/item/resources/tinned_food/soup/tomato_soup.tres" id="2_1oivw"]
-[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_e2l8i"]
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_gelgo"]
+[ext_resource type="Resource" uid="uid://bt0rj8er0hu44" path="res://game/resources/item/resources/tinned_food/soup/tomato_soup.tres" id="2_cevmg"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_7ouev"]
 
 [resource]
-script = ExtResource("3_e2l8i")
-product_info = ExtResource("2_1oivw")
+script = ExtResource("3_7ouev")
+product_info = ExtResource("2_cevmg")
 placeholder_size = Vector3(0.1, 0.2, 0.1)
 shelf_offset = Vector3(0, 0.1, 0)
+default_shelf_quantity = 6
 label_size = 1
 product_colour = Color(0.7454975, 0.33986905, 0.03824922, 1)
 barcode_size = Vector2(0.08, 0.04)

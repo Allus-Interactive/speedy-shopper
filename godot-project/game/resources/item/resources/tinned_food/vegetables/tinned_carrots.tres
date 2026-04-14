@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://jyf4usftqblt"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_fk0so"]
+
+[resource]
+script = ExtResource("1_fk0so")
+product_name = "Tinned Carrots"
+barcode_value = 1621
+metadata/_custom_type_script = "uid://siedaem41o6s"

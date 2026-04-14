@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ru5vl2ic3cbb"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_wt3jv"]
+
+[resource]
+script = ExtResource("1_wt3jv")
+product_name = "Tinned Sweetcorn"
+barcode_value = 1620
+metadata/_custom_type_script = "uid://siedaem41o6s"

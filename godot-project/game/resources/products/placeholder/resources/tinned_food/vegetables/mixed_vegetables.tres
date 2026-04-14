@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://dk7uljfptkj51"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_ekc1v"]
+[ext_resource type="Resource" uid="uid://ddqswkaa1nvo2" path="res://game/resources/item/resources/tinned_food/vegetables/mixed_vegetables.tres" id="2_8g5yf"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_c1di2"]
+
+[resource]
+script = ExtResource("3_c1di2")
+product_info = ExtResource("2_8g5yf")
+placeholder_size = Vector3(0.1, 0.2, 0.1)
+shelf_offset = Vector3(0, 0.1, 0)
+default_shelf_quantity = 6
+label_size = 1
+product_colour = Color(0.30338997, 0.46580285, 0.18573636, 1)
+barcode_size = Vector2(0.08, 0.04)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

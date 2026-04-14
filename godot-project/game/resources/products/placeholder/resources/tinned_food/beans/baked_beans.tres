@@ -9,6 +9,7 @@ script = ExtResource("3_b3x61")
 product_info = ExtResource("2_ytmpa")
 placeholder_size = Vector3(0.1, 0.2, 0.1)
 shelf_offset = Vector3(0, 0.1, 0)
+default_shelf_quantity = 6
 label_size = 1
 product_colour = Color(0.95529157, 0.396404, 0.25082, 1)
 barcode_size = Vector2(0.08, 0.04)

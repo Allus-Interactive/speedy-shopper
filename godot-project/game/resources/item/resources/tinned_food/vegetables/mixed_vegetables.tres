@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ddqswkaa1nvo2"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_8hixn"]
+
+[resource]
+script = ExtResource("1_8hixn")
+product_name = "Mixed Vegetables"
+barcode_value = 1622
+metadata/_custom_type_script = "uid://siedaem41o6s"
