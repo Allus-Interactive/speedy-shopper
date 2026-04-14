@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://s2w5b4bb6gcd"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_xmccu"]
-[ext_resource type="Resource" uid="uid://yply6q8k047l" path="res://game/resources/item/resources/finest_brand_cereal.tres" id="2_nqu3w"]
+[ext_resource type="Resource" uid="uid://yply6q8k047l" path="res://game/resources/item/resources/cereal/finest_brand_cereal.tres" id="2_nqu3w"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="2_xmccu"]
 
 [resource]

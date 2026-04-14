@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cnu7misw8btub"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_h4orc"]
+
+[resource]
+script = ExtResource("1_h4orc")
+product_name = "Whole Milk 2Pt"
+barcode_value = 2002
+metadata/_custom_type_script = "uid://siedaem41o6s"

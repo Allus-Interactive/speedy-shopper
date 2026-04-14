@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cafqib5pg13cj"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_u07fs"]
+
+[resource]
+script = ExtResource("1_u07fs")
+product_name = "Semi Skimmed Milk 1Pt"
+barcode_value = 1001
+metadata/_custom_type_script = "uid://siedaem41o6s"

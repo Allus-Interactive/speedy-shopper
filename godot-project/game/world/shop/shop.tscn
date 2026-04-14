@@ -5,11 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://0q7k7agu1au5" path="res://game/world/shop/shelf_unit/shelf_unit.tscn" id="2_4o56f"]
 [ext_resource type="PackedScene" uid="uid://q1llllqwatrb" path="res://game/resources/products/placeholder/product_placeholder.tscn" id="3_6k1ee"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="4_5qt63"]
-[ext_resource type="Resource" uid="uid://cwcswyx1gpss5" path="res://game/resources/products/placeholder/resources/own_brand_cereal.tres" id="5_yhfbf"]
-[ext_resource type="Resource" uid="uid://s2w5b4bb6gcd" path="res://game/resources/products/placeholder/resources/finest_brand_cereal.tres" id="6_u503x"]
-[ext_resource type="Resource" uid="uid://bnc10fdwnxv" path="res://game/resources/products/placeholder/resources/standard_brand_cereal.tres" id="7_7cwmf"]
+[ext_resource type="Resource" uid="uid://cwcswyx1gpss5" path="res://game/resources/products/placeholder/resources/cereal/own_brand_cereal.tres" id="5_yhfbf"]
+[ext_resource type="Resource" uid="uid://s2w5b4bb6gcd" path="res://game/resources/products/placeholder/resources/cereal/finest_brand_cereal.tres" id="6_u503x"]
+[ext_resource type="Resource" uid="uid://bnc10fdwnxv" path="res://game/resources/products/placeholder/resources/cereal/standard_brand_cereal.tres" id="7_7cwmf"]
 [ext_resource type="PackedScene" uid="uid://bxp4n4mj5pm6w" path="res://game/world/shop/delivery_crate/delivery_crate.tscn" id="8_5qt63"]
+[ext_resource type="Resource" uid="uid://dpt6nwkbb16k7" path="res://game/resources/products/placeholder/resources/milk/semi_skimmed_4pt.tres" id="8_oqv7w"]
+[ext_resource type="Resource" uid="uid://stx70yhrddbk" path="res://game/resources/products/placeholder/resources/milk/whole_4pt.tres" id="9_4k7rs"]
 [ext_resource type="PackedScene" uid="uid://btf72vp3ycnqe" path="res://game/world/shop/delivery_kiosk/delivery_kiosk.tscn" id="9_yhfbf"]
+[ext_resource type="Resource" uid="uid://c8lg704s7wqxd" path="res://game/resources/products/placeholder/resources/milk/skimmed_4pt.tres" id="10_c8ytq"]
+[ext_resource type="Resource" uid="uid://bpytjrfl3gejg" path="res://game/resources/products/placeholder/resources/milk/semi_skimmed_2pt.tres" id="11_c8ytq"]
+[ext_resource type="Resource" uid="uid://d0k72fl25jby" path="res://game/resources/products/placeholder/resources/milk/whole_2pt.tres" id="12_haqlr"]
+[ext_resource type="Resource" uid="uid://crj0gp1bmltoj" path="res://game/resources/products/placeholder/resources/milk/skimmed_2pt.tres" id="13_qj53o"]
+[ext_resource type="Resource" uid="uid://4m1x6qgglb37" path="res://game/resources/products/placeholder/resources/milk/semi_skimmed_1pt.tres" id="14_k3a1u"]
+[ext_resource type="Resource" uid="uid://dgq11hedfj3ki" path="res://game/resources/products/placeholder/resources/milk/whole_1pt.tres" id="15_iirsv"]
+[ext_resource type="Resource" uid="uid://dmiomgq2gyprh" path="res://game/resources/products/placeholder/resources/milk/skimmed_1pt.tres" id="16_idgyd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -161,10 +170,13 @@ shape = SubResource("BoxShape3D_c8ytq")
 
 [node name="Left" type="Node3D" parent="Aisle1" unique_id=1328090863]
 
-[node name="ShelfUnit0" parent="Aisle1/Left" unique_id=214161151 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitMilk" parent="Aisle1/Left" unique_id=214161151 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, 0)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("8_oqv7w"), ExtResource("8_oqv7w"), ExtResource("8_oqv7w"), ExtResource("8_oqv7w"), ExtResource("8_oqv7w"), ExtResource("8_oqv7w"), ExtResource("8_oqv7w"), ExtResource("9_4k7rs"), ExtResource("9_4k7rs"), ExtResource("9_4k7rs"), ExtResource("9_4k7rs"), ExtResource("9_4k7rs"), ExtResource("10_c8ytq"), ExtResource("10_c8ytq"), ExtResource("11_c8ytq"), ExtResource("11_c8ytq"), ExtResource("11_c8ytq"), ExtResource("11_c8ytq"), ExtResource("12_haqlr"), ExtResource("12_haqlr"), ExtResource("13_qj53o"), ExtResource("14_k3a1u"), ExtResource("14_k3a1u"), ExtResource("14_k3a1u"), ExtResource("14_k3a1u"), ExtResource("15_iirsv"), ExtResource("15_iirsv"), ExtResource("16_idgyd")])
+slots_per_shelf = 7
+slot_margin_x = 0.2
+row_width = 0.4
 
 [node name="ShelfUnit1" parent="Aisle1/Left" unique_id=1038147316 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -2)
@@ -217,9 +229,11 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 product_placeholder_scene = ExtResource("3_6k1ee")
 slots_per_shelf = 5
 
-[node name="ShelfUnit2" parent="Aisle2/Left" unique_id=2046506246 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitBread" parent="Aisle2/Left" unique_id=2046506246 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -6)
 product_placeholder_scene = ExtResource("3_6k1ee")
+shelf_count = 5
+shelf_spacing = 0.4
 slots_per_shelf = 5
 
 [node name="ShelfUnitCereal" parent="Aisle2/Left" unique_id=1122229517 instance=ExtResource("2_4o56f")]

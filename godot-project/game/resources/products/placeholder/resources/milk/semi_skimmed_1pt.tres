@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://4m1x6qgglb37"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_pago4"]
+[ext_resource type="Resource" uid="uid://cafqib5pg13cj" path="res://game/resources/item/resources/milk/semi_skimmed_1pt.tres" id="2_pago4"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_nmdpg"]
+
+[resource]
+script = ExtResource("3_nmdpg")
+product_info = ExtResource("2_pago4")
+placeholder_size = Vector3(0.2, 0.25, 0.2)
+shelf_offset = Vector3(0, 0.125, 0)
+product_colour = Color(5.2943824e-07, 0.5756506, 0.13848397, 1)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

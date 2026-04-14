@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://svxki8yw5fky"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_fy15w"]
+
+[resource]
+script = ExtResource("1_fy15w")
+product_name = "Skimmed Milk 2Pt"
+barcode_value = 2003
+metadata/_custom_type_script = "uid://siedaem41o6s"
