@@ -14,32 +14,21 @@ func _ready() -> void:
 
 func generate_order() -> void:
 	var all_products_in_shop: Array[Item] = ProductManager.all_products
+	var grouped_products = group_items_by_category(all_products_in_shop)
 	var products_in_order: Array[OrderItemData] = []
 	
-	var grouped_products = group_items_by_category(all_products_in_shop)
+	var no_of_categories: int = Item.CATEGORY.size()
+	var no_of_items_in_order: int = randi_range(1, no_of_categories)
 	
-	var milk = grouped_products[Item.CATEGORY.MILK]
-	var bread = grouped_products[Item.CATEGORY.BREAD]
-	var cereal = grouped_products[Item.CATEGORY.CEREAL]
-	var tinned_food = grouped_products[Item.CATEGORY.TINNED_FOOD]
-	
-	# TODO: implement auto generation for orders
-	var new_product := OrderItemData.new()
-	new_product.product_info = milk[randi_range(0, milk.size() - 1)]
-	new_product.required_quantity = randi_range(1, 3)
-	products_in_order.append(new_product)
-	var new_product_2 := OrderItemData.new()
-	new_product_2.product_info = bread[randi_range(0, bread.size() - 1)]
-	new_product_2.required_quantity = randi_range(1, 4)
-	products_in_order.append(new_product_2)
-	var new_product_3 := OrderItemData.new()
-	new_product_3.product_info = cereal[randi_range(0, cereal.size() - 1)]
-	new_product_3.required_quantity = randi_range(1, 2)
-	products_in_order.append(new_product_3)
-	var new_product_4 := OrderItemData.new()
-	new_product_4.product_info = tinned_food[randi_range(0, tinned_food.size() - 1)]
-	new_product_4.required_quantity = randi_range(1, 5)
-	products_in_order.append(new_product_4)
+	# Basic Order Generation
+	# TODO: change order of grouped_products? So orders don't follow the same patern every time
+	for i in no_of_items_in_order:
+		print("CATEGORY: ", Item.CATEGORY.keys()[i])
+		var product = grouped_products[i]
+		var new_product := OrderItemData.new()
+		new_product.product_info = product[randi_range(0, product.size() - 1)]
+		new_product.required_quantity = randi_range(1, 3)
+		products_in_order.append(new_product)
 	
 	var order := OrderData.new()
 	# irrelevant data, remove?

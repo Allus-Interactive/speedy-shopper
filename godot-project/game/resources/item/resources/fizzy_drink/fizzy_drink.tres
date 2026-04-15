@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cpjxgm381bd70"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_juctb"]
+
+[resource]
+script = ExtResource("1_juctb")
+product_name = "Fizzy Drink"
+barcode_value = 997
+product_price = 14.5
+product_type = 4
+metadata/_custom_type_script = "uid://siedaem41o6s"

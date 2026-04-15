@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c0u8aetdba7aq"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_7b8qc"]
+
+[resource]
+script = ExtResource("1_7b8qc")
+product_name = "Crisps"
+barcode_value = 998
+product_price = 1.75
+product_type = 3
+metadata/_custom_type_script = "uid://siedaem41o6s"
