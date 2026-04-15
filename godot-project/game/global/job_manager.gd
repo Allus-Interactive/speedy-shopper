@@ -28,7 +28,9 @@ func generate_order() -> void:
 		var new_product := OrderItemData.new()
 		new_product.product_info = product[randi_range(0, product.size() - 1)]
 		new_product.required_quantity = randi_range(1, 3)
-		products_in_order.append(new_product)
+		var max_range = products_in_order.size() if products_in_order.size() == 0 else products_in_order.size() - 1
+		var index = randi_range(0, max_range)
+		products_in_order.insert(index, new_product)
 	
 	var order := OrderData.new()
 	# irrelevant data, remove?
