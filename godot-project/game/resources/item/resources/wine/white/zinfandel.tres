@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cd0mttajja1yv"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_7iwr8"]
+
+[resource]
+script = ExtResource("1_7iwr8")
+product_name = "Zinfandel"
+barcode_value = 8432
+product_price = 6.25
+product_type = 8
+metadata/_custom_type_script = "uid://siedaem41o6s"

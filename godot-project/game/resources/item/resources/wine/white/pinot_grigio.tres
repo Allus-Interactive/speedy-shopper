@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b4owpm7lpswhc"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_hndav"]
+
+[resource]
+script = ExtResource("1_hndav")
+product_name = "Pinot Grigio"
+barcode_value = 8431
+product_price = 8.25
+product_type = 8
+metadata/_custom_type_script = "uid://siedaem41o6s"

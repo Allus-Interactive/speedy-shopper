@@ -7,4 +7,4 @@ class_name Item
 @export var product_price: float = 0
 @export var product_type: CATEGORY
 
-enum CATEGORY { BEER, BREAD, CEREAL, CRISPS, FIZZY_DRINK, MILK, RUM, TINNED_FOOD, WINE }
+enum CATEGORY { BEER, BREAD, CEREAL, CRISPS, FIZZY_DRINK, MILK, SPIRITS, TINNED_FOOD, WINE }

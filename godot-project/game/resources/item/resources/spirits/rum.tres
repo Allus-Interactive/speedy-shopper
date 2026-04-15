@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bjq5x0grmn3ui"]
 
-[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_v1r7d"]
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_u5wmi"]
 
 [resource]
-script = ExtResource("1_v1r7d")
+script = ExtResource("1_u5wmi")
 product_name = "Rum"
-barcode_value = 996
-product_price = 24.99
+barcode_value = 4253
+product_price = 23.99
 product_type = 6
 metadata/_custom_type_script = "uid://siedaem41o6s"

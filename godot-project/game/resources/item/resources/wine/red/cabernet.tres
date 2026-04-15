@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bqah35kpvvfu3"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_t1jcm"]
+
+[resource]
+script = ExtResource("1_t1jcm")
+product_name = "Cabernet"
+barcode_value = 8428
+product_price = 11.0
+product_type = 8
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://mduaemu4hv41"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_yjk65"]
+
+[resource]
+script = ExtResource("1_yjk65")
+product_name = "Chardonnay"
+barcode_value = 8429
+product_price = 7.25
+product_type = 8
+metadata/_custom_type_script = "uid://siedaem41o6s"

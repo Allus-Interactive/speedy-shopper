@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://fxxcgmkyo46b"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_jpex3"]
+
+[resource]
+script = ExtResource("1_jpex3")
+product_name = "Gin"
+barcode_value = 4255
+product_price = 20.99
+product_type = 6
+metadata/_custom_type_script = "uid://siedaem41o6s"

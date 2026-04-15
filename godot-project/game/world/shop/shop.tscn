@@ -54,6 +54,18 @@
 [ext_resource type="Resource" uid="uid://wriaci1jru7q" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink_lemon.tres" id="52_11a2g"]
 [ext_resource type="Resource" uid="uid://ddrmct56gjta" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink.tres" id="52_pm5fk"]
 [ext_resource type="Resource" uid="uid://d24wtpgvff3dc" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink_orange.tres" id="53_wpyta"]
+[ext_resource type="Resource" uid="uid://utnxqdrcyc4n" path="res://game/resources/products/placeholder/resources/spirits/gin.tres" id="55_g1yju"]
+[ext_resource type="Resource" uid="uid://nv6a1lv603nh" path="res://game/resources/products/placeholder/resources/spirits/vodka.tres" id="56_8lmnt"]
+[ext_resource type="Resource" uid="uid://b1jh6ppx3l0ce" path="res://game/resources/products/placeholder/resources/spirits/rum.tres" id="57_bcqtl"]
+[ext_resource type="Resource" uid="uid://cbf4uqcm4y4wx" path="res://game/resources/products/placeholder/resources/spirits/whiskey.tres" id="58_8lmnt"]
+[ext_resource type="Resource" uid="uid://m52aj8abwy47" path="res://game/resources/products/placeholder/resources/wine/white/zinfandel.tres" id="59_76srb"]
+[ext_resource type="Resource" uid="uid://f68v7f26rf54" path="res://game/resources/products/placeholder/resources/wine/red/shiraz.tres" id="59_ndgoc"]
+[ext_resource type="Resource" uid="uid://c84ul00qpxptq" path="res://game/resources/products/placeholder/resources/wine/red/merlot.tres" id="60_36wa0"]
+[ext_resource type="Resource" uid="uid://doyfm7klcj5wg" path="res://game/resources/products/placeholder/resources/wine/white/sauvignon_blanc.tres" id="60_xpiri"]
+[ext_resource type="Resource" uid="uid://bdvvx5cx0djsu" path="res://game/resources/products/placeholder/resources/wine/red/malbec.tres" id="61_lritm"]
+[ext_resource type="Resource" uid="uid://bwel527hg1bvs" path="res://game/resources/products/placeholder/resources/wine/white/pinot_grigio.tres" id="61_ogqhi"]
+[ext_resource type="Resource" uid="uid://4moi80aquu1b" path="res://game/resources/products/placeholder/resources/wine/red/cabernet.tres" id="62_inxf2"]
+[ext_resource type="Resource" uid="uid://c3ajqillktbnt" path="res://game/resources/products/placeholder/resources/wine/white/chardonnay.tres" id="62_ssi33"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -297,22 +309,31 @@ shelf_spacing = 0.8
 slots_per_shelf = 3
 slot_margin_x = 0.35
 
-[node name="ShelfUnit" parent="Aisle2/Right" unique_id=566735270 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitBeer" parent="Aisle2/Right" unique_id=566735270 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -4)
 product_placeholder_scene = ExtResource("3_6k1ee")
 slots_per_shelf = 5
 
-[node name="ShelfUnit2" parent="Aisle2/Right" unique_id=133376802 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitSpirits" parent="Aisle2/Right" unique_id=989585367 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -6)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("55_g1yju"), ExtResource("55_g1yju"), ExtResource("55_g1yju"), ExtResource("55_g1yju"), ExtResource("55_g1yju"), ExtResource("55_g1yju"), ExtResource("55_g1yju"), ExtResource("56_8lmnt"), ExtResource("56_8lmnt"), ExtResource("56_8lmnt"), ExtResource("56_8lmnt"), ExtResource("56_8lmnt"), ExtResource("56_8lmnt"), ExtResource("56_8lmnt"), ExtResource("57_bcqtl"), ExtResource("57_bcqtl"), ExtResource("57_bcqtl"), ExtResource("57_bcqtl"), ExtResource("57_bcqtl"), ExtResource("57_bcqtl"), ExtResource("57_bcqtl"), ExtResource("58_8lmnt"), ExtResource("58_8lmnt"), ExtResource("58_8lmnt"), ExtResource("58_8lmnt"), ExtResource("58_8lmnt"), ExtResource("58_8lmnt"), ExtResource("58_8lmnt")])
+slots_per_shelf = 7
+slot_margin_x = 0.2
+row_width = 0.4
 
-[node name="ShelfUnit3" parent="Aisle2/Right" unique_id=989585367 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitWineRed" parent="Aisle2/Right" unique_id=133376802 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -8)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("59_ndgoc"), ExtResource("59_ndgoc"), ExtResource("59_ndgoc"), ExtResource("59_ndgoc"), ExtResource("59_ndgoc"), ExtResource("59_ndgoc"), ExtResource("59_ndgoc"), ExtResource("60_36wa0"), ExtResource("60_36wa0"), ExtResource("60_36wa0"), ExtResource("60_36wa0"), ExtResource("60_36wa0"), ExtResource("60_36wa0"), ExtResource("60_36wa0"), ExtResource("61_lritm"), ExtResource("61_lritm"), ExtResource("61_lritm"), ExtResource("61_lritm"), ExtResource("61_lritm"), ExtResource("61_lritm"), ExtResource("61_lritm"), ExtResource("62_inxf2"), ExtResource("62_inxf2"), ExtResource("62_inxf2"), ExtResource("62_inxf2"), ExtResource("62_inxf2"), ExtResource("62_inxf2"), ExtResource("62_inxf2")])
+slots_per_shelf = 7
+slot_margin_x = 0.2
+row_width = 0.4
 
-[node name="ShelfUnit4" parent="Aisle2/Right" unique_id=1956754812 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitWineWhite" parent="Aisle2/Right" unique_id=1956754812 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -10)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("59_76srb"), ExtResource("59_76srb"), ExtResource("59_76srb"), ExtResource("59_76srb"), ExtResource("59_76srb"), ExtResource("59_76srb"), ExtResource("59_76srb"), ExtResource("60_xpiri"), ExtResource("60_xpiri"), ExtResource("60_xpiri"), ExtResource("60_xpiri"), ExtResource("60_xpiri"), ExtResource("60_xpiri"), ExtResource("60_xpiri"), ExtResource("61_ogqhi"), ExtResource("61_ogqhi"), ExtResource("61_ogqhi"), ExtResource("61_ogqhi"), ExtResource("61_ogqhi"), ExtResource("61_ogqhi"), ExtResource("61_ogqhi"), ExtResource("62_ssi33"), ExtResource("62_ssi33"), ExtResource("62_ssi33"), ExtResource("62_ssi33"), ExtResource("62_ssi33"), ExtResource("62_ssi33"), ExtResource("62_ssi33")])
+slots_per_shelf = 7
+slot_margin_x = 0.2
+row_width = 0.4

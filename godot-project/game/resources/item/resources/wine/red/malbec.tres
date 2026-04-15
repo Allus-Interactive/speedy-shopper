@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bs8pphdakpcg5"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_akady"]
+
+[resource]
+script = ExtResource("1_akady")
+product_name = "Malbec"
+barcode_value = 8425
+product_price = 8.75
+product_type = 8
+metadata/_custom_type_script = "uid://siedaem41o6s"

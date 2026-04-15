@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://u2rka60ciwbk"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_grtxi"]
+
+[resource]
+script = ExtResource("1_grtxi")
+product_name = "Sauvignon Blanc"
+barcode_value = 8430
+product_price = 11.75
+product_type = 8
+metadata/_custom_type_script = "uid://siedaem41o6s"

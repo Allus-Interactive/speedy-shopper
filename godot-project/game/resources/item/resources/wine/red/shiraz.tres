@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b4s7f4i2jnwy3"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_as1ib"]
+
+[resource]
+script = ExtResource("1_as1ib")
+product_name = "Shiraz"
+barcode_value = 8427
+product_price = 7.5
+product_type = 8
+metadata/_custom_type_script = "uid://siedaem41o6s"
