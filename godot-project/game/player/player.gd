@@ -216,8 +216,9 @@ func complete_order() -> void:
 	TheGameManager.daily_earnings += calculate_player_tip()
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % TheGameManager.daily_earnings
 	
-	# Generate next order
-	TheJobManager.generate_order()
+	# Generate next orders if no available orders
+	if TheJobManager.available_orders.size() == 0:
+		TheJobManager.generate_order()
 	
 	# Reset the delivery crate (once order has been collected)
 	TheGameManager.delivery_crate.reparent(TheGameManager.crate_hold_point)
