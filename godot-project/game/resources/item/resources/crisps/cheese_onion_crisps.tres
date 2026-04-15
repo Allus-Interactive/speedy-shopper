@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://wjc4p1frp17f"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_e25ga"]
+
+[resource]
+script = ExtResource("1_e25ga")
+product_name = "Cheese & Onion Crisps"
+barcode_value = 5858
+product_price = 2.2
+product_type = 3
+metadata/_custom_type_script = "uid://siedaem41o6s"

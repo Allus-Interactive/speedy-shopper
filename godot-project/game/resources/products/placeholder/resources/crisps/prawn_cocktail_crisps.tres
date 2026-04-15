@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://i5irb18pvnyu"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_onuui"]
+[ext_resource type="Resource" uid="uid://b8fdklkagwgwv" path="res://game/resources/item/resources/crisps/prawn_cocktail_crisps.tres" id="2_qqygk"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_e87tt"]
+
+[resource]
+script = ExtResource("3_e87tt")
+product_info = ExtResource("2_qqygk")
+placeholder_size = Vector3(0.3, 0.5, 0.2)
+shelf_offset = Vector3(0, 0.25, 0)
+product_colour = Color(0.8784336, 0.26771918, 0.9071174, 1)
+barcode_offset = Vector3(0.07, -0.17, 0)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

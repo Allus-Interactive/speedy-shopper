@@ -51,9 +51,13 @@
 [ext_resource type="Resource" uid="uid://dks2g76xrny2a" path="res://game/resources/products/placeholder/resources/tinned_food/vegetables/tinned_peas.tres" id="29_lb1gs"]
 [ext_resource type="Resource" uid="uid://cy5fw11pwks3j" path="res://game/resources/products/placeholder/resources/tinned_food_packs/vegetables/tinned_peas_4pk.tres" id="29_oaavk"]
 [ext_resource type="Resource" uid="uid://wmems0n6umak" path="res://game/resources/products/placeholder/resources/tinned_food_packs/vegetables/tinned_carrots_4pk.tres" id="30_76srb"]
+[ext_resource type="Resource" uid="uid://bpayoildvo6pa" path="res://game/resources/products/placeholder/resources/crisps/cheese_onion_crisps.tres" id="52_2ccmc"]
 [ext_resource type="Resource" uid="uid://wriaci1jru7q" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink_lemon.tres" id="52_11a2g"]
 [ext_resource type="Resource" uid="uid://ddrmct56gjta" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink.tres" id="52_pm5fk"]
+[ext_resource type="Resource" uid="uid://dubeaketjaudj" path="res://game/resources/products/placeholder/resources/crisps/salted_crisps.tres" id="53_36nt5"]
 [ext_resource type="Resource" uid="uid://d24wtpgvff3dc" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink_orange.tres" id="53_wpyta"]
+[ext_resource type="Resource" uid="uid://llhio55ha5ku" path="res://game/resources/products/placeholder/resources/crisps/salt_vinegar_crisps.tres" id="54_nmdxo"]
+[ext_resource type="Resource" uid="uid://i5irb18pvnyu" path="res://game/resources/products/placeholder/resources/crisps/prawn_cocktail_crisps.tres" id="55_36nt5"]
 [ext_resource type="Resource" uid="uid://utnxqdrcyc4n" path="res://game/resources/products/placeholder/resources/spirits/gin.tres" id="55_g1yju"]
 [ext_resource type="Resource" uid="uid://d011jmqebndmf" path="res://game/resources/products/placeholder/resources/beer/cider.tres" id="55_lritm"]
 [ext_resource type="Resource" uid="uid://nv6a1lv603nh" path="res://game/resources/products/placeholder/resources/spirits/vodka.tres" id="56_8lmnt"]
@@ -281,23 +285,25 @@ slot_margin_x = 0.2
 
 [node name="Left" type="Node3D" parent="Aisle2" unique_id=1934480765]
 
-[node name="ShelfUnit" parent="Aisle2/Left" unique_id=1431300107 instance=ExtResource("2_4o56f")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -4)
-product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
-
 [node name="ShelfUnitBread" parent="Aisle2/Left" unique_id=2046506246 instance=ExtResource("2_4o56f")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -6)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -4)
 product_placeholder_scene = ExtResource("3_6k1ee")
 stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("17_8noyx"), ExtResource("17_8noyx"), ExtResource("17_8noyx"), ExtResource("17_iirsv"), ExtResource("17_iirsv"), ExtResource("17_iirsv"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("19_vh3dg"), ExtResource("20_njqpr"), ExtResource("20_njqpr"), ExtResource("20_njqpr")])
 shelf_count = 5
 shelf_spacing = 0.4
 slots_per_shelf = 3
+slot_margin_x = 0.35
 
 [node name="ShelfUnitCereal" parent="Aisle2/Left" unique_id=1122229517 instance=ExtResource("2_4o56f")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -8)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -6)
 product_placeholder_scene = ExtResource("3_6k1ee")
 stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x")])
+slots_per_shelf = 5
+
+[node name="ShelfUnitCrisps" parent="Aisle2/Left" unique_id=1431300107 instance=ExtResource("2_4o56f")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -8)
+product_placeholder_scene = ExtResource("3_6k1ee")
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("52_2ccmc"), ExtResource("52_2ccmc"), ExtResource("52_2ccmc"), ExtResource("52_2ccmc"), ExtResource("52_2ccmc"), ExtResource("53_36nt5"), ExtResource("53_36nt5"), ExtResource("53_36nt5"), ExtResource("53_36nt5"), ExtResource("53_36nt5"), ExtResource("54_nmdxo"), ExtResource("54_nmdxo"), ExtResource("54_nmdxo"), ExtResource("54_nmdxo"), ExtResource("54_nmdxo"), ExtResource("55_36nt5"), ExtResource("55_36nt5"), ExtResource("55_36nt5"), ExtResource("55_36nt5"), ExtResource("55_36nt5")])
 slots_per_shelf = 5
 
 [node name="Right" type="Node3D" parent="Aisle2" unique_id=2114417710]

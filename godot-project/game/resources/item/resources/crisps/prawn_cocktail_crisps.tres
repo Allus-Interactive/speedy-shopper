@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b8fdklkagwgwv"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_udh0f"]
+
+[resource]
+script = ExtResource("1_udh0f")
+product_name = "Prawn Cocktail Crisps"
+barcode_value = 5959
+product_price = 2.35
+product_type = 3
+metadata/_custom_type_script = "uid://siedaem41o6s"
