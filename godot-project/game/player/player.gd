@@ -216,10 +216,6 @@ func complete_order() -> void:
 	TheGameManager.daily_earnings += calculate_player_tip()
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % TheGameManager.daily_earnings
 	
-	# Generate next orders if no available orders
-	if TheJobManager.available_orders.size() == 0:
-		TheJobManager.generate_order()
-	
 	# Reset the delivery crate (once order has been collected)
 	TheGameManager.delivery_crate.reparent(TheGameManager.crate_hold_point)
 	TheGameManager.delivery_crate.position = Vector3.ZERO
@@ -229,10 +225,16 @@ func complete_order() -> void:
 	if TheGameManager.delivery_crate.has_node("CollisionShape3D"):
 		TheGameManager.delivery_crate.get_node("CollisionShape3D").disabled = false
 	
-	# Mark order as complete and clear active order
+	# Mark order as complete
 	TheOrderManager.active_order.is_completed = true
-	# TODO: store order in completed_orders array before clearing active order?
+	# store order in completed_orders array before clearing active order
+	TheJobManager.complete_order_by_id(TheOrderManager.active_order.order_id)
+	# clear active order
 	TheOrderManager.active_order = null
+	
+	# Generate next orders if no available orders
+	if TheJobManager.available_orders.size() == 0:
+		TheJobManager.generate_order()
 
 func calculate_player_tip() -> float:
 	var order_price: float = TheOrderManager.active_order.price

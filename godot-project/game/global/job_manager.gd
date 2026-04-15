@@ -8,6 +8,7 @@ signal order_selected
 # Save the order number?
 var order_id: int = 1
 var available_orders: Array[OrderData] = []
+var completed_orders: Array[OrderData] = []
 
 func _ready() -> void:
 	generate_order()
@@ -60,6 +61,16 @@ func select_order_by_id(id: int) -> void:
 			TheOrderManager.active_order = order
 			TheOrderManager.no_of_unique_items_in_order = items.size()
 			order_selected.emit()
+	# TODO: Handle order not found?
+
+func complete_order_by_id(id: int) -> void:
+	for i in range(available_orders.size()):
+		var order = available_orders[i]
+		
+		if order.order_id == id:
+			completed_orders.append(order)
+			available_orders.remove_at(i)
+			return
 	# TODO: Handle order not found?
 
 func group_items_by_category(items: Array[Item]) -> Dictionary:
