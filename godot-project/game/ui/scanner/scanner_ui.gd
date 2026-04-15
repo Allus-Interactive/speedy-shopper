@@ -151,11 +151,12 @@ func _rebuild_available_items_list(items: Array[OrderData]) -> void:
 		var order_number: int = item.order_id
 		var products: Array[OrderItemData] = item.items
 		var item_qty: int = products.size()
+		var price: float = item.price
 		
 		# Add label to items list
 		available_items_list.add_child(row)
 		# populate label data
-		row.populate_data(order_number, item_qty)
+		row.populate_data(order_number, item_qty, price)
 		
 		if not button_in_focus:
 			row.focus_on_button()

@@ -26,9 +26,19 @@ text = "Order #12345"
 [node name="QuantityLabel" type="Label" parent="LabelBackground" unique_id=1815586305]
 custom_minimum_size = Vector2(262, 20)
 layout_mode = 0
-offset_top = 30.0
+offset_top = 25.0
 offset_right = 262.0
-offset_bottom = 50.0
+offset_bottom = 45.0
+theme = ExtResource("2_7gfbs")
+theme_override_font_sizes/font_size = 12
+text = "1/2 Items Picked"
+
+[node name="PriceLabel" type="Label" parent="LabelBackground" unique_id=1861300418]
+custom_minimum_size = Vector2(262, 20)
+layout_mode = 0
+offset_top = 40.0
+offset_right = 262.0
+offset_bottom = 60.0
 theme = ExtResource("2_7gfbs")
 theme_override_font_sizes/font_size = 12
 text = "1/2 Items Picked"

@@ -204,12 +204,20 @@ func put_down_delivery_crate(kiosk: DeliveryKiosk) -> void:
 	complete_order()
 
 func complete_order() -> void:
+	### START OF TEMP LOGIC
+	# TODO: spawn new crate to continue next order
+	# TODO: Implement customer pickup and allow multiple orders on the delivery kiosk
+	
+	# Wait for a lil bit to reset crate, simulate customer pickup
+	await get_tree().create_timer(3.0).timeout
+	### END OF TEMP LOGIC
+	
 	# Pay the player
 	TheGameManager.daily_earnings += calculate_player_tip()
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % TheGameManager.daily_earnings
 	
-	# Wait for a lil bit
-	await get_tree().create_timer(3.0).timeout
+	# Generate next order
+	TheJobManager.generate_order()
 	
 	# Reset the delivery crate (once order has been collected)
 	TheGameManager.delivery_crate.reparent(TheGameManager.crate_hold_point)
