@@ -51,6 +51,9 @@
 [ext_resource type="Resource" uid="uid://dks2g76xrny2a" path="res://game/resources/products/placeholder/resources/tinned_food/vegetables/tinned_peas.tres" id="29_lb1gs"]
 [ext_resource type="Resource" uid="uid://cy5fw11pwks3j" path="res://game/resources/products/placeholder/resources/tinned_food_packs/vegetables/tinned_peas_4pk.tres" id="29_oaavk"]
 [ext_resource type="Resource" uid="uid://wmems0n6umak" path="res://game/resources/products/placeholder/resources/tinned_food_packs/vegetables/tinned_carrots_4pk.tres" id="30_76srb"]
+[ext_resource type="Resource" uid="uid://wriaci1jru7q" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink_lemon.tres" id="52_11a2g"]
+[ext_resource type="Resource" uid="uid://ddrmct56gjta" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink.tres" id="52_pm5fk"]
+[ext_resource type="Resource" uid="uid://d24wtpgvff3dc" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink_orange.tres" id="53_wpyta"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -285,10 +288,14 @@ slots_per_shelf = 5
 
 [node name="Right" type="Node3D" parent="Aisle2" unique_id=2114417710]
 
-[node name="ShelfUnit0" parent="Aisle2/Right" unique_id=555619701 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitFizzyDrink" parent="Aisle2/Right" unique_id=555619701 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -2)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("52_11a2g"), ExtResource("52_11a2g"), ExtResource("52_11a2g"), ExtResource("53_wpyta"), ExtResource("53_wpyta"), ExtResource("53_wpyta"), ExtResource("52_pm5fk"), ExtResource("52_pm5fk"), ExtResource("52_pm5fk")])
+shelf_count = 3
+shelf_spacing = 0.8
+slots_per_shelf = 3
+slot_margin_x = 0.35
 
 [node name="ShelfUnit" parent="Aisle2/Right" unique_id=566735270 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -4)

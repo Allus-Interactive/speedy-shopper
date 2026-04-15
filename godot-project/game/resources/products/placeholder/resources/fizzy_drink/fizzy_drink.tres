@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://ddrmct56gjta"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_26g05"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="2_stent"]
+[ext_resource type="Resource" uid="uid://cpjxgm381bd70" path="res://game/resources/item/resources/fizzy_drink/fizzy_drink.tres" id="2_x8ccc"]
+
+[resource]
+script = ExtResource("2_stent")
+product_info = ExtResource("2_x8ccc")
+placeholder_size = Vector3(0.6, 0.6, 0.6)
+shelf_offset = Vector3(0, 0.3, 0)
+default_shelf_quantity = 1
+product_colour = Color(0.6396391, 0.10983121, 0.0638514, 1)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

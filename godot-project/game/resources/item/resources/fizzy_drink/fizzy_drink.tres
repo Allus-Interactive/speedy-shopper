@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_juctb")
-product_name = "Fizzy Drink"
-barcode_value = 997
+product_name = "24pk Fizzy Drink"
+barcode_value = 3674
 product_price = 14.5
 product_type = 4
 metadata/_custom_type_script = "uid://siedaem41o6s"
