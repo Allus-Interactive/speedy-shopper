@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_wcwhs")
 product_name = "Beer"
-barcode_value = 999
-product_price = 5.5
+barcode_value = 3349
+product_price = 13.0
 metadata/_custom_type_script = "uid://siedaem41o6s"

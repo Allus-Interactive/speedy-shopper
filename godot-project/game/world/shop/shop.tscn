@@ -55,7 +55,9 @@
 [ext_resource type="Resource" uid="uid://ddrmct56gjta" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink.tres" id="52_pm5fk"]
 [ext_resource type="Resource" uid="uid://d24wtpgvff3dc" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink_orange.tres" id="53_wpyta"]
 [ext_resource type="Resource" uid="uid://utnxqdrcyc4n" path="res://game/resources/products/placeholder/resources/spirits/gin.tres" id="55_g1yju"]
+[ext_resource type="Resource" uid="uid://d011jmqebndmf" path="res://game/resources/products/placeholder/resources/beer/cider.tres" id="55_lritm"]
 [ext_resource type="Resource" uid="uid://nv6a1lv603nh" path="res://game/resources/products/placeholder/resources/spirits/vodka.tres" id="56_8lmnt"]
+[ext_resource type="Resource" uid="uid://5ec4fa5se8j" path="res://game/resources/products/placeholder/resources/beer/beer.tres" id="56_inxf2"]
 [ext_resource type="Resource" uid="uid://b1jh6ppx3l0ce" path="res://game/resources/products/placeholder/resources/spirits/rum.tres" id="57_bcqtl"]
 [ext_resource type="Resource" uid="uid://cbf4uqcm4y4wx" path="res://game/resources/products/placeholder/resources/spirits/whiskey.tres" id="58_8lmnt"]
 [ext_resource type="Resource" uid="uid://m52aj8abwy47" path="res://game/resources/products/placeholder/resources/wine/white/zinfandel.tres" id="59_76srb"]
@@ -312,7 +314,12 @@ slot_margin_x = 0.35
 [node name="ShelfUnitBeer" parent="Aisle2/Right" unique_id=566735270 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -4)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("55_lritm"), ExtResource("55_lritm"), ExtResource("55_lritm"), ExtResource("55_lritm"), ExtResource("55_lritm"), ExtResource("55_lritm"), ExtResource("56_inxf2"), ExtResource("56_inxf2"), ExtResource("56_inxf2"), ExtResource("56_inxf2"), ExtResource("56_inxf2"), ExtResource("56_inxf2"), ExtResource("56_inxf2"), ExtResource("56_inxf2"), ExtResource("56_inxf2")])
+shelf_count = 5
+shelf_spacing = 0.4
+slots_per_shelf = 3
+slot_margin_x = 0.35
+row_width = 0.4
 
 [node name="ShelfUnitSpirits" parent="Aisle2/Right" unique_id=989585367 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -1, 0, -6)

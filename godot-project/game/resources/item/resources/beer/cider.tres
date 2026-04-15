@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://blnc3s15tq2a3"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_q7mje"]
+
+[resource]
+script = ExtResource("1_q7mje")
+product_name = "Cider"
+barcode_value = 3351
+product_price = 11.25
+metadata/_custom_type_script = "uid://siedaem41o6s"
