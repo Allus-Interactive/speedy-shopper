@@ -234,6 +234,9 @@ func complete_order() -> void:
 	
 	# Generate next orders if no available orders
 	if TheJobManager.available_orders.size() == 0:
+		# restock products before generating new orders
+		# TODO: move restock logic to when player returns to shop after deliveries
+		ProductManager.restock_products()
 		TheJobManager.generate_order()
 
 func calculate_player_tip() -> float:
@@ -271,20 +274,12 @@ func collect_held_product() -> void:
 	
 	var product_to_remove = held_product
 	
-	held_product = null
-	held_product_original_parent = null
-	is_inspecting_product = false
+	# Return product to shelf and hide node/disablecollider until restocked
+	return_held_product()
 	
-	# Confine Mouse to screen
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	# Show the crosshair and hide the tooltip
-	crosshair.show()
-	tooltip_panel.hide()
-	
-	# Remove the product
-	# TODO: move product to basket instead of deleting object
-	product_to_remove.queue_free()
+	product_to_remove.visible = false
+	product_to_remove.collision_shape.disabled = true
+	ProductManager.items_to_restock.append(product_to_remove)
 
 func scan_barcode() -> void:
 	if held_product == null:

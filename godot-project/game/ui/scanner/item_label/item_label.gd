@@ -7,7 +7,7 @@ class_name ItemLabel
 @onready var quantity_label: Label = $LabelBackground/QuantityLabel
 
 func _ready() -> void:
-	pass
+	self.focus_mode = Control.FOCUS_ALL
 
 func populate_data(product_name: String, required_qty: int, scanned_qty: int, price: float) -> void:
 	product_label.text = str(required_qty) + "x " + product_name + calculate_price(price, required_qty)
@@ -23,3 +23,9 @@ func calculate_price(price: float, required_qty: int) -> String:
 	var formatted_price = "%0.2f" % total_price
 	var price_string = " (£" + formatted_price + ")"
 	return price_string
+
+func focus_on_button() -> void:
+	self.grab_focus()
+
+func _pressed() -> void:
+	print("Don't do anything atm")
