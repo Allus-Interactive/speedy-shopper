@@ -1,6 +1,6 @@
 ### How to add new products into the game to be populated on shelves.
 - Step 1 - Create a new `Item` resource in the correct `{resource_type}` folder under **game** -> **resources** -> **item** -> **resources** -> **{resource_type}** 
-	- Note: if adding a product of a new type, be sure to add the new type to the `CATEGORY` enum in `item.gd`
+	- Note: if adding a product of a new type, be sure to add the new type to end of the `CATEGORY` enum in `item.gd` Adding it in any other position will throw off existing resources/data.
 - Step 2 - Enter the relevant data into the resource by double clicking it in the file system window
 	![[item resource panel.png]]
 	Make sure to record the new barcode in the Barcodes file in this documentation

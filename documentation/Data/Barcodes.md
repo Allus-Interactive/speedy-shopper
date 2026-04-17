@@ -32,6 +32,11 @@ This is a record of all the barcode values used in the game, and the product to 
 | Tartare Sauce        | 6431        |
 | Mustard              | 6432        |
 | Apple Sauce          | 6433        |
+## Cooking Sauces
+| **Product** | **Barcode** |
+| ----------- | ----------- |
+|             |             |
+|             |             |
 ## Crisps
 | **Product**           | **Barcode** |
 | --------------------- | ----------- |
@@ -50,7 +55,12 @@ This is a record of all the barcode values used in the game, and the product to 
 | ----------- | ----------- |
 |             |             |
 |             |             |
-## Frozen
+## Meat
+| **Product** | **Barcode** |
+| ----------- | ----------- |
+|             |             |
+|             |             |
+## Meal Kits
 | **Product** | **Barcode** |
 | ----------- | ----------- |
 |             |             |
@@ -67,6 +77,11 @@ This is a record of all the barcode values used in the game, and the product to 
 | Semi Skimmed Milk 1pt | 1001        |
 | Whole Milk 1pt        | 1002        |
 | Skimmed Milk 1pt      | 1003        |
+## Pasta Rice
+| **Product** | **Barcode** |
+| ----------- | ----------- |
+|             |             |
+|             |             |
 ## Spirits
 | **Product** | **Barcode** |
 | ----------- | ----------- |
