@@ -1,0 +1,118 @@
+This is a record of all the barcode values used in the game, and the product to which they are assigned
+## Beer
+| **Product** | **Barcode** |
+| ----------- | ----------- |
+| Beer        | 3349        |
+| Cider       | 3351        |
+## Bread
+| **Product**          | **Barcode** |
+| -------------------- | ----------- |
+| Wholemeal Bread 800g | 8552        |
+| White Bread 800g     | 8553        |
+| Farmhouse Bread 800g | 8554        |
+| Tiger Bread 800g     | 8555        |
+## Cereal
+| **Product**      | **Barcode** |
+| ---------------- | ----------- |
+| Finest Cereal    | 3           |
+| Standard Cereal  | 2           |
+| Own Brand Cereal | 1           |
+## Condiments
+| **Product**          | **Barcode** |
+| -------------------- | ----------- |
+| Tomato Ketchup       | 1123        |
+| Reduced Salt Ketchup | 1124        |
+| Brown Sauce          | 2234        |
+| BBQ Sauce            | 2243        |
+| Salt                 | 7315        |
+| Malt Vinegar         | 5382        |
+| Mayonnaise           | 6436        |
+| Light Mayonnaise     | 6435        |
+| Salad Cream          | 6434        |
+| Tartare Sauce        | 6431        |
+| Mustard              | 6432        |
+| Apple Sauce          | 6433        |
+## Crisps
+| **Product**           | **Barcode** |
+| --------------------- | ----------- |
+| Salted Crisps         | 5656        |
+| Salt & Vinegar Crisps | 5757        |
+| Cheese & Onion Crisps | 5858        |
+| Prawn Cocktail Crisps | 5959        |
+## Fizzy Drink
+| **Product**        | **Barcode** |
+| ------------------ | ----------- |
+| Fizzy Drink        | 3674        |
+| Fizzy Drink Orange | 3675        |
+| Fizzy Drink Lemon  | 3676        |
+## Fresh
+| **Product** | **Barcode** |
+| ----------- | ----------- |
+|             |             |
+|             |             |
+## Frozen
+| **Product** | **Barcode** |
+| ----------- | ----------- |
+|             |             |
+|             |             |
+## Milk
+| **Product**           | **Barcode** |
+| --------------------- | ----------- |
+| Semi Skimmed Milk 4pt | 4001        |
+| Whole Milk 4pt        | 4002        |
+| Skimmed Milk 4pt      | 4003        |
+| Semi Skimmed Milk 2pt | 201         |
+| Whole Milk 2pt        | 2002        |
+| Skimmed Milk 2pt      | 2003        |
+| Semi Skimmed Milk 1pt | 1001        |
+| Whole Milk 1pt        | 1002        |
+| Skimmed Milk 1pt      | 1003        |
+## Spirits
+| **Product** | **Barcode** |
+| ----------- | ----------- |
+| Rum         | 4253        |
+| Vodka       | 4254        |
+| Gin         | 4255        |
+| Whiskey     | 4256        |
+## Tinned Food
+| **Product**                  | **Barcode** |
+| ---------------------------- | ----------- |
+| Lentil Soup                  | 6488        |
+| Mushroom Soup                | 6489        |
+| Chicken Soup                 | 6490        |
+| Minestrone Soup              | 6491        |
+| Tomato Soup                  | 6492        |
+| Vegetable Soup               | 6493        |
+| Baked Beans                  | 6196        |
+| Baked Beans and Sausage      | 6916        |
+| Cheesy Baked Beans           | 6619        |
+| Reduced Salt Baked Beans     | 9166        |
+| Tinned Peas                  | 1619        |
+| Tinned Sweetcorn             | 1620        |
+| Tinned Carrot                | 1621        |
+| Mixed Vegetables             | 1622        |
+| Lentil Soup 4pk              | 7488        |
+| Mushroom Soup 4pk            | 4789        |
+| Chicken Soup 4pk             | 4790        |
+| Minestrone Soup 4pk          | 4791        |
+| Tomato Soup 4pk              | 4792        |
+| Vegetable Soup 4pk           | 4793        |
+| Baked Beans 4pk              | 7197        |
+| Baked Beans and Sausage 4pk  | 7917        |
+| Cheesy Baked Beans 4pk       | 7719        |
+| Reduced Salt Baked Beans 4pk | 9177        |
+| Tinned Peas 4pk              | 2619        |
+| Tinned Sweetcorn 4pk         | 2620        |
+| Tinned Carrot 4pk            | 2621        |
+| Mixed Vegetables 4pk         | 2622        |
+## Wine
+| **Product**     | **Barcode** |
+| --------------- | ----------- |
+| Malbec          | 8425        |
+| Merlot          | 8426        |
+| Shiraz          | 8427        |
+| Cabernet        | 8428        |
+| Chardonnay      | 8429        |
+| Sauvignon Blanc | 8430        |
+| Pinot Grigio    | 8431        |
+| Zinfandel       | 8432        |
