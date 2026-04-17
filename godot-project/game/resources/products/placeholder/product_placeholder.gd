@@ -30,7 +30,7 @@ func on_barcode_clicked() -> bool:
 	if product_data == null:
 		return false
 	
-	var success = TheOrderManager.scan_product(product_data.product_info.barcode_value)
+	var success = OrderManager.scan_product(product_data.product_info.barcode_value)
 	
 	if success:
 		print("Scanned: ", product_data.product_info.product_name)

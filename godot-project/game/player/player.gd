@@ -137,12 +137,12 @@ func _process(delta: float) -> void:
 		scanner_ui.toggle_scanner()
 	
 	# Scroll the items list with the mouse wheel
-	if TheGameManager.is_scanner_open and TheOrderManager.active_order != null:
+	if GameManager.is_scanner_open and OrderManager.active_order != null:
 		if Input.is_action_just_pressed("scroll_up"):
-			TheGameManager.scroll_container.scroll_vertical -= 40
+			GameManager.scroll_container.scroll_vertical -= 40
 		
 		if Input.is_action_just_pressed("scroll_down"):
-			TheGameManager.scroll_container.scroll_vertical += 40
+			GameManager.scroll_container.scroll_vertical += 40
 	
 	# Check raycast for interactable object
 	if Input.is_action_just_released("interact"):
@@ -221,34 +221,34 @@ func complete_order() -> void:
 	### END OF TEMP LOGIC
 	
 	# Pay the player
-	TheGameManager.daily_earnings += calculate_player_tip()
-	earnings_label.text = "Today's Earnings: £" + "%0.2f" % TheGameManager.daily_earnings
+	GameManager.daily_earnings += calculate_player_tip()
+	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
 	
 	# Reset the delivery crate (once order has been collected)
-	TheGameManager.delivery_crate.reparent(TheGameManager.crate_hold_point)
-	TheGameManager.delivery_crate.position = Vector3.ZERO
-	TheGameManager.delivery_crate.rotation = Vector3.ZERO
+	GameManager.delivery_crate.reparent(GameManager.crate_hold_point)
+	GameManager.delivery_crate.position = Vector3.ZERO
+	GameManager.delivery_crate.rotation = Vector3.ZERO
 	
 	# re-enable collision shape
-	if TheGameManager.delivery_crate.has_node("CollisionShape3D"):
-		TheGameManager.delivery_crate.get_node("CollisionShape3D").disabled = false
+	if GameManager.delivery_crate.has_node("CollisionShape3D"):
+		GameManager.delivery_crate.get_node("CollisionShape3D").disabled = false
 	
 	# Mark order as complete
-	TheOrderManager.active_order.is_completed = true
+	OrderManager.active_order.is_completed = true
 	# store order in completed_orders array before clearing active order
-	TheJobManager.complete_order_by_id(TheOrderManager.active_order.order_id)
+	JobManager.complete_order_by_id(OrderManager.active_order.order_id)
 	# clear active order
-	TheOrderManager.active_order = null
+	OrderManager.active_order = null
 	
 	# Generate next orders if no available orders
-	if TheJobManager.available_orders.size() == 0:
+	if JobManager.available_orders.size() == 0:
 		# restock products before generating new orders
 		# TODO: move restock logic to when player returns to shop after deliveries
 		ProductManager.restock_products()
-		TheJobManager.generate_order()
+		JobManager.generate_order()
 
 func calculate_player_tip() -> float:
-	var order_price: float = TheOrderManager.active_order.price
+	var order_price: float = OrderManager.active_order.price
 	var tip_percentage: int = 15
 	var player_tip: float = (order_price / 100) * tip_percentage
 	return player_tip

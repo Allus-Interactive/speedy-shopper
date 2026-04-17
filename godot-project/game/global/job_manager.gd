@@ -1,7 +1,5 @@
 extends Node
 
-class_name JobManager
-
 signal order_selected
 
 # TODO: first crack at save data
@@ -58,8 +56,8 @@ func select_order_by_id(id: int) -> void:
 	for order in available_orders:
 		if order.order_id == id:
 			var items = order.items
-			TheOrderManager.active_order = order
-			TheOrderManager.no_of_unique_items_in_order = items.size()
+			OrderManager.active_order = order
+			OrderManager.no_of_unique_items_in_order = items.size()
 			order_selected.emit()
 	# TODO: Handle order not found?
 

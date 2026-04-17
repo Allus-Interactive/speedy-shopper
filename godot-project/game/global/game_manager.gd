@@ -1,7 +1,5 @@
 extends Node
 
-class_name GameManager
-
 var daily_earnings: float = 0
 var player_money: float = 0
 

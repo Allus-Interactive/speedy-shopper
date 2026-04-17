@@ -1,7 +1,5 @@
 extends Node
 
-class_name OrderManager
-
 signal order_updated
 
 var active_order: OrderData

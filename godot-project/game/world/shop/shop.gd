@@ -4,5 +4,5 @@ extends Node3D
 @onready var delivery_crate: DeliveryCrate = $CrateHoldPoint/DeliveryCrate
 
 func _ready() -> void:
-	TheGameManager.crate_hold_point = crate_hold_point
-	TheGameManager.delivery_crate = delivery_crate
+	GameManager.crate_hold_point = crate_hold_point
+	GameManager.delivery_crate = delivery_crate

@@ -29,43 +29,43 @@ class_name ScannerUI
 var is_animating: bool = false
 
 func _ready() -> void:
-	TheGameManager.scroll_container = scroll_container
+	GameManager.scroll_container = scroll_container
 	scanner_container.position.y = closed_y
 	initialize_scanner_ui()
 	
-	if not TheOrderManager.order_updated.is_connected(refresh_from_order):
-		TheOrderManager.order_updated.connect(refresh_from_order)
+	if not OrderManager.order_updated.is_connected(refresh_from_order):
+		OrderManager.order_updated.connect(refresh_from_order)
 	
-	if not TheJobManager.order_selected.is_connected(refresh_from_order):
-		TheJobManager.order_selected.connect(refresh_from_order)
+	if not JobManager.order_selected.is_connected(refresh_from_order):
+		JobManager.order_selected.connect(refresh_from_order)
 
 func toggle_scanner() -> void:
 	if is_animating:
 		return
 	
-	if TheGameManager.is_scanner_open:
+	if GameManager.is_scanner_open:
 		close()
 	else:
 		open()
 
 func open() -> void:
-	if TheGameManager.is_scanner_open:
+	if GameManager.is_scanner_open:
 		return
 	
-	var order = TheOrderManager.active_order
+	var order = OrderManager.active_order
 	if order:
 		refresh_from_order()
 	else:
 		initialize_scanner_ui()
 	
-	TheGameManager.is_scanner_open = true
+	GameManager.is_scanner_open = true
 	_animate_to(open_y)
 
 func close() -> void:
-	if not TheGameManager.is_scanner_open:
+	if not GameManager.is_scanner_open:
 		return
 	
-	TheGameManager.is_scanner_open = false
+	GameManager.is_scanner_open = false
 	_animate_to(closed_y)
 
 func _animate_to(target_y: float) -> void:
@@ -80,7 +80,7 @@ func _animate_to(target_y: float) -> void:
 	is_animating = false
 
 func refresh_from_order() -> void:
-	var order = TheOrderManager.active_order
+	var order = OrderManager.active_order
 	
 	if order:
 		# show current order view
@@ -142,7 +142,7 @@ func _rebuild_items_list(items: Array[OrderItemData]) -> void:
 			button_in_focus = true
 
 func _build_available_orders_view() -> void:
-	var orders = TheJobManager.available_orders
+	var orders = JobManager.available_orders
 	var unpicked_orders = orders.filter(func(order): return not order.is_completed)
 	_rebuild_available_items_list(unpicked_orders)
 

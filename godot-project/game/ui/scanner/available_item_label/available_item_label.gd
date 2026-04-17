@@ -25,4 +25,4 @@ func focus_on_button() -> void:
 	self.grab_focus()
 
 func _pressed() -> void:
-	TheJobManager.select_order_by_id(order_id)
+	JobManager.select_order_by_id(order_id)
