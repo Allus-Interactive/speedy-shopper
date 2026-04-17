@@ -12,9 +12,15 @@ func _ready() -> void:
 	generate_order()
 
 func generate_order() -> void:
-	var all_products_in_shop: Array[Item] = ProductManager.all_products
-	var grouped_products = group_items_by_category(all_products_in_shop)
 	var no_of_orders_to_generate = randi_range(1, 4)
+	# Get all products
+	var all_products_in_shop: Array[Item] = ProductManager.all_products
+	# group by category
+	var grouped_products = group_items_by_category(all_products_in_shop)
+	# extract into an array and shuffle
+	var all_products = grouped_products.values()
+	all_products.shuffle()
+	
 	
 	for no_of_orders in no_of_orders_to_generate:
 		var products_in_order: Array[OrderItemData] = []
@@ -22,16 +28,16 @@ func generate_order() -> void:
 		var no_of_items_in_order: int = randi_range(1, no_of_categories)
 		
 		# Basic Order Generation
-		# TODO: change order of grouped_products? So orders don't follow the same patern every time
 		for i in no_of_items_in_order:
-			var product = grouped_products[i]
+			var product = all_products[i]
 			var new_product := OrderItemData.new()
 			new_product.product_info = product[randi_range(0, product.size() - 1)]
 			new_product.required_quantity = randi_range(1, 3)
-			var max_range = products_in_order.size() if products_in_order.size() == 0 else products_in_order.size() - 1
-			var index = randi_range(0, max_range)
-			products_in_order.insert(index, new_product)
-	
+			products_in_order.append(new_product)
+		
+		# Shuffle item order to appear more random
+		products_in_order.shuffle()
+		
 		var order := OrderData.new()
 		# irrelevant data, remove?
 		order.shop_name = "ScotMid"
