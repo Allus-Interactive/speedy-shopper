@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://d4f3xkukrvids"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_l88eb"]
+
+[resource]
+script = ExtResource("1_l88eb")
+product_name = "Reduced Salt Ketchup"
+barcode_value = 1124
+product_price = 3.35
+product_type = 9
+metadata/_custom_type_script = "uid://siedaem41o6s"

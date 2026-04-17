@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bq6fj84kow4vq"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_wqkcg"]
+
+[resource]
+script = ExtResource("1_wqkcg")
+product_name = "Mustard"
+barcode_value = 6432
+product_price = 1.49
+product_type = 9
+metadata/_custom_type_script = "uid://siedaem41o6s"

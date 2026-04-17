@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://vd5ry2rs4xcg"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_ut4i1"]
+[ext_resource type="Resource" uid="uid://drw1lyymutci5" path="res://game/resources/item/resources/condiments/light_mayonnaise.tres" id="2_ut4i1"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_yfmjs"]
+
+[resource]
+script = ExtResource("3_yfmjs")
+product_info = ExtResource("2_ut4i1")
+placeholder_size = Vector3(0.15, 0.4, 0.1)
+shelf_offset = Vector3(0, 0.2, 0)
+default_shelf_quantity = 6
+label_size = 1
+product_colour = Color(0.7708837, 0.69221056, 0.44205737, 1)
+barcode_size = Vector2(0.08, 0.04)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://duyqc71ch5wtm"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_k21ql"]
+
+[resource]
+script = ExtResource("1_k21ql")
+product_name = "Mayonnaise"
+barcode_value = 6436
+product_price = 2.4
+product_type = 9
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bmsaw4vosh5a"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_0hbtf"]
+
+[resource]
+script = ExtResource("1_0hbtf")
+product_name = "Salt"
+barcode_value = 7315
+product_price = 1.9
+product_type = 9
+metadata/_custom_type_script = "uid://siedaem41o6s"

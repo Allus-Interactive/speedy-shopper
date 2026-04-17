@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://15k5xfid85x2"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_v3rvl"]
+[ext_resource type="Resource" uid="uid://d4f3xkukrvids" path="res://game/resources/item/resources/condiments/reduced_salt_ketchup.tres" id="2_v3rvl"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_q8ihs"]
+
+[resource]
+script = ExtResource("3_q8ihs")
+product_info = ExtResource("2_v3rvl")
+placeholder_size = Vector3(0.15, 0.4, 0.1)
+shelf_offset = Vector3(0, 0.2, 0)
+default_shelf_quantity = 6
+label_size = 1
+product_colour = Color(0.6259931, 0.1941663, 0.07317927, 1)
+barcode_size = Vector2(0.08, 0.04)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

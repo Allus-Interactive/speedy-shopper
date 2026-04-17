@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cck34gd65pps2"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_ehy3t"]
+
+[resource]
+script = ExtResource("1_ehy3t")
+product_name = "Salad Cream"
+barcode_value = 6434
+product_price = 1.9
+product_type = 9
+metadata/_custom_type_script = "uid://siedaem41o6s"

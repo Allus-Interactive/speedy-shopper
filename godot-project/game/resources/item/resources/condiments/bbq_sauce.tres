@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dhqf0lakkfmu0"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_uhorn"]
+
+[resource]
+script = ExtResource("1_uhorn")
+product_name = "BBQ Sauce"
+barcode_value = 2243
+product_price = 1.85
+product_type = 9
+metadata/_custom_type_script = "uid://siedaem41o6s"

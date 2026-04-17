@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://0cpu1ktplc8g"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_4r0es"]
+
+[resource]
+script = ExtResource("1_4r0es")
+product_name = "Tomato Ketchup"
+barcode_value = 1123
+product_price = 3.0
+product_type = 9
+metadata/_custom_type_script = "uid://siedaem41o6s"

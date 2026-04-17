@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c23vlggj3qcaq"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_yyabk"]
+
+[resource]
+script = ExtResource("1_yyabk")
+product_name = "Tartare Sauce"
+barcode_value = 6431
+product_price = 1.55
+product_type = 9
+metadata/_custom_type_script = "uid://siedaem41o6s"
