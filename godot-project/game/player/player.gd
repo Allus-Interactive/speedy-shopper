@@ -136,6 +136,14 @@ func _process(delta: float) -> void:
 	if not is_inspecting_product and Input.is_action_just_pressed("toggle_scanner"):
 		scanner_ui.toggle_scanner()
 	
+	# Scroll the items list with the mouse wheel
+	if TheGameManager.is_scanner_open and TheOrderManager.active_order != null:
+		if Input.is_action_just_pressed("scroll_up"):
+			TheGameManager.scroll_container.scroll_vertical -= 40
+		
+		if Input.is_action_just_pressed("scroll_down"):
+			TheGameManager.scroll_container.scroll_vertical += 40
+	
 	# Check raycast for interactable object
 	if Input.is_action_just_released("interact"):
 		if ray_cast_3d.is_colliding():

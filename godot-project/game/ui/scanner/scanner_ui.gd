@@ -16,6 +16,7 @@ class_name ScannerUI
 @onready var order_details: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery/OrderDetails
 @onready var delivery_details: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery/DeliveryDetails
 @onready var customer_details: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxCustomer/CustomerDetails
+@onready var scroll_container: ScrollContainer = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/ScrollContainer
 @onready var items_list: VBoxContainer = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/ScrollContainer/ItemsList
 # Available Orders View
 @onready var available_items_list: VBoxContainer = $ScannerContainer/Screen/AvailableOrdersView/VBoxContainer/AvailableOrdersScroll/AvailableItemsList
@@ -25,10 +26,10 @@ class_name ScannerUI
 @onready var item_label_scene = preload("res://game/ui/scanner/item_label/item_label.tscn")
 @onready var available_item_label_scene = preload("res://game/ui/scanner/available_item_label/available_item_label.tscn")
 
-var is_open: bool = false
 var is_animating: bool = false
 
 func _ready() -> void:
+	TheGameManager.scroll_container = scroll_container
 	scanner_container.position.y = closed_y
 	initialize_scanner_ui()
 	
@@ -42,13 +43,13 @@ func toggle_scanner() -> void:
 	if is_animating:
 		return
 	
-	if is_open:
+	if TheGameManager.is_scanner_open:
 		close()
 	else:
 		open()
 
 func open() -> void:
-	if is_open:
+	if TheGameManager.is_scanner_open:
 		return
 	
 	var order = TheOrderManager.active_order
@@ -57,14 +58,14 @@ func open() -> void:
 	else:
 		initialize_scanner_ui()
 	
-	is_open = true
+	TheGameManager.is_scanner_open = true
 	_animate_to(open_y)
 
 func close() -> void:
-	if not is_open:
+	if not TheGameManager.is_scanner_open:
 		return
 	
-	is_open = false
+	TheGameManager.is_scanner_open = false
 	_animate_to(closed_y)
 
 func _animate_to(target_y: float) -> void:
@@ -121,6 +122,8 @@ func _rebuild_items_list(items: Array[OrderItemData]) -> void:
 	for child in items_list.get_children():
 		child.queue_free()
 	
+	var button_in_focus: bool = false
+	
 	for item in items:
 		var row: ItemLabel = item_label_scene.instantiate()
 		
@@ -133,6 +136,10 @@ func _rebuild_items_list(items: Array[OrderItemData]) -> void:
 		items_list.add_child(row)
 		# populate label data
 		row.populate_data(item_name, required_qty, scanned_qty, price)
+		
+		if not button_in_focus:
+			row.focus_on_button()
+			button_in_focus = true
 
 func _build_available_orders_view() -> void:
 	var orders = TheJobManager.available_orders
