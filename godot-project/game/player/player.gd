@@ -157,7 +157,7 @@ func pick_up_product(product: ProductPlaceholder) -> void:
 		return
 	
 	# if scanner is open, close it
-	if scanner_ui.is_open:
+	if GameManager.is_scanner_open:
 		scanner_ui.toggle_scanner()
 	
 	held_product = product
@@ -186,7 +186,7 @@ func pick_up_product(product: ProductPlaceholder) -> void:
 
 func pick_up_delivery_crate(crate: DeliveryCrate) -> void:
 	# if scanner is open, close it
-	if scanner_ui.is_open:
+	if GameManager.is_scanner_open:
 		scanner_ui.toggle_scanner()
 	
 	delivery_crate = crate
