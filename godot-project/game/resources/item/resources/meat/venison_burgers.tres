@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://co0kwq2mu2eyg"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_dftpg"]
+
+[resource]
+script = ExtResource("1_dftpg")
+product_name = "Venison Burgers"
+barcode_value = 8003
+product_price = 5.5
+product_type = 10
+metadata/_custom_type_script = "uid://siedaem41o6s"

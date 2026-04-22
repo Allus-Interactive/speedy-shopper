@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c6sxbesukdieo"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_6mmm8"]
+
+[resource]
+script = ExtResource("1_6mmm8")
+product_name = "Beef Burgers"
+barcode_value = 8004
+product_price = 4.0
+product_type = 10
+metadata/_custom_type_script = "uid://siedaem41o6s"

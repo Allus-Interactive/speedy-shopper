@@ -56,10 +56,14 @@ This is a record of all the barcode values used in the game, and the product to 
 |             |             |
 |             |             |
 ## Meat
-| **Product** | **Barcode** |
-| ----------- | ----------- |
-|             |             |
-|             |             |
+| **Product**          | **Barcode** |
+| -------------------- | ----------- |
+| Chicken Fillets 500g | 8008        |
+| Chicken Thighs 500g  | 8007        |
+| Lamb Chops 300g      | 8006        |
+| Pork Chops 700g      | 8005        |
+| Beef Burgers         | 8004        |
+| Vension Burgers      | 8003        |
 ## Meal Kits
 | **Product** | **Barcode** |
 | ----------- | ----------- |

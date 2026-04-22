@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b6eoh8fp67c0j"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_yqpsk"]
+
+[resource]
+script = ExtResource("1_yqpsk")
+product_name = "Lamb Chops 300g"
+barcode_value = 8006
+product_price = 6.1
+product_type = 10
+metadata/_custom_type_script = "uid://siedaem41o6s"

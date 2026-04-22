@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dnmmbj2fpbcir"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_ymwex"]
+
+[resource]
+script = ExtResource("1_ymwex")
+product_name = "Chicken Thighs 500g"
+barcode_value = 8008
+product_price = 3.45
+product_type = 10
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c754g0hv0wv8s"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_vhfp0"]
+
+[resource]
+script = ExtResource("1_vhfp0")
+product_name = "Pork Chops 700g"
+barcode_value = 8005
+product_price = 4.49
+product_type = 10
+metadata/_custom_type_script = "uid://siedaem41o6s"
