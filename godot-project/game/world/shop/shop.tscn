@@ -56,21 +56,28 @@
 [ext_resource type="Resource" uid="uid://dtbjt4wafge56" path="res://game/resources/products/placeholder/resources/tinned_food_packs/beans/baked_beans_sausage_4pk.tres" id="24_ae1d0"]
 [ext_resource type="Resource" uid="uid://kok47ssuy2oe" path="res://game/resources/products/placeholder/resources/meat/beef_burgers.tres" id="24_fc1rd"]
 [ext_resource type="Resource" uid="uid://dbqwusjdtmx8e" path="res://game/resources/products/placeholder/resources/tinned_food/beans/baked_beans_sausage.tres" id="24_gsyqm"]
+[ext_resource type="Resource" uid="uid://cji528j4vk3xj" path="res://game/resources/products/placeholder/resources/meat/pork_sausages.tres" id="25_1f10i"]
 [ext_resource type="Resource" uid="uid://1wncpyu3ecuf" path="res://game/resources/products/placeholder/resources/tinned_food_packs/beans/baked_beans_4pk.tres" id="25_g1yju"]
 [ext_resource type="Resource" uid="uid://cxj7b1kidbj1s" path="res://game/resources/products/placeholder/resources/condiments/salad_cream.tres" id="25_mkobh"]
 [ext_resource type="Resource" uid="uid://cm4iel1bevvoi" path="res://game/resources/products/placeholder/resources/tinned_food_packs/beans/reduced_salt_baked_beans_4pk.tres" id="26_8lmnt"]
 [ext_resource type="Resource" uid="uid://cgc7iocma44gg" path="res://game/resources/products/placeholder/resources/tinned_food/beans/reduced_salt_baked_beans.tres" id="26_28o8y"]
 [ext_resource type="Resource" uid="uid://db0xsqba4ncm8" path="res://game/resources/products/placeholder/resources/condiments/tartare_sauce.tres" id="26_f8nii"]
+[ext_resource type="Resource" uid="uid://wjdnk5r723kc" path="res://game/resources/products/placeholder/resources/meat/beef_sausages.tres" id="26_ktfky"]
 [ext_resource type="Resource" uid="uid://tvknj6b866jp" path="res://game/resources/products/placeholder/resources/tinned_food_packs/vegetables/tinned_sweetcorn_4pk.tres" id="27_bcqtl"]
 [ext_resource type="Resource" uid="uid://ddmnl518wfgj0" path="res://game/resources/products/placeholder/resources/tinned_food/vegetables/tinned_sweetcorn.tres" id="27_e45yw"]
 [ext_resource type="Resource" uid="uid://duoubugaqkog2" path="res://game/resources/products/placeholder/resources/condiments/apple_sauce.tres" id="27_otvff"]
 [ext_resource type="Resource" uid="uid://cv8vhuu15vqjv" path="res://game/resources/products/placeholder/resources/tinned_food/vegetables/tinned_carrots.tres" id="27_t3ndj"]
+[ext_resource type="Resource" uid="uid://dfjf5acp0mgyu" path="res://game/resources/products/placeholder/resources/meat/smoked_bacon.tres" id="27_tut5l"]
 [ext_resource type="Resource" uid="uid://dm1gakpfkwf27" path="res://game/resources/products/placeholder/resources/tinned_food_packs/vegetables/mixed_vegetables_4pk.tres" id="28_6ultn"]
+[ext_resource type="Resource" uid="uid://bbhpcj51ehf2k" path="res://game/resources/products/placeholder/resources/meat/unsmoked_bacon.tres" id="28_ovvyg"]
 [ext_resource type="Resource" uid="uid://dk7uljfptkj51" path="res://game/resources/products/placeholder/resources/tinned_food/vegetables/mixed_vegetables.tres" id="28_t3ndj"]
 [ext_resource type="Resource" uid="uid://dniq05wihi0s0" path="res://game/resources/products/placeholder/resources/condiments/mustard.tres" id="28_tdmha"]
+[ext_resource type="Resource" uid="uid://dhv6h0x7mdyui" path="res://game/resources/products/placeholder/resources/meat/rump_steak.tres" id="29_0kqfy"]
 [ext_resource type="Resource" uid="uid://dks2g76xrny2a" path="res://game/resources/products/placeholder/resources/tinned_food/vegetables/tinned_peas.tres" id="29_lb1gs"]
 [ext_resource type="Resource" uid="uid://cy5fw11pwks3j" path="res://game/resources/products/placeholder/resources/tinned_food_packs/vegetables/tinned_peas_4pk.tres" id="29_oaavk"]
 [ext_resource type="Resource" uid="uid://wmems0n6umak" path="res://game/resources/products/placeholder/resources/tinned_food_packs/vegetables/tinned_carrots_4pk.tres" id="30_76srb"]
+[ext_resource type="Resource" uid="uid://jodabu8y8f6q" path="res://game/resources/products/placeholder/resources/meat/ribeye_steak.tres" id="30_xukhx"]
+[ext_resource type="Resource" uid="uid://160olf3ojiqh" path="res://game/resources/products/placeholder/resources/meat/sirloin_steak.tres" id="31_w68iv"]
 [ext_resource type="Resource" uid="uid://bpayoildvo6pa" path="res://game/resources/products/placeholder/resources/crisps/cheese_onion_crisps.tres" id="52_2ccmc"]
 [ext_resource type="Resource" uid="uid://wriaci1jru7q" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink_lemon.tres" id="52_11a2g"]
 [ext_resource type="Resource" uid="uid://ddrmct56gjta" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink.tres" id="52_pm5fk"]
@@ -293,7 +300,7 @@ slots_per_shelf = 5
 [node name="ShelfUnitMeat" parent="Aisle1/Left" unique_id=703272705 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -4)
 product_placeholder_scene = ExtResource("3_6k1ee")
-stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("20_b0egw"), ExtResource("20_b0egw"), ExtResource("20_b0egw"), ExtResource("20_kb8gc"), ExtResource("20_kb8gc"), ExtResource("21_36d3j"), ExtResource("21_36d3j"), ExtResource("22_36d3j"), ExtResource("22_36d3j"), ExtResource("22_36d3j"), ExtResource("23_5yps4"), ExtResource("23_5yps4"), ExtResource("24_fc1rd"), ExtResource("24_fc1rd"), ExtResource("24_fc1rd"), null, null, null, null, null])
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("20_b0egw"), ExtResource("20_b0egw"), ExtResource("20_b0egw"), ExtResource("20_kb8gc"), ExtResource("20_kb8gc"), ExtResource("21_36d3j"), ExtResource("21_36d3j"), ExtResource("22_36d3j"), ExtResource("22_36d3j"), ExtResource("22_36d3j"), ExtResource("23_5yps4"), ExtResource("23_5yps4"), ExtResource("24_fc1rd"), ExtResource("24_fc1rd"), ExtResource("24_fc1rd"), ExtResource("25_1f10i"), ExtResource("25_1f10i"), ExtResource("25_1f10i"), ExtResource("26_ktfky"), ExtResource("26_ktfky"), ExtResource("27_tut5l"), ExtResource("27_tut5l"), ExtResource("28_ovvyg"), ExtResource("28_ovvyg"), ExtResource("28_ovvyg"), ExtResource("29_0kqfy"), ExtResource("29_0kqfy"), ExtResource("30_xukhx"), ExtResource("31_w68iv"), ExtResource("31_w68iv")])
 shelf_count = 6
 shelf_spacing = 0.36
 slots_per_shelf = 5

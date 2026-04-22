@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://dfjf5acp0mgyu"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_5qc6h"]
+[ext_resource type="Resource" uid="uid://ck5iggmirpyss" path="res://game/resources/item/resources/meat/smoked_bacon.tres" id="2_5qc6h"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_y8was"]
+
+[resource]
+script = ExtResource("3_y8was")
+product_info = ExtResource("2_5qc6h")
+placeholder_size = Vector3(0.3, 0.1, 0.2)
+shelf_offset = Vector3(0, 0.075, 0)
+product_colour = Color(0.85735047, 0.5126205, 0.4846239, 1)
+barcode_size = Vector2(0.08, 0.04)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

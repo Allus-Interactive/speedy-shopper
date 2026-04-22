@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dc2s14ln07srj"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_m0i2y"]
+
+[resource]
+script = ExtResource("1_m0i2y")
+product_name = "Pork Sausages"
+barcode_value = 8002
+product_price = 3.3
+product_type = 10
+metadata/_custom_type_script = "uid://siedaem41o6s"

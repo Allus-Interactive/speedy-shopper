@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://wjdnk5r723kc"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_8hl0r"]
+[ext_resource type="Resource" uid="uid://cpwep7hnp5svn" path="res://game/resources/item/resources/meat/beef_sausages.tres" id="2_8hl0r"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_mo2p5"]
+
+[resource]
+script = ExtResource("3_mo2p5")
+product_info = ExtResource("2_8hl0r")
+placeholder_size = Vector3(0.3, 0.1, 0.2)
+shelf_offset = Vector3(0, 0.075, 0)
+product_colour = Color(0.44210032, 0.20487851, 0.052623495, 1)
+barcode_size = Vector2(0.08, 0.04)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

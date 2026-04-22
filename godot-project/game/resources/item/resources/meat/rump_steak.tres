@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://mqylpfadcwek"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_2vh0d"]
+
+[resource]
+script = ExtResource("1_2vh0d")
+product_name = "Rump Steak"
+barcode_value = 7997
+product_price = 7.65
+product_type = 10
+metadata/_custom_type_script = "uid://siedaem41o6s"

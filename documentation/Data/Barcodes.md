@@ -64,6 +64,13 @@ This is a record of all the barcode values used in the game, and the product to 
 | Pork Chops 700g      | 8005        |
 | Beef Burgers         | 8004        |
 | Vension Burgers      | 8003        |
+| Pork Sausages        | 8002        |
+| Beef Sausages        | 8001        |
+| Smoked Bacon         | 7999        |
+| Unsmoked Bacon       | 7998        |
+| Rump Steak           | 7997        |
+| Ribeye Steak         | 7996        |
+| Sirloin Steak        | 7995        |
 ## Meal Kits
 | **Product** | **Barcode** |
 | ----------- | ----------- |

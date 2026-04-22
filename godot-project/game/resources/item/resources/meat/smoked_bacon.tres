@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ck5iggmirpyss"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_mp4vk"]
+
+[resource]
+script = ExtResource("1_mp4vk")
+product_name = "Smoked Bacon"
+barcode_value = 7999
+product_price = 2.29
+product_type = 10
+metadata/_custom_type_script = "uid://siedaem41o6s"
