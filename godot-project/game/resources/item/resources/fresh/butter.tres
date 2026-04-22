@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://rym7rv2xefw7"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_fa44i"]
+
+[resource]
+script = ExtResource("1_fa44i")
+product_name = "Butter"
+barcode_value = 6301
+product_price = 1.5
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -51,10 +51,36 @@ This is a record of all the barcode values used in the game, and the product to 
 | Fizzy Drink Orange | 3675        |
 | Fizzy Drink Lemon  | 3676        |
 ## Fresh
-| **Product** | **Barcode** |
-| ----------- | ----------- |
-|             |             |
-|             |             |
+| **Product**                      | **Barcode** |
+| -------------------------------- | ----------- |
+| Butter                           | 6301        |
+| Salted Butter                    | 6302        |
+| Unsalted Butter                  | 6303        |
+| Bitter Butter                    | 6304        |
+| Mild White Cheese                |             |
+| Mild Red Cheese                  |             |
+| Mature Cheese                    |             |
+| Extra Mature Cheese              |             |
+| Mild White Grated Cheese         |             |
+| Mild Red Grated Cheese           |             |
+| Mature Grated Cheese             |             |
+| Extra Mature Grated Cheese       |             |
+| Honey Roast Ham Slices           |             |
+| Crumbed Ham Slices               |             |
+| Cured Ham Slices                 |             |
+| Smoked Ham Slices                |             |
+| Roast Beef Slices                |             |
+| Topside of Beef Slices           |             |
+| Roast Chicken Slices             |             |
+| Flamegrilled Chicken Slices      |             |
+| Macaroni Cheese                  |             |
+| Beef Lasagne                     |             |
+| Chicken and Bacon Pasta Bake     |             |
+| Tomato and Mozzarella Pasta Bake |             |
+| Bangers and Mash                 |             |
+| Toad in the Hole                 |             |
+| Casserole and Dumplings          |             |
+| Cottage Pie                      |             |
 ## Meat
 | **Product**          | **Barcode** |
 | -------------------- | ----------- |

@@ -34,8 +34,10 @@
 [ext_resource type="Resource" uid="uid://bpgnwt003flig" path="res://game/resources/products/placeholder/resources/tinned_food/soup/chicken_soup.tres" id="19_fseaq"]
 [ext_resource type="Resource" uid="uid://d1uf4hly3c71x" path="res://game/resources/products/placeholder/resources/condiments/bbq_sauce.tres" id="19_j28sq"]
 [ext_resource type="Resource" uid="uid://dafpim7p4lb2q" path="res://game/resources/products/placeholder/resources/bread/white_bread.tres" id="19_vh3dg"]
+[ext_resource type="Resource" uid="uid://ya2s4nsfi7m1" path="res://game/resources/products/placeholder/resources/fresh/butter.tres" id="19_xukhx"]
 [ext_resource type="Resource" uid="uid://b8yjpjjotuihl" path="res://game/resources/products/placeholder/resources/meat/chicken_thighs_500g.tres" id="20_b0egw"]
 [ext_resource type="Resource" uid="uid://dp8s5xj8itei7" path="res://game/resources/products/placeholder/resources/tinned_food/soup/minestrone_soup.tres" id="20_fq2pm"]
+[ext_resource type="Resource" uid="uid://dd707t2qtqgr8" path="res://game/resources/products/placeholder/resources/fresh/salted_butter.tres" id="20_jde63"]
 [ext_resource type="Resource" uid="uid://b2rks586tkg5u" path="res://game/resources/products/placeholder/resources/meat/chicken_fillets_500g.tres" id="20_kb8gc"]
 [ext_resource type="Resource" uid="uid://cediseir745lx" path="res://game/resources/products/placeholder/resources/bread/farmhouse_bread.tres" id="20_njqpr"]
 [ext_resource type="Resource" uid="uid://c5ta2c6xgewin" path="res://game/resources/products/placeholder/resources/tinned_food_packs/soup/minestrone_soup_4pk.tres" id="20_pm5fk"]
@@ -44,9 +46,11 @@
 [ext_resource type="Resource" uid="uid://bgdjfwvutgbgt" path="res://game/resources/products/placeholder/resources/meat/lamb_chops_300g.tres" id="21_36d3j"]
 [ext_resource type="Resource" uid="uid://bujkkqr3nyhh5" path="res://game/resources/products/placeholder/resources/tinned_food_packs/soup/tomato_soup_4pk.tres" id="21_a0xsg"]
 [ext_resource type="Resource" uid="uid://8hxhoavd6pf" path="res://game/resources/products/placeholder/resources/tinned_food/soup/tomato_soup.tres" id="21_a5uy8"]
+[ext_resource type="Resource" uid="uid://cw7u3nav1dcwu" path="res://game/resources/products/placeholder/resources/fresh/unsalted_butter.tres" id="21_dxm1n"]
 [ext_resource type="Resource" uid="uid://dsu6dyafljsbd" path="res://game/resources/products/placeholder/resources/tinned_food/soup/vegetable_soup.tres" id="22_2g26t"]
 [ext_resource type="Resource" uid="uid://bbsoonnrvm8iy" path="res://game/resources/products/placeholder/resources/tinned_food_packs/soup/vegetable_soup_4pk.tres" id="22_11a2g"]
 [ext_resource type="Resource" uid="uid://drva4bvl51e1r" path="res://game/resources/products/placeholder/resources/meat/pork_chops_700g.tres" id="22_36d3j"]
+[ext_resource type="Resource" uid="uid://bgx1asyk64xvm" path="res://game/resources/products/placeholder/resources/fresh/bitter_butter.tres" id="22_djm6u"]
 [ext_resource type="Resource" uid="uid://cg8j8e53tvdad" path="res://game/resources/products/placeholder/resources/tinned_food/beans/cheesy_baked_beans.tres" id="23_3jddy"]
 [ext_resource type="Resource" uid="uid://d2oivqvnu07a6" path="res://game/resources/products/placeholder/resources/meat/venison_burgers.tres" id="23_5yps4"]
 [ext_resource type="Resource" uid="uid://btm001npwar3j" path="res://game/resources/products/placeholder/resources/tinned_food/beans/baked_beans.tres" id="23_uhu4s"]
@@ -292,10 +296,14 @@ slots_per_shelf = 7
 slot_margin_x = 0.2
 row_width = 0.4
 
-[node name="ShelfUnit1" parent="Aisle1/Left" unique_id=1038147316 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitFresh" parent="Aisle1/Left" unique_id=1038147316 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -2)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("19_xukhx"), ExtResource("19_xukhx"), ExtResource("20_jde63"), ExtResource("20_jde63"), ExtResource("21_dxm1n"), ExtResource("20_jde63"), ExtResource("22_djm6u"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+shelf_count = 7
+shelf_spacing = 0.3
+slots_per_shelf = 7
+slot_margin_x = 0.2
 
 [node name="ShelfUnitMeat" parent="Aisle1/Left" unique_id=703272705 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -4)
