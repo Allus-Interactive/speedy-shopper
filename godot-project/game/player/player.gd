@@ -9,7 +9,7 @@ const JUMP_VELOCITY: float = 4.5
 
 # Crouching
 var is_crouching: bool = false
-var standing_neck_height: float = 1.6
+var standing_neck_height: float = 1.8
 var crouching_neck_height: float = 1.0
 var crouch_lerp_speed: float = 10.0
 
