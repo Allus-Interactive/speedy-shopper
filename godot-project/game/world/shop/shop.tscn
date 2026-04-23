@@ -122,10 +122,13 @@
 [ext_resource type="Resource" uid="uid://m52aj8abwy47" path="res://game/resources/products/placeholder/resources/wine/white/zinfandel.tres" id="59_76srb"]
 [ext_resource type="Resource" uid="uid://f68v7f26rf54" path="res://game/resources/products/placeholder/resources/wine/red/shiraz.tres" id="59_ndgoc"]
 [ext_resource type="Resource" uid="uid://13xj8ra0mof2" path="res://game/resources/products/placeholder/resources/meal_kits/enchilada_kit.tres" id="60_4mmwr"]
+[ext_resource type="Resource" uid="uid://ckkflpmbvmqti" path="res://game/resources/products/placeholder/resources/pasta_rice/basmati_rice.tres" id="60_4wku6"]
+[ext_resource type="Resource" uid="uid://dacocpw78nigx" path="res://game/resources/products/placeholder/resources/cooking_sauces/korma_sauce.tres" id="60_21kxx"]
 [ext_resource type="Resource" uid="uid://c84ul00qpxptq" path="res://game/resources/products/placeholder/resources/wine/red/merlot.tres" id="60_36wa0"]
 [ext_resource type="Resource" uid="uid://c4pdh4ic0nrnn" path="res://game/resources/products/placeholder/resources/meal_kits/crispy_chicken_kit.tres" id="60_hjdj8"]
 [ext_resource type="Resource" uid="uid://m0chsjdudih4" path="res://game/resources/products/placeholder/resources/meal_kits/fajita_kit_bbq.tres" id="60_nuv0r"]
 [ext_resource type="Resource" uid="uid://doyfm7klcj5wg" path="res://game/resources/products/placeholder/resources/wine/white/sauvignon_blanc.tres" id="60_xpiri"]
+[ext_resource type="Resource" uid="uid://dkygpbfr07ct1" path="res://game/resources/products/placeholder/resources/pasta_rice/penne_pasta.tres" id="60_xuy6m"]
 [ext_resource type="Resource" uid="uid://dyx1wc56cb3ke" path="res://game/resources/products/placeholder/resources/meal_kits/buttermilk_chicken_kit.tres" id="61_21kxx"]
 [ext_resource type="Resource" uid="uid://djd0lhlgyp2dw" path="res://game/resources/products/placeholder/resources/meal_kits/fajita_kit_roasted.tres" id="61_fev1n"]
 [ext_resource type="Resource" uid="uid://dhkkmtwj84jnw" path="res://game/resources/products/placeholder/resources/meal_kits/taco_kit.tres" id="61_ixh2t"]
@@ -348,15 +351,22 @@ shelf_count = 6
 shelf_spacing = 0.36
 slots_per_shelf = 5
 
-[node name="ShelfUnit3" parent="Aisle1/Left" unique_id=1204653631 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitPastaRice" parent="Aisle1/Left" unique_id=1204653631 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -6)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([null, null, null, null, null, null, null, null, null, ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), null, null, null, null, null, null, null, null, null])
+shelf_count = 6
+shelf_spacing = 0.36
+slots_per_shelf = 6
 
-[node name="ShelfUnit4" parent="Aisle1/Left" unique_id=358589094 instance=ExtResource("2_4o56f")]
+[node name="ShelfUnitCookingSauces" parent="Aisle1/Left" unique_id=358589094 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -8)
 product_placeholder_scene = ExtResource("3_6k1ee")
-slots_per_shelf = 5
+stocked_products = Array[ExtResource("4_5qt63")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+shelf_count = 6
+shelf_spacing = 0.36
+slots_per_shelf = 10
+slot_margin_x = 0.2
 
 [node name="ShelfUnitMealKits" parent="Aisle1/Left" unique_id=926249095 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -10)

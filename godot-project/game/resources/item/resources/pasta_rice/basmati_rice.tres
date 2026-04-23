@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dw06h4tcn5oje"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_ldtl8"]
+
+[resource]
+script = ExtResource("1_ldtl8")
+product_name = "Basmati Rice"
+barcode_value = 2245
+product_price = 1.79
+product_type = 13
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -33,10 +33,10 @@ This is a record of all the barcode values used in the game, and the product to 
 | Mustard              | 6432        |
 | Apple Sauce          | 6433        |
 ## Cooking Sauces
-| **Product** | **Barcode** |
-| ----------- | ----------- |
-|             |             |
-|             |             |
+| **Product**         | **Barcode** |
+| ------------------- | ----------- |
+| Korma Cooking Sauce | 2145        |
+|                     |             |
 ## Crisps
 | **Product**           | **Barcode** |
 | --------------------- | ----------- |
@@ -124,10 +124,10 @@ This is a record of all the barcode values used in the game, and the product to 
 | Whole Milk 1pt        | 1002        |
 | Skimmed Milk 1pt      | 1003        |
 ## Pasta Rice
-| **Product** | **Barcode** |
-| ----------- | ----------- |
-|             |             |
-|             |             |
+| **Product**  | **Barcode** |
+| ------------ | ----------- |
+| Basmati Rice | 2245        |
+| Penne Pasta  | 2255        |
 ## Spirits
 | **Product** | **Barcode** |
 | ----------- | ----------- |
