@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c5ynlxjlwi56s"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_nj648"]
+
+[resource]
+script = ExtResource("1_nj648")
+product_name = "Mild White Cheese"
+barcode_value = 6305
+product_price = 2.49
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

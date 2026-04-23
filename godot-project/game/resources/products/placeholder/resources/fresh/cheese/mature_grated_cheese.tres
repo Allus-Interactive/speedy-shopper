@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://bvoftied58ul5"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_uyg21"]
+[ext_resource type="Resource" uid="uid://tfms1h4hf8f6" path="res://game/resources/item/resources/fresh/cheese/mature_grated_cheese.tres" id="2_uyg21"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_io5fc"]
+
+[resource]
+script = ExtResource("3_io5fc")
+product_info = ExtResource("2_uyg21")
+placeholder_size = Vector3(0.2, 0.3, 0.05)
+shelf_offset = Vector3(0, 0.15, 0)
+default_shelf_quantity = 6
+label_size = 2
+product_colour = Color(0.7090717, 0.25392348, 0.07493863, 1)
+barcode_size = Vector2(0.08, 0.04)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

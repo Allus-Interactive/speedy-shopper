@@ -57,30 +57,30 @@ This is a record of all the barcode values used in the game, and the product to 
 | Salted Butter                    | 6302        |
 | Unsalted Butter                  | 6303        |
 | Bitter Butter                    | 6304        |
-| Mild White Cheese                |             |
-| Mild Red Cheese                  |             |
-| Mature Cheese                    |             |
-| Extra Mature Cheese              |             |
-| Mild White Grated Cheese         |             |
-| Mild Red Grated Cheese           |             |
-| Mature Grated Cheese             |             |
-| Extra Mature Grated Cheese       |             |
-| Honey Roast Ham Slices           |             |
-| Crumbed Ham Slices               |             |
-| Cured Ham Slices                 |             |
-| Smoked Ham Slices                |             |
-| Roast Beef Slices                |             |
-| Topside of Beef Slices           |             |
-| Roast Chicken Slices             |             |
-| Flamegrilled Chicken Slices      |             |
-| Macaroni Cheese                  |             |
-| Beef Lasagne                     |             |
-| Chicken and Bacon Pasta Bake     |             |
-| Tomato and Mozzarella Pasta Bake |             |
-| Bangers and Mash                 |             |
-| Toad in the Hole                 |             |
-| Casserole and Dumplings          |             |
-| Cottage Pie                      |             |
+| Mild White Cheese                | 6305        |
+| Mild Red Cheese                  | 6306        |
+| Mature Cheese                    | 6307        |
+| Extra Mature Cheese              | 6308        |
+| Mild White Grated Cheese         | 6309        |
+| Mild Red Grated Cheese           | 6310        |
+| Mature Grated Cheese             | 6311        |
+| Extra Mature Grated Cheese       | 6312        |
+| Honey Roast Ham Slices           | 6313        |
+| Crumbed Ham Slices               | 6314        |
+| Cured Ham Slices                 | 6315        |
+| Smoked Ham Slices                | 6316        |
+| Roast Beef Slices                | 6317        |
+| Topside of Beef Slices           | 6318        |
+| Roast Chicken Slices             | 6319        |
+| Flamegrilled Chicken Slices      | 6320        |
+| Macaroni Cheese                  | 6321        |
+| Beef Lasagne                     | 6322        |
+| Chicken and Bacon Pasta Bake     | 6323        |
+| Tomato and Mozzarella Pasta Bake | 6324        |
+| Bangers and Mash                 | 6325        |
+| Toad in the Hole                 | 6326        |
+| Casserole and Dumplings          | 6327        |
+| Cottage Pie                      | 6328        |
 ## Meat
 | **Product**          | **Barcode** |
 | -------------------- | ----------- |
