@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ci6ke5g6448hy"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_nk4ey"]
+
+[resource]
+script = ExtResource("1_nk4ey")
+product_name = "Buttermilk Chicken Kit"
+barcode_value = 5122
+product_price = 2.7
+product_type = 12
+metadata/_custom_type_script = "uid://siedaem41o6s"

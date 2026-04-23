@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://bmcfmuopwspfq"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_ql36g"]
+[ext_resource type="Resource" uid="uid://lbbvn5kdvosl" path="res://game/resources/item/resources/meal_kits/sloppy_joe_kit.tres" id="2_sw0ph"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_asuv2"]
+
+[resource]
+script = ExtResource("3_asuv2")
+product_info = ExtResource("2_sw0ph")
+placeholder_size = Vector3(0.4, 0.4, 0.15)
+shelf_offset = Vector3(0, 0.2, 0)
+product_colour = Color(0.5465814, 0.250713, 0.1895352, 1)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

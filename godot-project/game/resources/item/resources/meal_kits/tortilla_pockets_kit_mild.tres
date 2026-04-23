@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://brkmixuf6fufw"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_oc5xe"]
+
+[resource]
+script = ExtResource("1_oc5xe")
+product_name = "Mild Tortilla Pockets Kit"
+barcode_value = 5115
+product_price = 2.75
+product_type = 12
+metadata/_custom_type_script = "uid://siedaem41o6s"

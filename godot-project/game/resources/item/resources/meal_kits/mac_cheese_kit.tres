@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bcn401qlt4s33"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_0cjns"]
+
+[resource]
+script = ExtResource("1_0cjns")
+product_name = "Mac 'n' Cheese Kit"
+barcode_value = 5120
+product_price = 2.7
+product_type = 12
+metadata/_custom_type_script = "uid://siedaem41o6s"

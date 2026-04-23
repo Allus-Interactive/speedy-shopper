@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://qgvft2ecd38l"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_nq6m5"]
+
+[resource]
+script = ExtResource("1_nq6m5")
+product_name = "Crispy Chicken Fajita Kit"
+barcode_value = 5113
+product_price = 3.85
+product_type = 12
+metadata/_custom_type_script = "uid://siedaem41o6s"

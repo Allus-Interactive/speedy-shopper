@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://0jts6crm531w"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_sl3co"]
+
+[resource]
+script = ExtResource("1_sl3co")
+product_name = "BBQ Fajita Kit"
+barcode_value = 5112
+product_price = 3.85
+product_type = 12
+metadata/_custom_type_script = "uid://siedaem41o6s"

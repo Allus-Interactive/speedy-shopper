@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://cn4sxhcwnc5fn"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_chrkm"]
+[ext_resource type="Resource" uid="uid://bcn401qlt4s33" path="res://game/resources/item/resources/meal_kits/mac_cheese_kit.tres" id="2_chrkm"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_w41wa"]
+
+[resource]
+script = ExtResource("3_w41wa")
+product_info = ExtResource("2_chrkm")
+placeholder_size = Vector3(0.4, 0.4, 0.15)
+shelf_offset = Vector3(0, 0.2, 0)
+product_colour = Color(0.8088747, 0.7482047, 0.28895715, 1)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

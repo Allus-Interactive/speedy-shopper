@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://daf51x3tgtvd3"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_7kubo"]
+
+[resource]
+script = ExtResource("1_7kubo")
+product_name = "Crispy Chicken Kit"
+barcode_value = 5121
+product_price = 2.7
+product_type = 12
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://c4pdh4ic0nrnn"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_3766t"]
+[ext_resource type="Resource" uid="uid://daf51x3tgtvd3" path="res://game/resources/item/resources/meal_kits/crispy_chicken_kit.tres" id="2_3766t"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_tg07c"]
+
+[resource]
+script = ExtResource("3_tg07c")
+product_info = ExtResource("2_3766t")
+placeholder_size = Vector3(0.4, 0.4, 0.15)
+shelf_offset = Vector3(0, 0.2, 0)
+product_colour = Color(0.52615786, 0.27442607, 0.1022575, 1)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

@@ -98,17 +98,26 @@ This is a record of all the barcode values used in the game, and the product to 
 | Ribeye Steak         | 7996        |
 | Sirloin Steak        | 7995        |
 ## Meal Kits
-| **Product** | **Barcode** |
-| ----------- | ----------- |
-|             |             |
-|             |             |
+| **Product**                   | **Barcode** |
+| ----------------------------- | ----------- |
+| Fajita Kit BBQ                | 5112        |
+| Fajita Kit Crispy             | 5113        |
+| Fajita Kit Roasted            | 5114        |
+| Tortilla Pockets Kit Mild     | 5115        |
+| Tortilla Pockets Kit BBQ      | 5116        |
+| Enchilada Kit                 | 5117        |
+| Taco Kit                      | 5118        |
+| Sloppy Joe Recipe Kit         | 5119        |
+| Mac 'n' Cheese Recipe Kit     | 5120        |
+| Crispy Chicken Recipe Kit     | 5121        |
+| Buttermilk Chicken Recipe Kit | 5122        |
 ## Milk
 | **Product**           | **Barcode** |
 | --------------------- | ----------- |
 | Semi Skimmed Milk 4pt | 4001        |
 | Whole Milk 4pt        | 4002        |
 | Skimmed Milk 4pt      | 4003        |
-| Semi Skimmed Milk 2pt | 201         |
+| Semi Skimmed Milk 2pt | 2001        |
 | Whole Milk 2pt        | 2002        |
 | Skimmed Milk 2pt      | 2003        |
 | Semi Skimmed Milk 1pt | 1001        |

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://crpbcfhj6gt63"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_kk4m1"]
+
+[resource]
+script = ExtResource("1_kk4m1")
+product_name = "Enchilada Kit"
+barcode_value = 5117
+product_price = 3.85
+product_type = 12
+metadata/_custom_type_script = "uid://siedaem41o6s"
