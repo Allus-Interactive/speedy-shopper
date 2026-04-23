@@ -89,7 +89,11 @@
 [ext_resource type="Resource" uid="uid://wmems0n6umak" path="res://game/resources/products/placeholder/resources/tinned_food_packs/vegetables/tinned_carrots_4pk.tres" id="30_76srb"]
 [ext_resource type="Resource" uid="uid://fog2oxfhcs3q" path="res://game/resources/products/placeholder/resources/fresh/cheese/extra_mature_grated_cheese.tres" id="30_wumsd"]
 [ext_resource type="Resource" uid="uid://jodabu8y8f6q" path="res://game/resources/products/placeholder/resources/meat/ribeye_steak.tres" id="30_xukhx"]
+[ext_resource type="Resource" uid="uid://cy0l2c1j67d56" path="res://game/resources/products/placeholder/resources/fresh/cooked_meat/honey_roast_ham.tres" id="31_no6kl"]
 [ext_resource type="Resource" uid="uid://160olf3ojiqh" path="res://game/resources/products/placeholder/resources/meat/sirloin_steak.tres" id="31_w68iv"]
+[ext_resource type="Resource" uid="uid://cse54ifhsgylj" path="res://game/resources/products/placeholder/resources/fresh/cooked_meat/crumbed_ham.tres" id="32_sv2i3"]
+[ext_resource type="Resource" uid="uid://cp76n0s5mmqnh" path="res://game/resources/products/placeholder/resources/fresh/cooked_meat/cured_ham.tres" id="33_fddqd"]
+[ext_resource type="Resource" uid="uid://dpnlrfswgkcds" path="res://game/resources/products/placeholder/resources/fresh/cooked_meat/smoked_ham.tres" id="34_h4hyv"]
 [ext_resource type="Resource" uid="uid://bpayoildvo6pa" path="res://game/resources/products/placeholder/resources/crisps/cheese_onion_crisps.tres" id="52_2ccmc"]
 [ext_resource type="Resource" uid="uid://wriaci1jru7q" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink_lemon.tres" id="52_11a2g"]
 [ext_resource type="Resource" uid="uid://ddrmct56gjta" path="res://game/resources/products/placeholder/resources/fizzy_drink/fizzy_drink.tres" id="52_pm5fk"]
@@ -307,7 +311,7 @@ row_width = 0.4
 [node name="ShelfUnitFresh" parent="Aisle1/Left" unique_id=1038147316 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -2)
 product_placeholder_scene = ExtResource("3_6k1ee")
-stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("19_xukhx"), ExtResource("19_xukhx"), ExtResource("20_jde63"), ExtResource("20_jde63"), ExtResource("21_dxm1n"), ExtResource("20_jde63"), ExtResource("22_djm6u"), ExtResource("23_74cwd"), ExtResource("23_74cwd"), ExtResource("24_3omb3"), ExtResource("24_3omb3"), ExtResource("25_d6ss1"), ExtResource("25_d6ss1"), ExtResource("26_hoqxn"), ExtResource("27_ffjx6"), ExtResource("27_ffjx6"), ExtResource("27_3omb3"), ExtResource("27_3omb3"), ExtResource("29_no6kl"), ExtResource("29_no6kl"), ExtResource("30_wumsd"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("19_xukhx"), ExtResource("19_xukhx"), ExtResource("20_jde63"), ExtResource("20_jde63"), ExtResource("21_dxm1n"), ExtResource("20_jde63"), ExtResource("22_djm6u"), ExtResource("23_74cwd"), ExtResource("23_74cwd"), ExtResource("24_3omb3"), ExtResource("24_3omb3"), ExtResource("25_d6ss1"), ExtResource("25_d6ss1"), ExtResource("26_hoqxn"), ExtResource("27_ffjx6"), ExtResource("27_ffjx6"), ExtResource("27_3omb3"), ExtResource("27_3omb3"), ExtResource("29_no6kl"), ExtResource("29_no6kl"), ExtResource("30_wumsd"), ExtResource("31_no6kl"), ExtResource("31_no6kl"), ExtResource("32_sv2i3"), ExtResource("32_sv2i3"), ExtResource("33_fddqd"), ExtResource("33_fddqd"), ExtResource("34_h4hyv"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 shelf_count = 7
 shelf_spacing = 0.3
 slots_per_shelf = 7

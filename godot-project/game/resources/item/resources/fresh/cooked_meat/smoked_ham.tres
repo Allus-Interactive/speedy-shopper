@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://jhn0c04pidnn"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_4ckxk"]
+
+[resource]
+script = ExtResource("1_4ckxk")
+product_name = "Smoked Ham"
+barcode_value = 6316
+product_price = 2.25
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://cy0l2c1j67d56"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_jis0q"]
+[ext_resource type="Resource" uid="uid://bv03exnrwyn35" path="res://game/resources/item/resources/fresh/cooked_meat/honey_roast_ham.tres" id="2_qu8pl"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_7s7k2"]
+
+[resource]
+script = ExtResource("3_7s7k2")
+product_info = ExtResource("2_qu8pl")
+placeholder_size = Vector3(0.2, 0.3, 0.05)
+shelf_offset = Vector3(0, 0.15, 0)
+default_shelf_quantity = 10
+label_size = 1
+product_colour = Color(0.9045959, 0.64681727, 0.83285683, 1)
+barcode_size = Vector2(0.08, 0.04)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

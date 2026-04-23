@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dx02q666dbsbp"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_qw5pc"]
+
+[resource]
+script = ExtResource("1_qw5pc")
+product_name = "Cured Ham"
+barcode_value = 6315
+product_price = 2.25
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"
