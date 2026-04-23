@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://c5nf7vm67xkqc"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_idxw0"]
+[ext_resource type="Resource" uid="uid://dobafhq7q4amw" path="res://game/resources/item/resources/fresh/ready_meals/chicken_bacon_pasta_bake.tres" id="2_idxw0"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_8h664"]
+
+[resource]
+script = ExtResource("3_8h664")
+product_info = ExtResource("2_idxw0")
+placeholder_size = Vector3(0.25, 0.1, 0.2)
+shelf_offset = Vector3(0, 0.075, 0)
+default_shelf_quantity = 3
+label_size = 2
+product_colour = Color(0.7606504, 0.51596, 0.092448615, 1)
+barcode_size = Vector2(0.08, 0.04)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

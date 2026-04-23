@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://4ttuk17qaf5x"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_e4ro7"]
+
+[resource]
+script = ExtResource("1_e4ro7")
+product_name = "Tomato and Mozzarella Pasta Bake"
+barcode_value = 6324
+product_price = 3.5
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ccgafbmf4r0gj"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_feu5h"]
+
+[resource]
+script = ExtResource("1_feu5h")
+product_name = "Topside of Beef"
+barcode_value = 6318
+product_price = 3.25
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

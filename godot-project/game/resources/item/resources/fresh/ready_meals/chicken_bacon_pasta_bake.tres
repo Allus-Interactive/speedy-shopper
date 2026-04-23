@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dobafhq7q4amw"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_0t5kf"]
+
+[resource]
+script = ExtResource("1_0t5kf")
+product_name = "Chicken and Bacon Pasta Bake"
+barcode_value = 6323
+product_price = 3.5
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

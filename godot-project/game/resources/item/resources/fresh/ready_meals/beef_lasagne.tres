@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b8fu6mqb78h0f"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_5786f"]
+
+[resource]
+script = ExtResource("1_5786f")
+product_name = "Beef Lasagne"
+barcode_value = 6322
+product_price = 3.5
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

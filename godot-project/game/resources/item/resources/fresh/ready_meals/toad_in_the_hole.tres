@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c6bde7wbjjfoy"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_45t0o"]
+
+[resource]
+script = ExtResource("1_45t0o")
+product_name = "Toad in the Hole"
+barcode_value = 6326
+product_price = 3.5
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

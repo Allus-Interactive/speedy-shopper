@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://da2fm3qv8qijk"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_f8xjv"]
+
+[resource]
+script = ExtResource("1_f8xjv")
+product_name = "Flamegrilled Chicken"
+barcode_value = 6320
+product_price = 3.25
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

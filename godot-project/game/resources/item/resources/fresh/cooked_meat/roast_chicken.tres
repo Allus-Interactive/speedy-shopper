@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://buat24jqeb2y6"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_fonuv"]
+
+[resource]
+script = ExtResource("1_fonuv")
+product_name = "Roast Chicken"
+barcode_value = 6319
+product_price = 2.25
+product_type = 11
+metadata/_custom_type_script = "uid://siedaem41o6s"

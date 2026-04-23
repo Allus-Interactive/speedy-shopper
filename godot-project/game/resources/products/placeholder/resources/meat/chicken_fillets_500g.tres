@@ -9,5 +9,6 @@ script = ExtResource("3_w4mr5")
 product_info = ExtResource("2_x53ua")
 placeholder_size = Vector3(0.3, 0.15, 0.25)
 shelf_offset = Vector3(0, 0.1, 0)
+default_shelf_quantity = 3
 product_colour = Color(0.81594914, 0.49392927, 0.43992922, 1)
 metadata/_custom_type_script = "uid://c485xiqer6nrc"

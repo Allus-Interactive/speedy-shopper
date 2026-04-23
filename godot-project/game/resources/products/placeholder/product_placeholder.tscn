@@ -22,7 +22,7 @@ text = "Own Brand Cereal"
 font_size = 64
 outline_size = 2
 autowrap_mode = 2
-width = 100.0
+width = 200.0
 
 [node name="BarcodeRoot" type="Node3D" parent="." unique_id=1090311050]
 
