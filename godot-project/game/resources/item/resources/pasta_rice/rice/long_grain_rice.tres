@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b5s4fmi075ur0"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_hxq1w"]
+
+[resource]
+script = ExtResource("1_hxq1w")
+product_name = "Long Grain Rice"
+barcode_value = 2248
+product_price = 1.79
+product_type = 13
+metadata/_custom_type_script = "uid://siedaem41o6s"

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://ckkflpmbvmqti"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_snaja"]
-[ext_resource type="Resource" uid="uid://dw06h4tcn5oje" path="res://game/resources/item/resources/pasta_rice/basmati_rice.tres" id="2_rlb46"]
+[ext_resource type="Resource" uid="uid://dw06h4tcn5oje" path="res://game/resources/item/resources/pasta_rice/rice/basmati_rice.tres" id="2_rlb46"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_dt2c3"]
 
 [resource]

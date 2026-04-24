@@ -124,10 +124,21 @@ This is a record of all the barcode values used in the game, and the product to 
 | Whole Milk 1pt        | 1002        |
 | Skimmed Milk 1pt      | 1003        |
 ## Pasta Rice
-| **Product**  | **Barcode** |
-| ------------ | ----------- |
-| Basmati Rice | 2245        |
-| Penne Pasta  | 2255        |
+| **Product**       | **Barcode** |
+| ----------------- | ----------- |
+| Basmati Rice      | 2245        |
+| Pilau Rice        | 2246        |
+| Egg Fried Rice    | 2247        |
+| Long Grain Rice   | 2248        |
+| Wholegrain Rice   | 2249        |
+| Brown Rice        | 2250        |
+| Penne Pasta       | 2255        |
+| Fusilli Pasta     | 2256        |
+| Rigatoni Pasta    | 2257        |
+| Farfalle Pasta    | 2258        |
+| Spirali Pasta     | 2259        |
+| Whole Wheat Pasta | 2260        |
+
 ## Spirits
 | **Product** | **Barcode** |
 | ----------- | ----------- |

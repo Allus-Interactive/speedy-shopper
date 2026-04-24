@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cvokgn5vhpgld"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_g1ets"]
+
+[resource]
+script = ExtResource("1_g1ets")
+product_name = "Egg Fried Rice"
+barcode_value = 2247
+product_price = 1.79
+product_type = 13
+metadata/_custom_type_script = "uid://siedaem41o6s"

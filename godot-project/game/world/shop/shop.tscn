@@ -121,14 +121,16 @@
 [ext_resource type="Resource" uid="uid://cbf4uqcm4y4wx" path="res://game/resources/products/placeholder/resources/spirits/whiskey.tres" id="58_8lmnt"]
 [ext_resource type="Resource" uid="uid://m52aj8abwy47" path="res://game/resources/products/placeholder/resources/wine/white/zinfandel.tres" id="59_76srb"]
 [ext_resource type="Resource" uid="uid://f68v7f26rf54" path="res://game/resources/products/placeholder/resources/wine/red/shiraz.tres" id="59_ndgoc"]
+[ext_resource type="Resource" uid="uid://dydypngnpxjjw" path="res://game/resources/products/placeholder/resources/pasta_rice/pasta/farfalle_pasta.tres" id="60_1lr13"]
 [ext_resource type="Resource" uid="uid://13xj8ra0mof2" path="res://game/resources/products/placeholder/resources/meal_kits/enchilada_kit.tres" id="60_4mmwr"]
-[ext_resource type="Resource" uid="uid://ckkflpmbvmqti" path="res://game/resources/products/placeholder/resources/pasta_rice/basmati_rice.tres" id="60_4wku6"]
+[ext_resource type="Resource" uid="uid://ckkflpmbvmqti" path="res://game/resources/products/placeholder/resources/pasta_rice/rice/basmati_rice.tres" id="60_4wku6"]
 [ext_resource type="Resource" uid="uid://dacocpw78nigx" path="res://game/resources/products/placeholder/resources/cooking_sauces/korma_sauce.tres" id="60_21kxx"]
 [ext_resource type="Resource" uid="uid://c84ul00qpxptq" path="res://game/resources/products/placeholder/resources/wine/red/merlot.tres" id="60_36wa0"]
 [ext_resource type="Resource" uid="uid://c4pdh4ic0nrnn" path="res://game/resources/products/placeholder/resources/meal_kits/crispy_chicken_kit.tres" id="60_hjdj8"]
 [ext_resource type="Resource" uid="uid://m0chsjdudih4" path="res://game/resources/products/placeholder/resources/meal_kits/fajita_kit_bbq.tres" id="60_nuv0r"]
 [ext_resource type="Resource" uid="uid://doyfm7klcj5wg" path="res://game/resources/products/placeholder/resources/wine/white/sauvignon_blanc.tres" id="60_xpiri"]
-[ext_resource type="Resource" uid="uid://dkygpbfr07ct1" path="res://game/resources/products/placeholder/resources/pasta_rice/penne_pasta.tres" id="60_xuy6m"]
+[ext_resource type="Resource" uid="uid://dkygpbfr07ct1" path="res://game/resources/products/placeholder/resources/pasta_rice/pasta/penne_pasta.tres" id="60_xuy6m"]
+[ext_resource type="Resource" uid="uid://dknn0ielau4pr" path="res://game/resources/products/placeholder/resources/pasta_rice/pasta/spirali_pasta.tres" id="61_2gavi"]
 [ext_resource type="Resource" uid="uid://dyx1wc56cb3ke" path="res://game/resources/products/placeholder/resources/meal_kits/buttermilk_chicken_kit.tres" id="61_21kxx"]
 [ext_resource type="Resource" uid="uid://djd0lhlgyp2dw" path="res://game/resources/products/placeholder/resources/meal_kits/fajita_kit_roasted.tres" id="61_fev1n"]
 [ext_resource type="Resource" uid="uid://dhkkmtwj84jnw" path="res://game/resources/products/placeholder/resources/meal_kits/taco_kit.tres" id="61_ixh2t"]
@@ -137,10 +139,18 @@
 [ext_resource type="Resource" uid="uid://l8nl71bxu4c" path="res://game/resources/products/placeholder/resources/meal_kits/fajita_kit_crispy.tres" id="62_1jjwa"]
 [ext_resource type="Resource" uid="uid://blv6aacicc2ot" path="res://game/resources/products/placeholder/resources/meal_kits/tortilla_pocket_kit_mild.tres" id="62_4i74t"]
 [ext_resource type="Resource" uid="uid://bmcfmuopwspfq" path="res://game/resources/products/placeholder/resources/meal_kits/sloppy_joe_kit.tres" id="62_4wku6"]
+[ext_resource type="Resource" uid="uid://cgkcyesb656g3" path="res://game/resources/products/placeholder/resources/pasta_rice/rice/pilau_rice.tres" id="62_erv48"]
 [ext_resource type="Resource" uid="uid://4moi80aquu1b" path="res://game/resources/products/placeholder/resources/wine/red/cabernet.tres" id="62_inxf2"]
+[ext_resource type="Resource" uid="uid://dy0fjhlymrnb6" path="res://game/resources/products/placeholder/resources/pasta_rice/pasta/rigatoni_pasta.tres" id="62_mnxnl"]
 [ext_resource type="Resource" uid="uid://c3ajqillktbnt" path="res://game/resources/products/placeholder/resources/wine/white/chardonnay.tres" id="62_ssi33"]
+[ext_resource type="Resource" uid="uid://x2jfn0u6xdho" path="res://game/resources/products/placeholder/resources/pasta_rice/pasta/whole_wheat_pasta.tres" id="63_aa3qu"]
+[ext_resource type="Resource" uid="uid://ha1tutt8ma5d" path="res://game/resources/products/placeholder/resources/pasta_rice/rice/egg_fried_rice.tres" id="63_ea6oo"]
 [ext_resource type="Resource" uid="uid://dwkgkxq7svhco" path="res://game/resources/products/placeholder/resources/meal_kits/tortilla_pocket_kit_bbq.tres" id="63_l8eg2"]
 [ext_resource type="Resource" uid="uid://cn4sxhcwnc5fn" path="res://game/resources/products/placeholder/resources/meal_kits/mac_cheese_kit.tres" id="63_xuy6m"]
+[ext_resource type="Resource" uid="uid://cxxqnc182fcln" path="res://game/resources/products/placeholder/resources/pasta_rice/rice/long_grain_rice.tres" id="64_qeg3v"]
+[ext_resource type="Resource" uid="uid://bb8lsqn5df6pl" path="res://game/resources/products/placeholder/resources/pasta_rice/rice/wholegrain_rice.tres" id="65_dqryf"]
+[ext_resource type="Resource" uid="uid://dprbnwmrgapwt" path="res://game/resources/products/placeholder/resources/pasta_rice/pasta/fusilli_pasta.tres" id="65_lvdf8"]
+[ext_resource type="Resource" uid="uid://fu28fcjn3lmc" path="res://game/resources/products/placeholder/resources/pasta_rice/rice/brown_rice.tres" id="66_2bofm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -354,7 +364,7 @@ slots_per_shelf = 5
 [node name="ShelfUnitPastaRice" parent="Aisle1/Left" unique_id=1204653631 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -6)
 product_placeholder_scene = ExtResource("3_6k1ee")
-stocked_products = Array[ExtResource("4_5qt63")]([null, null, null, null, null, null, null, null, null, ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), null, null, null, null, null, null, null, null, null])
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("60_1lr13"), ExtResource("60_1lr13"), ExtResource("60_1lr13"), ExtResource("61_2gavi"), ExtResource("61_2gavi"), ExtResource("61_2gavi"), ExtResource("62_mnxnl"), ExtResource("62_mnxnl"), ExtResource("62_mnxnl"), ExtResource("63_aa3qu"), ExtResource("63_aa3qu"), ExtResource("63_aa3qu"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("60_xuy6m"), ExtResource("65_lvdf8"), ExtResource("65_lvdf8"), ExtResource("65_lvdf8"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("60_4wku6"), ExtResource("62_erv48"), ExtResource("62_erv48"), ExtResource("62_erv48"), ExtResource("63_ea6oo"), ExtResource("63_ea6oo"), ExtResource("63_ea6oo"), ExtResource("66_2bofm"), ExtResource("66_2bofm"), ExtResource("66_2bofm"), ExtResource("65_dqryf"), ExtResource("65_dqryf"), ExtResource("65_dqryf"), ExtResource("64_qeg3v"), ExtResource("64_qeg3v"), ExtResource("64_qeg3v")])
 shelf_count = 6
 shelf_spacing = 0.36
 slots_per_shelf = 6

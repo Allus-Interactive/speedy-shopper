@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ck5u0kuncgxiu"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_0h8v8"]
+
+[resource]
+script = ExtResource("1_0h8v8")
+product_name = "Spirali Pasta"
+barcode_value = 2259
+product_price = 0.69
+product_type = 13
+metadata/_custom_type_script = "uid://siedaem41o6s"

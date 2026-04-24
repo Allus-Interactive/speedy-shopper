@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://72lxx6olvxoe"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_qiyh6"]
+
+[resource]
+script = ExtResource("1_qiyh6")
+product_name = "Farfalle Pasta"
+barcode_value = 2258
+product_price = 0.69
+product_type = 13
+metadata/_custom_type_script = "uid://siedaem41o6s"

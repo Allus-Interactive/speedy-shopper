@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://dprbnwmrgapwt"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_o0fr3"]
+[ext_resource type="Resource" uid="uid://y2yjojmiq8fb" path="res://game/resources/item/resources/pasta_rice/pasta/fusilli_pasta.tres" id="2_o0fr3"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_5vyk6"]
+
+[resource]
+script = ExtResource("3_5vyk6")
+product_info = ExtResource("2_o0fr3")
+placeholder_size = Vector3(0.2, 0.35, 0.1)
+shelf_offset = Vector3(0, 0.175, 0)
+default_shelf_quantity = 6
+label_size = 1
+product_colour = Color(0.5341403, 0.58077395, 0.33711672, 1)
+barcode_size = Vector2(0.08, 0.04)
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

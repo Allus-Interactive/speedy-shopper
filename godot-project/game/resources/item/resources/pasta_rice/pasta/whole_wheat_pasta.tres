@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dwvy6xxwv7w6c"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_q4hp1"]
+
+[resource]
+script = ExtResource("1_q4hp1")
+product_name = "Whole Wheat Pasta"
+barcode_value = 2260
+product_price = 0.69
+product_type = 13
+metadata/_custom_type_script = "uid://siedaem41o6s"

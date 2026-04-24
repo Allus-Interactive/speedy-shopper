@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cwnwwgk2l1h0v"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_s207v"]
+
+[resource]
+script = ExtResource("1_s207v")
+product_name = "Brown Rice"
+barcode_value = 2250
+product_price = 1.79
+product_type = 13
+metadata/_custom_type_script = "uid://siedaem41o6s"
