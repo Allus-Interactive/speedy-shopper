@@ -33,10 +33,20 @@ This is a record of all the barcode values used in the game, and the product to 
 | Mustard              | 6432        |
 | Apple Sauce          | 6433        |
 ## Cooking Sauces
-| **Product**         | **Barcode** |
-| ------------------- | ----------- |
-| Korma Cooking Sauce | 2145        |
-|                     |             |
+| **Product**                        | **Barcode** |
+| ---------------------------------- | ----------- |
+| Korma Sauce                        | 2145        |
+| Madras Sauce                       | 2146        |
+| Jalfrezi Sauce                     | 2147        |
+| Tikka Masala Sauce                 | 2148        |
+| Butter Chicken Sauce               | 2149        |
+| Balti Sauce                        | 2150        |
+| Tomato and Basil Pasta Sauce       | 2155        |
+| Tomato and Chilli Pasta Sauce      | 2156        |
+| Bolognese Tomato Sauce             | 2157        |
+| Bolognese Onion and Garlic Sauce   | 2158        |
+| Tomato and Cheese Pasta Bake Sauce | 2159        |
+| Cheese and Bacon Pasta Bake Sauce  | 2160        |
 ## Crisps
 | **Product**           | **Barcode** |
 | --------------------- | ----------- |

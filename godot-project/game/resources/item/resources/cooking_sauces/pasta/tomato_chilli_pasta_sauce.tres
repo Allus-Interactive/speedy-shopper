@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://2n4nsfxdm3yc"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_im80l"]
+
+[resource]
+script = ExtResource("1_im80l")
+product_name = "Tomato & Chilli Pasta Sauce"
+barcode_value = 2156
+product_price = 0.89
+product_type = 14
+metadata/_custom_type_script = "uid://siedaem41o6s"

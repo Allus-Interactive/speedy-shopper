@@ -124,7 +124,7 @@
 [ext_resource type="Resource" uid="uid://dydypngnpxjjw" path="res://game/resources/products/placeholder/resources/pasta_rice/pasta/farfalle_pasta.tres" id="60_1lr13"]
 [ext_resource type="Resource" uid="uid://13xj8ra0mof2" path="res://game/resources/products/placeholder/resources/meal_kits/enchilada_kit.tres" id="60_4mmwr"]
 [ext_resource type="Resource" uid="uid://ckkflpmbvmqti" path="res://game/resources/products/placeholder/resources/pasta_rice/rice/basmati_rice.tres" id="60_4wku6"]
-[ext_resource type="Resource" uid="uid://dacocpw78nigx" path="res://game/resources/products/placeholder/resources/cooking_sauces/korma_sauce.tres" id="60_21kxx"]
+[ext_resource type="Resource" uid="uid://dacocpw78nigx" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/korma_sauce.tres" id="60_21kxx"]
 [ext_resource type="Resource" uid="uid://c84ul00qpxptq" path="res://game/resources/products/placeholder/resources/wine/red/merlot.tres" id="60_36wa0"]
 [ext_resource type="Resource" uid="uid://c4pdh4ic0nrnn" path="res://game/resources/products/placeholder/resources/meal_kits/crispy_chicken_kit.tres" id="60_hjdj8"]
 [ext_resource type="Resource" uid="uid://m0chsjdudih4" path="res://game/resources/products/placeholder/resources/meal_kits/fajita_kit_bbq.tres" id="60_nuv0r"]
@@ -151,6 +151,17 @@
 [ext_resource type="Resource" uid="uid://bb8lsqn5df6pl" path="res://game/resources/products/placeholder/resources/pasta_rice/rice/wholegrain_rice.tres" id="65_dqryf"]
 [ext_resource type="Resource" uid="uid://dprbnwmrgapwt" path="res://game/resources/products/placeholder/resources/pasta_rice/pasta/fusilli_pasta.tres" id="65_lvdf8"]
 [ext_resource type="Resource" uid="uid://fu28fcjn3lmc" path="res://game/resources/products/placeholder/resources/pasta_rice/rice/brown_rice.tres" id="66_2bofm"]
+[ext_resource type="Resource" uid="uid://bom2r6jj5maf5" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/balti_sauce.tres" id="72_gmwuy"]
+[ext_resource type="Resource" uid="uid://3b2nhqr6k7w2" path="res://game/resources/products/placeholder/resources/cooking_sauces/pasta/bolognese_tomato_sauce.tres" id="72_ja0sq"]
+[ext_resource type="Resource" uid="uid://jo1jmiavddxm" path="res://game/resources/products/placeholder/resources/cooking_sauces/pasta/bolognese_onion_garlic_sauce.tres" id="73_l8ad3"]
+[ext_resource type="Resource" uid="uid://677470vpbhtp" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/jalfrezi_sauce.tres" id="73_lu5ha"]
+[ext_resource type="Resource" uid="uid://bivx5egknbpak" path="res://game/resources/products/placeholder/resources/cooking_sauces/pasta/tomato_cheese_pasta_bake_sauce.tres" id="74_f71ri"]
+[ext_resource type="Resource" uid="uid://dag80a8o7wyb4" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/butter_chicken_sauce.tres" id="75_cxjak"]
+[ext_resource type="Resource" uid="uid://bektv1ylc8prg" path="res://game/resources/products/placeholder/resources/cooking_sauces/pasta/cheese_bacon_pasta_bake_sauce.tres" id="75_teebb"]
+[ext_resource type="Resource" uid="uid://y3eul7nh88pu" path="res://game/resources/products/placeholder/resources/cooking_sauces/pasta/tomato_basil_pasta_sauce.tres" id="76_m1y7i"]
+[ext_resource type="Resource" uid="uid://b10c2iqujoy1u" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/madras_sauce.tres" id="76_m81gg"]
+[ext_resource type="Resource" uid="uid://pb3e4342bhj7" path="res://game/resources/products/placeholder/resources/cooking_sauces/pasta/tomato_chilli_pasta_sauce.tres" id="77_7ash6"]
+[ext_resource type="Resource" uid="uid://bmf621ddj4kpu" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/tikka_masala_sauce.tres" id="77_acre2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -372,7 +383,7 @@ slots_per_shelf = 6
 [node name="ShelfUnitCookingSauces" parent="Aisle1/Left" unique_id=358589094 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -10, 0, -8)
 product_placeholder_scene = ExtResource("3_6k1ee")
-stocked_products = Array[ExtResource("4_5qt63")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("72_ja0sq"), ExtResource("72_ja0sq"), ExtResource("72_ja0sq"), ExtResource("72_ja0sq"), ExtResource("72_ja0sq"), ExtResource("73_l8ad3"), ExtResource("73_l8ad3"), ExtResource("73_l8ad3"), ExtResource("73_l8ad3"), ExtResource("73_l8ad3"), ExtResource("74_f71ri"), ExtResource("74_f71ri"), ExtResource("74_f71ri"), ExtResource("74_f71ri"), ExtResource("74_f71ri"), ExtResource("75_teebb"), ExtResource("75_teebb"), ExtResource("75_teebb"), ExtResource("75_teebb"), ExtResource("75_teebb"), ExtResource("76_m1y7i"), ExtResource("76_m1y7i"), ExtResource("76_m1y7i"), ExtResource("76_m1y7i"), ExtResource("76_m1y7i"), ExtResource("77_7ash6"), ExtResource("77_7ash6"), ExtResource("77_7ash6"), ExtResource("77_7ash6"), ExtResource("77_7ash6"), ExtResource("72_gmwuy"), ExtResource("72_gmwuy"), ExtResource("72_gmwuy"), ExtResource("72_gmwuy"), ExtResource("72_gmwuy"), ExtResource("73_lu5ha"), ExtResource("73_lu5ha"), ExtResource("73_lu5ha"), ExtResource("73_lu5ha"), ExtResource("73_lu5ha"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("60_21kxx"), ExtResource("75_cxjak"), ExtResource("75_cxjak"), ExtResource("75_cxjak"), ExtResource("75_cxjak"), ExtResource("75_cxjak"), ExtResource("76_m81gg"), ExtResource("76_m81gg"), ExtResource("76_m81gg"), ExtResource("76_m81gg"), ExtResource("76_m81gg"), ExtResource("77_acre2"), ExtResource("77_acre2"), ExtResource("77_acre2"), ExtResource("77_acre2"), ExtResource("77_acre2")])
 shelf_count = 6
 shelf_spacing = 0.36
 slots_per_shelf = 10

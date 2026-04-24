@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://brhat80qe1mes"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_vxssh"]
+
+[resource]
+script = ExtResource("1_vxssh")
+product_name = "Butter Chicken Sauce"
+barcode_value = 2149
+product_price = 0.89
+product_type = 14
+metadata/_custom_type_script = "uid://siedaem41o6s"

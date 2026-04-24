@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://dqrmaw14gtbo"]
 
-[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_mq41b"]
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_ik1t6"]
 
 [resource]
-script = ExtResource("1_mq41b")
-product_name = "Korma Cooking Sauce"
+script = ExtResource("1_ik1t6")
+product_name = "Korma Sauce"
 barcode_value = 2145
 product_price = 0.89
 product_type = 14
