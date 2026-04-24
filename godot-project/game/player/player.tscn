@@ -88,7 +88,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TooltipPanel" type="Panel" parent="CanvasLayer/Control" unique_id=556540204]
-custom_minimum_size = Vector2(300, 75)
+custom_minimum_size = Vector2(350, 75)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -103,7 +103,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TooltipLabel" type="Label" parent="CanvasLayer/Control/TooltipPanel" unique_id=1409749733]
-custom_minimum_size = Vector2(300, 75)
+custom_minimum_size = Vector2(350, 75)
 layout_mode = 0
 offset_right = 220.0
 offset_bottom = 75.0
