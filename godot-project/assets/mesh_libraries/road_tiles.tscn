@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c5mxbs1sed0a5"]
+
+[ext_resource type="ArrayMesh" uid="uid://bgmamacr50605" path="res://assets/environment/roads/road_straight.tres" id="1_2oslq"]
+[ext_resource type="ArrayMesh" uid="uid://dmnc4cp5hqlor" path="res://assets/environment/roads/road_bend.tres" id="2_mejqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2mav"]
+size = Vector3(15, 0.3, 15)
+
+[node name="RoadTiles" type="Node3D" unique_id=259098110]
+
+[node name="RoadStraight" type="StaticBody3D" parent="." unique_id=1369561197]
+visible = false
+
+[node name="RoadStraight" type="MeshInstance3D" parent="RoadStraight" unique_id=1421149134]
+mesh = ExtResource("1_2oslq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadStraight" unique_id=108706941]
+shape = SubResource("BoxShape3D_e2mav")
+
+[node name="RoadBend" type="StaticBody3D" parent="." unique_id=432693816]
+visible = false
+
+[node name="RoadBend" type="MeshInstance3D" parent="RoadBend" unique_id=1490798578]
+mesh = ExtResource("2_mejqx")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadBend" unique_id=251987321]
+shape = SubResource("BoxShape3D_e2mav")
