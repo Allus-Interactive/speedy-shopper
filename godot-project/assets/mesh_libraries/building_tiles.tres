@@ -110,6 +110,9 @@ image = SubResource("Image_wepxc")
 [sub_resource type="BoxShape3D" id="BoxShape3D_tlucu"]
 size = Vector3(15, 10, 15)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ja0sq"]
+size = Vector3(4, 3, 0.25)
+
 [resource]
 item/0/name = "RoadStraight"
 item/0/mesh = SubResource("ArrayMesh_6ll48")
@@ -123,7 +126,7 @@ item/1/name = "Shop"
 item/1/mesh = SubResource("ArrayMesh_22bws")
 item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/mesh_cast_shadow = 1
-item/1/shapes = [SubResource("BoxShape3D_tlucu"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)]
+item/1/shapes = [SubResource("BoxShape3D_tlucu"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ja0sq"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8)]
 item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/navigation_layers = 1
 item/1/preview = SubResource("ImageTexture_2gwa2")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bw5rwejnjhw31"]
+
+[ext_resource type="Script" uid="uid://pwa4to07qojx" path="res://game/world/exit_entry/exit_entry.gd" id="1_25fki"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ja0sq"]
+size = Vector3(4, 3, 0.25)
+
+[node name="ExitEntry" type="StaticBody3D" unique_id=755504319]
+script = ExtResource("1_25fki")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1074367525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+shape = SubResource("BoxShape3D_ja0sq")
+debug_color = Color(0.8284457, 0.50202274, 0.2541949, 0.41960785)

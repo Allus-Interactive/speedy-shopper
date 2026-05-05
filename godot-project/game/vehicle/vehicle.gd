@@ -28,7 +28,7 @@ func _physics_process(delta):
 	process_steer(delta)
 	process_brake(delta)
 
-func process_accel(delta):
+func process_accel(_delta):
 	if Input.is_action_pressed("forwards"):
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		if fwd_mps >= -1:
@@ -54,7 +54,7 @@ func process_steer(delta):
 	steer_target *= STEER_LIMIT
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 
-func process_brake(delta):
+func process_brake(_delta):
 	if Input.is_action_pressed("ui_select"):
 		brake=0.5
 		$wheel_rear_left.wheel_friction_slip=2
@@ -63,8 +63,8 @@ func process_brake(delta):
 		$wheel_rear_left.wheel_friction_slip=2.9
 		$wheel_rear_right.wheel_friction_slip=2.9
 
-func traction(speed):
-	apply_central_force(Vector3.DOWN*speed)
+func traction(traction_speed):
+	apply_central_force(Vector3.DOWN * traction_speed)
 
 func _process(_delta: float) -> void:
 	if !is_player_inside:

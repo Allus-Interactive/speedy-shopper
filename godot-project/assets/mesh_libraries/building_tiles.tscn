@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://cxh4w8gup6r2l" path="res://assets/environment/buildings/shop.tres" id="1_irvc1"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_e2mav"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tlucu"]
 size = Vector3(15, 10, 15)
 
 [node name="BuildingTiles" type="Node3D" unique_id=259098110]
@@ -14,4 +14,4 @@ mesh = ExtResource("1_irvc1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Shop/Shop" unique_id=108706941]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-shape = SubResource("BoxShape3D_e2mav")
+shape = SubResource("BoxShape3D_tlucu")

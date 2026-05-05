@@ -14,11 +14,11 @@ radius = 0.4
 script = ExtResource("1_3vyb7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=7696061]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_u8vuu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1313398334]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_obar5")
 
 [node name="Neck" type="Node3D" parent="." unique_id=707722043]

@@ -162,6 +162,8 @@
 [ext_resource type="Resource" uid="uid://b10c2iqujoy1u" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/madras_sauce.tres" id="76_m81gg"]
 [ext_resource type="Resource" uid="uid://pb3e4342bhj7" path="res://game/resources/products/placeholder/resources/cooking_sauces/pasta/tomato_chilli_pasta_sauce.tres" id="77_7ash6"]
 [ext_resource type="Resource" uid="uid://bmf621ddj4kpu" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/tikka_masala_sauce.tres" id="77_acre2"]
+[ext_resource type="PackedScene" uid="uid://bw5rwejnjhw31" path="res://game/world/exit_entry/exit_entry.tscn" id="163_l8ad3"]
+[ext_resource type="ArrayMesh" uid="uid://cxh4w8gup6r2l" path="res://assets/environment/buildings/shop.tres" id="164_f71ri"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -223,6 +225,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=992022153]
+visible = false
 material_override = ExtResource("2_otvff")
 mesh = SubResource("PlaneMesh_glehq")
 
@@ -244,6 +247,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -2.6)
 [node name="DeliveryCrate" parent="CrateHoldPoint" unique_id=1490719446 instance=ExtResource("8_5qt63")]
 
 [node name="Building" type="Node3D" parent="." unique_id=1287546074]
+visible = false
 
 [node name="Ceiling" type="StaticBody3D" parent="Building" unique_id=167690750]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 5.5, -5)
@@ -491,3 +495,10 @@ stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("59_76srb"), ExtRe
 slots_per_shelf = 7
 slot_margin_x = 0.2
 row_width = 0.4
+
+[node name="ExitEntry" parent="." unique_id=755504319 instance=ExtResource("163_l8ad3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.5, 2)
+
+[node name="Shop" type="MeshInstance3D" parent="." unique_id=2098293408]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6, 0, -5)
+mesh = ExtResource("164_f71ri")

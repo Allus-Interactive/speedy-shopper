@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://yexejxsnlqvn" path="res://game/vehicle/vehicle.tscn" id="2_wnw7r"]
 [ext_resource type="MeshLibrary" uid="uid://05lgw1fm3ia" path="res://assets/mesh_libraries/building_tiles.tres" id="4_wnw7r"]
 [ext_resource type="MeshLibrary" uid="uid://cr2p2x812x1rk" path="res://assets/mesh_libraries/road_tiles.tres" id="5_3oap8"]
+[ext_resource type="PackedScene" uid="uid://bw5rwejnjhw31" path="res://game/world/exit_entry/exit_entry.tscn" id="5_qlrgr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -43,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_74d5v")
 
 [node name="Player" parent="." unique_id=932964266 instance=ExtResource("1_jotaf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 1, 13.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.43139207, 13.75)
 
 [node name="Vehicle" parent="." unique_id=1457488571 instance=ExtResource("2_wnw7r")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 22, 0, 5)
@@ -61,3 +62,7 @@ cell_size = Vector3(15, 0.3, 15)
 data = {
 "cells": PackedInt32Array(1, 1, 0)
 }
+
+[node name="ExitEntry" parent="." unique_id=755504319 instance=ExtResource("5_qlrgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 2, 16)
+is_in_shop = false
