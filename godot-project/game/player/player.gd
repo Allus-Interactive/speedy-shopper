@@ -367,8 +367,9 @@ func enter_vehicle(v: Vehicle) -> void:
 		global_position = v.global_position
 	
 	# switch camera
-	var van_camera = v.get_node("ThirdPersonCam")
-	if v.get_node("ThirdPersonCam"):
+	var look = v.get_node("look")
+	var van_camera = look.get_node("ThirdPersonCam")
+	if look.get_node("ThirdPersonCam"):
 		camera.current = false
 		van_camera.current = true
 	else:

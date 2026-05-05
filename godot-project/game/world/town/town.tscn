@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hdoipf1qndch"]
 
 [ext_resource type="PackedScene" uid="uid://cjsrfjrg00vbp" path="res://game/player/player.tscn" id="1_jotaf"]
-[ext_resource type="PackedScene" path="res://game/vehicle/vehicle.tscn" id="2_74d5v"]
+[ext_resource type="PackedScene" uid="uid://yexejxsnlqvn" path="res://car-demo/main.tscn" id="2_wnw7r"]
 [ext_resource type="MeshLibrary" uid="uid://cr2p2x812x1rk" path="res://assets/mesh_libraries/road_tiles.tres" id="5_3oap8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
@@ -43,9 +43,10 @@ shape = SubResource("BoxShape3D_74d5v")
 
 [node name="Player" parent="." unique_id=932964266 instance=ExtResource("1_jotaf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.629208, 0, 0)
+visible = false
 
-[node name="Vehicle" parent="." unique_id=1201802725 instance=ExtResource("2_74d5v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.778355, 0.18813884, 0)
+[node name="Main" parent="." unique_id=1457488571 instance=ExtResource("2_wnw7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
 
 [node name="GridMap" type="GridMap" parent="." unique_id=796683962]
 mesh_library = ExtResource("5_3oap8")
