@@ -25,7 +25,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_uprr5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_po7rg"]
 resource_name = "road_straight_road-straight"
 _surfaces = [{
 "aabb": AABB(-7.5, 0, -7.5, 15, 0.3, 15),
@@ -52,8 +52,11 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_rwb51"]
+[sub_resource type="ImageTexture" id="ImageTexture_uprr5"]
 image = SubResource("Image_po7rg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2mav"]
+size = Vector3(15, 0.3, 15)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgotd"]
 resource_name = "colormap"
@@ -76,7 +79,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_w8fvu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_56knc"]
 resource_name = "road_bend_road-bend"
 _surfaces = [{
 "aabb": AABB(-7.5, 0, -7.5, 15, 0.29999998, 15),
@@ -104,7 +107,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_3y2cp"]
+[sub_resource type="ImageTexture" id="ImageTexture_w8fvu"]
 image = SubResource("Image_8lgl3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hsd1"]
@@ -127,7 +130,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_e45x1"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_k812p"]
 resource_name = "road_end_road-end"
 _surfaces = [{
 "aabb": AABB(-7.5, 0, -7.5, 15, 0.29999998, 15),
@@ -154,7 +157,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_r8xjx"]
+[sub_resource type="ImageTexture" id="ImageTexture_e45x1"]
 image = SubResource("Image_uprr5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksdk5"]
@@ -177,7 +180,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qgb61"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_x20i5"]
 resource_name = "road_intersection_road-intersection"
 _surfaces = [{
 "aabb": AABB(-7.5, 0, -7.5, 15, 0.29999998, 15),
@@ -204,39 +207,39 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_1eafs"]
+[sub_resource type="ImageTexture" id="ImageTexture_qgb61"]
 image = SubResource("Image_56knc")
 
 [resource]
 item/0/name = "RoadStraight"
-item/0/mesh = SubResource("ArrayMesh_uprr5")
+item/0/mesh = SubResource("ArrayMesh_po7rg")
 item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/mesh_cast_shadow = 1
-item/0/shapes = []
+item/0/shapes = [SubResource("BoxShape3D_e2mav"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/navigation_layers = 1
-item/0/preview = SubResource("ImageTexture_rwb51")
+item/0/preview = SubResource("ImageTexture_uprr5")
 item/1/name = "RoadBend"
-item/1/mesh = SubResource("ArrayMesh_w8fvu")
+item/1/mesh = SubResource("ArrayMesh_56knc")
 item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/mesh_cast_shadow = 1
-item/1/shapes = []
+item/1/shapes = [SubResource("BoxShape3D_e2mav"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/navigation_layers = 1
-item/1/preview = SubResource("ImageTexture_3y2cp")
+item/1/preview = SubResource("ImageTexture_w8fvu")
 item/2/name = "RoadEnd"
-item/2/mesh = SubResource("ArrayMesh_e45x1")
+item/2/mesh = SubResource("ArrayMesh_k812p")
 item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/2/mesh_cast_shadow = 1
-item/2/shapes = []
+item/2/shapes = [SubResource("BoxShape3D_e2mav"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/2/navigation_layers = 1
-item/2/preview = SubResource("ImageTexture_r8xjx")
+item/2/preview = SubResource("ImageTexture_e45x1")
 item/3/name = "RoadIntersection"
-item/3/mesh = SubResource("ArrayMesh_qgb61")
+item/3/mesh = SubResource("ArrayMesh_x20i5")
 item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/3/mesh_cast_shadow = 1
-item/3/shapes = []
+item/3/shapes = [SubResource("BoxShape3D_e2mav"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/3/navigation_layers = 1
-item/3/preview = SubResource("ImageTexture_1eafs")
+item/3/preview = SubResource("ImageTexture_qgb61")
