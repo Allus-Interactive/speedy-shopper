@@ -122,6 +122,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
+	if is_in_vehicle:
+		earnings_label.visible = false
+	else:
+		earnings_label.visible = true
+	
 	if is_inspecting_product:
 		handle_product_inspection_input(delta)
 	
@@ -377,14 +382,16 @@ func enter_vehicle(v: Vehicle) -> void:
 
 func exit_vehicle(v: Vehicle) -> void:
 	is_in_vehicle = false
+	v.is_player_inside = false
 	visible = true
 	
 	# move player beside veihcle
-	#global_position = v.global_position + Vector3(2, 0, 0)
+	global_position = v.global_position + Vector3(2, 0, 0)
 	
 	# restore player camera
-	var van_camera = v.get_node("ThirdPersonCam")
-	if v.get_node("ThirdPersonCam"):
+	var look = v.get_node("look")
+	var van_camera = look.get_node("ThirdPersonCam")
+	if look.get_node("ThirdPersonCam"):
 		van_camera.current = false
 		camera.current = true
 	else:
