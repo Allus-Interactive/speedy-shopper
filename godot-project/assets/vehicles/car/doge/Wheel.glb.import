@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c8ujes7b1aoxh"
-path="res://.godot/imported/Wheel.glb-83a700225fa5b820bf9673a1d0336aca.scn"
+path="res://.godot/imported/Wheel.glb-a3779b5f2cb47fdefeb05aafc12b780f.scn"
 
 [deps]
 
-source_file="res://car-demo/cars/Models/Doge/Wheel.glb"
-dest_files=["res://.godot/imported/Wheel.glb-83a700225fa5b820bf9673a1d0336aca.scn"]
+source_file="res://assets/vehicles/car/doge/Wheel.glb"
+dest_files=["res://.godot/imported/Wheel.glb-a3779b5f2cb47fdefeb05aafc12b780f.scn"]
 
 [params]
 

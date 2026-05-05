@@ -74,7 +74,7 @@ func _process(_delta: float) -> void:
 		exit_vehicle()
 
 func get_interaction_tooltip(_player: Player) -> String:
-	return "Delivery Van\nPress E to Enter"
+	return self.name + "\nPress E to Enter"
 
 func interact(p: Player) -> void:
 	player = p

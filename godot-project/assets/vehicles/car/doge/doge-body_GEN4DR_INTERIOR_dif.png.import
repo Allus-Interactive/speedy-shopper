@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgonljqafa0bi"
-path.s3tc="res://.godot/imported/doge-body_UCB_GLASS_CLEAN_dif.png-0b143b6cc9ac22ecef5065ab19bf92f7.s3tc.ctex"
+uid="uid://c0d248n7glp06"
+path.s3tc="res://.godot/imported/doge-body_GEN4DR_INTERIOR_dif.png-699a3d73259722aa51e8f024a9b9db4a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://car-demo/cars/Models/Doge/doge-body_UCB_GLASS_CLEAN_dif.png"
-dest_files=["res://.godot/imported/doge-body_UCB_GLASS_CLEAN_dif.png-0b143b6cc9ac22ecef5065ab19bf92f7.s3tc.ctex"]
+source_file="res://assets/vehicles/car/doge/doge-body_GEN4DR_INTERIOR_dif.png"
+dest_files=["res://.godot/imported/doge-body_GEN4DR_INTERIOR_dif.png-699a3d73259722aa51e8f024a9b9db4a.s3tc.ctex"]
 
 [params]
 

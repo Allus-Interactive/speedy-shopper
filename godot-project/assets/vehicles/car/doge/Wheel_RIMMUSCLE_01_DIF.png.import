@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx4emhim7hd1y"
-path.s3tc="res://.godot/imported/doge-body_UCB_BOTTOM_DIF.png-02b903569656a601200836d2371ae56b.s3tc.ctex"
+uid="uid://n585wro7jt0"
+path.s3tc="res://.godot/imported/Wheel_RIMMUSCLE_01_DIF.png-5d88217c37f3d7c8a028d21daa9134b2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://car-demo/cars/Models/Doge/doge-body_UCB_BOTTOM_DIF.png"
-dest_files=["res://.godot/imported/doge-body_UCB_BOTTOM_DIF.png-02b903569656a601200836d2371ae56b.s3tc.ctex"]
+source_file="res://assets/vehicles/car/doge/Wheel_RIMMUSCLE_01_DIF.png"
+dest_files=["res://.godot/imported/Wheel_RIMMUSCLE_01_DIF.png-5d88217c37f3d7c8a028d21daa9134b2.s3tc.ctex"]
 
 [params]
 

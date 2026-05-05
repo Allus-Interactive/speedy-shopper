@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcxqgfwe2v70b"
-path.s3tc="res://.godot/imported/Wheel_RIMMUSCLE_01_NRM.png-0495c18a9eea9fc72a1e1aed96d80053.s3tc.ctex"
+uid="uid://bm5dfjf2enpf"
+path.s3tc="res://.godot/imported/texture_10.png-e3e0e18d72d8d67c758af42b4a0f7ab4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://car-demo/cars/Models/Doge/Wheel_RIMMUSCLE_01_NRM.png"
-dest_files=["res://.godot/imported/Wheel_RIMMUSCLE_01_NRM.png-0495c18a9eea9fc72a1e1aed96d80053.s3tc.ctex"]
+source_file="res://assets/vehicles/car/texture_10.png"
+dest_files=["res://.godot/imported/texture_10.png-e3e0e18d72d8d67c758af42b4a0f7ab4.s3tc.ctex"]
 
 [params]
 
@@ -22,12 +22,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://cars/Models/Doge/Wheel_RIMMUSCLE_01_NRM.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

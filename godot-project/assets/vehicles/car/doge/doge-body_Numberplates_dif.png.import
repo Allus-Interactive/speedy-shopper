@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0d248n7glp06"
-path.s3tc="res://.godot/imported/doge-body_GEN4DR_INTERIOR_dif.png-7ec178255b2a3412a040fabc521bbb2f.s3tc.ctex"
+uid="uid://b0i64mnf2nlgd"
+path.s3tc="res://.godot/imported/doge-body_Numberplates_dif.png-78e5edc33595be97d0e88dc522090217.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://car-demo/cars/Models/Doge/doge-body_GEN4DR_INTERIOR_dif.png"
-dest_files=["res://.godot/imported/doge-body_GEN4DR_INTERIOR_dif.png-7ec178255b2a3412a040fabc521bbb2f.s3tc.ctex"]
+source_file="res://assets/vehicles/car/doge/doge-body_Numberplates_dif.png"
+dest_files=["res://.godot/imported/doge-body_Numberplates_dif.png-78e5edc33595be97d0e88dc522090217.s3tc.ctex"]
 
 [params]
 
