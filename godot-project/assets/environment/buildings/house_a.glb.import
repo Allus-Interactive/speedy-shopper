@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cqnln26ck3ohi"
-path="res://.godot/imported/road_curve.glb-99c4995e473443e60f6436aed6951cc3.scn"
+uid="uid://byfrxe4ohkc6i"
+path="res://.godot/imported/house_a.glb-5c47fff1c23e08acd5ed15f10d566bef.scn"
 
 [deps]
 
-source_file="res://assets/environment/roads/road_curve.glb"
-dest_files=["res://.godot/imported/road_curve.glb-99c4995e473443e60f6436aed6951cc3.scn"]
+source_file="res://assets/environment/buildings/house_a.glb"
+dest_files=["res://.godot/imported/house_a.glb-5c47fff1c23e08acd5ed15f10d566bef.scn"]
 
 [params]
 
@@ -39,14 +39,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"road_curve_road-curve": {
+"house_a_building-type-a": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/environment/roads/road_curve.tres",
-"save_to_file/path": "uid://dkr45dhs3g32w"
+"save_to_file/fallback_path": "res://assets/environment/buildings/house_a.tres",
+"save_to_file/path": "uid://cijibnxywr6un"
 }
 }
 }
