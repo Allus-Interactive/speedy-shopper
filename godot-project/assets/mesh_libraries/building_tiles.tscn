@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bw37ly3d20lfi"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxh4w8gup6r2l" path="res://assets/environment/buildings/shop.tres" id="1_irvc1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2mav"]
+size = Vector3(15, 10, 15)
+
+[node name="BuildingTiles" type="Node3D" unique_id=259098110]
+
+[node name="RoadStraight" type="StaticBody3D" parent="." unique_id=1369561197]
+
+[node name="RoadStraight" type="MeshInstance3D" parent="RoadStraight" unique_id=1421149134]
+mesh = ExtResource("1_irvc1")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadStraight" unique_id=108706941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_e2mav")
