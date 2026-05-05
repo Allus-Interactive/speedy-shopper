@@ -45,7 +45,7 @@ shape = SubResource("BoxShape3D_74d5v")
 [node name="Player" parent="." unique_id=932964266 instance=ExtResource("1_jotaf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 1, 13.75)
 
-[node name="Main" parent="." unique_id=1457488571 instance=ExtResource("2_wnw7r")]
+[node name="Vehicle" parent="." unique_id=1457488571 instance=ExtResource("2_wnw7r")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 22, 0, 5)
 
 [node name="RoadGridMap" type="GridMap" parent="." unique_id=796683962]
