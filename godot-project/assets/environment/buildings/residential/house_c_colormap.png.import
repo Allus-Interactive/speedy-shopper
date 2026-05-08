@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg6m1wkdnavq5"
-path.s3tc="res://.godot/imported/house_a_colormap.png-d19ebdc4b949427bf584911c5a5b8069.s3tc.ctex"
+uid="uid://rbwjgw1xcnqh"
+path.s3tc="res://.godot/imported/house_c_colormap.png-cd150d3c634b53bd3fc67d830319b71f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/environment/buildings/house_a_colormap.png"
-dest_files=["res://.godot/imported/house_a_colormap.png-d19ebdc4b949427bf584911c5a5b8069.s3tc.ctex"]
+source_file="res://assets/environment/buildings/residential/house_c_colormap.png"
+dest_files=["res://.godot/imported/house_c_colormap.png-cd150d3c634b53bd3fc67d830319b71f.s3tc.ctex"]
 
 [params]
 

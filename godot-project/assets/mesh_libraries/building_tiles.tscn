@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bw37ly3d20lfi"]
 
-[ext_resource type="ArrayMesh" uid="uid://cxh4w8gup6r2l" path="res://assets/environment/buildings/shop.tres" id="1_irvc1"]
-[ext_resource type="ArrayMesh" uid="uid://baohwp1en36ps" path="res://assets/environment/buildings/house_a.tres" id="2_8mpub"]
+[ext_resource type="ArrayMesh" uid="uid://dy2fug1cqrweh" path="res://assets/environment/buildings/industrial/shop.tres" id="1_irvc1"]
+[ext_resource type="ArrayMesh" uid="uid://cijibnxywr6un" path="res://assets/environment/buildings/residential/house_a.tres" id="2_8mpub"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tlucu"]
 size = Vector3(15, 10, 15)

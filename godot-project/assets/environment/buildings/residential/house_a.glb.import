@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://byfrxe4ohkc6i"
-path="res://.godot/imported/house_a.glb-5c47fff1c23e08acd5ed15f10d566bef.scn"
+path="res://.godot/imported/house_a.glb-b58e603d043c6eeb250ea68dc2baceee.scn"
 
 [deps]
 
-source_file="res://assets/environment/buildings/house_a.glb"
-dest_files=["res://.godot/imported/house_a.glb-5c47fff1c23e08acd5ed15f10d566bef.scn"]
+source_file="res://assets/environment/buildings/residential/house_a.glb"
+dest_files=["res://.godot/imported/house_a.glb-b58e603d043c6eeb250ea68dc2baceee.scn"]
 
 [params]
 
@@ -45,7 +45,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/environment/buildings/house_a.tres",
+"save_to_file/fallback_path": "res://assets/environment/buildings/residential/house_a.tres",
 "save_to_file/path": "uid://cijibnxywr6un"
 }
 }
