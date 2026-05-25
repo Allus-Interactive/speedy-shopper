@@ -1,10 +1,10 @@
 [gd_resource type="MeshLibrary" format=4 uid="uid://cr2p2x812x1rk"]
 
-[ext_resource type="Texture2D" uid="uid://64g2vi3x3tn3" path="res://assets/environment/roads/road_straight_colormap.png" id="1_mm2px"]
-[ext_resource type="Texture2D" uid="uid://bgcyux0brdhmm" path="res://assets/environment/roads/road_bend_pavement_colormap.png" id="2_8lgl3"]
-[ext_resource type="Texture2D" uid="uid://cryyq8b5r0d1f" path="res://assets/environment/roads/road_end_colormap.png" id="3_po7rg"]
-[ext_resource type="Texture2D" uid="uid://882gn3eqgllm" path="res://assets/environment/roads/road_intersection_colormap.png" id="4_8lgl3"]
-[ext_resource type="Texture2D" uid="uid://b5aha5rxnrjfv" path="res://assets/environment/roads/empty_tile_colormap.png" id="5_8lgl3"]
+[ext_resource type="Texture2D" uid="uid://iwuhciy0dyxo" path="res://assets/environment/roads/road_straight_colormap.png" id="1_mm2px"]
+[ext_resource type="Texture2D" uid="uid://cv74cuih6guh3" path="res://assets/environment/roads/road_bend_pavement_colormap.png" id="2_8lgl3"]
+[ext_resource type="Texture2D" uid="uid://bjfaqmx5fxfmi" path="res://assets/environment/roads/road_end_colormap.png" id="3_po7rg"]
+[ext_resource type="Texture2D" uid="uid://dhnv0k5ulnjbv" path="res://assets/environment/roads/road_intersection_colormap.png" id="4_8lgl3"]
+[ext_resource type="Texture2D" uid="uid://bv5oo4i2sv0no" path="res://assets/environment/roads/empty_tile_colormap.png" id="5_8lgl3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ee0li"]
 resource_name = "colormap"

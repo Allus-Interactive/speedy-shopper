@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://64g2vi3x3tn3"
+uid="uid://iwuhciy0dyxo"
 path.s3tc="res://.godot/imported/road_straight_colormap.png-3c092e53cd649ea813071b5952cae8d7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "600ccb6bee07edc248013582d622c834"
 }
 
 [deps]

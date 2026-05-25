@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cryyq8b5r0d1f"
+uid="uid://bjfaqmx5fxfmi"
 path.s3tc="res://.godot/imported/road_end_colormap.png-38e756b8e79858f8e365aa383380520f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "600ccb6bee07edc248013582d622c834"
 }
 
 [deps]

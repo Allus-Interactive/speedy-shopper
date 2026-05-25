@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://c4k60yv1kp4tm"]
 
-[ext_resource type="Texture2D" uid="uid://882gn3eqgllm" path="res://assets/environment/roads/road_intersection_colormap.png" id="1_7xcov"]
+[ext_resource type="Texture2D" uid="uid://dhnv0k5ulnjbv" path="res://assets/environment/roads/road_intersection_colormap.png" id="1_7xcov"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksdk5"]
 resource_name = "colormap.001"

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5aha5rxnrjfv"
+uid="uid://bv5oo4i2sv0no"
 path.s3tc="res://.godot/imported/empty_tile_colormap.png-4f2b1a1926fb5889fc6a0de0099eb8d7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "600ccb6bee07edc248013582d622c834"
 }
 
 [deps]

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgcyux0brdhmm"
+uid="uid://cv74cuih6guh3"
 path.s3tc="res://.godot/imported/road_bend_pavement_colormap.png-46d748bf49139aa324e637400612a965.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "600ccb6bee07edc248013582d622c834"
 }
 
 [deps]

@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://dxddfjxwqr8ve"]
 
-[ext_resource type="Texture2D" uid="uid://b5aha5rxnrjfv" path="res://assets/environment/roads/empty_tile_colormap.png" id="1_aukhx"]
+[ext_resource type="Texture2D" uid="uid://bv5oo4i2sv0no" path="res://assets/environment/roads/empty_tile_colormap.png" id="1_aukhx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eug4q"]
 resource_name = "colormap.003"
