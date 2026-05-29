@@ -38,15 +38,20 @@ func generate_order() -> void:
 		# Shuffle item order to appear more random
 		products_in_order.shuffle()
 		
+		# get customer details
+		var all_customers: Array[Customer] = CustomerManager.all_customers
+		var customer_index: int = randi_range(0, all_customers.size() - 1)
+		var customer_details: Customer = all_customers[customer_index]
+		var customer_title: String = Customer.TITLE.keys()[customer_details.title]
+		var customer_name: String = customer_title.to_lower().capitalize() + " " + customer_details.first_name + " " + customer_details.last_name
+		
 		var order := OrderData.new()
 		# irrelevant data, remove?
 		order.shop_name = "ScotMid"
 		order.order_id = order_id
 		order.items = products_in_order
-		# TODO: get delivery address
-		order.delivery_address = "Pickup"
-		# TODO: get customer name
-		order.customer = "Bruce Wayne"
+		order.delivery_address = customer_details.address
+		order.customer = customer_name
 		# TODO: get times when time system has been implmented
 		order.order_placed = "10:00"
 		order.delivery_time = "11:00"
