@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://bnr1047vs53mn"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_5gq3m"]
+
+[resource]
+script = ExtResource("1_5gq3m")
+title = 4
+first_name = "Hetty"
+last_name = "Benson"
+address = "4 Main Street"
+dob_year = 1988
+dob_month = 11
+dob_day = 27
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

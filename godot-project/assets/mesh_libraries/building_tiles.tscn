@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cijibnxywr6un" path="res://assets/environment/buildings/residential/house_a.tres" id="2_8mpub"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tlucu"]
-size = Vector3(15, 10, 15)
+size = Vector3(15, 10, 13)
 
 [node name="BuildingTiles" type="Node3D" unique_id=259098110]
 
@@ -24,5 +24,5 @@ mesh = ExtResource("2_8mpub")
 [node name="HouseA" type="StaticBody3D" parent="HouseA" unique_id=778352033]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HouseA/HouseA" unique_id=977379008]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 1)
 shape = SubResource("BoxShape3D_tlucu")

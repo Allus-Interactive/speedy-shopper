@@ -122,10 +122,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
-	if is_in_vehicle:
-		earnings_label.visible = false
-	else:
-		earnings_label.visible = true
+	# TODO: why did I disable this when driving?
+	#if is_in_vehicle:
+		#earnings_label.visible = false
+	#else:
+		#earnings_label.visible = true
 	
 	if is_inspecting_product:
 		handle_product_inspection_input(delta)

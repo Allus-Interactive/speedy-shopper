@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://c37jbx8cmglje"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_tiddl"]
+
+[resource]
+script = ExtResource("1_tiddl")
+first_name = "Terry"
+last_name = "Orange"
+address = "3 Main Street"
+dob_year = 1988
+dob_month = 11
+dob_day = 27
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

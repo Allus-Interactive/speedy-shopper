@@ -5,6 +5,10 @@
 [ext_resource type="MeshLibrary" uid="uid://05lgw1fm3ia" path="res://assets/mesh_libraries/building_tiles.tres" id="4_wnw7r"]
 [ext_resource type="MeshLibrary" uid="uid://cr2p2x812x1rk" path="res://assets/mesh_libraries/road_tiles.tres" id="5_3oap8"]
 [ext_resource type="PackedScene" uid="uid://bw5rwejnjhw31" path="res://game/world/exit_entry/exit_entry.tscn" id="5_qlrgr"]
+[ext_resource type="PackedScene" uid="uid://dmkt3rjvo1iat" path="res://game/world/drop_off_point/drop_off_point.tscn" id="6_febur"]
+[ext_resource type="Resource" uid="uid://brf4frkpxvupc" path="res://game/resources/customer/resources/main_street/001_main_street.tres" id="7_nflbr"]
+[ext_resource type="Resource" uid="uid://dp1yajhrgrtuj" path="res://game/resources/customer/resources/main_street/002_main_street.tres" id="8_7p2xk"]
+[ext_resource type="Resource" uid="uid://c37jbx8cmglje" path="res://game/resources/customer/resources/main_street/003_main_street.tres" id="9_5ncuf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -61,9 +65,27 @@ data = {
 mesh_library = ExtResource("4_wnw7r")
 cell_size = Vector3(15, 0.3, 15)
 data = {
-"cells": PackedInt32Array(1, 1, 0, 2, 11, 2)
+"cells": PackedInt32Array(1, 1, 0, 2, 11, 2, 3, 11, 2, 1, 11, 2, 0, 11, 2, 3, 9, 655362, 2, 9, 655362, 0, 9, 655362, 3, 8, 2, 2, 8, 2)
 }
 
 [node name="ExitEntry" parent="." unique_id=755504319 instance=ExtResource("5_qlrgr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 2, 16)
 is_in_shop = false
+
+[node name="MainStreetDropOffs" type="Node" parent="." unique_id=1822193916]
+
+[node name="001" parent="MainStreetDropOffs" unique_id=352598617 instance=ExtResource("6_febur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5, 2, 166.5)
+customer_details = ExtResource("7_nflbr")
+
+[node name="002" parent="MainStreetDropOffs" unique_id=1411894378 instance=ExtResource("6_febur")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 52.5, 2, 148.5)
+customer_details = ExtResource("8_7p2xk")
+
+[node name="003" parent="MainStreetDropOffs" unique_id=301412062 instance=ExtResource("6_febur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5, 2, 166.5)
+customer_details = ExtResource("9_5ncuf")
+
+[node name="004" parent="MainStreetDropOffs" unique_id=1490319689 instance=ExtResource("6_febur")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 37.5, 2, 148.5)
+customer_details = ExtResource("8_7p2xk")

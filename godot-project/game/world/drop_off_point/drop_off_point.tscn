@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dmkt3rjvo1iat"]
+
+[ext_resource type="Script" uid="uid://cck2eh35db8uc" path="res://game/world/drop_off_point/drop_off_point.gd" id="1_1l1ln"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ja0sq"]
+size = Vector3(4, 3, 0.25)
+
+[node name="DropOffPoint" type="StaticBody3D" unique_id=755504319]
+script = ExtResource("1_1l1ln")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1074367525]
+shape = SubResource("BoxShape3D_ja0sq")
+debug_color = Color(0.8284457, 0.50202274, 0.2541949, 0.41960785)
