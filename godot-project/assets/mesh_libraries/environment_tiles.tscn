@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bjr7c3eypuvr5"]
+
+[ext_resource type="ArrayMesh" uid="uid://cyo0fi3dgowb8" path="res://assets/environment/environment/fence.tres" id="1_2pvjt"]
+[ext_resource type="ArrayMesh" uid="uid://ugwsstvbm22h" path="res://assets/environment/environment/tree_large.tres" id="2_cgrka"]
+[ext_resource type="ArrayMesh" uid="uid://cwbioticu8nxc" path="res://assets/environment/environment/tree_small.tres" id="3_4m41i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2dwb"]
+size = Vector3(3.5, 2, 0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t2dwb"]
+height = 10.0
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m2va7"]
+height = 10.0
+radius = 2.0
+
+[node name="EnvironmentTiles" type="Node3D" unique_id=1274146631]
+
+[node name="Fence" type="MeshInstance3D" parent="." unique_id=1535708622]
+visible = false
+mesh = ExtResource("1_2pvjt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence" unique_id=620264819]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence/StaticBody3D" unique_id=1564948118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_t2dwb")
+
+[node name="TreeLarge" type="MeshInstance3D" parent="." unique_id=1193206860]
+visible = false
+mesh = ExtResource("2_cgrka")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeLarge" unique_id=967664673]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLarge/StaticBody3D" unique_id=776175729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("CylinderShape3D_t2dwb")
+
+[node name="TreeSmall" type="MeshInstance3D" parent="." unique_id=1710440625]
+visible = false
+mesh = ExtResource("3_4m41i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeSmall" unique_id=908023288]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeSmall/StaticBody3D" unique_id=1292131077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("CylinderShape3D_m2va7")
