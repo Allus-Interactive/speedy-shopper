@@ -397,3 +397,20 @@ func exit_vehicle(v: Vehicle) -> void:
 		camera.current = true
 	else:
 		push_error("No Van Camera found")
+
+# TEMPORARY SCREENSHOT LOGIC
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("screenshot"):
+		take_screenshot()
+
+func take_screenshot():
+	await RenderingServer.frame_post_draw
+	
+	var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
+	var image = get_viewport().get_texture().get_image()
+	var time = Time.get_datetime_string_from_system().replace(":", "-")
+	
+	var filename = "Screenshot_%s.png" % Time.get_datetime_string_from_system().replace(":", "-")
+	image.save_png(desktop.path_join(filename))
+	print(filename)
