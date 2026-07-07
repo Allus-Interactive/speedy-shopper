@@ -31,6 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CurrentOrderView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=1271660774]
+visible = false
 custom_minimum_size = Vector2(264, 430)
 layout_mode = 1
 anchors_preset = 8
@@ -151,7 +152,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="DeliveriesView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=858089192]
-visible = false
 custom_minimum_size = Vector2(264, 430)
 layout_mode = 0
 offset_right = 40.0
@@ -167,7 +167,7 @@ theme = ExtResource("1_6jepp")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_pq742")
-text = "Orders to Deilver"
+text = "Orders to Deliver"
 
 [node name="DeliveriesScroll" type="ScrollContainer" parent="ScannerContainer/Screen/DeliveriesView/VBoxContainer" unique_id=1639124149]
 custom_minimum_size = Vector2(0, 395)

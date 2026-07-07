@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c3loisyvokriv"]
+
+[ext_resource type="Script" uid="uid://dyadobgje8ca0" path="res://game/ui/scanner/delivery_label/delivery_label.gd" id="1_rr7gk"]
+[ext_resource type="Theme" uid="uid://ch0elgt0g6a0j" path="res://assets/themes/scanner.tres" id="2_2ajhm"]
+
+[node name="DeliveryLabel" type="Button" unique_id=475212200]
+custom_minimum_size = Vector2(262, 60)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_rr7gk")
+
+[node name="LabelBackground" type="ColorRect" parent="." unique_id=1662033234]
+custom_minimum_size = Vector2(262, 60)
+layout_mode = 0
+
+[node name="AddressLabel" type="Label" parent="LabelBackground" unique_id=1106363421]
+custom_minimum_size = Vector2(262, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_2ajhm")
+text = "1 Main Street"
+
+[node name="CustomerLabel" type="Label" parent="LabelBackground" unique_id=1619794723]
+custom_minimum_size = Vector2(262, 20)
+layout_mode = 0
+offset_top = 30.0
+offset_right = 262.0
+offset_bottom = 50.0
+theme = ExtResource("2_2ajhm")
+theme_override_font_sizes/font_size = 12
+text = "Sir John Smith"

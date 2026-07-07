@@ -22,11 +22,14 @@ class_name ScannerUI
 @onready var items_list: VBoxContainer = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/ScrollContainer/ItemsList
 # Available Orders View
 @onready var available_items_list: VBoxContainer = $ScannerContainer/Screen/AvailableOrdersView/VBoxContainer/AvailableOrdersScroll/AvailableItemsList
+# Deliveries View
+@onready var deliveries_list: VBoxContainer = $ScannerContainer/Screen/DeliveriesView/VBoxContainer/DeliveriesScroll/DeliveriesList
 
 @onready var scanner_theme = preload("res://assets/themes/scanner.tres")
 
 @onready var item_label_scene = preload("res://game/ui/scanner/item_label/item_label.tscn")
 @onready var available_item_label_scene = preload("res://game/ui/scanner/available_item_label/available_item_label.tscn")
+@onready var delivery_label_scene = preload("res://game/ui/scanner/delivery_label/delivery_label.tscn")
 
 var is_animating: bool = false
 
@@ -98,9 +101,11 @@ func display_current_order() -> void:
 		_build_current_order_view(order)
 
 func display_orders_to_be_delivered() -> void:
+	# Show orders to be delivered
 	current_order_view.visible = false
 	available_orders_view.visible = false
 	deliveries_view.visible = true
+	_build_deliveries_view()
 
 func display_available_orders() -> void:
 	# show available orders list
@@ -181,6 +186,31 @@ func _rebuild_available_items_list(items: Array[OrderData]) -> void:
 		available_items_list.add_child(row)
 		# populate label data
 		row.populate_data(order_number, item_qty, price)
+		
+		if not button_in_focus:
+			row.focus_on_button()
+			button_in_focus = true
+
+func _build_deliveries_view() -> void:
+	var picked_orders = JobManager.picked_orders
+	_rebuild_delivery_list(picked_orders)
+
+func _rebuild_delivery_list(items: Array[OrderData]) -> void:
+	for child in deliveries_list.get_children():
+		child.queue_free()
+	
+	var button_in_focus: bool = false
+	
+	for item in items:
+		var row: DeliveryLabel = delivery_label_scene.instantiate()
+		
+		var address: String = item.delivery_address
+		var customer_name: String = item.customer
+		
+		# Add label to items list
+		deliveries_list.add_child(row)
+		# populate label data
+		row.populate_data(address, customer_name)
 		
 		if not button_in_focus:
 			row.focus_on_button()
