@@ -9,4 +9,6 @@ var crate_hold_point: Marker3D = null
 var delivery_crate: DeliveryCrate = null
 var scroll_container: ScrollContainer = null
 
+var notification_ui: NotificationUI = null
+
 var order_id: int = 1

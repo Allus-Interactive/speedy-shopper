@@ -12,17 +12,17 @@ func interact(player: Player) -> void:
 	# - create delivery UI - phone showing picked orders to be delivered
 	# - select order to deliver, set as active_delivery
 	if OrderManager.active_delivery == null:
-		print("You don't have anything to deliver!")
+		GameManager.notification_ui.show_message("You have no active delivery!", false)
 		return
 	
 	var address = customer_details.address
 	var order_address = OrderManager.active_delivery.delivery_address
 	
 	if address == order_address:
-		print("Order Delivered")
+		GameManager.notification_ui.show_message("Order successfully delivered!", true)
 		player.complete_delivery()
 	else:
-		print("Wrong House")
+		GameManager.notification_ui.show_message("Wrong Address!", false)
 
 func _order_is_picked() -> bool:
 	var active_order = OrderManager.active_order
