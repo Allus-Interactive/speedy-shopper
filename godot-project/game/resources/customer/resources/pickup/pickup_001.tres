@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://dkhql4s3b6pi5"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_g5mia"]
+
+[resource]
+script = ExtResource("1_g5mia")
+first_name = "Declan"
+last_name = "Henderson"
+address = "Pickup"
+dob_year = 1988
+dob_month = 11
+dob_day = 27
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

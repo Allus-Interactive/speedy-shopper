@@ -6,6 +6,7 @@ signal order_selected
 # Save the order number?
 var order_id: int = 1
 var available_orders: Array[OrderData] = []
+var picked_orders: Array[OrderData] = []
 var completed_orders: Array[OrderData] = []
 
 func _ready() -> void:
@@ -72,6 +73,16 @@ func select_order_by_id(id: int) -> void:
 			order_selected.emit()
 	# TODO: Handle order not found?
 
+func pick_order_by_id(id: int) -> void:
+	for i in range(available_orders.size()):
+		var order = available_orders[i]
+		
+		if order.order_id == id:
+			picked_orders.append(order)
+			available_orders.remove_at(i)
+			return
+	# TODO: Handle order not found?
+
 func complete_order_by_id(id: int) -> void:
 	for i in range(available_orders.size()):
 		var order = available_orders[i]
@@ -79,6 +90,16 @@ func complete_order_by_id(id: int) -> void:
 		if order.order_id == id:
 			completed_orders.append(order)
 			available_orders.remove_at(i)
+			return
+	# TODO: Handle order not found?
+
+func complete_delivery_by_id(id: int) -> void:
+	for i in range(picked_orders.size()):
+		var order = picked_orders[i]
+		
+		if order.order_id == id:
+			completed_orders.append(order)
+			picked_orders.remove_at(i)
 			return
 	# TODO: Handle order not found?
 

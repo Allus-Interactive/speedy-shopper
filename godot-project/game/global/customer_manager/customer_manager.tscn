@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bici1ey4xt1rl" path="res://game/global/customer_manager/customer_manager.gd" id="1_k345p"]
 [ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="2_18e5q"]
+[ext_resource type="Resource" uid="uid://dkhql4s3b6pi5" path="res://game/resources/customer/resources/pickup/pickup_001.tres" id="3_v3w5l"]
 [ext_resource type="Resource" uid="uid://brf4frkpxvupc" path="res://game/resources/customer/resources/main_street/001_main_street.tres" id="3_wadd2"]
 [ext_resource type="Resource" uid="uid://dp1yajhrgrtuj" path="res://game/resources/customer/resources/main_street/002_main_street.tres" id="4_argt7"]
 [ext_resource type="Resource" uid="uid://c37jbx8cmglje" path="res://game/resources/customer/resources/main_street/003_main_street.tres" id="5_v3w5l"]
@@ -9,4 +10,4 @@
 
 [node name="CustomerManager" type="Node" unique_id=115059877]
 script = ExtResource("1_k345p")
-all_customers = Array[ExtResource("2_18e5q")]([ExtResource("3_wadd2"), ExtResource("4_argt7"), ExtResource("5_v3w5l"), ExtResource("6_gmgwh")])
+all_customers = Array[ExtResource("2_18e5q")]([ExtResource("3_v3w5l"), ExtResource("3_wadd2"), ExtResource("4_argt7"), ExtResource("5_v3w5l"), ExtResource("6_gmgwh")])

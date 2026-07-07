@@ -8,21 +8,21 @@ func get_interaction_tooltip(_player: Player) -> String:
 	return "Press E to Knock"
 
 func interact(player: Player) -> void:
-	if OrderManager.active_order == null:
+	# TODO: 
+	# - create delivery UI - phone showing picked orders to be delivered
+	# - select order to deliver, set as active_delivery
+	if OrderManager.active_delivery == null:
 		print("You don't have anything to deliver!")
 		return
 	
 	var address = customer_details.address
-	var order_address = OrderManager.active_order.delivery_address
+	var order_address = OrderManager.active_delivery.delivery_address
 	
-	if _order_is_picked():
-		if address == order_address:
-			print("Order Delivered")
-			player.complete_order()
-		else:
-			print("Wrong House")
+	if address == order_address:
+		print("Order Delivered")
+		player.complete_delivery()
 	else:
-		print("You haven't finished picking the order!")
+		print("Wrong House")
 
 func _order_is_picked() -> bool:
 	var active_order = OrderManager.active_order

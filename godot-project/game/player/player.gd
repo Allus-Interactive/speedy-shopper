@@ -207,7 +207,7 @@ func pick_up_delivery_crate(crate: DeliveryCrate) -> void:
 	crate.position = Vector3.ZERO
 	crate.rotation = Vector3.ZERO
 
-func put_down_delivery_crate(kiosk: DeliveryKiosk) -> void:
+func put_down_delivery_crate(kiosk: DeliveryKiosk, is_pickup: bool) -> void:
 	is_carrying_crate = false
 	
 	# Reparent to crate hold point and reset position and rotation
@@ -215,7 +215,10 @@ func put_down_delivery_crate(kiosk: DeliveryKiosk) -> void:
 	delivery_crate.position = Vector3.ZERO
 	delivery_crate.rotation = Vector3.ZERO
 	
-	complete_order()
+	if is_pickup:
+		complete_order()
+	else:
+		load_order_into_van()
 
 func complete_order() -> void:
 	### START OF TEMP LOGIC
@@ -230,14 +233,9 @@ func complete_order() -> void:
 	GameManager.daily_earnings += calculate_player_tip()
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
 	
-	# Reset the delivery crate (once order has been collected)
-	GameManager.delivery_crate.reparent(GameManager.crate_hold_point)
-	GameManager.delivery_crate.position = Vector3.ZERO
-	GameManager.delivery_crate.rotation = Vector3.ZERO
-	
-	# re-enable collision shape
-	if GameManager.delivery_crate.has_node("CollisionShape3D"):
-		GameManager.delivery_crate.get_node("CollisionShape3D").disabled = false
+	# Reset crate for next order
+	# TODO: animations for crate, load into van etc.
+	reset_crate()
 	
 	# Mark order as complete
 	OrderManager.active_order.is_completed = true
@@ -246,12 +244,63 @@ func complete_order() -> void:
 	# clear active order
 	OrderManager.active_order = null
 	
-	# Generate next orders if no available orders
-	if JobManager.available_orders.size() == 0:
+	# Generate next orders if no available orders or orders to be delivered
+	if JobManager.available_orders.size() == 0 and JobManager.picked_orders.size() == 0:
 		# restock products before generating new orders
 		# TODO: move restock logic to when player returns to shop after deliveries
 		ProductManager.restock_products()
 		JobManager.generate_order()
+
+func complete_delivery() -> void:
+	# TODO: Animate delivery
+	
+	# Pay the player
+	GameManager.daily_earnings += calculate_player_tip()
+	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
+	
+	# Mark order as complete
+	OrderManager.active_delivery.is_completed = true
+	# store order in completed_orders array before clearing active order
+	JobManager.complete_order_by_id(OrderManager.active_order.order_id)
+	# clear active order
+	OrderManager.active_order = null
+	
+	# Generate next orders if no available orders or orders to be delivered
+	if JobManager.available_orders.size() == 0 and JobManager.picked_orders.size() == 0:
+		# restock products before generating new orders
+		# TODO: move restock logic to when player returns to shop after deliveries
+		ProductManager.restock_products()
+		JobManager.generate_order()
+
+func load_order_into_van() -> void:
+	### START OF TEMP LOGIC
+	# TODO: spawn new crate to continue next order
+	# TODO: Implement customer pickup and allow multiple orders on the delivery kiosk
+	
+	# Wait for a lil bit to reset crate, simulate customer pickup
+	await get_tree().create_timer(3.0).timeout
+	### END OF TEMP LOGIC
+	
+	# Reset crate for next order
+	# TODO: animations for crate, load into van etc.
+	reset_crate()
+	
+	# Mark order as complete
+	OrderManager.active_order.is_picked = true
+	# store order in completed_orders array before clearing active order
+	JobManager.pick_order_by_id(OrderManager.active_order.order_id)
+	# clear active order
+	OrderManager.active_order = null
+
+func reset_crate() -> void:
+	# Reset the delivery crate (once order has been collected)
+	GameManager.delivery_crate.reparent(GameManager.crate_hold_point)
+	GameManager.delivery_crate.position = Vector3.ZERO
+	GameManager.delivery_crate.rotation = Vector3.ZERO
+	
+	# re-enable collision shape
+	if GameManager.delivery_crate.has_node("CollisionShape3D"):
+		GameManager.delivery_crate.get_node("CollisionShape3D").disabled = false
 
 func calculate_player_tip() -> float:
 	var order_price: float = OrderManager.active_order.price
@@ -411,6 +460,6 @@ func take_screenshot():
 	var image = get_viewport().get_texture().get_image()
 	var time = Time.get_datetime_string_from_system().replace(":", "-")
 	
-	var filename = "Screenshot_%s.png" % Time.get_datetime_string_from_system().replace(":", "-")
+	var filename = "Screenshot_%s.png" % time
 	image.save_png(desktop.path_join(filename))
 	print(filename)
