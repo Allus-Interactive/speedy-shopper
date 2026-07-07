@@ -69,8 +69,8 @@ process_mode = 4
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1235062685]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1720.0
-offset_bottom = 1080.0
+offset_right = 1280.0
+offset_bottom = 720.0
 mouse_filter = 2
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer/Control" unique_id=1705154295]
