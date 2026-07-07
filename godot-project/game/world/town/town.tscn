@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://brf4frkpxvupc" path="res://game/resources/customer/resources/main_street/001_main_street.tres" id="7_nflbr"]
 [ext_resource type="Resource" uid="uid://dp1yajhrgrtuj" path="res://game/resources/customer/resources/main_street/002_main_street.tres" id="8_7p2xk"]
 [ext_resource type="Resource" uid="uid://c37jbx8cmglje" path="res://game/resources/customer/resources/main_street/003_main_street.tres" id="9_5ncuf"]
+[ext_resource type="Resource" uid="uid://bnr1047vs53mn" path="res://game/resources/customer/resources/main_street/004_main_street.tres" id="11_7p2xk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -96,4 +97,4 @@ customer_details = ExtResource("9_5ncuf")
 
 [node name="004" parent="MainStreetDropOffs" unique_id=1490319689 instance=ExtResource("6_febur")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 37.5, 2, 148.5)
-customer_details = ExtResource("8_7p2xk")
+customer_details = ExtResource("11_7p2xk")

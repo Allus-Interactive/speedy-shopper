@@ -260,16 +260,16 @@ func complete_delivery() -> void:
 	
 	# Mark order as complete
 	OrderManager.active_delivery.is_completed = true
-	# store order in completed_orders array before clearing active order
-	JobManager.complete_order_by_id(OrderManager.active_order.order_id)
-	# clear active order
-	OrderManager.active_order = null
+	# store order in completed_orders array before clearing active delivery
+	JobManager.complete_delivery_by_id(OrderManager.active_delivery.order_id)
+	# clear active delivery
+	OrderManager.active_delivery = null
 	
 	# Generate next orders if no available orders or orders to be delivered
 	if JobManager.available_orders.size() == 0 and JobManager.picked_orders.size() == 0:
 		# restock products before generating new orders
 		# TODO: move restock logic to when player returns to shop after deliveries
-		ProductManager.restock_products()
+		# ProductManager.restock_products()
 		JobManager.generate_order()
 
 func load_order_into_van() -> void:
@@ -303,9 +303,14 @@ func reset_crate() -> void:
 		GameManager.delivery_crate.get_node("CollisionShape3D").disabled = false
 
 func calculate_player_tip() -> float:
-	var order_price: float = OrderManager.active_order.price
+	var order_price: float = 0
+	if OrderManager.active_order:
+		order_price = OrderManager.active_order.price
+	elif OrderManager.active_delivery:
+		order_price = OrderManager.active_delivery.price
 	var tip_percentage: int = 15
 	var player_tip: float = (order_price / 100) * tip_percentage
+	
 	return player_tip
 
 func return_held_product() -> void:
@@ -450,8 +455,9 @@ func exit_vehicle(v: Vehicle) -> void:
 # TEMPORARY SCREENSHOT LOGIC
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("screenshot"):
-		take_screenshot()
+	pass
+	#if event.is_action_pressed("screenshot"):
+		#take_screenshot()
 
 func take_screenshot():
 	await RenderingServer.frame_post_draw

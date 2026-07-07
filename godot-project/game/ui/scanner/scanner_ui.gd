@@ -204,13 +204,10 @@ func _rebuild_delivery_list(items: Array[OrderData]) -> void:
 	for item in items:
 		var row: DeliveryLabel = delivery_label_scene.instantiate()
 		
-		var address: String = item.delivery_address
-		var customer_name: String = item.customer
-		
 		# Add label to items list
 		deliveries_list.add_child(row)
 		# populate label data
-		row.populate_data(address, customer_name)
+		row.populate_data(item)
 		
 		if not button_in_focus:
 			row.focus_on_button()
