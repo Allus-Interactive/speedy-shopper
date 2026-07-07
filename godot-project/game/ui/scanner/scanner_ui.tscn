@@ -31,7 +31,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CurrentOrderView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=1271660774]
-visible = false
 custom_minimum_size = Vector2(264, 430)
 layout_mode = 1
 anchors_preset = 8
@@ -61,31 +60,6 @@ text = "Order #00001"
 [node name="OrderDetailsContainer" type="HBoxContainer" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer" unique_id=62385124]
 layout_mode = 2
 
-[node name="VBoxDelivery" type="VBoxContainer" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer" unique_id=821880702]
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-
-[node name="DeliveryLabel" type="Label" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=1676859107]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-theme = ExtResource("1_6jepp")
-theme_override_font_sizes/font_size = 12
-text = "Order:"
-
-[node name="OrderDetails" type="Label" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=144819064]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-theme = ExtResource("1_6jepp")
-theme_override_font_sizes/font_size = 12
-text = "Placed:"
-
-[node name="DeliveryDetails" type="Label" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=424528954]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-theme = ExtResource("1_6jepp")
-theme_override_font_sizes/font_size = 12
-text = "Due:"
-
 [node name="VBoxCustomer" type="VBoxContainer" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer" unique_id=1488224293]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
@@ -104,6 +78,44 @@ theme = ExtResource("1_6jepp")
 theme_override_font_sizes/font_size = 12
 text = "Name"
 
+[node name="VBoxDelivery" type="VBoxContainer" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer" unique_id=821880702]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="DeliveryLabel" type="Label" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=1676859107]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("1_6jepp")
+theme_override_font_sizes/font_size = 12
+text = "Address: "
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="DeliveryDetails" type="Label" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=203570843]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("1_6jepp")
+theme_override_font_sizes/font_size = 12
+text = "Address"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="TimeOrdered" type="Label" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=144819064]
+visible = false
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("1_6jepp")
+theme_override_font_sizes/font_size = 12
+text = "Placed:"
+
+[node name="TimeDue" type="Label" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery" unique_id=424528954]
+visible = false
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("1_6jepp")
+theme_override_font_sizes/font_size = 12
+text = "Due:"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="ScannerContainer/Screen/CurrentOrderView/VBoxContainer" unique_id=1416076793]
 custom_minimum_size = Vector2(0, 340)
 layout_mode = 2
@@ -113,6 +125,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="AvailableOrdersView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=1988843271]
+visible = false
 custom_minimum_size = Vector2(264, 430)
 layout_mode = 0
 offset_right = 40.0
@@ -135,6 +148,32 @@ custom_minimum_size = Vector2(0, 395)
 layout_mode = 2
 
 [node name="AvailableItemsList" type="VBoxContainer" parent="ScannerContainer/Screen/AvailableOrdersView/VBoxContainer/AvailableOrdersScroll" unique_id=1162525198]
+layout_mode = 2
+
+[node name="DeliveriesView" type="MarginContainer" parent="ScannerContainer/Screen" unique_id=858089192]
+visible = false
+custom_minimum_size = Vector2(264, 430)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScannerContainer/Screen/DeliveriesView" unique_id=256687663]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleLabel" type="Label" parent="ScannerContainer/Screen/DeliveriesView/VBoxContainer" unique_id=11802849]
+layout_mode = 2
+theme = ExtResource("1_6jepp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_pq742")
+text = "Orders to Deilver"
+
+[node name="DeliveriesScroll" type="ScrollContainer" parent="ScannerContainer/Screen/DeliveriesView/VBoxContainer" unique_id=1639124149]
+custom_minimum_size = Vector2(0, 395)
+layout_mode = 2
+
+[node name="DeliveriesList" type="VBoxContainer" parent="ScannerContainer/Screen/DeliveriesView/VBoxContainer/DeliveriesScroll" unique_id=1107212565]
 layout_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1870317863]

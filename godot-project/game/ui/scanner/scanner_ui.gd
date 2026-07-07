@@ -10,11 +10,13 @@ class_name ScannerUI
 # View Containers
 @onready var current_order_view: MarginContainer = $ScannerContainer/Screen/CurrentOrderView
 @onready var available_orders_view: MarginContainer = $ScannerContainer/Screen/AvailableOrdersView
+@onready var deliveries_view: MarginContainer = $ScannerContainer/Screen/DeliveriesView
 # Current Order View
 @onready var title_label: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/TitleLabel
 @onready var order_details_container: HBoxContainer = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer
-@onready var order_details: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery/OrderDetails
 @onready var delivery_details: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery/DeliveryDetails
+@onready var time_ordered: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery/TimeOrdered
+@onready var time_due: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxDelivery/TimeDue
 @onready var customer_details: Label = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/OrderDetailsContainer/VBoxCustomer/CustomerDetails
 @onready var scroll_container: ScrollContainer = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/ScrollContainer
 @onready var items_list: VBoxContainer = $ScannerContainer/Screen/CurrentOrderView/VBoxContainer/ScrollContainer/ItemsList
@@ -31,13 +33,13 @@ var is_animating: bool = false
 func _ready() -> void:
 	GameManager.scroll_container = scroll_container
 	scanner_container.position.y = closed_y
-	initialize_scanner_ui()
+	display_available_orders()
 	
-	if not OrderManager.order_updated.is_connected(refresh_from_order):
-		OrderManager.order_updated.connect(refresh_from_order)
+	if not OrderManager.order_updated.is_connected(display_current_order):
+		OrderManager.order_updated.connect(display_current_order)
 	
-	if not JobManager.order_selected.is_connected(refresh_from_order):
-		JobManager.order_selected.connect(refresh_from_order)
+	if not JobManager.order_selected.is_connected(display_current_order):
+		JobManager.order_selected.connect(display_current_order)
 
 func toggle_scanner() -> void:
 	if is_animating:
@@ -53,10 +55,16 @@ func open() -> void:
 		return
 	
 	var order = OrderManager.active_order
+	
+	var available_orders = JobManager.available_orders.size()
+	var picked_orders = JobManager.picked_orders.size()
+	
 	if order:
-		refresh_from_order()
+		display_current_order()
+	elif available_orders == 0 and picked_orders > 0:
+		display_orders_to_be_delivered()
 	else:
-		initialize_scanner_ui()
+		display_available_orders()
 	
 	GameManager.is_scanner_open = true
 	_animate_to(open_y)
@@ -79,19 +87,26 @@ func _animate_to(target_y: float) -> void:
 	await tween.finished
 	is_animating = false
 
-func refresh_from_order() -> void:
+func display_current_order() -> void:
 	var order = OrderManager.active_order
 	
 	if order:
 		# show current order view
 		current_order_view.visible = true
 		available_orders_view.visible = false
+		deliveries_view.visible = false
 		_build_current_order_view(order)
 
-func initialize_scanner_ui() -> void:
+func display_orders_to_be_delivered() -> void:
+	current_order_view.visible = false
+	available_orders_view.visible = false
+	deliveries_view.visible = true
+
+func display_available_orders() -> void:
 	# show available orders list
 	current_order_view.visible = false
 	available_orders_view.visible = true
+	deliveries_view.visible = false
 	_build_available_orders_view()
 	
 	# TODO: investigate if we need this
@@ -113,8 +128,10 @@ func _build_current_order_view(order: OrderData) -> void:
 	title_label.text = "Order #" + str(order.order_id).pad_zeros(5)
 	order_details_container.visible = true
 	customer_details.text = order.customer
-	order_details.text = "Ordered: " +order.order_placed
-	delivery_details.text = "Due: " + order.delivery_time
+	delivery_details.text = order.delivery_address + " "
+	# TODO: reintroduce when implementing Time system
+	# time_ordered.text = "Ordered: " + order.order_placed
+	# time_due.text = "Due: " + order.delivery_time
 	
 	_rebuild_items_list(order.items)
 	
