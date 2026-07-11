@@ -3,5 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://djb74eito08y7" path="res://assets/npcs/placeholder.glb" id="1_afh0j"]
 
 [node name="DemoNPC" type="Node3D" unique_id=904645452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.342093, -2.5726752, 1.4146258)
 
 [node name="placeholder" parent="." unique_id=1066095562 instance=ExtResource("1_afh0j")]
