@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dcfeufe0tmvth"]
+
+[ext_resource type="PackedScene" uid="uid://djb74eito08y7" path="res://assets/npcs/placeholder.glb" id="1_afh0j"]
+
+[node name="DemoNPC" type="Node3D" unique_id=904645452]
+
+[node name="placeholder" parent="." unique_id=1066095562 instance=ExtResource("1_afh0j")]
