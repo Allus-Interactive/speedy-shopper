@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://djkw3qkxjoya3"
-path="res://.godot/imported/road_bend.glb-04f22a24cd739d5b216d2f718f46647d.scn"
+uid="uid://ch0inmnkgw8pm"
+path="res://.godot/imported/footstool.glb-a120e0c5e6f09b6702d2301009f2d45c.scn"
 
 [deps]
 
-source_file="res://assets/environment/roads/road_bend.glb"
-dest_files=["res://.godot/imported/road_bend.glb-04f22a24cd739d5b216d2f718f46647d.scn"]
+source_file="res://assets/environment/shop/footstool.glb"
+dest_files=["res://.godot/imported/footstool.glb-a120e0c5e6f09b6702d2301009f2d45c.scn"]
 
 [params]
 
@@ -39,19 +39,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"meshes": {
-"road_bend_road-bend": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/environment/roads/road_bend.tres",
-"save_to_file/path": "uid://bmsmw5st83fku"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
-gltf/texture_map_mode=0
+gltf/texture_map_mode=1
