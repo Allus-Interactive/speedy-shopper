@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dcfeufe0tmvth"]
 
-[ext_resource type="PackedScene" uid="uid://djb74eito08y7" path="res://assets/npcs/placeholder.glb" id="1_afh0j"]
+[ext_resource type="PackedScene" uid="uid://bw35wi51qu154" path="res://assets/npcs/block_woman.glb" id="1_0ttxc"]
 
 [node name="DemoNPC" type="Node3D" unique_id=904645452]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.342093, -2.5726752, 1.4146258)
 
-[node name="placeholder" parent="." unique_id=1066095562 instance=ExtResource("1_afh0j")]
+[node name="block_woman" parent="." unique_id=798762923 instance=ExtResource("1_0ttxc")]
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
