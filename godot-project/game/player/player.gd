@@ -43,6 +43,9 @@ var is_inspecting_product: bool = false
 # Scanner
 @onready var scanner_ui: ScannerUI = $ScannerUI
 
+# 3D Model
+@onready var model: Node3D = $Model
+
 func _ready() -> void:
 	tooltip_panel.hide()
 
@@ -64,6 +67,7 @@ func handle_player_look_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.01)
+			model.rotate_y(-event.relative.x * 0.01)
 			camera.rotate_x(-event.relative.y * 0.01)
 			# clamp rotation
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-45), deg_to_rad(45))
@@ -453,19 +457,17 @@ func exit_vehicle(v: Vehicle) -> void:
 		push_error("No Van Camera found")
 
 # TEMPORARY SCREENSHOT LOGIC
-
-func _input(event: InputEvent) -> void:
-	pass
+#func _input(event: InputEvent) -> void:
 	#if event.is_action_pressed("screenshot"):
 		#take_screenshot()
 
-func take_screenshot():
-	await RenderingServer.frame_post_draw
-	
-	var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
-	var image = get_viewport().get_texture().get_image()
-	var time = Time.get_datetime_string_from_system().replace(":", "-")
-	
-	var filename = "Screenshot_%s.png" % time
-	image.save_png(desktop.path_join(filename))
-	print(filename)
+#func take_screenshot():
+	#await RenderingServer.frame_post_draw
+	#
+	#var desktop = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
+	#var image = get_viewport().get_texture().get_image()
+	#var time = Time.get_datetime_string_from_system().replace(":", "-")
+	#
+	#var filename = "Screenshot_%s.png" % time
+	#image.save_png(desktop.path_join(filename))
+	#print(filename)
