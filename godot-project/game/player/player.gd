@@ -20,8 +20,11 @@ var is_in_vehicle: bool = false
 var is_carrying_crate: bool = false
 var delivery_crate: DeliveryCrate = null
 
+var is_on_stool: bool = false
 var is_carrying_stool: bool = false
 var footstool: Footstool = null
+
+var standing_point: Vector3 = Vector3.ZERO
 
 # Product Inspect variables
 var held_product: ProductPlaceholder = null
@@ -109,6 +112,9 @@ func _physics_process(delta: float) -> void:
 	if is_inspecting_product:
 		return
 	
+	if is_on_stool:
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -173,6 +179,9 @@ func _process(delta: float) -> void:
 			print("Player interacts with: ", obj)
 			if obj.has_method("interact"):
 				obj.interact(self)
+		else:
+			if is_on_stool:
+				get_off_footstool()
 
 func pick_up_product(product: ProductPlaceholder) -> void:	
 	if is_inspecting_product:
@@ -254,6 +263,7 @@ func pick_up_footstool(stool: Footstool) -> void:
 	stool.rotation = Vector3.ZERO
 
 func put_down_footstool(floor: Floor, place_point: Vector3) -> void:
+	footstool = null
 	is_carrying_stool = false
 	
 	# re-enable collision shape to avoid interference with raycasts or clipping
@@ -263,6 +273,33 @@ func put_down_footstool(floor: Floor, place_point: Vector3) -> void:
 	footstool.reparent(floor.get_parent())
 	footstool.position = place_point
 	footstool.rotation = Vector3.ZERO
+
+func stand_on_footstool(stool: Footstool, stand_point: Node3D) -> void:
+	is_on_stool = true
+	footstool = stool
+	
+	# disable collision shape to avoid interference with raycasts or clipping
+	if stool.has_node("CollisionShape3D"):
+		stool.get_node("CollisionShape3D").disabled = true
+	
+	self.reparent(stand_point)
+	
+	standing_point = self.global_position
+	self.position = Vector3.ZERO
+
+func get_off_footstool() -> void:
+	is_on_stool = false
+	
+	# disable collision shape to avoid interference with raycasts or clipping
+	if footstool.has_node("CollisionShape3D"):
+		footstool.get_node("CollisionShape3D").disabled = false
+	
+	self.reparent(footstool.get_parent())
+	
+	self.position = standing_point
+	standing_point = Vector3.ZERO
+	
+	footstool = null
 
 func complete_order() -> void:
 	### START OF TEMP LOGIC

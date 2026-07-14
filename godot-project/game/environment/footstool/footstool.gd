@@ -2,9 +2,20 @@ extends StaticBody3D
 
 class_name Footstool
 
+@onready var stand_point: Node3D = $StandPoint
+
 func interact(player: Player) -> void:
 	if not player.is_carrying_crate:
-		player.pick_up_footstool(self)
+		# Get the player's interaction raycast.
+		var raycast = player.ray_cast_3d
+		
+		var local_hit: Vector3 = _get_local_hit_point(raycast)
+		# If the player is looking at the top section of the stool, offer to stand on it.
+		# Otherwise, they're looking at the lower section, so offer to pick it up instead.
+		if local_hit.y > 1.5:
+			player.stand_on_footstool(self, stand_point)
+		else:
+			player.pick_up_footstool(self)
 
 func get_interaction_tooltip(player: Player) -> String:
 	# Get the player's interaction raycast.
