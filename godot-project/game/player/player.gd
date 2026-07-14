@@ -112,6 +112,9 @@ func _physics_process(delta: float) -> void:
 	if is_inspecting_product:
 		return
 	
+	# Update the interaction tooltip, even when on the stool
+	update_tooltip()
+	
 	if is_on_stool:
 		return
 	
@@ -138,8 +141,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, movement_speed)
 		velocity.z = move_toward(velocity.z, 0, movement_speed)
 	
-	# Update the interaction tooltip
-	update_tooltip()
 	# Move the player
 	move_and_slide()
 
@@ -263,7 +264,6 @@ func pick_up_footstool(stool: Footstool) -> void:
 	stool.rotation = Vector3.ZERO
 
 func put_down_footstool(floor_obj: Floor, place_point: Vector3) -> void:
-	footstool = null
 	is_carrying_stool = false
 	
 	# re-enable collision shape
@@ -273,6 +273,8 @@ func put_down_footstool(floor_obj: Floor, place_point: Vector3) -> void:
 	footstool.reparent(floor_obj.get_parent())
 	footstool.position = place_point
 	footstool.rotation = Vector3.ZERO
+	
+	footstool = null
 
 func stand_on_footstool(stool: Footstool, stand_point: Node3D) -> void:
 	is_on_stool = true
@@ -286,6 +288,8 @@ func stand_on_footstool(stool: Footstool, stand_point: Node3D) -> void:
 	
 	standing_point = self.global_position
 	self.position = Vector3.ZERO
+	
+	self.reparent(footstool.get_parent())
 
 func get_off_footstool() -> void:
 	is_on_stool = false
@@ -293,8 +297,6 @@ func get_off_footstool() -> void:
 	# re-enable collision shape
 	if footstool.has_node("CollisionShape3D"):
 		footstool.get_node("CollisionShape3D").disabled = false
-	
-	self.reparent(footstool.get_parent())
 	
 	self.position = standing_point
 	standing_point = Vector3.ZERO
@@ -461,6 +463,12 @@ func scan_barcode() -> void:
 
 # Update tooltip text and crosshair colour
 func update_tooltip() -> void:
+	# If on the stool and there is no object
+	if is_on_stool and not ray_cast_3d.is_colliding():
+		tooltip_label.text = "Press E - Get off Stool"
+		tooltip_panel.show()
+		return
+	
 	# If there is no object
 	if not ray_cast_3d.is_colliding():
 		tooltip_panel.hide()
