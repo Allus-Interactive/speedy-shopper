@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://dcfeufe0tmvth"]
 
 [ext_resource type="PackedScene" uid="uid://bw35wi51qu154" path="res://assets/npcs/block_woman.glb" id="1_0ttxc"]
+[ext_resource type="Script" uid="uid://didou0glf670l" path="res://game/npcs/demo_npc/demo_npc.gd" id="1_j524i"]
 
-[node name="DemoNPC" type="Node3D" unique_id=904645452]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t2dwb"]
+
+[node name="DemoNPC" type="StaticBody3D" unique_id=1516119349]
+script = ExtResource("1_j524i")
 
 [node name="block_woman" parent="." unique_id=798762923 instance=ExtResource("1_0ttxc")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=965250006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_t2dwb")

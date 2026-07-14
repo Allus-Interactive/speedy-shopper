@@ -28,6 +28,8 @@ var standing_point: Vector3 = Vector3.ZERO
 
 var ray_cast_target_position = Vector3(0, 0, -2)
 
+var is_speaking_to_npc: bool = false
+
 # Product Inspect variables
 var held_product: ProductPlaceholder = null
 var held_product_original_parent: Node = null

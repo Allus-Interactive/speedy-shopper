@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://cvwv36djqy7es" path="res://assets/themes/player_ui.tres" id="2_8soms"]
 [ext_resource type="PackedScene" uid="uid://c6m46wgh7wbdt" path="res://game/ui/scanner/scanner_ui.tscn" id="2_b2mth"]
 [ext_resource type="PackedScene" uid="uid://c5mty81xoue3a" path="res://game/ui/notification_ui/notification_ui.tscn" id="4_a4w0n"]
+[ext_resource type="PackedScene" uid="uid://gnqq0wgbnm5k" path="res://game/ui/dialog_ui/dialog_ui.tscn" id="6_4ste8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_obar5"]
 radius = 0.4
@@ -122,3 +123,5 @@ open_y = 300.0
 [node name="NotificationUI" parent="." unique_id=1021323123 instance=ExtResource("4_a4w0n")]
 offset = Vector2(290, 100)
 transform = Transform2D(1, 0, 0, 1, 290, 100)
+
+[node name="DialogUI" parent="." unique_id=935902538 instance=ExtResource("6_4ste8")]

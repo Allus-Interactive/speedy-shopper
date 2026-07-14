@@ -5,7 +5,7 @@
 [node name="NotificationUI" type="CanvasLayer" unique_id=1021323123]
 script = ExtResource("1_4ijny")
 
-[node name="NotificationPanel" type="ColorRect" parent="." unique_id=140205930]
+[node name="NotificationPanel" type="ColorRect" parent="." unique_id=1325904060]
 custom_minimum_size = Vector2(700, 150)
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6862745)
 
-[node name="NotificationLabel" type="Label" parent="NotificationPanel" unique_id=2082061414]
+[node name="NotificationLabel" type="Label" parent="NotificationPanel" unique_id=1987063495]
 custom_minimum_size = Vector2(700, 150)
 layout_mode = 0
 offset_right = 220.0

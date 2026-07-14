@@ -27,6 +27,7 @@ OrderManager="*uid://8qw21rlqvxpy"
 ProductManager="*uid://bq28rqrtxh13d"
 CustomerManager="*uid://df377056n5rq7"
 Constants="*uid://bk1di2xfeuuvr"
+DialogManager="*uid://c4tnm8tcb4iie"
 
 [display]
 
