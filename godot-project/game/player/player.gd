@@ -26,6 +26,8 @@ var footstool: Footstool = null
 
 var standing_point: Vector3 = Vector3.ZERO
 
+var ray_cast_target_position = Vector3(0, 0, -2)
+
 # Product Inspect variables
 var held_product: ProductPlaceholder = null
 var held_product_original_parent: Node = null
@@ -254,6 +256,9 @@ func pick_up_footstool(stool: Footstool) -> void:
 	footstool = stool
 	is_carrying_stool = true
 	
+	# Increase ray cast to put down stool
+	ray_cast_3d.target_position = Vector3(0, 0, -3)
+	
 	# disable collision shape to avoid interference with raycasts or clipping
 	if stool.has_node("CollisionShape3D"):
 		stool.get_node("CollisionShape3D").disabled = true
@@ -265,6 +270,9 @@ func pick_up_footstool(stool: Footstool) -> void:
 
 func put_down_footstool(floor_obj: Floor, place_point: Vector3) -> void:
 	is_carrying_stool = false
+	
+	# Reset raycast after putting doen the stool
+	ray_cast_3d.target_position = ray_cast_target_position
 	
 	# re-enable collision shape
 	if footstool.has_node("CollisionShape3D"):
