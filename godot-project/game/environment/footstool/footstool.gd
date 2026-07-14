@@ -4,6 +4,8 @@ class_name Footstool
 
 @onready var stand_point: Node3D = $StandPoint
 
+var height_split: float = 1.98
+
 func interact(player: Player) -> void:
 	if not player.is_carrying_crate:
 		# Get the player's interaction raycast.
@@ -12,7 +14,7 @@ func interact(player: Player) -> void:
 		var local_hit: Vector3 = _get_local_hit_point(raycast)
 		# If the player is looking at the top section of the stool, offer to stand on it.
 		# Otherwise, they're looking at the lower section, so offer to pick it up instead.
-		if local_hit.y > 1.5:
+		if local_hit.y > height_split:
 			player.stand_on_footstool(self, stand_point)
 		else:
 			player.pick_up_footstool(self)
@@ -24,7 +26,7 @@ func get_interaction_tooltip(player: Player) -> String:
 	var local_hit: Vector3 = _get_local_hit_point(raycast)
 	# If the player is looking at the top section of the stool, offer to stand on it.
 	# Otherwise, they're looking at the lower section, so offer to pick it up instead.
-	if local_hit.y > 1.5:
+	if local_hit.y > height_split:
 		return "Press E - Stand on Footstool"
 	else:
 		return "Press E - Pick up Footstool"
