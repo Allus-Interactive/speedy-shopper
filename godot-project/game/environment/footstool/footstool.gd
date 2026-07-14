@@ -2,8 +2,6 @@ extends StaticBody3D
 
 class_name Footstool
 
-@onready var collision_shape_top: FootstoolTop = $CollisionShapeTop
-
 func get_interaction_tooltip(player: Player) -> String:
 	# Get the player's interaction raycast.
 	var raycast = player.ray_cast_3d
