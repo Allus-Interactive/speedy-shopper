@@ -30,18 +30,21 @@ shape = SubResource("CapsuleShape3D_obar5")
 [node name="Neck" type="Node3D" parent="." unique_id=707722043]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Neck" unique_id=904531325]
+[node name="ThirdPersonCamera" type="Camera3D" parent="Neck" unique_id=1486429542]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1, 2)
+
+[node name="FirstPersonCamera" type="Camera3D" parent="Neck" unique_id=904531325]
 current = true
 
-[node name="RayCast3D" type="RayCast3D" parent="Neck/Camera3D" unique_id=924524563]
+[node name="RayCast3D" type="RayCast3D" parent="Neck/FirstPersonCamera" unique_id=924524563]
 target_position = Vector3(0, 0, -1.5)
 debug_shape_custom_color = Color(0, 0.5058824, 0, 1)
 debug_shape_thickness = 1
 
-[node name="HoldPoint" type="Marker3D" parent="Neck/Camera3D" unique_id=318646590]
+[node name="HoldPoint" type="Marker3D" parent="Neck/FirstPersonCamera" unique_id=318646590]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
-[node name="CrateHoldPoint" type="Marker3D" parent="Neck/Camera3D" unique_id=1080737540]
+[node name="CrateHoldPoint" type="Marker3D" parent="Neck/FirstPersonCamera" unique_id=1080737540]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.8)
 
 [node name="UiPanel" type="Panel" parent="." unique_id=1552972375]

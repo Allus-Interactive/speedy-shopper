@@ -26,13 +26,14 @@ var held_product_original_parent: Node = null
 var held_product_original_transform: Transform3D
 var is_inspecting_product: bool = false
 @export var inspect_rotation_speed: float = 2.0
-@onready var hold_point: Marker3D = $Neck/Camera3D/HoldPoint
-@onready var crate_hold_point: Marker3D = $Neck/Camera3D/CrateHoldPoint
+@onready var hold_point: Marker3D = $Neck/FirstPersonCamera/HoldPoint
+@onready var crate_hold_point: Marker3D = $Neck/FirstPersonCamera/CrateHoldPoint
 
 # Camera
 @onready var neck: Node3D = $Neck
-@onready var camera: Camera3D = $Neck/Camera3D
-@onready var ray_cast_3d: RayCast3D = $Neck/Camera3D/RayCast3D
+@onready var camera: Camera3D = $Neck/FirstPersonCamera
+@onready var third_person_camera: Camera3D = $Neck/ThirdPersonCamera
+@onready var ray_cast_3d: RayCast3D = $Neck/FirstPersonCamera/RayCast3D
 
 # UI
 @onready var crosshair: ColorRect = $CanvasLayer/Control/Crosshair
@@ -71,6 +72,10 @@ func handle_player_look_input(event: InputEvent) -> void:
 			camera.rotate_x(-event.relative.y * 0.01)
 			# clamp rotation
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-45), deg_to_rad(45))
+			
+			third_person_camera.rotate_x(-event.relative.y * 0.01)
+			# clamp rotation
+			third_person_camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-45), deg_to_rad(45))
 
 func handle_product_inspection_input(delta: float) -> void:
 	if held_product == null:
@@ -108,6 +113,10 @@ func _physics_process(delta: float) -> void:
 	is_crouching = Input.is_action_pressed("crouch")
 	
 	update_crouch(delta)
+	
+	# TODO: revisit and improve camera switching
+	if Input.is_action_just_pressed("switch camera"):
+		switch_camera()
 	
 	var movement_speed = CROUCH_SPEED if is_crouching else WALK_SPEED
 	
@@ -413,6 +422,14 @@ func update_tooltip() -> void:
 func update_crouch(delta: float) -> void:
 	var target_neck_y = crouching_neck_height if is_crouching else standing_neck_height
 	neck.position.y = lerp(neck.position.y, target_neck_y, crouch_lerp_speed * delta)
+
+func switch_camera() -> void:
+	if camera.current:
+		third_person_camera.current = true
+		camera.current = false
+	else:
+		camera.current = true
+		third_person_camera.current = false
 
 func enter_vehicle(v: Vehicle) -> void:
 	is_in_vehicle = true
