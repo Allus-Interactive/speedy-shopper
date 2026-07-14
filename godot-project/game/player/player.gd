@@ -262,15 +262,15 @@ func pick_up_footstool(stool: Footstool) -> void:
 	stool.position = Vector3.ZERO
 	stool.rotation = Vector3.ZERO
 
-func put_down_footstool(floor: Floor, place_point: Vector3) -> void:
+func put_down_footstool(floor_obj: Floor, place_point: Vector3) -> void:
 	footstool = null
 	is_carrying_stool = false
 	
-	# re-enable collision shape to avoid interference with raycasts or clipping
+	# re-enable collision shape
 	if footstool.has_node("CollisionShape3D"):
 		footstool.get_node("CollisionShape3D").disabled = false
 	
-	footstool.reparent(floor.get_parent())
+	footstool.reparent(floor_obj.get_parent())
 	footstool.position = place_point
 	footstool.rotation = Vector3.ZERO
 
@@ -290,7 +290,7 @@ func stand_on_footstool(stool: Footstool, stand_point: Node3D) -> void:
 func get_off_footstool() -> void:
 	is_on_stool = false
 	
-	# disable collision shape to avoid interference with raycasts or clipping
+	# re-enable collision shape
 	if footstool.has_node("CollisionShape3D"):
 		footstool.get_node("CollisionShape3D").disabled = false
 	
