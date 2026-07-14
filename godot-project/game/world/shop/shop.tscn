@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://0q7k7agu1au5" path="res://game/world/shop/shelf_unit/shelf_unit.tscn" id="2_4o56f"]
 [ext_resource type="Material" uid="uid://da0qvmrkc6mef" path="res://assets/materials/shop_floor.tres" id="2_otvff"]
 [ext_resource type="PackedScene" uid="uid://q1llllqwatrb" path="res://game/resources/products/placeholder/product_placeholder.tscn" id="3_6k1ee"]
+[ext_resource type="Script" uid="uid://wb0hf7mix7b4" path="res://game/world/shop/floor.gd" id="3_m1y7i"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="4_5qt63"]
 [ext_resource type="Resource" uid="uid://cwcswyx1gpss5" path="res://game/resources/products/placeholder/resources/cereal/own_brand_cereal.tres" id="5_yhfbf"]
 [ext_resource type="Resource" uid="uid://s2w5b4bb6gcd" path="res://game/resources/products/placeholder/resources/cereal/finest_brand_cereal.tres" id="6_u503x"]
@@ -195,14 +196,15 @@ environment = SubResource("Environment_4wyf3")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=992022153]
-visible = false
+[node name="Floor" type="StaticBody3D" parent="." unique_id=793564619]
+script = ExtResource("3_m1y7i")
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=992022153]
 material_override = ExtResource("2_otvff")
 mesh = SubResource("PlaneMesh_glehq")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=793564619]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1456260005]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1456260005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_74d5v")
 

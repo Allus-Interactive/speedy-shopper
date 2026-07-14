@@ -3,8 +3,9 @@ extends StaticBody3D
 class_name DeliveryCrate
 
 func interact(player: Player) -> void:
-	if _order_is_picked():
-		player.pick_up_delivery_crate(self)
+	if not player.is_carrying_stool:
+		if _order_is_picked():
+			player.pick_up_delivery_crate(self)
 
 func get_interaction_tooltip(_player: Player) -> String:
 	if _order_is_picked():

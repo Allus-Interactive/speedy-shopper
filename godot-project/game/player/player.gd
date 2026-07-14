@@ -20,6 +20,9 @@ var is_in_vehicle: bool = false
 var is_carrying_crate: bool = false
 var delivery_crate: DeliveryCrate = null
 
+var is_carrying_stool: bool = false
+var footstool: Footstool = null
+
 # Product Inspect variables
 var held_product: ProductPlaceholder = null
 var held_product_original_parent: Node = null
@@ -233,6 +236,34 @@ func put_down_delivery_crate(kiosk: DeliveryKiosk, is_pickup: bool) -> void:
 	else:
 		load_order_into_van()
 
+func pick_up_footstool(stool: Footstool) -> void:
+	# if scanner is open, close it
+	if GameManager.is_scanner_open:
+		scanner_ui.toggle_scanner()
+	
+	footstool = stool
+	is_carrying_stool = true
+	
+	# disable collision shape to avoid interference with raycasts or clipping
+	if stool.has_node("CollisionShape3D"):
+		stool.get_node("CollisionShape3D").disabled = true
+	
+	# Reparent to crate hold point and reset position and rotation
+	stool.reparent(crate_hold_point)
+	stool.position = Vector3.ZERO
+	stool.rotation = Vector3.ZERO
+
+func put_down_footstool(floor: Floor, place_point: Vector3) -> void:
+	is_carrying_stool = false
+	
+	# re-enable collision shape to avoid interference with raycasts or clipping
+	if footstool.has_node("CollisionShape3D"):
+		footstool.get_node("CollisionShape3D").disabled = false
+	
+	footstool.reparent(floor.get_parent())
+	footstool.position = place_point
+	footstool.rotation = Vector3.ZERO
+
 func complete_order() -> void:
 	### START OF TEMP LOGIC
 	# TODO: spawn new crate to continue next order
@@ -410,8 +441,9 @@ func update_tooltip() -> void:
 	# If the object has the 'get_interaction_tooltip' function
 	if obj.has_method("get_interaction_tooltip"):
 		tooltip_label.text = obj.get_interaction_tooltip(self)
-		tooltip_panel.show()
-		crosshair.modulate = Color.DARK_GREEN
+		if tooltip_label.text != "":
+			tooltip_panel.show()
+			crosshair.modulate = Color.DARK_GREEN
 		return
 	
 	# if the object has the 'interact' function

@@ -2,10 +2,23 @@ extends StaticBody3D
 
 class_name Footstool
 
+func interact(player: Player) -> void:
+	if not player.is_carrying_crate:
+		player.pick_up_footstool(self)
+
 func get_interaction_tooltip(player: Player) -> String:
 	# Get the player's interaction raycast.
 	var raycast = player.ray_cast_3d
 	
+	var local_hit: Vector3 = _get_local_hit_point(raycast)
+	# If the player is looking at the top section of the stool, offer to stand on it.
+	# Otherwise, they're looking at the lower section, so offer to pick it up instead.
+	if local_hit.y > 1.5:
+		return "Press E - Stand on Footstool"
+	else:
+		return "Press E - Pick up Footstool"
+
+func _get_local_hit_point(raycast) -> Vector3:
 	# Only continue if the raycast is currently hitting this footstool.
 	if raycast.is_colliding():
 		# Get the object that was hit and the exact world-space position of the collision.
@@ -15,14 +28,6 @@ func get_interaction_tooltip(player: Player) -> String:
 		# Convert the collision point from world space into the footstool's local space.
 		# This allows us to determine where on the stool it was hit regardless of
 		# its position or rotation in the world.
-		var local_hit = collider.to_local(hit_pos)
-		
-		# If the player is looking at the top section of the stool, offer to stand on it.
-		# Otherwise, they're looking at the lower section, so offer to pick it up instead.
-		if local_hit.y > 1.5:
-			return "Press E - Stand on Footstool"
-		else:
-			return "Press E - Pick up Footstool"
+		return collider.to_local(hit_pos)
+	return Vector3.ZERO
 	
-	# If the raycast isn't hitting a specific interaction area, just display the object name.
-	return "A Footstool"
