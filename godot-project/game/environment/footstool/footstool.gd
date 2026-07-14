@@ -20,10 +20,8 @@ func get_interaction_tooltip(player: Player) -> String:
 		# If the player is looking at the top section of the stool, offer to stand on it.
 		# Otherwise, they're looking at the lower section, so offer to pick it up instead.
 		if local_hit.y > 1.5:
-			print("Top half")
 			return "Press E - Stand on Footstool"
 		else:
-			print("Bottom half")
 			return "Press E - Pick up Footstool"
 	
 	# If the raycast isn't hitting a specific interaction area, just display the object name.
