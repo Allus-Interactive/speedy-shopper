@@ -49,22 +49,29 @@ func _rebuild() -> void:
 	
 	var size := product_data.placeholder_size
 	
-	var box := BoxMesh.new()
-	box.size = size
+	if product_data.model:
+		var instance = product_data.model.instantiate()
+		visual_root.add_child(instance)
+	else:		
+		var box := BoxMesh.new()
+		box.size = size
+		
+		var material := StandardMaterial3D.new()
+		material.albedo_color = product_data.product_colour
+		box.material = material
+		
+		mesh_instance = MeshInstance3D.new()
+		mesh_instance.mesh = box
+		visual_root.add_child(mesh_instance)
+		
+		# TODO: Do we want the label on 3D Models? Or should it be part of the model texture?
+		_setup_label(size)
 	
-	var material := StandardMaterial3D.new()
-	material.albedo_color = product_data.product_colour
-	box.material = material
-	
-	mesh_instance = MeshInstance3D.new()
-	mesh_instance.mesh = box
-	visual_root.add_child(mesh_instance)
-	
+	# This is needed for either the model or placeholder, as it resizes the collision shape
 	var shape := BoxShape3D.new()
 	shape.size = size
 	collision_shape.shape = shape
 	
-	_setup_label(size)
 	_setup_barcode_with_texture(size)
 	
 	position = product_data.shelf_offset
