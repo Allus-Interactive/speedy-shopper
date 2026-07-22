@@ -11,5 +11,7 @@ product_info = ExtResource("2_k5e26")
 placeholder_size = Vector3(0.2, 0.25, 0.2)
 shelf_offset = Vector3(0, 0.125, 0)
 product_colour = Color(0, 0.48155195, 0.84707105, 1)
+barcode_size = Vector2(0.06, 0.04)
+barcode_offset = Vector3(0, -0.073, 0)
 model = ExtResource("2_6a7m1")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
