@@ -19,4 +19,6 @@ class_name Product
 
 @export var barcode_image: CompressedTexture2D = preload("res://assets/barcodes/barcode.png")
 
+@export var model: PackedScene
+
 enum FONT_SIZE { L, M, S }

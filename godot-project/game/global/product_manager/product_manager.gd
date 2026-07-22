@@ -2,7 +2,7 @@ extends Node
 
 @export var all_products: Array[Item] = []
 
-var items_to_restock: Array[ProductPlaceholder] = []
+var items_to_restock: Array[ProductObject] = []
 
 func restock_products() -> void:
 	var no_of_products: int = items_to_restock.size()
