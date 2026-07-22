@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://c8lg704s7wqxd"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_seh1y"]
+[ext_resource type="PackedScene" uid="uid://h6v8olop5ock" path="res://assets/products/milk/skimmed_4pt.glb" id="2_2y056"]
 [ext_resource type="Resource" uid="uid://d0ki662oeydnl" path="res://game/resources/item/resources/milk/skimmed_4pt.tres" id="2_seh1y"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_rf381"]
 
@@ -11,4 +12,6 @@ placeholder_size = Vector3(0.2, 0.5, 0.4)
 shelf_offset = Vector3(0, 0.25, 0)
 default_shelf_quantity = 2
 product_colour = Color(0.8893724, 0, 0.13350803, 1)
+barcode_offset = Vector3(0, -0.145, 0)
+model = ExtResource("2_2y056")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"

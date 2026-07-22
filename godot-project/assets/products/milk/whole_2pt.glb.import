@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cxofgmxat2tyu"
-path="res://.godot/imported/2pt_skimmed.glb-a75ffa8e5c0ec852ed05c6ed770f1640.scn"
+uid="uid://keyue7435eyf"
+path="res://.godot/imported/whole_2pt.glb-ccb9d74261c933d1549fd145320b3018.scn"
 
 [deps]
 
-source_file="res://assets/products/milk/2pt_skimmed.glb"
-dest_files=["res://.godot/imported/2pt_skimmed.glb-a75ffa8e5c0ec852ed05c6ed770f1640.scn"]
+source_file="res://assets/products/milk/whole_2pt.glb"
+dest_files=["res://.godot/imported/whole_2pt.glb-ccb9d74261c933d1549fd145320b3018.scn"]
 
 [params]
 
