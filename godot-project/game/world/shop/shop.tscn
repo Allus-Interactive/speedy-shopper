@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c1ssp6exi0mw7" path="res://game/world/shop/shop.gd" id="1_u503x"]
 [ext_resource type="PackedScene" uid="uid://0q7k7agu1au5" path="res://game/world/shop/shelf_unit/shelf_unit.tscn" id="2_4o56f"]
 [ext_resource type="Material" uid="uid://da0qvmrkc6mef" path="res://assets/materials/shop_floor.tres" id="2_otvff"]
-[ext_resource type="PackedScene" uid="uid://q1llllqwatrb" path="res://game/resources/products/placeholder/product_placeholder.tscn" id="3_6k1ee"]
+[ext_resource type="PackedScene" uid="uid://q1llllqwatrb" path="res://game/resources/products/placeholder/product_object.tscn" id="3_6k1ee"]
 [ext_resource type="Script" uid="uid://wb0hf7mix7b4" path="res://game/world/shop/floor.gd" id="3_m1y7i"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="4_5qt63"]
 [ext_resource type="Resource" uid="uid://cwcswyx1gpss5" path="res://game/resources/products/placeholder/resources/cereal/own_brand_cereal.tres" id="5_yhfbf"]

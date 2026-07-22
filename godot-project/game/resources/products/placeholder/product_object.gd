@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-class_name ProductPlaceholder
+class_name ProductObject
 
 var product_data: Product
 var mesh_instance: MeshInstance3D

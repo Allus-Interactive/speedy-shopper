@@ -31,7 +31,7 @@ var ray_cast_target_position = Vector3(0, 0, -2)
 var is_speaking_to_npc: bool = false
 
 # Product Inspect variables
-var held_product: ProductPlaceholder = null
+var held_product: ProductObject = null
 var held_product_original_parent: Node = null
 var held_product_original_transform: Transform3D
 var is_inspecting_product: bool = false
@@ -188,7 +188,7 @@ func _process(delta: float) -> void:
 			if is_on_stool:
 				get_off_footstool()
 
-func pick_up_product(product: ProductPlaceholder) -> void:	
+func pick_up_product(product: ProductObject) -> void:	
 	if is_inspecting_product:
 		return
 	
