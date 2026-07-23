@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("3_m1c4t")
 product_info = ExtResource("2_u2qsm")
-placeholder_size = Vector3(0.1, 0.2, 0.1)
+placeholder_size = Vector3(0.15, 0.2, 0.15)
 shelf_offset = Vector3(0, 0.125, 0)
 default_shelf_quantity = 6
 label_size = 2
