@@ -1,16 +1,19 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://ddmnl518wfgj0"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_lp3xu"]
+[ext_resource type="PackedScene" uid="uid://dalwkeo0fb5ux" path="res://assets/products/tinned_food/vegetables/tinned_sweetcorn.glb" id="2_dlcjs"]
 [ext_resource type="Resource" uid="uid://ru5vl2ic3cbb" path="res://game/resources/item/resources/tinned_food/vegetables/tinned_sweetcorn.tres" id="2_lp3xu"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_8bi0w"]
 
 [resource]
 script = ExtResource("3_8bi0w")
 product_info = ExtResource("2_lp3xu")
-placeholder_size = Vector3(0.1, 0.2, 0.1)
-shelf_offset = Vector3(0, 0.1, 0)
+placeholder_size = Vector3(0.15, 0.2, 0.15)
+shelf_offset = Vector3(0, 0.125, 0)
 default_shelf_quantity = 6
 label_size = 2
 product_colour = Color(0.9034666, 0.82219654, 0.27359873, 1)
 barcode_size = Vector2(0.08, 0.04)
+barcode_offset = Vector3(0, -0.065, 0)
+model = ExtResource("2_dlcjs")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
