@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://dbqwusjdtmx8e"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_u2qsm"]
+[ext_resource type="PackedScene" uid="uid://3semui7rtph0" path="res://assets/products/tinned_food/beans/baked_beans_and_sausage.glb" id="2_jtfq4"]
 [ext_resource type="Resource" uid="uid://k72ic8m5d8o" path="res://game/resources/item/resources/tinned_food/beans/baked_beans_sausage.tres" id="2_u2qsm"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_m1c4t"]
 
@@ -8,9 +9,11 @@
 script = ExtResource("3_m1c4t")
 product_info = ExtResource("2_u2qsm")
 placeholder_size = Vector3(0.1, 0.2, 0.1)
-shelf_offset = Vector3(0, 0.1, 0)
+shelf_offset = Vector3(0, 0.125, 0)
 default_shelf_quantity = 6
 label_size = 2
 product_colour = Color(0.64428097, 0.20110825, 0.0770397, 1)
 barcode_size = Vector2(0.08, 0.04)
+barcode_offset = Vector3(0, -0.065, 0)
+model = ExtResource("2_jtfq4")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
