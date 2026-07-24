@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://stx70yhrddbk"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_wxvap"]
-[ext_resource type="PackedScene" uid="uid://bbvqqqyj6fvpk" path="res://assets/products/milk/whole_4pt.glb" id="2_20qn1"]
+[ext_resource type="PackedScene" uid="uid://ckgpmj4ekkxi7" path="res://assets/products/milk/whole_4pt.glb" id="2_20qn1"]
 [ext_resource type="Resource" uid="uid://cq7m8386jk2iy" path="res://game/resources/item/resources/milk/whole_4pt.tres" id="2_wxvap"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_xqjai"]
 

@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_182f4"]
 [ext_resource type="Resource" uid="uid://svxki8yw5fky" path="res://game/resources/item/resources/milk/skimmed_2pt.tres" id="2_182f4"]
-[ext_resource type="PackedScene" uid="uid://dfrs71ltxw64m" path="res://assets/products/milk/skimmed_2pt.glb" id="2_n3nja"]
+[ext_resource type="PackedScene" uid="uid://6arnxu8ojg2g" path="res://assets/products/milk/skimmed_2pt.glb" id="2_n3nja"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_ioqhu"]
 
 [resource]
 script = ExtResource("3_ioqhu")
 product_info = ExtResource("2_182f4")
 placeholder_size = Vector3(0.2, 0.5, 0.2)
-shelf_offset = Vector3(0, 0.25, 0)
+shelf_offset = Vector3(0, 0.275, 0)
 product_colour = Color(0.8893724, 0, 0.13350803, 1)
 barcode_size = Vector2(0.09, 0.06)
 barcode_offset = Vector3(0, -0.145, 0)

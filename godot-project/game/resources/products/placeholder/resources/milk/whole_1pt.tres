@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://dgq11hedfj3ki"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_k5e26"]
-[ext_resource type="PackedScene" uid="uid://bqlgde6imxm1m" path="res://assets/products/milk/whole_1pt.glb" id="2_6a7m1"]
+[ext_resource type="PackedScene" uid="uid://hmwpckmixeht" path="res://assets/products/milk/whole_1pt.glb" id="2_6a7m1"]
 [ext_resource type="Resource" uid="uid://c006pn8n5k36m" path="res://game/resources/item/resources/milk/whole_1pt.tres" id="2_k5e26"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_t1ri2"]
 
@@ -9,7 +9,7 @@
 script = ExtResource("3_t1ri2")
 product_info = ExtResource("2_k5e26")
 placeholder_size = Vector3(0.2, 0.25, 0.2)
-shelf_offset = Vector3(0, 0.125, 0)
+shelf_offset = Vector3(0, 0.15, 0)
 product_colour = Color(0, 0.48155195, 0.84707105, 1)
 barcode_size = Vector2(0.06, 0.04)
 barcode_offset = Vector3(0, -0.073, 0)
