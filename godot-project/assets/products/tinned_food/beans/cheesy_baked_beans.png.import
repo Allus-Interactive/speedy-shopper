@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://euxlvc3yxvws"
-path.s3tc="res://.godot/imported/mushroom_soup_mushroom_soup.png-0b23e28f7e18cba787576614f2a12589.s3tc.ctex"
+uid="uid://7tnfajbof7bb"
+path.s3tc="res://.godot/imported/cheesy_baked_beans.png-c8c51cdbb7625dee7504d4bf33590908.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "03e2f4382769baee7270ab21b2314569"
+"md5": "6560e6ae23ec6a0b3716773c9935b872"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/soup/mushroom_soup_mushroom_soup.png"
-dest_files=["res://.godot/imported/mushroom_soup_mushroom_soup.png-0b23e28f7e18cba787576614f2a12589.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/beans/cheesy_baked_beans.png"
+dest_files=["res://.godot/imported/cheesy_baked_beans.png-c8c51cdbb7625dee7504d4bf33590908.s3tc.ctex"]
 
 [params]
 

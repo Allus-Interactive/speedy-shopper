@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u5m1ysr3f6nu"
-path.s3tc="res://.godot/imported/lentil_soup_lentil_soup.png-7a58d20a5548b91ff23f1ddc9a80786c.s3tc.ctex"
+uid="uid://bovlhxexul37o"
+path.s3tc="res://.godot/imported/chicken_soup.png-0a53dac14a8a82b873593eba2bc5ab9a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "35b4f16b9f951a1e87a0d82e61121e08"
+"md5": "35e4907efc0f9ff91de18591056f17a0"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/soup/lentil_soup_lentil_soup.png"
-dest_files=["res://.godot/imported/lentil_soup_lentil_soup.png-7a58d20a5548b91ff23f1ddc9a80786c.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/soup/chicken_soup.png"
+dest_files=["res://.godot/imported/chicken_soup.png-0a53dac14a8a82b873593eba2bc5ab9a.s3tc.ctex"]
 
 [params]
 

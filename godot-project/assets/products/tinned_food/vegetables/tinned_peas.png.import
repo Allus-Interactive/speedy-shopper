@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwl3ijqnpq0bg"
-path.s3tc="res://.godot/imported/tomato_soup_tomato_soup.png-3b1274767f168cb1e44754d2b5f38250.s3tc.ctex"
+uid="uid://dog03tw7njeqs"
+path.s3tc="res://.godot/imported/tinned_peas.png-d2aaa58ba02e561d14b722920225d38b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "9b14038fe67bac09a87aa4b3fd3e4dd4"
+"md5": "d4b4cc86f46e8dff9e6f7cfa2261d05c"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/soup/tomato_soup_tomato_soup.png"
-dest_files=["res://.godot/imported/tomato_soup_tomato_soup.png-3b1274767f168cb1e44754d2b5f38250.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/vegetables/tinned_peas.png"
+dest_files=["res://.godot/imported/tinned_peas.png-d2aaa58ba02e561d14b722920225d38b.s3tc.ctex"]
 
 [params]
 

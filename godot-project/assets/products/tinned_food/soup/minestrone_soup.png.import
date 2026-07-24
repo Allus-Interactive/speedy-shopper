@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7tnfajbof7bb"
-path.s3tc="res://.godot/imported/cheesy_baked_beans_cheesy_baked_beans.png-2d5f6d2213cfc16d0a2624fbfda66b1c.s3tc.ctex"
+uid="uid://cyncao71sd7ot"
+path.s3tc="res://.godot/imported/minestrone_soup.png-530c9cdb5d4ad8d6509d6a6c2c116650.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6560e6ae23ec6a0b3716773c9935b872"
+"md5": "3d0fbc689d53283aef4ca67db0e36169"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/beans/cheesy_baked_beans_cheesy_baked_beans.png"
-dest_files=["res://.godot/imported/cheesy_baked_beans_cheesy_baked_beans.png-2d5f6d2213cfc16d0a2624fbfda66b1c.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/soup/minestrone_soup.png"
+dest_files=["res://.godot/imported/minestrone_soup.png-530c9cdb5d4ad8d6509d6a6c2c116650.s3tc.ctex"]
 
 [params]
 

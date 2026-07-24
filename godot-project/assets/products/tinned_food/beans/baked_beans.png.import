@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dog03tw7njeqs"
-path.s3tc="res://.godot/imported/tinned_peas_tinned_peas.png-ee04d6e571df2ffa338dfbec37d094f5.s3tc.ctex"
+uid="uid://ce74jlb2hoaq6"
+path.s3tc="res://.godot/imported/baked_beans.png-52f64c8156e4667f8a5e4caa9450e230.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d4b4cc86f46e8dff9e6f7cfa2261d05c"
+"md5": "b18be55e00a1fdfd811b6b50bc7e06fc"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/vegetables/tinned_peas_tinned_peas.png"
-dest_files=["res://.godot/imported/tinned_peas_tinned_peas.png-ee04d6e571df2ffa338dfbec37d094f5.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/beans/baked_beans.png"
+dest_files=["res://.godot/imported/baked_beans.png-52f64c8156e4667f8a5e4caa9450e230.s3tc.ctex"]
 
 [params]
 

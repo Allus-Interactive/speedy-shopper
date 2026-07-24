@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chs6jysi3iq30"
-path.s3tc="res://.godot/imported/tinned_sweetcorn_tinned_sweetcorn.png-112c0d26b18c994eabf22f429242f763.s3tc.ctex"
+uid="uid://b0q3ibwbq87ys"
+path.s3tc="res://.godot/imported/reduced_salt_baked_beans.png-e121136f021fbc6f4e1ee0e77388cd22.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "9f45fcf4af4c3c27de438433df48cd9c"
+"md5": "ea980df74b25d4f14bd2da1a23de18ca"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/vegetables/tinned_sweetcorn_tinned_sweetcorn.png"
-dest_files=["res://.godot/imported/tinned_sweetcorn_tinned_sweetcorn.png-112c0d26b18c994eabf22f429242f763.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/beans/reduced_salt_baked_beans.png"
+dest_files=["res://.godot/imported/reduced_salt_baked_beans.png-e121136f021fbc6f4e1ee0e77388cd22.s3tc.ctex"]
 
 [params]
 

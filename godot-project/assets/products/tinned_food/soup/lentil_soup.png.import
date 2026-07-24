@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce74jlb2hoaq6"
-path.s3tc="res://.godot/imported/baked_beans_baked_beans.png-d0c9e53d9bb18f912e745f9134d02db8.s3tc.ctex"
+uid="uid://u5m1ysr3f6nu"
+path.s3tc="res://.godot/imported/lentil_soup.png-da79f3f37f0aa0be67c17f6fc96903d5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b18be55e00a1fdfd811b6b50bc7e06fc"
+"md5": "35b4f16b9f951a1e87a0d82e61121e08"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/beans/baked_beans_baked_beans.png"
-dest_files=["res://.godot/imported/baked_beans_baked_beans.png-d0c9e53d9bb18f912e745f9134d02db8.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/soup/lentil_soup.png"
+dest_files=["res://.godot/imported/lentil_soup.png-da79f3f37f0aa0be67c17f6fc96903d5.s3tc.ctex"]
 
 [params]
 

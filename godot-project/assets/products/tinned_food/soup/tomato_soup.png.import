@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjmkudymlvdr8"
-path.s3tc="res://.godot/imported/mixed_vegetables_mied_vegetables.png-acfb6d6e4964d6d4bb775fd10b0a7c71.s3tc.ctex"
+uid="uid://bwl3ijqnpq0bg"
+path.s3tc="res://.godot/imported/tomato_soup.png-54aa9cf1457528fcf8bca093f6bc296a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ec69ae371bde6870b4727ecfe3abd998"
+"md5": "9b14038fe67bac09a87aa4b3fd3e4dd4"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/vegetables/mixed_vegetables_mied_vegetables.png"
-dest_files=["res://.godot/imported/mixed_vegetables_mied_vegetables.png-acfb6d6e4964d6d4bb775fd10b0a7c71.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/soup/tomato_soup.png"
+dest_files=["res://.godot/imported/tomato_soup.png-54aa9cf1457528fcf8bca093f6bc296a.s3tc.ctex"]
 
 [params]
 

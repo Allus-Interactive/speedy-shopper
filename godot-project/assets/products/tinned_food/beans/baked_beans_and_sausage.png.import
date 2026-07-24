@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bovlhxexul37o"
-path.s3tc="res://.godot/imported/chicken_soup_chicken_soup.png-9ccdae7f0d978938ad6a75516e55ba0d.s3tc.ctex"
+uid="uid://crnxusedggtct"
+path.s3tc="res://.godot/imported/baked_beans_and_sausage.png-94c21fa0692f70c83d9c6538582a076b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "35e4907efc0f9ff91de18591056f17a0"
+"md5": "84e5df46f15d973ec5544945724b6040"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/soup/chicken_soup_chicken_soup.png"
-dest_files=["res://.godot/imported/chicken_soup_chicken_soup.png-9ccdae7f0d978938ad6a75516e55ba0d.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/beans/baked_beans_and_sausage.png"
+dest_files=["res://.godot/imported/baked_beans_and_sausage.png-94c21fa0692f70c83d9c6538582a076b.s3tc.ctex"]
 
 [params]
 

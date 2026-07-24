@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0q3ibwbq87ys"
-path.s3tc="res://.godot/imported/reduced_salt_baked_beans_reduced_salt_baked_beans.png-98d215aea20f00eb2549c7ce7cd5729c.s3tc.ctex"
+uid="uid://euxlvc3yxvws"
+path.s3tc="res://.godot/imported/mushroom_soup.png-521c456f67698f732395a69c187c50a8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ea980df74b25d4f14bd2da1a23de18ca"
+"md5": "03e2f4382769baee7270ab21b2314569"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/beans/reduced_salt_baked_beans_reduced_salt_baked_beans.png"
-dest_files=["res://.godot/imported/reduced_salt_baked_beans_reduced_salt_baked_beans.png-98d215aea20f00eb2549c7ce7cd5729c.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/soup/mushroom_soup.png"
+dest_files=["res://.godot/imported/mushroom_soup.png-521c456f67698f732395a69c187c50a8.s3tc.ctex"]
 
 [params]
 

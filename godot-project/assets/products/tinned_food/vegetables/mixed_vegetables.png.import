@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crnxusedggtct"
-path.s3tc="res://.godot/imported/baked_beans_and_sausage_baked_beans_and_sausage.png-8a3bdc3b2d352bfa0e87c8d93ce43ce1.s3tc.ctex"
+uid="uid://bjmkudymlvdr8"
+path.s3tc="res://.godot/imported/mixed_vegetables.png-66ec70df048cda3030b795c4cb107d86.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "84e5df46f15d973ec5544945724b6040"
+"md5": "ec69ae371bde6870b4727ecfe3abd998"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/beans/baked_beans_and_sausage_baked_beans_and_sausage.png"
-dest_files=["res://.godot/imported/baked_beans_and_sausage_baked_beans_and_sausage.png-8a3bdc3b2d352bfa0e87c8d93ce43ce1.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/vegetables/mixed_vegetables.png"
+dest_files=["res://.godot/imported/mixed_vegetables.png-66ec70df048cda3030b795c4cb107d86.s3tc.ctex"]
 
 [params]
 

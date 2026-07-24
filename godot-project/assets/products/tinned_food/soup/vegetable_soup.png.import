@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn4flcnk00jvt"
-path.s3tc="res://.godot/imported/tinned_carrots_tinned_carrots.png-0f3061067b9a153727546e085eafab13.s3tc.ctex"
+uid="uid://clnalge2q6mg8"
+path.s3tc="res://.godot/imported/vegetable_soup.png-49dc44ab109dd31f795f9efbf08b89bc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7aa5f41e28f0871b3b085177b0149120"
+"md5": "cdf48628c4da707a0e656e6327b3747e"
 }
 
 [deps]
 
-source_file="res://assets/products/tinned_food/vegetables/tinned_carrots_tinned_carrots.png"
-dest_files=["res://.godot/imported/tinned_carrots_tinned_carrots.png-0f3061067b9a153727546e085eafab13.s3tc.ctex"]
+source_file="res://assets/products/tinned_food/soup/vegetable_soup.png"
+dest_files=["res://.godot/imported/vegetable_soup.png-49dc44ab109dd31f795f9efbf08b89bc.s3tc.ctex"]
 
 [params]
 
