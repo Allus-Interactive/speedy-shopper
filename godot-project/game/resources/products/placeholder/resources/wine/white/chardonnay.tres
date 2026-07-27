@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://c3ajqillktbnt"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_sgdbb"]
+[ext_resource type="PackedScene" uid="uid://neblevd4xgom" path="res://assets/products/wine/white/chardonnay.glb" id="2_j0gst"]
 [ext_resource type="Resource" uid="uid://mduaemu4hv41" path="res://game/resources/item/resources/wine/white/chardonnay.tres" id="2_sgdbb"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_3hf6g"]
 
@@ -8,6 +9,9 @@
 script = ExtResource("3_3hf6g")
 product_info = ExtResource("2_sgdbb")
 placeholder_size = Vector3(0.15, 0.5, 0.15)
-shelf_offset = Vector3(0, 0.25, 0)
+shelf_offset = Vector3(0, 0.275, 0)
 product_colour = Color(0.78067774, 0.66670734, 0.36273673, 1)
+barcode_size = Vector2(0.06, 0.04)
+barcode_offset = Vector3(0, -0.15, 0)
+model = ExtResource("2_j0gst")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
