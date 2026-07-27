@@ -20,3 +20,6 @@ screenshots
 
 # Local build files
 godot-project/builds
+
+# HTML code for itch page
+itch-page.html
