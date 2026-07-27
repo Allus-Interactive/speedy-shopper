@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://c84ul00qpxptq"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_tfnuw"]
+[ext_resource type="PackedScene" uid="uid://4mn623x25h0a" path="res://assets/products/wine/red/merlot.glb" id="2_isay6"]
 [ext_resource type="Resource" uid="uid://b2bs6la1h56dq" path="res://game/resources/item/resources/wine/red/merlot.tres" id="2_tfnuw"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_kkjus"]
 
@@ -8,6 +9,9 @@
 script = ExtResource("3_kkjus")
 product_info = ExtResource("2_tfnuw")
 placeholder_size = Vector3(0.15, 0.5, 0.15)
-shelf_offset = Vector3(0, 0.25, 0)
+shelf_offset = Vector3(0, 0.275, 0)
 product_colour = Color(0.1921128, 0.03474425, 0.004231126, 1)
+barcode_size = Vector2(0.06, 0.04)
+barcode_offset = Vector3(0, -0.177, 0)
+model = ExtResource("2_isay6")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
