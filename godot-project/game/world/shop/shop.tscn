@@ -378,6 +378,7 @@ mesh = ExtResource("164_f71ri")
 
 [node name="PlaceholderNPC" parent="." unique_id=904645452 instance=ExtResource("164_teebb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 0, 0)
+visible = false
 
 [node name="Footstool" parent="." unique_id=805391710 instance=ExtResource("165_teebb")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -11, 0, 0)
