@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b6vw5slf68n0o"]
+
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_sdmwd"]
+
+[resource]
+script = ExtResource("1_sdmwd")
+product_name = "Honey Hoops"
+barcode_value = 4
+product_price = 2.2
+product_type = 2
+metadata/_custom_type_script = "uid://siedaem41o6s"

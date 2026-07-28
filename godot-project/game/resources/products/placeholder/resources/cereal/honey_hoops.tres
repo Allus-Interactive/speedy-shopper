@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://do63r43536nho"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_s3qb6"]
+[ext_resource type="PackedScene" uid="uid://bhcd5f3svek5t" path="res://assets/products/cereal/honey_rings.glb" id="2_s3qb6"]
+[ext_resource type="Resource" uid="uid://b6vw5slf68n0o" path="res://game/resources/item/resources/cereal/honey_hoops.tres" id="3_5y1uk"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="4_l5xvh"]
+
+[resource]
+script = ExtResource("4_l5xvh")
+product_info = ExtResource("3_5y1uk")
+placeholder_size = Vector3(0.3, 0.4, 0.2)
+shelf_offset = Vector3(0, 0.225, 0)
+barcode_offset = Vector3(0.08, -0.155, 0)
+model = ExtResource("2_s3qb6")
+metadata/_custom_type_script = "uid://c485xiqer6nrc"

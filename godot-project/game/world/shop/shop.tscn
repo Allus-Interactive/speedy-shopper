@@ -7,9 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://q1llllqwatrb" path="res://game/resources/products/placeholder/product_object.tscn" id="3_6k1ee"]
 [ext_resource type="Script" uid="uid://wb0hf7mix7b4" path="res://game/world/shop/floor.gd" id="3_m1y7i"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="4_5qt63"]
-[ext_resource type="Resource" uid="uid://cwcswyx1gpss5" path="res://game/resources/products/placeholder/resources/cereal/own_brand_cereal.tres" id="5_yhfbf"]
-[ext_resource type="Resource" uid="uid://s2w5b4bb6gcd" path="res://game/resources/products/placeholder/resources/cereal/finest_brand_cereal.tres" id="6_u503x"]
-[ext_resource type="Resource" uid="uid://bnc10fdwnxv" path="res://game/resources/products/placeholder/resources/cereal/standard_brand_cereal.tres" id="7_7cwmf"]
 [ext_resource type="PackedScene" uid="uid://bxp4n4mj5pm6w" path="res://game/world/shop/delivery_crate/delivery_crate.tscn" id="8_5qt63"]
 [ext_resource type="Resource" uid="uid://dpt6nwkbb16k7" path="res://game/resources/products/placeholder/resources/milk/semi_skimmed_4pt.tres" id="8_oqv7w"]
 [ext_resource type="Resource" uid="uid://stx70yhrddbk" path="res://game/resources/products/placeholder/resources/milk/whole_4pt.tres" id="9_4k7rs"]
@@ -162,6 +159,10 @@
 [ext_resource type="Resource" uid="uid://b10c2iqujoy1u" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/madras_sauce.tres" id="76_m81gg"]
 [ext_resource type="Resource" uid="uid://pb3e4342bhj7" path="res://game/resources/products/placeholder/resources/cooking_sauces/pasta/tomato_chilli_pasta_sauce.tres" id="77_7ash6"]
 [ext_resource type="Resource" uid="uid://bmf621ddj4kpu" path="res://game/resources/products/placeholder/resources/cooking_sauces/rice/tikka_masala_sauce.tres" id="77_acre2"]
+[ext_resource type="Resource" uid="uid://cwcswyx1gpss5" path="res://game/resources/products/placeholder/resources/cereal/choco_bites.tres" id="140_l8ad3"]
+[ext_resource type="Resource" uid="uid://do63r43536nho" path="res://game/resources/products/placeholder/resources/cereal/honey_hoops.tres" id="141_m1y7i"]
+[ext_resource type="Resource" uid="uid://ba475jnvtaqod" path="res://game/resources/products/placeholder/resources/cereal/fruit_rings.tres" id="142_7ash6"]
+[ext_resource type="Resource" uid="uid://bpssolhv7lrnn" path="res://game/resources/products/placeholder/resources/cereal/rice_snaps.tres" id="143_tsovw"]
 [ext_resource type="PackedScene" uid="uid://bw5rwejnjhw31" path="res://game/world/exit_entry/exit_entry.tscn" id="163_l8ad3"]
 [ext_resource type="ArrayMesh" uid="uid://dy2fug1cqrweh" path="res://assets/environment/buildings/industrial/shop.tres" id="164_f71ri"]
 [ext_resource type="PackedScene" uid="uid://bl7vmn0oj4ckt" path="res://game/environment/footstool/footstool.tscn" id="165_teebb"]
@@ -317,7 +318,7 @@ slot_margin_x = 0.35
 [node name="ShelfUnitCereal" parent="Aisle2/Left" unique_id=1122229517 instance=ExtResource("2_4o56f")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5, 0, -6)
 product_placeholder_scene = ExtResource("3_6k1ee")
-stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("5_yhfbf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("7_7cwmf"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x"), ExtResource("6_u503x")])
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("140_l8ad3"), ExtResource("140_l8ad3"), ExtResource("140_l8ad3"), ExtResource("140_l8ad3"), ExtResource("140_l8ad3"), ExtResource("141_m1y7i"), ExtResource("141_m1y7i"), ExtResource("141_m1y7i"), ExtResource("141_m1y7i"), ExtResource("141_m1y7i"), ExtResource("142_7ash6"), ExtResource("142_7ash6"), ExtResource("142_7ash6"), ExtResource("142_7ash6"), ExtResource("142_7ash6"), ExtResource("143_tsovw"), ExtResource("143_tsovw"), ExtResource("143_tsovw"), ExtResource("143_tsovw"), ExtResource("143_tsovw")])
 slots_per_shelf = 5
 
 [node name="ShelfUnitCrisps" parent="Aisle2/Left" unique_id=1431300107 instance=ExtResource("2_4o56f")]

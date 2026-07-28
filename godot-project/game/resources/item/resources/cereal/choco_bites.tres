@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://yply6q8k047l"]
 
-[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_21xmg"]
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_mjyvq"]
 
 [resource]
-script = ExtResource("1_21xmg")
-product_name = "Finest Cereal"
+script = ExtResource("1_mjyvq")
+product_name = "Choco Bites"
 barcode_value = 3
 product_price = 3.5
 product_type = 2

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://cwcswyx1gpss5"]
+
+[ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_swg7o"]
+[ext_resource type="PackedScene" uid="uid://ca34ds03nn04h" path="res://assets/products/cereal/choco_bites.glb" id="2_1og0a"]
+[ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_820n2"]
+[ext_resource type="Resource" uid="uid://yply6q8k047l" path="res://game/resources/item/resources/cereal/choco_bites.tres" id="3_egrcs"]
+
+[resource]
+script = ExtResource("3_820n2")
+product_info = ExtResource("3_egrcs")
+placeholder_size = Vector3(0.3, 0.4, 0.2)
+shelf_offset = Vector3(0, 0.225, 0)
+barcode_offset = Vector3(0.08, -0.155, 0)
+model = ExtResource("2_1og0a")
+metadata/_custom_type_script = "uid://c485xiqer6nrc"
