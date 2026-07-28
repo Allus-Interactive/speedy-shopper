@@ -2,12 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_ra4rl"]
 [ext_resource type="Resource" uid="uid://bkhy43e2e5ulu" path="res://game/resources/item/resources/bread/farmhouse_bread.tres" id="2_ra4rl"]
+[ext_resource type="PackedScene" uid="uid://b7vq2xfdttl47" path="res://assets/products/bread/farmhouse_bread.glb" id="2_rk4y4"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_lgfbh"]
 
 [resource]
 script = ExtResource("3_lgfbh")
 product_info = ExtResource("2_ra4rl")
-placeholder_size = Vector3(0.6, 0.2, 0.2)
-shelf_offset = Vector3(0, 0.1, 0)
+placeholder_size = Vector3(0.6, 0.25, 0.2)
+shelf_offset = Vector3(0, 0.175, 0)
 product_colour = Color(0.73672163, 0.5976088, 0.1390146, 1)
+barcode_size = Vector2(0.09, 0.06)
+barcode_offset = Vector3(-0.215, -0.065, 0)
+model = ExtResource("2_rk4y4")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
