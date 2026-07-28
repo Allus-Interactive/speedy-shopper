@@ -2,13 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_h3lxl"]
 [ext_resource type="Resource" uid="uid://cr2oi47jsxl75" path="res://game/resources/item/resources/beer/beer.tres" id="2_48ijp"]
+[ext_resource type="PackedScene" uid="uid://dkm0aekvope53" path="res://assets/products/beer/beer.glb" id="2_nix63"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_7bcxb"]
 
 [resource]
 script = ExtResource("3_7bcxb")
 product_info = ExtResource("2_48ijp")
 placeholder_size = Vector3(0.6, 0.3, 0.3)
-shelf_offset = Vector3(0, 0.15, 0)
+shelf_offset = Vector3(0, 0.175, 0)
 default_shelf_quantity = 2
 product_colour = Color(0.068751454, 0.42347687, 2.8878452e-07, 1)
+barcode_size = Vector2(0.09, 0.06)
+barcode_offset = Vector3(-0.23, 0.1, 0)
+model = ExtResource("2_nix63")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
