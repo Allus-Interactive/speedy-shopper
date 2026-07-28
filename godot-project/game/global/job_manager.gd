@@ -29,8 +29,8 @@ func generate_order() -> void:
 		var products_in_order: Array[OrderItemData] = []
 		var no_of_categories: int = Item.CATEGORY.size()
 	# TODO: remove temp testing logic
-		#var no_of_items_in_order: int = randi_range(1, no_of_categories)
-		var no_of_items_in_order: int = randi_range(1, 2)
+		var no_of_items_in_order: int = randi_range(1, no_of_categories)
+		#var no_of_items_in_order: int = randi_range(1, 2)
 		
 		# Basic Order Generation
 		for i in no_of_items_in_order:
