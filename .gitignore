@@ -19,7 +19,7 @@ vector-art
 screenshots
 
 # Local build files
-godot-project/builds
+builds
 
 # HTML code for itch page
 itch-page.html
