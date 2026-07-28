@@ -331,11 +331,12 @@ slots_per_shelf = 5
 [node name="ShelfUnitFizzyDrink" parent="Aisle2/Right" unique_id=555619701 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, 0, 0, -2)
 product_placeholder_scene = ExtResource("3_6k1ee")
-stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("52_11a2g"), ExtResource("52_11a2g"), ExtResource("52_11a2g"), ExtResource("53_wpyta"), ExtResource("53_wpyta"), ExtResource("53_wpyta"), ExtResource("52_pm5fk"), ExtResource("52_pm5fk"), ExtResource("52_pm5fk")])
-shelf_count = 3
-shelf_spacing = 0.8
+stocked_products = Array[ExtResource("4_5qt63")]([ExtResource("52_11a2g"), ExtResource("52_11a2g"), ExtResource("52_11a2g"), ExtResource("52_11a2g"), ExtResource("52_11a2g"), ExtResource("52_11a2g"), ExtResource("53_wpyta"), ExtResource("53_wpyta"), ExtResource("53_wpyta"), ExtResource("53_wpyta"), ExtResource("53_wpyta"), ExtResource("53_wpyta"), ExtResource("52_pm5fk"), ExtResource("52_pm5fk"), ExtResource("52_pm5fk"), ExtResource("52_pm5fk"), ExtResource("52_pm5fk"), ExtResource("52_pm5fk")])
+shelf_count = 6
+shelf_spacing = 0.35
 slots_per_shelf = 3
 slot_margin_x = 0.35
+row_width = 0.4
 
 [node name="ShelfUnitBeer" parent="Aisle2/Right" unique_id=566735270 instance=ExtResource("2_4o56f")]
 transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, 0, 0, -4)

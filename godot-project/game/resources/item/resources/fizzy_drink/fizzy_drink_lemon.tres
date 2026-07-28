@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_qmon0")
-product_name = "24pk Fizzy Drink Lemon"
+product_name = "Fizzy Drink Lemon"
 barcode_value = 3676
 product_price = 14.5
 product_type = 4

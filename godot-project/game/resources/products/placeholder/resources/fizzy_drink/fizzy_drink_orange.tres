@@ -1,14 +1,18 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://d24wtpgvff3dc"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_yx78t"]
+[ext_resource type="PackedScene" uid="uid://c78u8gq6dpie8" path="res://assets/products/fizzy_drink/fizzy_drink_orange.glb" id="2_msirj"]
 [ext_resource type="Resource" uid="uid://b6evmya0vmpvy" path="res://game/resources/item/resources/fizzy_drink/fizzy_drink_orange.tres" id="2_yx78t"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_v5e63"]
 
 [resource]
 script = ExtResource("3_v5e63")
 product_info = ExtResource("2_yx78t")
-placeholder_size = Vector3(0.6, 0.6, 0.6)
-shelf_offset = Vector3(0, 0.3, 0)
-default_shelf_quantity = 1
+placeholder_size = Vector3(0.4, 0.2, 0.2)
+shelf_offset = Vector3(0, 0.125, 0)
+default_shelf_quantity = 3
 product_colour = Color(0.7581622, 0.41733256, 0.0805221, 1)
+barcode_size = Vector2(0.06, 0.04)
+barcode_offset = Vector3(0.15, -0.07, 0)
+model = ExtResource("2_msirj")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
