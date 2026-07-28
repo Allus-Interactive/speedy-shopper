@@ -57,6 +57,8 @@ var is_inspecting_product: bool = false
 # 3D Model
 @onready var model: Node3D = $Model
 
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
+
 func _ready() -> void:
 	tooltip_panel.hide()
 
@@ -526,6 +528,7 @@ func enter_vehicle(v: Vehicle) -> void:
 	
 	# hide player
 	visible = false
+	collision_shape_3d.disabled = true
 	
 	# move player to vehicle
 	var seat_position = v.get_node("SeatPosition").global_position
@@ -547,9 +550,10 @@ func exit_vehicle(v: Vehicle) -> void:
 	is_in_vehicle = false
 	v.is_player_inside = false
 	visible = true
+	collision_shape_3d.disabled = false
 	
 	# move player beside veihcle
-	global_position = v.global_position + Vector3(2, 0, 0)
+	global_position = v.global_position + Vector3(3, 0, 3)
 	
 	# restore player camera
 	var look = v.get_node("look")

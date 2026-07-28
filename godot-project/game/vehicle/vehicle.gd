@@ -3,15 +3,15 @@ extends VehicleBody3D
 class_name Vehicle
 
 @export var STEER_SPEED = 1.5
-@export var STEER_LIMIT = 0.6
+@export var STEER_LIMIT = 0.4
 var steer_target = 0
-@export var engine_force_value = 40
+@export var engine_force_value = 6500
 
 var gearshift = 3
 var gear_multiplicator = 1
 var gear_locked = false
 
-var fwd_mps : float
+var forward_speed : float
 var speed: float
 
 var is_player_inside = false
@@ -21,8 +21,11 @@ func _physics_process(delta):
 	if not is_player_inside:
 		return
 	
-	speed = linear_velocity.length()*Engine.get_frames_per_second()*delta
-	fwd_mps = transform.basis.x.x
+	var speed_mph = linear_velocity.length() * 2.23694
+	print("Speed:", speed_mph, "mph")
+	
+	speed = linear_velocity.length() * Engine.get_frames_per_second() * delta
+	forward_speed = linear_velocity.dot(-transform.basis.z)
 	traction(speed)
 	process_accel(delta)
 	process_steer(delta)
@@ -31,21 +34,26 @@ func _physics_process(delta):
 func process_accel(_delta):
 	if Input.is_action_pressed("forwards"):
 		# Increase engine force at low speeds to make the initial acceleration faster.
-		if fwd_mps >= -1:
-			if speed < 30 and speed != 0:
-				engine_force = clamp(engine_force_value * 10 / speed, 0, 300)
-			else:
-				engine_force = engine_force_value
-		engine_force = engine_force * gear_multiplicator
+		#if forward_speed >= -1:
+			#if speed < 30 and speed != 0:
+				#engine_force = clamp(engine_force_value * 10 / speed, 0, 300)
+			#else:
+				#engine_force = engine_force_value
+		#engine_force = engine_force * gear_multiplicator
+		#return
+		engine_force = engine_force_value
 		return
 	
 	if Input.is_action_pressed("backwards"):
-	# Increase engine force at low speeds to make the initial acceleration faster.
-		if speed < 20 and speed != 0:
-			engine_force = -clamp(engine_force_value * 3 / speed, 0, 300)
-		else:
-			engine_force = -engine_force_value
+		# Increase engine force at low speeds to make the initial acceleration faster.
+		#if speed < 20 and speed != 0:
+			#engine_force = -clamp(engine_force_value * 3 / speed, 0, 300)
+		#else:
+			#engine_force = -engine_force_value
+		#return
+		engine_force = -engine_force_value
 		return
+	
 	engine_force = 0
 	brake = 0
 
@@ -63,8 +71,9 @@ func process_brake(_delta):
 		$wheel_rear_left.wheel_friction_slip=2.9
 		$wheel_rear_right.wheel_friction_slip=2.9
 
-func traction(traction_speed):
-	apply_central_force(Vector3.DOWN * traction_speed)
+func traction(_traction_speed):
+	#apply_central_force(Vector3.DOWN * traction_speed)
+	apply_central_force(-linear_velocity * 25.0)
 
 func _process(_delta: float) -> void:
 	if !is_player_inside:

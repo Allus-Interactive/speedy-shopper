@@ -21,22 +21,28 @@ radius = 0.363529
 
 [node name="Car" type="VehicleBody3D" parent="." unique_id=862733348]
 transform = Transform3D(0.9999996, 0, 0, 0, 1, 0, 0, 0, 0.9999996, 0, 0, 0)
+mass = 2000.0
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, -0.1, 0)
+center_of_mass = Vector3(0, -0.8, 0)
+can_sleep = false
+continuous_cd = true
+linear_damp = 0.1
+angular_damp = 4.0
 script = ExtResource("1_6tmgj")
 STEER_LIMIT = 0.5
-engine_force_value = 200
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="Car" unique_id=2026192383]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812, 0.331356, 1.484)
 use_as_steering = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.37
-wheel_rest_length = 0.095
+wheel_radius = 0.33
+wheel_rest_length = 0.03
 wheel_friction_slip = 3.0
 suspension_travel = 0.357
-suspension_stiffness = 30.0
+suspension_stiffness = 60.0
 suspension_max_force = 10000.0
+damping_compression = 3.5
+damping_relaxation = 4.5
 
 [node name="Wheel" parent="Car/wheel_front_left" unique_id=157481343 instance=ExtResource("2_hwo3e")]
 
@@ -44,12 +50,14 @@ suspension_max_force = 10000.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.842, 0.331356, 1.484)
 use_as_steering = true
 wheel_roll_influence = 0.5
-wheel_radius = 0.37
-wheel_rest_length = 0.095
+wheel_radius = 0.33
+wheel_rest_length = 0.03
 wheel_friction_slip = 3.0
 suspension_travel = 0.357
-suspension_stiffness = 30.0
+suspension_stiffness = 60.0
 suspension_max_force = 10000.0
+damping_compression = 3.5
+damping_relaxation = 4.5
 
 [node name="Wheel" parent="Car/wheel_front_right" unique_id=1348361123 instance=ExtResource("2_hwo3e")]
 
@@ -57,11 +65,13 @@ suspension_max_force = 10000.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812, 0.33315, -1.26208)
 use_as_traction = true
 wheel_radius = 0.37
-wheel_rest_length = 0.095
+wheel_rest_length = 0.03
 wheel_friction_slip = 2.9
 suspension_travel = 0.357
-suspension_stiffness = 30.0
+suspension_stiffness = 60.0
 suspension_max_force = 10000.0
+damping_compression = 3.5
+damping_relaxation = 4.5
 
 [node name="Wheel" parent="Car/wheel_rear_left" unique_id=301583585 instance=ExtResource("2_hwo3e")]
 
@@ -70,11 +80,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.842, 0.33315, -1.26208)
 use_as_traction = true
 wheel_roll_influence = 0.5
 wheel_radius = 0.37
-wheel_rest_length = 0.095
+wheel_rest_length = 0.03
 wheel_friction_slip = 2.9
 suspension_travel = 0.357
-suspension_stiffness = 30.0
+suspension_stiffness = 60.0
 suspension_max_force = 10000.0
+damping_compression = 3.5
+damping_relaxation = 4.5
 
 [node name="Wheel" parent="Car/wheel_rear_right" unique_id=1646956058 instance=ExtResource("2_hwo3e")]
 
