@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://3uwajgjnnnrn"]
+
+[ext_resource type="Script" uid="uid://f6yg2r3jjmkb" path="res://game/screens/loading_overlay/loading_overlay.gd" id="1_gf1ab"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joy1p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf1ab"]
+bg_color = Color(0.28870335, 0.43350288, 0.19541839, 1)
+
+[node name="LoadingOverlay" type="CanvasLayer" unique_id=45473407]
+script = ExtResource("1_gf1ab")
+
+[node name="LoadingScreen" type="ColorRect" parent="." unique_id=997941650]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="LoadingText" type="Label" parent="LoadingScreen" unique_id=1770498066]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 96
+text = "LOADING..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="LoadingScreen" unique_id=1384665184]
+custom_minimum_size = Vector2(640, 50)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 432.0
+offset_right = 960.0
+offset_bottom = 482.0
+theme_override_styles/background = SubResource("StyleBoxFlat_joy1p")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gf1ab")
+show_percentage = false

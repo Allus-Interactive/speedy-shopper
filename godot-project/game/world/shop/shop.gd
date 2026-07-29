@@ -9,6 +9,8 @@ func _ready() -> void:
 	
 	if TutorialManager.tutorial_enabled:
 		play_the_tutorial()
+	
+	LoadingOverlay.toggle_loading(false)
 
 func play_the_tutorial():
 	print("Let's do the tutorial!")

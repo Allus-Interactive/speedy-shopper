@@ -29,6 +29,7 @@ CustomerManager="*uid://df377056n5rq7"
 Constants="*uid://bk1di2xfeuuvr"
 DialogManager="*uid://c4tnm8tcb4iie"
 TutorialManager="*uid://iwanrbaoco20"
+LoadingOverlay="*uid://3uwajgjnnnrn"
 
 [display]
 
