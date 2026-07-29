@@ -34,12 +34,12 @@ func update_ui() -> void:
 		Step.PICK_SECOND_ITEM:
 			GameManager.tutorial_label.text = "Congratulations! You scanned your first item. Now let's see what's next. Remember to re-open your scanner to see what the next item is"
 		Step.PICK_THIRD_ITEM:
-			GameManager.tutorial_label.text = "And third, they want some milk! That shouldn't be too hard to find!"
+			GameManager.tutorial_label.text = "That's it, you're getting the hang of it. What's next?"
 		Step.PICK_LAST_ITEM:
-			GameManager.tutorial_label.text = "And finally, some Rum. Can't argue with that. Let's go pick it."
+			GameManager.tutorial_label.text = "Just one more item to get for this order. Let's go pick it."
 		Step.PICK_UP_TRAY:
 			GameManager.tutorial_label.text = "You picked the order, well done! Return to the front of the shop and pick up the blue tray."
 		Step.RETURN_TO_COUNTER:
 			GameManager.tutorial_label.text = "This is a Pickup order, you may have noticed that on the scanner. For those, you simply need to drop the tray off at the Kiosk in the corner."
 		Step.COMPLETE:
-			GameManager.tutorial_label.text = "Congratulations, you completed your first order! You'll find most orders require you to actually deliver it, but I'll leave that for you to explore. Good Luck!"
+			GameManager.tutorial_label.text = "Congratulations, you completed your first order! You'll find most orders require you to actually deliver it, but I'll leave that for you to explore. Good Luck!\nFeel free to leave the shop, and I'll see you soon!"
