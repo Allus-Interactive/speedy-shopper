@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cos6h5yavtn42"
-path.s3tc="res://.godot/imported/semi_skimmed_2pt_semi_skimmed_2pt.png-4cd64bb603fad370c79a2608ef192d95.s3tc.ctex"
+uid="uid://c346jgegt633x"
+path.s3tc="res://.godot/imported/whole_1pt_whole.png-2a582e6c99b8dd27c88327636dee0650.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7753c9e57ac2cae00b56fa6b358fb27d"
+"md5": "51cb865f6e5d28cd8ec4445f3e52a3e7"
 }
 
 [deps]
 
-source_file="res://assets/products/milk/semi_skimmed_2pt_semi_skimmed_2pt.png"
-dest_files=["res://.godot/imported/semi_skimmed_2pt_semi_skimmed_2pt.png-4cd64bb603fad370c79a2608ef192d95.s3tc.ctex"]
+source_file="res://assets/products/milk/whole_1pt_whole.png"
+dest_files=["res://.godot/imported/whole_1pt_whole.png-2a582e6c99b8dd27c88327636dee0650.s3tc.ctex"]
 
 [params]
 

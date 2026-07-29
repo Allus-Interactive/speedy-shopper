@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_i6oei"]
 [ext_resource type="Resource" uid="uid://x1b00iajlebq" path="res://game/resources/item/resources/milk/skimmed_1pt.tres" id="2_i6oei"]
-[ext_resource type="PackedScene" uid="uid://dstvlm6q03ql4" path="res://assets/products/milk/skimmed_1pt.glb" id="2_q45ln"]
+[ext_resource type="PackedScene" uid="uid://c8ceek83koy34" path="res://assets/products/milk/skimmed_1pt.glb" id="2_q45ln"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_js1ch"]
 
 [resource]

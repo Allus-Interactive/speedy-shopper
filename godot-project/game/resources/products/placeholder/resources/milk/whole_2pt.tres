@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_c87g1"]
 [ext_resource type="Resource" uid="uid://cnu7misw8btub" path="res://game/resources/item/resources/milk/whole_2pt.tres" id="2_c87g1"]
-[ext_resource type="PackedScene" uid="uid://dh43kompwc42i" path="res://assets/products/milk/whole_2pt.glb" id="2_o32su"]
+[ext_resource type="PackedScene" uid="uid://qtujwfmh6m86" path="res://assets/products/milk/whole_2pt.glb" id="2_o32su"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_uerut"]
 
 [resource]
