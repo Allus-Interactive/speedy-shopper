@@ -34,6 +34,14 @@ func on_barcode_clicked() -> bool:
 	
 	if success:
 		print("Scanned: ", product_data.product_info.product_name)
+		if TutorialManager.current_step == TutorialManager.Step.PICK_FIRST_ITEM:
+			TutorialManager.next_step()
+		elif TutorialManager.current_step == TutorialManager.Step.PICK_SECOND_ITEM:
+			TutorialManager.next_step()
+		elif TutorialManager.current_step == TutorialManager.Step.PICK_THIRD_ITEM:
+			TutorialManager.next_step()
+		elif TutorialManager.current_step == TutorialManager.Step.PICK_LAST_ITEM:
+			TutorialManager.next_step()
 		return true
 	else:
 		print("Failed to scan item or already scanned: ", product_data.product_info.product_name)

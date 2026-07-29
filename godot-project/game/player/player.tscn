@@ -66,6 +66,39 @@ grow_vertical = 2
 theme = ExtResource("2_8soms")
 text = "Today's Earnings: £0.00"
 
+[node name="TutorialPanel" type="Panel" parent="." unique_id=1119547855]
+custom_minimum_size = Vector2(400, 100)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -720.0
+offset_right = 400.0
+offset_bottom = -620.0
+grow_vertical = 0
+
+[node name="TutorialLabel" type="Label" parent="TutorialPanel" unique_id=855969257]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.5
+offset_top = -22.5
+offset_right = 178.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8soms")
+theme_override_font_sizes/font_size = 16
+text = "Hello there, and welcome to Speedy Shopper!
+
+Use WASD to move and the mouse to look around"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=217225702]
 process_mode = 4
 
@@ -125,3 +158,4 @@ offset = Vector2(290, 100)
 transform = Transform2D(1, 0, 0, 1, 290, 100)
 
 [node name="DialogUI" parent="." unique_id=935902538 instance=ExtResource("6_4ste8")]
+visible = false

@@ -7,6 +7,8 @@ class_name DeliveryKiosk
 func interact(player: Player) -> void:
 	if _order_is_picked():
 		player.put_down_delivery_crate(self, _is_order_for_pickup())
+		if TutorialManager.current_step == TutorialManager.Step.RETURN_TO_COUNTER:
+			TutorialManager.next_step()
 
 func get_interaction_tooltip(player: Player) -> String:
 	var active_order = OrderManager.active_order
