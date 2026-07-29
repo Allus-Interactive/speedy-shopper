@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://hdoipf1qndch"]
 
+[ext_resource type="Script" uid="uid://djmfms1ucb3f3" path="res://game/world/town/town.gd" id="1_5ncuf"]
 [ext_resource type="PackedScene" uid="uid://cjsrfjrg00vbp" path="res://game/player/player.tscn" id="1_jotaf"]
 [ext_resource type="PackedScene" uid="uid://yexejxsnlqvn" path="res://game/vehicle/vehicle.tscn" id="2_wnw7r"]
 [ext_resource type="MeshLibrary" uid="uid://05lgw1fm3ia" path="res://assets/mesh_libraries/building_tiles.tres" id="4_wnw7r"]
@@ -32,6 +33,7 @@ size = Vector2(100, 100)
 size = Vector3(100, 1, 100)
 
 [node name="Town" type="Node3D" unique_id=1894934032]
+script = ExtResource("1_5ncuf")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=894894205]
 environment = SubResource("Environment_4wyf3")

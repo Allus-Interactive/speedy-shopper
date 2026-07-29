@@ -19,6 +19,6 @@ func interact(_p: Player) -> void:
 			get_tree().change_scene_to_file(Constants.TITLE_SCREEN)
 	else:
 		if is_in_shop:
-			get_tree().change_scene_to_file(Constants.DRIVING_SCENE)
+			GameManager.thread_load_scene(Constants.DRIVING_SCENE)
 		else:
-			get_tree().change_scene_to_file(Constants.SHOP_SCENE)
+			GameManager.thread_load_scene(Constants.SHOP_SCENE)
