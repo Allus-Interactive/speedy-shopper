@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Delivery Driver Simulator"
-run/main_scene="uid://ch7gd6ebp4842"
+run/main_scene="uid://by64gyav16ry7"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -28,6 +28,8 @@ ProductManager="*uid://bq28rqrtxh13d"
 CustomerManager="*uid://df377056n5rq7"
 Constants="*uid://bk1di2xfeuuvr"
 DialogManager="*uid://c4tnm8tcb4iie"
+TutorialManager="*uid://iwanrbaoco20"
+LoadingOverlay="*uid://3uwajgjnnnrn"
 
 [display]
 

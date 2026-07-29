@@ -1,6 +1,7 @@
 extends Node
 
 @export var all_products: Array[Item] = []
+@export var tutorial_products: Array[Item] = []
 
 var items_to_restock: Array[ProductObject] = []
 

@@ -11,4 +11,7 @@ var scroll_container: ScrollContainer = null
 
 var notification_ui: NotificationUI = null
 
+var tutorial_panel: Panel = null
+var tutorial_label: Label = null
+
 var order_id: int = 1

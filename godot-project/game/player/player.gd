@@ -49,6 +49,13 @@ var is_inspecting_product: bool = false
 @onready var crosshair: ColorRect = $CanvasLayer/Control/Crosshair
 @onready var tooltip_panel: Panel = $CanvasLayer/Control/TooltipPanel
 @onready var tooltip_label: Label = $CanvasLayer/Control/TooltipPanel/TooltipLabel
+
+# Tutorial UI
+@onready var tutorial_panel: Panel = $TutorialPanel
+@onready var tutorial_label: Label = $TutorialPanel/TutorialLabel
+
+# Earnings UI
+@onready var ui_panel: Panel = $UiPanel
 @onready var earnings_label: Label = $UiPanel/EarningsLabel
 
 # Scanner
@@ -57,10 +64,20 @@ var is_inspecting_product: bool = false
 # 3D Model
 @onready var model: Node3D = $Model
 
+# Collision Shape
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
+
 
 func _ready() -> void:
 	tooltip_panel.hide()
+	
+	GameManager.tutorial_panel = tutorial_panel
+	GameManager.tutorial_label = tutorial_label
+	
+	if TutorialManager.tutorial_enabled:
+		ui_panel.visible = false
+	else:
+		tutorial_panel.visible = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Capture mouse input when not inspecting a product
@@ -149,6 +166,10 @@ func _physics_process(delta: float) -> void:
 	
 	# Move the player
 	move_and_slide()
+	
+	if TutorialManager.current_step == TutorialManager.Step.MOVE:
+		if Input.is_action_just_pressed("forwards"):
+			TutorialManager.next_step()
 
 func _process(delta: float) -> void:
 	# TODO: why did I disable this when driving?
@@ -170,6 +191,8 @@ func _process(delta: float) -> void:
 	
 	if not is_inspecting_product and Input.is_action_just_pressed("toggle_scanner"):
 		scanner_ui.toggle_scanner()
+		if TutorialManager.current_step == TutorialManager.Step.OPEN_SCANNER:
+			TutorialManager.next_step()
 	
 	# Scroll the items list with the mouse wheel
 	if GameManager.is_scanner_open and OrderManager.active_order != null:

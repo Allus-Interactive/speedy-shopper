@@ -11,3 +11,4 @@
 [node name="CustomerManager" type="Node" unique_id=115059877]
 script = ExtResource("1_k345p")
 all_customers = Array[ExtResource("2_18e5q")]([ExtResource("3_v3w5l"), ExtResource("3_wadd2"), ExtResource("4_argt7"), ExtResource("5_v3w5l"), ExtResource("6_gmgwh")])
+tutorial_customers = Array[ExtResource("2_18e5q")]([ExtResource("3_v3w5l")])

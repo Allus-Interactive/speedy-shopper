@@ -13,9 +13,7 @@ func _ready() -> void:
 	generate_order()
 
 func generate_order() -> void:
-	# TODO: remove temp testing logic
-	# var no_of_orders_to_generate = randi_range(1, 4)
-	var no_of_orders_to_generate = randi_range(1, 1)
+	var no_of_orders_to_generate = randi_range(1, 4)
 	# Get all products
 	var all_products_in_shop: Array[Item] = ProductManager.all_products
 	# group by category
@@ -23,7 +21,6 @@ func generate_order() -> void:
 	# extract into an array and shuffle
 	var all_products = grouped_products.values()
 	all_products.shuffle()
-	
 	
 	for no_of_orders in no_of_orders_to_generate:
 		var products_in_order: Array[OrderItemData] = []
@@ -65,6 +62,51 @@ func generate_order() -> void:
 		available_orders.append(order)
 		
 		order_id += 1
+	
+	print("Orders: ", available_orders.size())
+
+func generate_tutorial_order() -> void:
+	available_orders.clear()
+	
+	# Get all products
+	var tutorial_products: Array[Item] = ProductManager.tutorial_products
+	# group by category
+	var grouped_products = group_items_by_category(tutorial_products)
+	# extract into an array
+	var all_products = grouped_products.values()
+	all_products = all_products.filter(func(a): return !a.is_empty())
+	
+	var products_in_order: Array[OrderItemData] = []
+	
+	var no_of_items_in_order: int = 4
+	
+	# Basic Order Generation
+	for i in no_of_items_in_order:
+		var product = all_products[i]
+		var new_product := OrderItemData.new()
+		new_product.product_info = product[randi_range(0, product.size() - 1)]
+		new_product.required_quantity = 1
+		products_in_order.append(new_product)
+	
+	# get customer details
+	var all_customers: Array[Customer] = CustomerManager.tutorial_customers
+	var customer_details: Customer = all_customers[0]
+	var customer_title: String = Customer.TITLE.keys()[customer_details.title]
+	var customer_name: String = customer_title.to_lower().capitalize() + " " + customer_details.first_name + " " + customer_details.last_name
+	
+	var order := OrderData.new()
+	# irrelevant data, remove?
+	order.shop_name = "ScotMid"
+	order.order_id = 0
+	order.items = products_in_order
+	order.delivery_address = customer_details.address
+	order.customer = customer_name
+	# TODO: get times when time system has been implmented
+	order.order_placed = "10:00"
+	order.delivery_time = "11:00"
+	order.price = calculate_order_price(products_in_order)
+	
+	available_orders.append(order)
 	
 	print("Orders: ", available_orders.size())
 
