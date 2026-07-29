@@ -97,7 +97,7 @@ func generate_tutorial_order() -> void:
 	var order := OrderData.new()
 	# irrelevant data, remove?
 	order.shop_name = "ScotMid"
-	order.order_id = order_id
+	order.order_id = 0
 	order.items = products_in_order
 	order.delivery_address = customer_details.address
 	order.customer = customer_name
