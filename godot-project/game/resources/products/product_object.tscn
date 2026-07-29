@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://q1llllqwatrb"]
 
-[ext_resource type="Script" uid="uid://co02m0802gb4x" path="res://game/resources/products/placeholder/product_object.gd" id="1_vyu40"]
+[ext_resource type="Script" uid="uid://co02m0802gb4x" path="res://game/resources/products/product_object.gd" id="1_vyu40"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oc3nb"]
 
