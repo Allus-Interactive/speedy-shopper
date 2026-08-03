@@ -67,6 +67,10 @@ var is_inspecting_product: bool = false
 # Collision Shape
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
+# SFX
+@onready var sfx_player: SfxPlayer = $SFXPlayer
+@onready var barcode_beep: AudioStream = preload("res://assets/sfx/barcode_beep.mp3")
+@onready var wrong_barcode_beep: AudioStream = preload("res://assets/sfx/wrong_barcode_beep.mp3")
 
 func _ready() -> void:
 	tooltip_panel.hide()
@@ -492,9 +496,10 @@ func scan_barcode() -> void:
 		if owner_product == held_product:
 			if held_product.on_barcode_clicked():
 				collect_held_product()
+				sfx_player.play_sfx(barcode_beep)
 			else:
 				print("Wrong Product!")
-				# TODO: play wrong product scanned beep
+				sfx_player.play_sfx(wrong_barcode_beep)
 
 # Update tooltip text and crosshair colour
 func update_tooltip() -> void:

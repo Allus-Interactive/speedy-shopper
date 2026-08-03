@@ -1,3 +1,4 @@
 SFX:
 - barcode beep: https://www.zapsplat.com/music/modern-supermarket-cash-register-self-service-scanner-beep-version-2/
+- wrong barcode beep: https://www.zapsplat.com/music/modern-supermarket-cash-register-self-service-scanner-beep-version-1/
 - UI button press: https://www.zapsplat.com/music/bright-button-click-2/
