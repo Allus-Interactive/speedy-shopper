@@ -16,18 +16,15 @@ func populate_data(order: OrderData) -> void:
 	customer_label.text = order.customer
 	delivery = order
 	
-	if order.is_ready_for_delivery:
-		label_background.color = Color.FOREST_GREEN
-	else:
-		label_background.color = Color.WHITE
+	label_background.color = Color.TRANSPARENT
+	if OrderManager.active_delivery != null:
+		if order.order_id == OrderManager.active_delivery.order_id:
+			self.disabled = true
 
 func focus_on_button() -> void:
 	self.grab_focus()
 
 func _pressed() -> void:
-	for order in JobManager.picked_orders:
-		if delivery.order_id == order.order_id:
-			order.is_ready_for_delivery = true
-	
-	label_background.color = Color.FOREST_GREEN
-	OrderManager.active_delivery = delivery
+	if OrderManager.active_delivery == null:
+		self.disabled = true
+		OrderManager.active_delivery = delivery

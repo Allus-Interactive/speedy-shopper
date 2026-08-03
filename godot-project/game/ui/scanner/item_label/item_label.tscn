@@ -1,18 +1,10 @@
 [gd_scene format=3 uid="uid://hvm447qn31h0"]
 
 [ext_resource type="Theme" uid="uid://ch0elgt0g6a0j" path="res://assets/themes/scanner.tres" id="1_0dti8"]
+[ext_resource type="StyleBox" uid="uid://b1e1g0lxk7mop" path="res://assets/themes/overrides/scanner_label_focus.tres" id="1_3mtwi"]
+[ext_resource type="StyleBox" uid="uid://d0lv17yg63cjy" path="res://assets/themes/overrides/scanner_label_normal.tres" id="1_7oql2"]
 [ext_resource type="Script" uid="uid://dqite86dhjx0" path="res://game/ui/scanner/item_label/item_label.gd" id="1_l0xvm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mtwi"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7oql2"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
+[ext_resource type="StyleBox" uid="uid://becao0gnktnq2" path="res://assets/themes/overrides/scanner_label_disabled.tres" id="2_8if01"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anr75"]
 bg_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
@@ -21,13 +13,15 @@ bg_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
 custom_minimum_size = Vector2(262, 60)
 offset_right = 8.0
 offset_bottom = 8.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_3mtwi")
-theme_override_styles/focus = SubResource("StyleBoxFlat_7oql2")
+theme_override_styles/normal = ExtResource("1_7oql2")
+theme_override_styles/disabled = ExtResource("2_8if01")
+theme_override_styles/focus = ExtResource("1_3mtwi")
 script = ExtResource("1_l0xvm")
 
 [node name="LabelBackground" type="ColorRect" parent="." unique_id=1662033234]
 custom_minimum_size = Vector2(262, 60)
 layout_mode = 0
+color = Color(1, 1, 1, 0)
 
 [node name="ProductLabel" type="Label" parent="LabelBackground" unique_id=1106363421]
 custom_minimum_size = Vector2(262, 40)

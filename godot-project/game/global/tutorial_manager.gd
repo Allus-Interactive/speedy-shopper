@@ -34,9 +34,9 @@ func update_ui() -> void:
 		Step.PICK_SECOND_ITEM:
 			GameManager.tutorial_label.text = "Congratulations! You scanned your first item. Now let's see what's next. Remember to re-open your scanner to see what the next item is"
 		Step.PICK_THIRD_ITEM:
-			GameManager.tutorial_label.text = "That's it, you're getting the hang of it. What's next?"
+			GameManager.tutorial_label.text = "Nice one. Now let's try marking an item as unavailable. This is handy for when an item is out of stock. Open the scanner and select the milk. The red outline helps you see what item is selected. Then press Space."
 		Step.PICK_LAST_ITEM:
-			GameManager.tutorial_label.text = "Just one more item to get for this order. Let's go pick it."
+			GameManager.tutorial_label.text = "Sweet! That's a nice way to let customers know we don't have that item. Just one more item to get now. Let's go pick it."
 		Step.PICK_UP_TRAY:
 			GameManager.tutorial_label.text = "You picked the order, well done! Return to the front of the shop and pick up the blue tray."
 		Step.RETURN_TO_COUNTER:

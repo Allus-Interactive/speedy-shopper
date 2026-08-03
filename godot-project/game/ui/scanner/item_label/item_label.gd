@@ -24,10 +24,9 @@ func render_label_display(required_qty: int, scanned_qty: int, price: float) -> 
 	product_label.text = str(required_qty) + "x " + current_item_name + calculate_price(price, required_qty)
 	quantity_label.text = "%d/%d Items Picked" % [scanned_qty, required_qty]
 	
+	label_background.color = Color.TRANSPARENT
 	if scanned_qty >= required_qty:
-		label_background.color = Color.GRAY
-	else:
-		label_background.color = Color.TRANSPARENT
+		self.disabled = true
 
 func calculate_price(price: float, required_qty: int) -> String:
 	var total_price = price * required_qty
@@ -54,3 +53,5 @@ func _pressed() -> void:
 				render_label_display(item.required_quantity, item.scanned_quantity, item.product_info.product_price)
 				if OrderManager.is_active_order_fully_picked():
 					OrderManager.active_order.set("is_picked", true)
+				if TutorialManager.current_step == TutorialManager.Step.PICK_THIRD_ITEM:
+					TutorialManager.next_step()

@@ -13,5 +13,3 @@ class_name OrderData
 @export var player_tip: float = 0
 @export var is_picked: bool = false
 @export var is_completed: bool = false
-
-var is_ready_for_delivery: bool = false

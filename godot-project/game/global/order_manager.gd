@@ -2,8 +2,8 @@ extends Node
 
 signal order_updated
 
-var active_order: OrderData
-var active_delivery: OrderData
+var active_order: OrderData = null
+var active_delivery: OrderData = null
 var no_of_unique_items_in_order: int = 0
 
 func scan_product(barcode_value: int) -> bool:

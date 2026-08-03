@@ -38,8 +38,6 @@ func on_barcode_clicked() -> bool:
 			TutorialManager.next_step()
 		elif TutorialManager.current_step == TutorialManager.Step.PICK_SECOND_ITEM:
 			TutorialManager.next_step()
-		elif TutorialManager.current_step == TutorialManager.Step.PICK_THIRD_ITEM:
-			TutorialManager.next_step()
 		elif TutorialManager.current_step == TutorialManager.Step.PICK_LAST_ITEM:
 			TutorialManager.next_step()
 		return true
