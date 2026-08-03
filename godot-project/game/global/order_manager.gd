@@ -14,6 +14,8 @@ func scan_product(barcode_value: int) -> bool:
 	
 	for item in items:
 		if item.product_info.barcode_value == barcode_value:
+			if item.is_unavailable:
+				return false
 			var required_qty = item.required_quantity
 			var scanned_qty = item.scanned_quantity
 			
@@ -46,5 +48,6 @@ func is_active_order_fully_picked() -> bool:
 		if scanned_quantity < required_quantity:
 			return false
 	
+	active_order.price = JobManager.calculate_order_price(active_order.items)
 	return true
 	

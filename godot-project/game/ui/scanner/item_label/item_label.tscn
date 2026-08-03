@@ -3,10 +3,26 @@
 [ext_resource type="Theme" uid="uid://ch0elgt0g6a0j" path="res://assets/themes/scanner.tres" id="1_0dti8"]
 [ext_resource type="Script" uid="uid://dqite86dhjx0" path="res://game/ui/scanner/item_label/item_label.gd" id="1_l0xvm"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mtwi"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7oql2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anr75"]
+bg_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
+
 [node name="ItemLabel" type="Button" unique_id=475212200]
 custom_minimum_size = Vector2(262, 60)
 offset_right = 8.0
 offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mtwi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7oql2")
 script = ExtResource("1_l0xvm")
 
 [node name="LabelBackground" type="ColorRect" parent="." unique_id=1662033234]
@@ -22,11 +38,27 @@ theme = ExtResource("1_0dti8")
 text = "2x Skimmed Milk (£2.20)"
 
 [node name="QuantityLabel" type="Label" parent="LabelBackground" unique_id=1619794723]
-custom_minimum_size = Vector2(262, 20)
+custom_minimum_size = Vector2(162, 20)
 layout_mode = 0
 offset_top = 30.0
-offset_right = 262.0
+offset_right = 162.0
 offset_bottom = 50.0
 theme = ExtResource("1_0dti8")
 theme_override_font_sizes/font_size = 12
 text = "1/2 Items Picked"
+
+[node name="UnavailableLabel" type="Label" parent="LabelBackground" unique_id=1173494289]
+visible = false
+custom_minimum_size = Vector2(80, 20)
+layout_mode = 0
+offset_left = 182.0
+offset_top = 30.0
+offset_right = 262.0
+offset_bottom = 50.0
+theme = ExtResource("1_0dti8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_anr75")
+text = "Unavailable"
+horizontal_alignment = 1
+vertical_alignment = 1
