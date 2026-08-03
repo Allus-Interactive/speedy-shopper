@@ -1,0 +1,23 @@
+[gd_resource type="Theme" format=3 uid="uid://b1kte54hw4ql0"]
+
+[ext_resource type="FontFile" uid="uid://8l6ksbcdhnwn" path="res://assets/fonts/unispace/Unispace Rg.otf" id="1_xijo0"]
+[ext_resource type="FontFile" uid="uid://3ygrkp4sstfy" path="res://assets/fonts/unispace/Unispace Bd.otf" id="2_xpb4n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpb4n"]
+bg_color = Color(0.93417877, 0.10343369, 0.11448059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srlud"]
+bg_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xijo0"]
+bg_color = Color(0.40725797, 0.01605818, 0.022344245, 1)
+
+[resource]
+Button/colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+Button/fonts/font = ExtResource("1_xijo0")
+Button/styles/hover = SubResource("StyleBoxFlat_xpb4n")
+Button/styles/normal = SubResource("StyleBoxFlat_srlud")
+Button/styles/pressed = SubResource("StyleBoxFlat_xijo0")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("2_xpb4n")
