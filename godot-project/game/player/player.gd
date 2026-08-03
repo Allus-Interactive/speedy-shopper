@@ -498,7 +498,6 @@ func scan_barcode() -> void:
 				collect_held_product()
 				sfx_player.play_sfx(barcode_beep)
 			else:
-				print("Wrong Product!")
 				sfx_player.play_sfx(wrong_barcode_beep)
 
 # Update tooltip text and crosshair colour
