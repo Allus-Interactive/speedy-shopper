@@ -4,9 +4,10 @@
 [ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="2_joy1p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joy1p"]
+bg_color = Color(0.827451, 0.827451, 0.827451, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf1ab"]
-bg_color = Color(0.28870335, 0.43350288, 0.19541839, 1)
+bg_color = Color(0.30980393, 0.50980395, 0.12156863, 1)
 
 [node name="LoadingOverlay" type="CanvasLayer" unique_id=45473407]
 script = ExtResource("1_gf1ab")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7x1bfmqhwrtr" path="res://game/screens/settings_screen/settings_screen.gd" id="1_ary71"]
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="2_4ph8p"]
+[ext_resource type="Texture2D" uid="uid://bd47gx27yglwh" path="res://assets/backgrounds/title_screen_logoless.png" id="2_fc052"]
 [ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="2_gc4gq"]
 
 [node name="SettingsScreen" type="Control" unique_id=585573657]
@@ -13,12 +14,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ary71")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1285739726]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_fc052")
+
 [node name="Label" type="Label" parent="." unique_id=999125562]
 custom_minimum_size = Vector2(1280, 200)
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 200.0
 theme = ExtResource("2_gc4gq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "SETTINGS"
 horizontal_alignment = 1
@@ -32,6 +41,7 @@ offset_top = 248.0
 offset_right = 960.0
 offset_bottom = 280.0
 theme = ExtResource("2_gc4gq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "MUSIC"
 vertical_alignment = 1
@@ -43,6 +53,7 @@ offset_left = 320.0
 offset_top = 280.0
 offset_right = 960.0
 offset_bottom = 312.0
+theme = ExtResource("2_gc4gq")
 min_value = -40.0
 max_value = 0.0
 step = 0.1
@@ -55,6 +66,7 @@ offset_top = 312.0
 offset_right = 960.0
 offset_bottom = 344.0
 theme = ExtResource("2_gc4gq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "SFX"
 vertical_alignment = 1
@@ -66,17 +78,18 @@ offset_left = 320.0
 offset_top = 344.0
 offset_right = 960.0
 offset_bottom = 376.0
+theme = ExtResource("2_gc4gq")
 min_value = -40.0
 max_value = 0.0
 step = 0.1
 
 [node name="BackButton" type="Button" parent="." unique_id=301109577]
-custom_minimum_size = Vector2(300, 100)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
 offset_left = 490.0
-offset_top = 560.0
+offset_top = 620.0
 offset_right = 790.0
-offset_bottom = 660.0
+offset_bottom = 670.0
 theme = ExtResource("2_gc4gq")
 theme_override_font_sizes/font_size = 32
 text = "BACK"

@@ -1,23 +1,35 @@
 [gd_resource type="Theme" format=3 uid="uid://b1kte54hw4ql0"]
 
 [ext_resource type="FontFile" uid="uid://8l6ksbcdhnwn" path="res://assets/fonts/unispace/Unispace Rg.otf" id="1_xijo0"]
+[ext_resource type="Texture2D" uid="uid://ckkxvx6q8hxuv" path="res://assets/ui/sliders/slider_handle.png" id="2_au6vn"]
 [ext_resource type="FontFile" uid="uid://3ygrkp4sstfy" path="res://assets/fonts/unispace/Unispace Bd.otf" id="2_xpb4n"]
+[ext_resource type="Texture2D" uid="uid://cr53gay4qfj0l" path="res://assets/ui/sliders/slider_handle_highlight.png" id="3_r33x3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpb4n"]
-bg_color = Color(0.93417877, 0.10343369, 0.11448059, 1)
+bg_color = Color(0.4378658, 0.71479255, 0.1706233, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srlud"]
-bg_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
+bg_color = Color(0.30980393, 0.50980395, 0.12156863, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xijo0"]
-bg_color = Color(0.40725797, 0.01605818, 0.022344245, 1)
+bg_color = Color(0.15963322, 0.27596772, 0.051309742, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5awam"]
+bg_color = Color(0.30980393, 0.50980395, 0.12156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxkm7"]
+bg_color = Color(0.2201691, 0.36835244, 0.08180512, 1)
 
 [resource]
-Button/colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+Button/colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
 Button/fonts/font = ExtResource("1_xijo0")
 Button/styles/hover = SubResource("StyleBoxFlat_xpb4n")
 Button/styles/normal = SubResource("StyleBoxFlat_srlud")
 Button/styles/pressed = SubResource("StyleBoxFlat_xijo0")
+HSlider/icons/grabber = ExtResource("2_au6vn")
+HSlider/icons/grabber_highlight = ExtResource("3_r33x3")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_5awam")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_dxkm7")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/font_sizes/font_size = 16
 Label/fonts/font = ExtResource("2_xpb4n")

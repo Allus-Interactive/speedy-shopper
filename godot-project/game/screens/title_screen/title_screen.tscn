@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://by64gyav16ry7"]
 
 [ext_resource type="Script" uid="uid://vuugthcjcxll" path="res://game/screens/title_screen/title_screen.gd" id="1_s6vu8"]
+[ext_resource type="Texture2D" uid="uid://v1d3ee5q0u6h" path="res://assets/backgrounds/title_screen_logo.png" id="2_ej2s8"]
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="2_kxwh2"]
 [ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="2_vgr3u"]
+[ext_resource type="Texture2D" uid="uid://iv0hfkvs107f" path="res://assets/ui/icons/play_icon.png" id="4_rt638"]
+[ext_resource type="Texture2D" uid="uid://k3yy6sxrgt8o" path="res://assets/ui/icons/tutorial_icon.png" id="5_r1vf7"]
+[ext_resource type="Texture2D" uid="uid://dohhm8i6xgtu5" path="res://assets/ui/icons/settings_icon.png" id="6_c22wc"]
 
 [node name="TitleScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -13,7 +17,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s6vu8")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1825295610]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 721.0
+texture = ExtResource("2_ej2s8")
+
 [node name="Label" type="Label" parent="." unique_id=999125562]
+visible = false
 custom_minimum_size = Vector2(1280, 200)
 layout_mode = 0
 offset_right = 40.0
@@ -25,37 +37,43 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayButton" type="Button" parent="." unique_id=1082849707]
-custom_minimum_size = Vector2(300, 100)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
 offset_left = 490.0
-offset_top = 310.0
+offset_top = 470.0
 offset_right = 790.0
-offset_bottom = 410.0
+offset_bottom = 520.0
 theme = ExtResource("2_vgr3u")
 theme_override_font_sizes/font_size = 32
 text = "PLAY GAME"
+icon = ExtResource("4_rt638")
+expand_icon = true
 
 [node name="TutorialButton" type="Button" parent="." unique_id=1023160331]
-custom_minimum_size = Vector2(300, 100)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
 offset_left = 490.0
-offset_top = 435.0
+offset_top = 545.0
 offset_right = 790.0
-offset_bottom = 535.0
+offset_bottom = 595.0
 theme = ExtResource("2_vgr3u")
 theme_override_font_sizes/font_size = 32
 text = "PLAY TUTORIAL"
+icon = ExtResource("5_r1vf7")
+expand_icon = true
 
 [node name="SettingsButton" type="Button" parent="." unique_id=1811745266]
-custom_minimum_size = Vector2(300, 100)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
 offset_left = 490.0
-offset_top = 560.0
+offset_top = 620.0
 offset_right = 790.0
-offset_bottom = 660.0
+offset_bottom = 670.0
 theme = ExtResource("2_vgr3u")
 theme_override_font_sizes/font_size = 32
 text = "SETTINGS"
+icon = ExtResource("6_c22wc")
+expand_icon = true
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_kxwh2")]
 position = Vector2(490, 560)
