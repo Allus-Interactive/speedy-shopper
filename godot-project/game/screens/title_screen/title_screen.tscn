@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://by64gyav16ry7"]
 
 [ext_resource type="Script" uid="uid://vuugthcjcxll" path="res://game/screens/title_screen/title_screen.gd" id="1_s6vu8"]
+[ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="2_kxwh2"]
 
 [node name="TitleScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -50,6 +51,9 @@ offset_right = 790.0
 offset_bottom = 660.0
 theme_override_font_sizes/font_size = 32
 text = "SETTINGS"
+
+[node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_kxwh2")]
+position = Vector2(490, 560)
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
