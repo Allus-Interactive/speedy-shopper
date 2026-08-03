@@ -16,6 +16,13 @@ var tutorial_label: Label = null
 
 var order_id: int = 1
 
+# Settings
+var is_paused : bool = false
+var music_bus : int = AudioServer.get_bus_index("Music")
+var sfx_bus : int = AudioServer.get_bus_index("SFX")
+var music_volume : float = 0.0
+var sfx_volume : float = 0.0
+
 func thread_load_scene(scene_id: String) -> void:
 	LoadingOverlay.toggle_loading(true)
 
