@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://li24ord1cfkc"]
+
+[ext_resource type="Script" uid="uid://4ne2m1b3ir6s" path="res://game/screens/pause_overlay/pause_overlay.gd" id="1_lmqod"]
+[ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="2_07km2"]
+
+[node name="PauseOverlay" type="CanvasLayer" unique_id=45473407]
+script = ExtResource("1_lmqod")
+
+[node name="PauseScreen" type="ColorRect" parent="." unique_id=997941650]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.49803922)
+
+[node name="PauseText" type="Label" parent="." unique_id=1770498066]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_font_sizes/font_size = 96
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="." unique_id=689549825]
+custom_minimum_size = Vector2(300, 100)
+offset_left = 315.0
+offset_top = 435.0
+offset_right = 615.0
+offset_bottom = 535.0
+theme_override_font_sizes/font_size = 32
+text = "RESUME"
+
+[node name="MenuButton" type="Button" parent="." unique_id=576175315]
+custom_minimum_size = Vector2(300, 100)
+offset_left = 665.0
+offset_top = 435.0
+offset_right = 965.0
+offset_bottom = 535.0
+theme_override_font_sizes/font_size = 32
+text = "QUIT TO MENU"
+
+[node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_07km2")]
+
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

@@ -16,6 +16,8 @@ var tutorial_label: Label = null
 
 var order_id: int = 1
 
+var is_in_game: bool = false
+
 # Settings
 var is_paused : bool = false
 var music_bus : int = AudioServer.get_bus_index("Music")

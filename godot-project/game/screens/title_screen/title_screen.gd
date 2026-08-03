@@ -24,12 +24,16 @@ func load_settings() -> void:
 
 func _on_play_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
+	GameManager.is_in_game = true
+
 	await get_tree().create_timer(0.1).timeout
 	
 	GameManager.thread_load_scene(Constants.SHOP_SCENE)
 
 func _on_tutorial_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
+	GameManager.is_in_game = true
+	
 	await get_tree().create_timer(0.1).timeout
 	
 	TutorialManager.tutorial_enabled = true
