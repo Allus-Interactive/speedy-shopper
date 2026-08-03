@@ -41,5 +41,16 @@ offset_bottom = 535.0
 theme_override_font_sizes/font_size = 32
 text = "PLAY TUTORIAL"
 
+[node name="SettingsButton" type="Button" parent="." unique_id=1811745266]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 560.0
+offset_right = 790.0
+offset_bottom = 660.0
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS"
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
