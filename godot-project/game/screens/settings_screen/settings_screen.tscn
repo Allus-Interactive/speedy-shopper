@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvnccs7ugunpy"]
 
 [ext_resource type="Script" uid="uid://b7x1bfmqhwrtr" path="res://game/screens/settings_screen/settings_screen.gd" id="1_ary71"]
+[ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="2_4ph8p"]
 
 [node name="SettingsScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -74,6 +75,8 @@ offset_right = 790.0
 offset_bottom = 660.0
 theme_override_font_sizes/font_size = 32
 text = "BACK"
+
+[node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_4ph8p")]
 
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="SfxSlider" to="." method="_on_sfx_slider_value_changed"]

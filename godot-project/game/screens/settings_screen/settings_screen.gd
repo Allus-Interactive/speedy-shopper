@@ -4,6 +4,9 @@ class_name SettingsScreen#
 
 @onready var music_slider: HSlider = $MusicSlider
 @onready var sfx_slider: HSlider = $SfxSlider
+@onready var sfx_player: SfxPlayer = $SFXPlayer
+
+@onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
 var music_bus : int = GameManager.music_bus
 var sfx_bus : int = GameManager.sfx_bus
@@ -37,6 +40,7 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	GameManager.sfx_volume = value
 
 func _on_back_button_pressed() -> void:
+	sfx_player.play_sfx(button_press_sfx)
 	save_settings()
 	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file(Constants.TITLE_SCREEN)
