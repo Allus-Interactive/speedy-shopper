@@ -3,7 +3,7 @@ extends CanvasLayer
 class_name ScannerUI
 
 @export var closed_y: float = 1080.0
-@export var open_y: float = 450.0
+@export var open_y: float = 150.0
 @export var slide_duration: float = 0.5
 
 @onready var scanner_container: TextureRect = $ScannerContainer
