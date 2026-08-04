@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://yexejxsnlqvn"]
 
 [ext_resource type="Script" uid="uid://bgjy77w1skls3" path="res://game/vehicle/vehicle.gd" id="1_6tmgj"]
-[ext_resource type="PackedScene" uid="uid://c8ujes7b1aoxh" path="res://assets/vehicles/car/doge/Wheel.glb" id="2_hwo3e"]
 [ext_resource type="ArrayMesh" uid="uid://d0n050g33671a" path="res://assets/vehicles/van/van_wheel_front_left.tres" id="2_ipr78"]
 [ext_resource type="PackedScene" uid="uid://8sl5gmdd6o6w" path="res://game/vehicle/camera/follow_camera.tscn" id="3_b3hbe"]
-[ext_resource type="PackedScene" uid="uid://b607v1fjyqadp" path="res://assets/vehicles/car/doge/doge-body.glb" id="4_mscrk"]
 [ext_resource type="ArrayMesh" uid="uid://cmxtwsfcwbiil" path="res://assets/vehicles/van/van_wheel_front_right.tres" id="4_qqfut"]
 [ext_resource type="ArrayMesh" uid="uid://bwykf0sqiiesh" path="res://assets/vehicles/van/van_wheel_back_left.tres" id="5_1wjtb"]
 [ext_resource type="ArrayMesh" uid="uid://p0celopgg8yr" path="res://assets/vehicles/van/van_wheel_back_right.tres" id="6_2uabk"]
-[ext_resource type="ArrayMesh" uid="uid://blgnqndakx6pp" path="res://assets/vehicles/van/van_body.tres" id="8_qqfut"]
+[ext_resource type="ArrayMesh" uid="uid://euhrg8yx65wl" path="res://assets/vehicles/van/kenney_van_body.tres" id="8_qqfut"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mm2gk"]
 size = Vector3(2.277, 1.569, 1.359)
@@ -56,9 +54,6 @@ transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("2_ipr78")
 skeleton = NodePath("../../wheel_rear_left")
 
-[node name="Wheel" parent="Van/wheel_front_left" unique_id=157481343 instance=ExtResource("2_hwo3e")]
-visible = false
-
 [node name="wheel_front_right" type="VehicleWheel3D" parent="Van" unique_id=1545539749]
 transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -0.9068356, 0.331356, 1.3371441)
 use_as_steering = true
@@ -77,9 +72,6 @@ transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("4_qqfut")
 skeleton = NodePath("../../wheel_rear_left")
 
-[node name="Wheel" parent="Van/wheel_front_right" unique_id=1348361123 instance=ExtResource("2_hwo3e")]
-visible = false
-
 [node name="wheel_rear_left" type="VehicleWheel3D" parent="Van" unique_id=1235113372]
 transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0.91138095, 0.33315, -1.7646933)
 use_as_traction = true
@@ -96,9 +88,6 @@ damping_relaxation = 4.5
 transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("5_1wjtb")
 skeleton = NodePath("../../..")
-
-[node name="Wheel" parent="Van/wheel_rear_left" unique_id=301583585 instance=ExtResource("2_hwo3e")]
-visible = false
 
 [node name="wheel_rear_right" type="VehicleWheel3D" parent="Van" unique_id=169035002]
 transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -0.9068356, 0.33315, -1.7646933)
@@ -118,9 +107,6 @@ transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("6_2uabk")
 skeleton = NodePath("../../wheel_rear_left")
 
-[node name="Wheel" parent="Van/wheel_rear_right" unique_id=1646956058 instance=ExtResource("2_hwo3e")]
-visible = false
-
 [node name="SeatPosition" type="Node3D" parent="Van" unique_id=1568530794]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3667725, 0.6443297, -0.30233964)
 
@@ -131,14 +117,10 @@ transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 1.740
 transform = Transform3D(-1, 1.9665846e-08, -8.518214e-08, 0, 0.97437006, 0.22495104, 8.742278e-08, 0.22495104, -0.97437006, 0, 3.814, -7.074)
 current = false
 
-[node name="VanBody" type="MeshInstance3D" parent="Van" unique_id=667378702]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.3178441, 0)
+[node name="KenneyVanBody" type="MeshInstance3D" parent="Van" unique_id=516243549]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.318, 0)
 mesh = ExtResource("8_qqfut")
-skeleton = NodePath("../wheel_rear_right")
-
-[node name="doge-body" parent="Van" unique_id=119986545 instance=ExtResource("4_mscrk")]
-transform = Transform3D(1, 0, 6.3573e-08, 0, 1, 0, -6.3573e-08, 0, 1, 0, 0, 0)
-visible = false
+skeleton = NodePath("../..")
 
 [node name="Cab" type="CollisionShape3D" parent="Van" unique_id=1114515280]
 transform = Transform3D(-0.9999999, 0, -8.940699e-08, 0, 1, 0, 8.940699e-08, 0, -0.9999999, -0.0020990395, 1.7253846, 0.8345831)
