@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="2_4ph8p"]
 [ext_resource type="Texture2D" uid="uid://bd47gx27yglwh" path="res://assets/backgrounds/title_screen_logoless.png" id="2_fc052"]
 [ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="2_gc4gq"]
+[ext_resource type="Texture2D" uid="uid://bt327e87vcc0j" path="res://assets/buttons/back/back.png" id="4_vwcgb"]
+[ext_resource type="Texture2D" uid="uid://bn6d88n03fhwq" path="res://assets/buttons/back/back_pressed.png" id="5_kthwt"]
+[ext_resource type="Texture2D" uid="uid://y6jrh2g7iate" path="res://assets/buttons/back/back_hover.png" id="6_3s7ga"]
 
 [node name="SettingsScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -83,16 +86,16 @@ min_value = -40.0
 max_value = 0.0
 step = 0.1
 
-[node name="BackButton" type="Button" parent="." unique_id=301109577]
+[node name="BackButton" type="TextureButton" parent="." unique_id=1941135018]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
 offset_left = 490.0
 offset_top = 620.0
 offset_right = 790.0
 offset_bottom = 670.0
-theme = ExtResource("2_gc4gq")
-theme_override_font_sizes/font_size = 32
-text = "BACK"
+texture_normal = ExtResource("4_vwcgb")
+texture_pressed = ExtResource("5_kthwt")
+texture_hover = ExtResource("6_3s7ga")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_4ph8p")]
 
