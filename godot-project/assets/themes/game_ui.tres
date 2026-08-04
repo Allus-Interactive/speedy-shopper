@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://8l6ksbcdhnwn" path="res://assets/fonts/unispace/Unispace Rg.otf" id="1_xijo0"]
 [ext_resource type="Texture2D" uid="uid://ckkxvx6q8hxuv" path="res://assets/ui/sliders/slider_handle.png" id="2_au6vn"]
-[ext_resource type="FontFile" uid="uid://3ygrkp4sstfy" path="res://assets/fonts/unispace/Unispace Bd.otf" id="2_xpb4n"]
 [ext_resource type="Texture2D" uid="uid://cr53gay4qfj0l" path="res://assets/ui/sliders/slider_handle_highlight.png" id="3_r33x3"]
+[ext_resource type="FontFile" uid="uid://iwyrymwi76ql" path="res://assets/fonts/unispace/Unispace It.otf" id="4_au6vn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpb4n"]
 bg_color = Color(0.4378658, 0.71479255, 0.1706233, 1)
@@ -30,6 +30,6 @@ HSlider/icons/grabber = ExtResource("2_au6vn")
 HSlider/icons/grabber_highlight = ExtResource("3_r33x3")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_5awam")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_dxkm7")
-Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_color = Color(0.30980393, 0.50980395, 0.12156863, 1)
 Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("2_xpb4n")
+Label/fonts/font = ExtResource("4_au6vn")

@@ -30,7 +30,6 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 200.0
 theme = ExtResource("2_gc4gq")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "SETTINGS"
 horizontal_alignment = 1
