@@ -20,7 +20,7 @@ run/main_scene="uid://by64gyav16ry7"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0.827451, 0.827451, 0.827451, 1)
 boot_splash/image="uid://dorbk52ipjq46"
-config/icon="uid://vjaxonh46ggu"
+config/icon="uid://k58d43b4bobs"
 
 [audio]
 
