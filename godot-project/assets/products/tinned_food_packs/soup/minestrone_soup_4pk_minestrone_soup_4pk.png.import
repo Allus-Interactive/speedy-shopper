@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cgfjhlv7qihwu"
+path.s3tc="res://.godot/imported/minestrone_soup_4pk_minestrone_soup_4pk.png-5b7860ce523f02b4c4a5fdb37b80d161.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "1fb437f3511249b68c1f508d52b26932"
+}
+
+[deps]
+
+source_file="res://assets/products/tinned_food_packs/soup/minestrone_soup_4pk_minestrone_soup_4pk.png"
+dest_files=["res://.godot/imported/minestrone_soup_4pk_minestrone_soup_4pk.png-5b7860ce523f02b4c4a5fdb37b80d161.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

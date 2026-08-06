@@ -2,14 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_3iipg"]
 [ext_resource type="Resource" uid="uid://leughece5xd2" path="res://game/resources/item/resources/tinned_food_packs/beans/cheesy_baked_beans_4pk.tres" id="2_5o0t4"]
+[ext_resource type="PackedScene" uid="uid://bdrv37s1axbmp" path="res://assets/products/tinned_food_packs/beans/baked_beans_with_cheese_4pk.glb" id="2_h1qu1"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_n7mrx"]
 
 [resource]
 script = ExtResource("3_n7mrx")
 product_info = ExtResource("2_5o0t4")
 placeholder_size = Vector3(0.3, 0.2, 0.3)
-shelf_offset = Vector3(0, 0.1, 0)
+shelf_offset = Vector3(0, 0.125, 0)
 default_shelf_quantity = 3
 label_size = 1
 product_colour = Color(0.7940904, 0.53995806, 0.10768428, 1)
+barcode_size = Vector2(0.12, 0.04)
+barcode_offset = Vector3(0, -0.055, 0)
+model = ExtResource("2_h1qu1")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"

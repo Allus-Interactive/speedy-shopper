@@ -2,14 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_j0mhe"]
 [ext_resource type="Resource" uid="uid://b0dskc1bb8dqt" path="res://game/resources/item/resources/tinned_food_packs/soup/minestrone_soup_4pk.tres" id="2_l4a3c"]
+[ext_resource type="PackedScene" uid="uid://w3y24k81gbwd" path="res://assets/products/tinned_food_packs/soup/minestrone_soup_4pk.glb" id="2_uc1tl"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_hyvh8"]
 
 [resource]
 script = ExtResource("3_hyvh8")
 product_info = ExtResource("2_l4a3c")
 placeholder_size = Vector3(0.3, 0.2, 0.3)
-shelf_offset = Vector3(0, 0.1, 0)
+shelf_offset = Vector3(0, 0.125, 0)
 default_shelf_quantity = 3
 label_size = 1
 product_colour = Color(0.421572, 0.06735595, 0.6759285, 1)
+barcode_size = Vector2(0.12, 0.04)
+barcode_offset = Vector3(0, -0.055, 0)
+model = ExtResource("2_uc1tl")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"

@@ -2,14 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_5r3f3"]
 [ext_resource type="Resource" uid="uid://bitb1ajbwy2kr" path="res://game/resources/item/resources/tinned_food_packs/soup/lentil_soup_4pk.tres" id="2_bcom6"]
+[ext_resource type="PackedScene" uid="uid://d02u16jnjgxmc" path="res://assets/products/tinned_food_packs/soup/lentil_soup_4pk.glb" id="2_tsdni"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_3tqmg"]
 
 [resource]
 script = ExtResource("3_3tqmg")
 product_info = ExtResource("2_bcom6")
 placeholder_size = Vector3(0.3, 0.2, 0.3)
-shelf_offset = Vector3(0, 0.1, 0)
+shelf_offset = Vector3(0, 0.125, 0)
 default_shelf_quantity = 3
 label_size = 1
 product_colour = Color(0.3432878, 0.4980923, 0.15565056, 1)
+barcode_size = Vector2(0.12, 0.04)
+barcode_offset = Vector3(0, -0.055, 0)
+model = ExtResource("2_tsdni")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
