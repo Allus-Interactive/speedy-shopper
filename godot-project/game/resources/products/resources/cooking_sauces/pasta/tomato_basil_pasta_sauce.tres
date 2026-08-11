@@ -1,16 +1,19 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://y3eul7nh88pu"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_yvt4p"]
+[ext_resource type="PackedScene" uid="uid://caqnx20ipmvsu" path="res://assets/products/cooking_sauces/pasta/tomato_basil_sauce.glb" id="2_akmk2"]
 [ext_resource type="Resource" uid="uid://cb5rguptnbb1c" path="res://game/resources/item/resources/cooking_sauces/pasta/tomato_basil_pasta_sauce.tres" id="2_gjvdd"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_hxnij"]
 
 [resource]
 script = ExtResource("3_hxnij")
 product_info = ExtResource("2_gjvdd")
-placeholder_size = Vector3(0.1, 0.3, 0.1)
-shelf_offset = Vector3(0, 0.15, 0)
+placeholder_size = Vector3(0.15, 0.3, 0.15)
+shelf_offset = Vector3(0, 0.175, 0)
 default_shelf_quantity = 6
 label_size = 2
 product_colour = Color(0.6814849, 0.24846017, 0.06208963, 1)
-barcode_size = Vector2(0.08, 0.04)
+barcode_size = Vector2(0.04, 0.03)
+barcode_offset = Vector3(0, -0.06, 0)
+model = ExtResource("2_akmk2")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
