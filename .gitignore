@@ -9,12 +9,6 @@ documentation/To Do.md
 # External Assets
 external-assets
 
-# 3D Models and Blender Files
-3d-models
-
-# Vector Art
-vector-art
-
 # Screenshots
 screenshots
 
@@ -23,3 +17,8 @@ builds
 
 # HTML code for itch page
 itch-page.html
+
+# Speedy Shopper Assets, held in a separate Git Repo
+# Includes 3D models and vector art
+speedy-shopper-assets
+
