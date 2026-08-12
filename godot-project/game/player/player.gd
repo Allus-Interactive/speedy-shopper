@@ -36,6 +36,11 @@ var held_product_original_parent: Node = null
 var held_product_original_transform: Transform3D
 var is_inspecting_product: bool = false
 @export var inspect_rotation_speed: float = 2.0
+@export var default_inspect_distance: float = 0.3
+@export var inspect_distance: float = 0.3
+@export var inspect_min_distance: float = 0.1
+@export var inspect_max_distance: float = 0.5
+@export var inspect_zoom_speed: float = 0.02
 @onready var hold_point: Marker3D = $Neck/FirstPersonCamera/HoldPoint
 @onready var crate_hold_point: Marker3D = $Neck/FirstPersonCamera/CrateHoldPoint
 
@@ -217,9 +222,12 @@ func _process(delta: float) -> void:
 			if is_on_stool:
 				get_off_footstool()
 
-func pick_up_product(product: ProductObject) -> void:	
+func pick_up_product(product: ProductObject) -> void:
 	if is_inspecting_product:
 		return
+	
+	# reset inspect distance
+	reset_inspect_distance()
 	
 	# if scanner is open, close it
 	if GameManager.is_scanner_open:
@@ -239,6 +247,9 @@ func pick_up_product(product: ProductObject) -> void:
 	
 	# Reset local transform so it sits on the hold point
 	held_product.transform = Transform3D.IDENTITY
+	
+	# Set hold points position for zoom
+	held_product.position.z = -inspect_distance
 	
 	# Make the mouse visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -592,7 +603,13 @@ func exit_vehicle(v: Vehicle) -> void:
 		push_error("No Van Camera found")
 
 # TEMPORARY SCREENSHOT LOGIC
-#func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
+	if is_inspecting_product:
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+				_zoom_product(-1)
+			elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				_zoom_product(1)
 	#if event.is_action_pressed("screenshot"):
 		#take_screenshot()
 
@@ -606,3 +623,18 @@ func exit_vehicle(v: Vehicle) -> void:
 	#var filename = "Screenshot_%s.png" % time
 	#image.save_png(desktop.path_join(filename))
 	#print(filename)
+
+func _zoom_product(direction: int) -> void:
+	inspect_distance += direction * inspect_zoom_speed
+	
+	inspect_distance = clamp(
+		inspect_distance,
+		inspect_min_distance,
+		inspect_max_distance
+	)
+	
+	hold_point.position.z = -inspect_distance
+
+func reset_inspect_distance() -> void:
+	inspect_distance = default_inspect_distance
+	hold_point.position.z = -inspect_distance
