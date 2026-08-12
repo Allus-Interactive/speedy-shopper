@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("3_rf381")
 product_info = ExtResource("2_seh1y")
-placeholder_size = Vector3(0.2, 0.5, 0.4)
+placeholder_size = Vector3(0.2, 0.5, 0.3)
 shelf_offset = Vector3(0, 0.25, 0)
 default_shelf_quantity = 2
 product_colour = Color(0.8893724, 0, 0.13350803, 1)
