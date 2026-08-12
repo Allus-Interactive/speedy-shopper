@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://djbwm3llxyx3k"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_82nfl"]
+[ext_resource type="PackedScene" uid="uid://bd8f4yn68hu3f" path="res://assets/products/condiments/salt_grinder.glb" id="2_1gbha"]
 [ext_resource type="Resource" uid="uid://bmsaw4vosh5a" path="res://game/resources/item/resources/condiments/salt.tres" id="2_kaa7e"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_76dxj"]
 
@@ -8,9 +9,11 @@
 script = ExtResource("3_76dxj")
 product_info = ExtResource("2_kaa7e")
 placeholder_size = Vector3(0.1, 0.2, 0.1)
-shelf_offset = Vector3(0, 0.1, 0)
+shelf_offset = Vector3(0, 0.125, 0)
 default_shelf_quantity = 6
 label_size = 2
 product_colour = Color(0.57174236, 0.7271386, 0.939002, 1)
-barcode_size = Vector2(0.08, 0.04)
+barcode_size = Vector2(0.04, 0.03)
+barcode_offset = Vector3(0, -0.05, 0)
+model = ExtResource("2_1gbha")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
