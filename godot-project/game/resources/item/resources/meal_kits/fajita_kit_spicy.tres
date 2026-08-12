@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://pafqri1ynn15"]
 
-[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_afa7h"]
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_3amli"]
 
 [resource]
-script = ExtResource("1_afa7h")
-product_name = "Roasted Chicken Fajita Kit"
+script = ExtResource("1_3amli")
+product_name = "Spicy Chicken Fajita Kit"
 barcode_value = 5114
 product_price = 3.85
 product_type = 12

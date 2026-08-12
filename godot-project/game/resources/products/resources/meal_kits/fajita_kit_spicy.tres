@@ -1,13 +1,17 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://djd0lhlgyp2dw"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_wvp3q"]
-[ext_resource type="Resource" uid="uid://pafqri1ynn15" path="res://game/resources/item/resources/meal_kits/fajita_kit_roasted.tres" id="2_wvp3q"]
+[ext_resource type="PackedScene" uid="uid://dbt0ik1q10n88" path="res://assets/products/meal_kits/fajita_spicy.glb" id="2_7jaw3"]
+[ext_resource type="Resource" uid="uid://pafqri1ynn15" path="res://game/resources/item/resources/meal_kits/fajita_kit_spicy.tres" id="2_x13ho"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_0rofe"]
 
 [resource]
 script = ExtResource("3_0rofe")
-product_info = ExtResource("2_wvp3q")
+product_info = ExtResource("2_x13ho")
 placeholder_size = Vector3(0.4, 0.4, 0.15)
-shelf_offset = Vector3(0, 0.2, 0)
+shelf_offset = Vector3(0, 0.225, 0)
 product_colour = Color(0.44320175, 0.19744307, 0.14354631, 1)
+barcode_size = Vector2(0.11, 0.06)
+barcode_offset = Vector3(0, -0.14, 0)
+model = ExtResource("2_7jaw3")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"

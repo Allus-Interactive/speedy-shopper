@@ -2,12 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_24wrk"]
 [ext_resource type="Resource" uid="uid://0jts6crm531w" path="res://game/resources/item/resources/meal_kits/fajita_kit_bbq.tres" id="2_npyo5"]
+[ext_resource type="PackedScene" uid="uid://c7tmaimvy5dmr" path="res://assets/products/meal_kits/fajita_bbq.glb" id="2_osekk"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_tv36m"]
 
 [resource]
 script = ExtResource("3_tv36m")
 product_info = ExtResource("2_npyo5")
 placeholder_size = Vector3(0.4, 0.4, 0.15)
-shelf_offset = Vector3(0, 0.2, 0)
+shelf_offset = Vector3(0, 0.225, 0)
 product_colour = Color(0.5240173, 0.6063377, 0.37132114, 1)
+barcode_size = Vector2(0.11, 0.06)
+barcode_offset = Vector3(0, -0.14, 0)
+model = ExtResource("2_osekk")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"

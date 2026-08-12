@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://cho06g0cjpwxy"]
 
-[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_uve3g"]
+[ext_resource type="Script" uid="uid://siedaem41o6s" path="res://game/resources/item/item.gd" id="1_k6td5"]
 
 [resource]
-script = ExtResource("1_uve3g")
-product_name = "BBQ Tortilla Pockets Kit"
+script = ExtResource("1_k6td5")
+product_name = "BBQ Taco Kit"
 barcode_value = 5116
 product_price = 2.75
 product_type = 12
