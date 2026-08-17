@@ -2,15 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_8g34l"]
 [ext_resource type="Resource" uid="uid://ck5u0kuncgxiu" path="res://game/resources/item/resources/pasta_rice/pasta/spirali_pasta.tres" id="2_8g34l"]
+[ext_resource type="PackedScene" uid="uid://casvn6fbun74u" path="res://assets/products/pasta_rice/pasta/spirali_pasta.glb" id="2_t33e8"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_07pyg"]
 
 [resource]
 script = ExtResource("3_07pyg")
 product_info = ExtResource("2_8g34l")
 placeholder_size = Vector3(0.2, 0.35, 0.1)
-shelf_offset = Vector3(0, 0.175, 0)
+shelf_offset = Vector3(0, 0.2, 0)
 default_shelf_quantity = 6
 label_size = 1
 product_colour = Color(0.5341403, 0.58077395, 0.33711672, 1)
-barcode_size = Vector2(0.08, 0.04)
+barcode_size = Vector2(0.04, 0.04)
+barcode_offset = Vector3(-0.023, -0.071, 0)
+model = ExtResource("2_t33e8")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"

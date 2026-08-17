@@ -58,7 +58,7 @@ func _rebuild() -> void:
 	if product_data.model:
 		var instance = product_data.model.instantiate()
 		visual_root.add_child(instance)
-	else:		
+	else:
 		var box := BoxMesh.new()
 		box.size = size
 		
