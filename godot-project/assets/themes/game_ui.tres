@@ -14,6 +14,23 @@ bg_color = Color(0.30980393, 0.50980395, 0.12156863, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xijo0"]
 bg_color = Color(0.15963322, 0.27596772, 0.051309742, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yf5fn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0u6y"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcnqv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7numd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5awam"]
 bg_color = Color(0.30980393, 0.50980395, 0.12156863, 1)
 
@@ -26,6 +43,14 @@ Button/fonts/font = ExtResource("1_xijo0")
 Button/styles/hover = SubResource("StyleBoxFlat_xpb4n")
 Button/styles/normal = SubResource("StyleBoxFlat_srlud")
 Button/styles/pressed = SubResource("StyleBoxFlat_xijo0")
+CheckButton/colors/button_checked_color = Color(0.30980393, 0.50980395, 0.12156863, 1)
+CheckButton/colors/button_unchecked_color = Color(0.16078432, 0.27450982, 0.050980393, 1)
+CheckButton/styles/disabled = SubResource("StyleBoxTexture_yf5fn")
+CheckButton/styles/focus = SubResource("StyleBoxFlat_d0u6y")
+CheckButton/styles/hover = SubResource("StyleBoxFlat_3gngh")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxFlat_fcnqv")
+CheckButton/styles/normal = SubResource("StyleBoxFlat_g4v7s")
+CheckButton/styles/pressed = SubResource("StyleBoxFlat_7numd")
 HSlider/icons/grabber = ExtResource("2_au6vn")
 HSlider/icons/grabber_highlight = ExtResource("3_r33x3")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_5awam")

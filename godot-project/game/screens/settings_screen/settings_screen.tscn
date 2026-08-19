@@ -85,6 +85,28 @@ min_value = -40.0
 max_value = 0.0
 step = 0.1
 
+[node name="24HourLabel" type="Label" parent="." unique_id=1250745208]
+custom_minimum_size = Vector2(640, 32)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 376.0
+offset_right = 960.0
+offset_bottom = 408.0
+theme = ExtResource("2_gc4gq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "24 Hour Clock"
+vertical_alignment = 1
+
+[node name="TimeCheckButton" type="CheckButton" parent="." unique_id=1730348406]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 367.0
+offset_right = 484.0
+offset_bottom = 391.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_gc4gq")
+
 [node name="BackButton" type="TextureButton" parent="." unique_id=1941135018]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
@@ -100,4 +122,5 @@ texture_hover = ExtResource("6_3s7ga")
 
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="TimeCheckButton" to="." method="_on_time_check_button_toggled"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
