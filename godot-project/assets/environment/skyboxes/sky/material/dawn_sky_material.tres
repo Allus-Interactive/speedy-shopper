@@ -1,0 +1,7 @@
+[gd_resource type="ProceduralSkyMaterial" format=3 uid="uid://cj30014mdsbrs"]
+
+[resource]
+sky_top_color = Color(0.6393075, 0.5932603, 0.9227519, 1)
+sky_horizon_color = Color(0.88235295, 0.49411765, 0.47843137, 1)
+ground_bottom_color = Color(0.31740075, 0.47919005, 0.21385062, 1)
+ground_horizon_color = Color(0.88235295, 0.49411765, 0.47843137, 1)

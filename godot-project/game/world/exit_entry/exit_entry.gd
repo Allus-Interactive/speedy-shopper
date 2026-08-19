@@ -7,6 +7,8 @@ class_name ExitEntry
 func get_interaction_tooltip(_player: Player) -> String:
 	if TutorialManager.tutorial_enabled and TutorialManager.current_step != TutorialManager.Step.COMPLETE:
 		return "Please complete the Tutorial\nbefore leaving"
+	if GameTimeManager.hour > 22 and GameTimeManager.hour < 10:
+		return "The Store is Closed"
 	if is_in_shop:
 		return "Press E to Leave"
 	else:
@@ -21,4 +23,5 @@ func interact(_p: Player) -> void:
 		if is_in_shop:
 			GameManager.thread_load_scene(Constants.DRIVING_SCENE)
 		else:
-			GameManager.thread_load_scene(Constants.SHOP_SCENE)
+			if GameTimeManager.hour > 10 and GameTimeManager.hour < 22:
+				GameManager.thread_load_scene(Constants.SHOP_SCENE)

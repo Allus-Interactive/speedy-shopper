@@ -11,11 +11,15 @@ enum Day {
 }
 
 var day : Day = Day.MONDAY
-var hour: int = 10
-var minute: int = 0
+var hour: int = 7
+var minute: int = 40
 
 var time_accumulator : float = 0.0
 var seconds_per_minute : float = 1.0
+
+signal minute_changed
+signal hour_changed
+signal day_changed
 
 func _process(delta: float) -> void:
 	time_accumulator += delta
@@ -26,10 +30,12 @@ func _process(delta: float) -> void:
 
 func advance_minute() -> void:
 	minute += 1
+	minute_changed.emit()
 	
 	if minute >= 60:
 		minute = 0
 		hour += 1
+		hour_changed.emit()
 	
 	if hour >= 24:
 		hour = 0
@@ -37,6 +43,7 @@ func advance_minute() -> void:
 
 func advance_day() -> void:
 	day = (day + 1) % 7
+	day_changed.emit()
 
 func get_time_string(use_24_hour: bool) -> String:
 	if use_24_hour:

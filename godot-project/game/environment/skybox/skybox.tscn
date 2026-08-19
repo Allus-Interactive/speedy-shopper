@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bawarmmsij6un"]
+
+[ext_resource type="Environment" uid="uid://bnj7ebg32liyh" path="res://assets/environment/skyboxes/day.tres" id="1_tb2nj"]
+[ext_resource type="Script" uid="uid://baclkkcm2p35k" path="res://game/environment/skybox/skybox.gd" id="2_p2yd1"]
+[ext_resource type="Environment" uid="uid://bm34ffssbjaj3" path="res://assets/environment/skyboxes/dawn.tres" id="3_s7vjk"]
+[ext_resource type="Environment" uid="uid://c2ylxegb4bvig" path="res://assets/environment/skyboxes/evening.tres" id="4_ecg54"]
+[ext_resource type="Environment" uid="uid://b0vm7f4bgt8ai" path="res://assets/environment/skyboxes/night.tres" id="5_k0uji"]
+
+[node name="Skybox" type="WorldEnvironment" unique_id=81627788]
+environment = ExtResource("3_s7vjk")
+script = ExtResource("2_p2yd1")
+dawn_environment = ExtResource("3_s7vjk")
+day_environment = ExtResource("1_tb2nj")
+evening_environment = ExtResource("4_ecg54")
+night_environment = ExtResource("5_k0uji")

@@ -1,0 +1,9 @@
+[gd_resource type="Environment" format=3 uid="uid://c2ylxegb4bvig"]
+
+[ext_resource type="Sky" uid="uid://c7kyqlv125pb3" path="res://assets/environment/skyboxes/sky/evening_sky.tres" id="1_iho78"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("1_iho78")
+ambient_light_color = Color(0.70951504, 0.30470857, 0.114295624, 1)
+ambient_light_energy = 0.4
