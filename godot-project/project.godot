@@ -38,6 +38,7 @@ DialogManager="*uid://c4tnm8tcb4iie"
 TutorialManager="*uid://iwanrbaoco20"
 LoadingOverlay="*uid://3uwajgjnnnrn"
 PauseOverlay="*uid://li24ord1cfkc"
+GameTimeManager="*uid://dsa8kr61chpsx"
 
 [display]
 

@@ -31,6 +31,10 @@ class_name ScannerUI
 @onready var available_item_label_scene = preload("res://game/ui/scanner/available_item_label/available_item_label.tscn")
 @onready var delivery_label_scene = preload("res://game/ui/scanner/delivery_label/delivery_label.tscn")
 
+# Day Time Labels
+@onready var day_label: Label = $ScannerContainer/DateTime/DayLabel
+@onready var time_label: Label = $ScannerContainer/DateTime/TimeLabel
+
 var is_animating: bool = false
 
 func _ready() -> void:
@@ -43,6 +47,10 @@ func _ready() -> void:
 	
 	if not JobManager.order_selected.is_connected(display_current_order):
 		JobManager.order_selected.connect(display_current_order)
+
+func _process(_delta: float) -> void:
+	time_label.text = GameTimeManager.get_time_string(GameManager.use_24_hour)
+	day_label.text = GameTimeManager.get_day_string()
 
 func toggle_scanner() -> void:
 	if is_animating:

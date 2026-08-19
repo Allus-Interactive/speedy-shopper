@@ -24,6 +24,7 @@ var music_bus : int = AudioServer.get_bus_index("Music")
 var sfx_bus : int = AudioServer.get_bus_index("SFX")
 var music_volume : float = 0.0
 var sfx_volume : float = 0.0
+var use_24_hour : bool = true
 
 func thread_load_scene(scene_id: String) -> void:
 	LoadingOverlay.toggle_loading(true)
