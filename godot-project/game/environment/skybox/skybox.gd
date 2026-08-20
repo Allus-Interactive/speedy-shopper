@@ -40,6 +40,21 @@ var sun_angle_offset: float = -90.0
 @export var evening_ambient_energy: float = 0.5
 @export var night_ambient_energy: float = 0.1
 
+@export_category("Fog")
+@export var use_fog: bool = true
+@export var dawn_fog_color: Color = Color.WHITE
+@export var day_fog_color: Color = Color.WHITE
+@export var evening_fog_color: Color = Color.WHITE
+@export var night_fog_color: Color = Color(0.03, 0.05, 0.08)
+@export_range(0.0, 1.0, 0.01)
+var dawn_fog_density: float = 0.003
+@export_range(0.0, 1.0, 0.01)
+var day_fog_density: float = 0.0
+@export_range(0.0, 1.0, 0.01)
+var evening_fog_density: float = 0.003
+@export_range(0.0, 1.0, 0.01)
+var night_fog_density: float = 0.003
+
 func _ready():
 	setup_runtime_environment()
 	update_environment()
@@ -50,6 +65,7 @@ func _process(_delta):
 	update_sun()
 	update_moon()
 	update_ambient_lighting()
+	update_fog()
 
 func setup_runtime_environment():
 	if environment == null:
@@ -68,6 +84,9 @@ func setup_runtime_environment():
 		)
 	else:
 		environment.sky.sky_material = ProceduralSkyMaterial.new()
+	
+	environment.fog_enabled = use_fog
+	environment.fog_sky_affect = 0.1
 
 func update_environment():
 	var current_time: float = (
@@ -568,6 +587,136 @@ func update_ambient_lighting():
 		environment.ambient_light_color = night_ambient_color
 		environment.ambient_light_energy = night_ambient_energy
 
+func update_fog():
+	var current_time: float = (
+		GameTimeManager.hour +
+		(GameTimeManager.minute / 60.0)
+	)
+	
+	var dawn_start: float = (
+		dawn_time -
+		transition_hours
+	)
+	
+	var dawn_end: float = (
+		dawn_time +
+		transition_hours
+	)
+	
+	var evening_start: float = (
+		evening_time -
+		transition_hours
+	)
+	
+	var evening_end: float = (
+		evening_time +
+		transition_hours
+	)
+	# --------------------------------------------------
+	# Night → Dawn
+	# --------------------------------------------------
+	if current_time >= dawn_start and current_time < dawn_time:
+		var amount: float = inverse_lerp(
+			dawn_start,
+			dawn_time,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		interpolate_fog(
+			night_fog_color,
+			dawn_fog_color,
+			night_fog_density,
+			dawn_fog_density,
+			amount
+		)
+	# --------------------------------------------------
+	# Dawn → Day
+	# --------------------------------------------------
+	elif current_time >= dawn_time and current_time < dawn_end:
+		var amount: float = inverse_lerp(
+			dawn_time,
+			dawn_end,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		interpolate_fog(
+			dawn_fog_color,
+			day_fog_color,
+			dawn_fog_density,
+			day_fog_density,
+			amount
+		)
+	# --------------------------------------------------
+	# Day
+	# --------------------------------------------------
+	elif current_time >= dawn_end and current_time < evening_start:
+		environment.fog_light_color = day_fog_color
+		environment.fog_density = day_fog_density
+	# --------------------------------------------------
+	# Day → Evening
+	# --------------------------------------------------
+	elif current_time >= evening_start and current_time < evening_time:
+		var amount: float = inverse_lerp(
+			evening_start,
+			evening_time,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		interpolate_fog(
+			day_fog_color,
+			evening_fog_color,
+			day_fog_density,
+			evening_fog_density,
+			amount
+		)
+	# --------------------------------------------------
+	# Evening → Night
+	# --------------------------------------------------
+	elif current_time >= evening_time and current_time < evening_end:
+		var amount: float = inverse_lerp(
+			evening_time,
+			evening_end,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		interpolate_fog(
+			evening_fog_color,
+			night_fog_color,
+			evening_fog_density,
+			night_fog_density,
+			amount
+		)
+	# --------------------------------------------------
+	# Night
+	# --------------------------------------------------
+	else:
+		environment.fog_light_color = night_fog_color
+		environment.fog_density = night_fog_density
+
 func interpolate_ambient_lighting(
 	from_color: Color,
 	to_color: Color,
@@ -583,6 +732,24 @@ func interpolate_ambient_lighting(
 	environment.ambient_light_energy = lerp(
 		from_energy,
 		to_energy,
+		amount
+	)
+
+func interpolate_fog(
+	from_color: Color,
+	to_color: Color,
+	from_density: float,
+	to_density: float,
+	amount: float
+):
+	environment.fog_light_color = from_color.lerp(
+		to_color,
+		amount
+	)
+
+	environment.fog_density = lerp(
+		from_density,
+		to_density,
 		amount
 	)
 
