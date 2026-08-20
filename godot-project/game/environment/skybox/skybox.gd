@@ -25,6 +25,11 @@ var sun_angle_offset: float = -90.0
 @export var midday_sun_color := Color(1.0, 0.95, 0.85)
 @export var sunset_sun_color := Color(1.0, 0.5, 0.3)
 
+@export_category("Moon")
+@export var moon: DirectionalLight3D
+@export var max_moon_energy: float = 0.15
+@export var moon_color := Color(0.65, 0.75, 1.0)
+
 func _ready():
 	setup_runtime_environment()
 	update_environment()
@@ -33,7 +38,7 @@ func _ready():
 func _process(_delta):
 	update_environment()
 	update_sun()
-
+	update_moon()
 
 func setup_runtime_environment():
 	if environment == null:
@@ -52,7 +57,6 @@ func setup_runtime_environment():
 		)
 	else:
 		environment.sky.sky_material = ProceduralSkyMaterial.new()
-
 
 func update_environment():
 	var current_time: float = (
@@ -263,16 +267,165 @@ func update_sun():
 		# Night.
 		sun.light_color = sunset_sun_color
 
+func update_moon():
+	if moon == null:
+		return
+	
+	var current_time: float = (
+		GameTimeManager.hour +
+		(GameTimeManager.minute / 60.0)
+	)
+	
+	var sunrise_time: float = (
+		dawn_time -
+		transition_hours
+	)
+	
+	var sunset_time: float = (
+		evening_time +
+		transition_hours
+	)
+	
+	# --------------------------------------------------
+	# Moon rotation
+	# --------------------------------------------------
+	
+	var night_duration: float = (
+		24.0 -
+		sunset_time +
+		sunrise_time
+	)
+	
+	var day_duration: float = (
+		sunset_time -
+		sunrise_time
+	)
+	
+	var moon_angle: float
+	
+	# ----------------------------------------
+	# Night: Moonrise → Moonset
+	# ----------------------------------------
+	if current_time >= sunset_time or current_time < sunrise_time:
+		var night_elapsed: float
+		
+		if current_time >= sunset_time:
+			night_elapsed = (
+				current_time -
+				sunset_time
+			)
+		else:
+			night_elapsed = (
+				24.0 -
+				sunset_time +
+				current_time
+			)
+			
+		var night_progress: float = (
+			night_elapsed /
+			night_duration
+		)
+		
+		moon_angle = lerp(
+			0.0,
+			-180.0,
+			night_progress
+		)
+	# ----------------------------------------
+	# Day: Moonset → Moonrise
+	# ----------------------------------------
+	else:
+		
+		var day_elapsed: float = (
+			current_time -
+			sunrise_time
+		)
+		
+		var day_progress: float = (
+			day_elapsed /
+			day_duration
+		)
+		
+		moon_angle = lerp(
+			-180.0,
+			-360.0,
+			day_progress
+		)
+		
+	moon.rotation_degrees.x = moon_angle
+	
+	# --------------------------------------------------
+	# Moon visibility
+	# --------------------------------------------------
+	var evening_start: float = (
+		evening_time -
+		transition_hours
+	)
+	
+	var evening_end: float = (
+		evening_time +
+		transition_hours
+	)
+	
+	var dawn_start: float = (
+		dawn_time -
+		transition_hours
+	)
+	
+	var dawn_end: float = (
+		dawn_time +
+		transition_hours
+	)
+	
+	# Evening → Night
+	if current_time >= evening_start and current_time < evening_end:
+		var amount: float = inverse_lerp(
+			evening_start,
+			evening_end,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		moon.light_energy = lerp(
+			0.0,
+			max_moon_energy,
+			amount
+		)
+	# Night
+	elif current_time >= evening_end or current_time < dawn_start:
+		moon.light_energy = max_moon_energy
+	# Night → Dawn
+	elif current_time >= dawn_start and current_time < dawn_end:
+		var amount: float = inverse_lerp(
+			dawn_start,
+			dawn_end,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		moon.light_energy = lerp(
+			max_moon_energy,
+			0.0,
+			amount
+		)
+	# Day
+	else:
+		moon.light_energy = 0.0
 
-
-
-
-
-
-
-
-
-
+	# --------------------------------------------------
+	# Moon colour
+	# --------------------------------------------------
+	moon.light_color = moon_color
 
 func get_cyclic_transition_amount(
 	start_time: float,

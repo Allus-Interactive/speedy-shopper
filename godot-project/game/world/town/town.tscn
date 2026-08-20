@@ -23,11 +23,18 @@ size = Vector3(100, 1, 100)
 [node name="Town" type="Node3D" unique_id=1894934032]
 script = ExtResource("1_5ncuf")
 
-[node name="Skybox" parent="." unique_id=81627788 node_paths=PackedStringArray("sun") instance=ExtResource("2_trfnd")]
+[node name="Skybox" parent="." unique_id=81627788 node_paths=PackedStringArray("sun", "moon") instance=ExtResource("2_trfnd")]
 sun = NodePath("../Sun")
+moon = NodePath("../Moon")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=526779321]
 transform = Transform3D(0.9999996, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999997, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Moon" type="DirectionalLight3D" parent="." unique_id=443418501]
+transform = Transform3D(0.9999996, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999997, 0, 0, 0)
+light_color = Color(0.722018, 0.9991489, 0.9999997, 1)
+light_energy = 0.15
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=992022153]
