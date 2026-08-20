@@ -1,18 +1,24 @@
 extends WorldEnvironment
 
-@export_category("Environment Presets")
 
-@export var dawn_environment: Environment
-@export var day_environment: Environment
-@export var evening_environment: Environment
-@export var night_environment: Environment
+@export_category("Sky Presets")
+
+@export var dawn_sky: ProceduralSkyMaterial
+@export var day_sky: ProceduralSkyMaterial
+@export var evening_sky: ProceduralSkyMaterial
+@export var night_sky: ProceduralSkyMaterial
+
 
 @export_category("Time Settings")
 
-@export var dawn_start: float = 5.0
-@export var day_start: float = 8.0
-@export var evening_start: float = 17.0
-@export var night_start: float = 21.0
+@export_range(0.0, 23.99, 0.1)
+var dawn_time: float = 5.75
+
+@export_range(0.0, 23.99, 0.1)
+var evening_time: float = 20.75
+
+@export_range(0.1, 12.0, 0.1)
+var transition_hours: float = 1.0
 
 
 func _ready():
@@ -25,230 +31,260 @@ func _process(_delta):
 
 
 func setup_runtime_environment():
-	# Duplicate the environment
-	environment = day_environment.duplicate(true)
+	if environment == null:
+		environment = Environment.new()
+	else:
+		environment = environment.duplicate(true)
 
-	# Make sure the sky is also independent of the preset.
-	if environment.sky:
+	if environment.sky == null:
+		environment.sky = Sky.new()
+	else:
 		environment.sky = environment.sky.duplicate(true)
 
-		if environment.sky.sky_material:
-			environment.sky.sky_material = environment.sky.sky_material.duplicate(true)
+	if environment.sky.sky_material is ProceduralSkyMaterial:
+		environment.sky.sky_material = (
+			environment.sky.sky_material.duplicate(true)
+		)
+	else:
+		environment.sky.sky_material = ProceduralSkyMaterial.new()
 
 
 func update_environment():
-	var current_time := GameTimeManager.hour + GameTimeManager.minute / 60.0
+	var current_time: float = (
+		GameTimeManager.hour +
+		(GameTimeManager.minute / 60.0)
+	)
 
-	# ------------------------------
-	# Dawn → Day
-	# ------------------------------
+	var dawn_start: float = dawn_time - transition_hours
+	var dawn_end: float = dawn_time + transition_hours
 
-	if current_time >= dawn_start and current_time < day_start:
+	var evening_start: float = evening_time - transition_hours
+	var evening_end: float = evening_time + transition_hours
 
-		var amount := get_transition_amount(
+
+	# ----------------------------------------
+	# Night → Dawn
+	# ----------------------------------------
+
+	if current_time >= dawn_start and current_time < dawn_time:
+		var amount: float = inverse_lerp(
 			dawn_start,
-			day_start,
+			dawn_time,
 			current_time
 		)
 
-		interpolate_environment(
-			dawn_environment,
-			day_environment,
+		amount = smoothstep(0.0, 1.0, amount)
+
+		interpolate_sky(
+			night_sky,
+			dawn_sky,
 			amount
 		)
 
 
-	# ------------------------------
+	# ----------------------------------------
+	# Dawn → Day
+	# ----------------------------------------
+
+	elif current_time >= dawn_time and current_time < dawn_end:
+		var amount: float = inverse_lerp(
+			dawn_time,
+			dawn_end,
+			current_time
+		)
+
+		amount = smoothstep(0.0, 1.0, amount)
+
+		interpolate_sky(
+			dawn_sky,
+			day_sky,
+			amount
+		)
+
+
+	# ----------------------------------------
 	# Day
-	# ------------------------------
+	# ----------------------------------------
 
-	elif current_time >= day_start and current_time < evening_start:
-
-		interpolate_environment(
-			day_environment,
-			day_environment,
-			0.0
-		)
+	elif current_time >= dawn_end and current_time < evening_start:
+		apply_sky(day_sky)
 
 
-	# ------------------------------
-	# Evening → Night
-	# ------------------------------
+	# ----------------------------------------
+	# Day → Evening
+	# ----------------------------------------
 
-	elif current_time >= evening_start and current_time < night_start:
-
-		var amount := get_transition_amount(
+	elif current_time >= evening_start and current_time < evening_time:
+		var amount: float = inverse_lerp(
 			evening_start,
-			night_start,
+			evening_time,
 			current_time
 		)
 
-		interpolate_environment(
-			evening_environment,
-			night_environment,
+		amount = smoothstep(0.0, 1.0, amount)
+
+		interpolate_sky(
+			day_sky,
+			evening_sky,
 			amount
 		)
 
 
-	# ------------------------------
+	# ----------------------------------------
+	# Evening → Night
+	# ----------------------------------------
+
+	elif current_time >= evening_time and current_time < evening_end:
+		var amount: float = inverse_lerp(
+			evening_time,
+			evening_end,
+			current_time
+		)
+
+		amount = smoothstep(0.0, 1.0, amount)
+
+		interpolate_sky(
+			evening_sky,
+			night_sky,
+			amount
+		)
+
+
+	# ----------------------------------------
 	# Night
-	# ------------------------------
+	# ----------------------------------------
 
 	else:
+		apply_sky(night_sky)
 
-		interpolate_environment(
-			night_environment,
-			night_environment,
-			0.0
-		)
-
-
-func get_transition_amount(
+func get_cyclic_transition_amount(
 	start_time: float,
 	end_time: float,
 	current_time: float
 ) -> float:
 
-	var amount := inverse_lerp(
-		start_time,
-		end_time,
-		current_time
-	)
+	start_time = wrapf(start_time, 0.0, 24.0)
+	end_time = wrapf(end_time, 0.0, 24.0)
+
+	var duration: float
+	var elapsed: float
+
+	if end_time > start_time:
+		duration = end_time - start_time
+		elapsed = current_time - start_time
+
+	else:
+		duration = (24.0 - start_time) + end_time
+
+		if current_time >= start_time:
+			elapsed = current_time - start_time
+		else:
+			elapsed = (24.0 - start_time) + current_time
 
 	return smoothstep(
 		0.0,
 		1.0,
-		amount
+		elapsed / duration
 	)
 
 
-func interpolate_environment(
-	from: Environment,
-	to: Environment,
-	amount: float
-):
+func is_time_between(
+	current_time: float,
+	start_time: float,
+	end_time: float
+) -> bool:
 
-	# ------------------------------
-	# Ambient Light
-	# ------------------------------
+	start_time = wrapf(start_time, 0.0, 24.0)
+	end_time = wrapf(end_time, 0.0, 24.0)
 
-	environment.ambient_light_energy = lerp(
-		from.ambient_light_energy,
-		to.ambient_light_energy,
-		amount
-	)
-
-	environment.ambient_light_color = from.ambient_light_color.lerp(
-		to.ambient_light_color,
-		amount
-	)
-
-
-	# ------------------------------
-	# Background
-	# ------------------------------
-
-	environment.background_energy_multiplier = lerp(
-		from.background_energy_multiplier,
-		to.background_energy_multiplier,
-		amount
-	)
-
-
-	# ------------------------------
-	# Sky
-	# ------------------------------
-
-	if from.sky and to.sky:
-		interpolate_sky(
-			from.sky,
-			to.sky,
-			amount
+	if start_time < end_time:
+		return (
+			current_time >= start_time
+			and current_time < end_time
 		)
+
+	return (
+		current_time >= start_time
+		or current_time < end_time
+	)
+
+
+func apply_sky(
+	sky: ProceduralSkyMaterial
+):
+	if sky == null:
+		return
+
+	var runtime_sky := (
+		environment.sky.sky_material
+		as ProceduralSkyMaterial
+	)
+
+	runtime_sky.sky_top_color = sky.sky_top_color
+	runtime_sky.sky_horizon_color = sky.sky_horizon_color
+
+	runtime_sky.ground_bottom_color = (
+		sky.ground_bottom_color
+	)
+
+	runtime_sky.ground_horizon_color = (
+		sky.ground_horizon_color
+	)
+
+	runtime_sky.sky_curve = sky.sky_curve
+	runtime_sky.ground_curve = sky.ground_curve
 
 
 func interpolate_sky(
-	from_sky: Sky,
-	to_sky: Sky,
+	from: ProceduralSkyMaterial,
+	to: ProceduralSkyMaterial,
 	amount: float
 ):
-
-	if not from_sky.sky_material is ProceduralSkyMaterial:
+	if from == null or to == null:
 		return
 
-	if not to_sky.sky_material is ProceduralSkyMaterial:
-		return
-
-	if not environment.sky:
-		return
-
-	if not environment.sky.sky_material is ProceduralSkyMaterial:
-		return
-
-	var from_material := (
-		from_sky.sky_material as ProceduralSkyMaterial
+	var runtime_sky := (
+		environment.sky.sky_material
+		as ProceduralSkyMaterial
 	)
 
-	var to_material := (
-		to_sky.sky_material as ProceduralSkyMaterial
-	)
-
-	var runtime_material := (
-		environment.sky.sky_material as ProceduralSkyMaterial
-	)
-
-
-	# ------------------------------
-	# Sky Colours
-	# ------------------------------
-
-	runtime_material.sky_top_color = (
-		from_material.sky_top_color.lerp(
-			to_material.sky_top_color,
+	runtime_sky.sky_top_color = (
+		from.sky_top_color.lerp(
+			to.sky_top_color,
 			amount
 		)
 	)
 
-	runtime_material.sky_horizon_color = (
-		from_material.sky_horizon_color.lerp(
-			to_material.sky_horizon_color,
+	runtime_sky.sky_horizon_color = (
+		from.sky_horizon_color.lerp(
+			to.sky_horizon_color,
 			amount
 		)
 	)
 
-
-	# ------------------------------
-	# Ground Colours
-	# ------------------------------
-
-	runtime_material.ground_bottom_color = (
-		from_material.ground_bottom_color.lerp(
-			to_material.ground_bottom_color,
+	runtime_sky.ground_bottom_color = (
+		from.ground_bottom_color.lerp(
+			to.ground_bottom_color,
 			amount
 		)
 	)
 
-	runtime_material.ground_horizon_color = (
-		from_material.ground_horizon_color.lerp(
-			to_material.ground_horizon_color,
+	runtime_sky.ground_horizon_color = (
+		from.ground_horizon_color.lerp(
+			to.ground_horizon_color,
 			amount
 		)
 	)
 
-
-	# ------------------------------
-	# Sky Curves
-	# ------------------------------
-
-	runtime_material.sky_curve = lerp(
-		from_material.sky_curve,
-		to_material.sky_curve,
+	runtime_sky.sky_curve = lerp(
+		from.sky_curve,
+		to.sky_curve,
 		amount
 	)
 
-	runtime_material.ground_curve = lerp(
-		from_material.ground_curve,
-		to_material.ground_curve,
+	runtime_sky.ground_curve = lerp(
+		from.ground_curve,
+		to.ground_curve,
 		amount
 	)
 
