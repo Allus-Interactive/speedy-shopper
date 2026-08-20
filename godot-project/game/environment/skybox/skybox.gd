@@ -30,6 +30,16 @@ var sun_angle_offset: float = -90.0
 @export var max_moon_energy: float = 0.15
 @export var moon_color := Color(0.65, 0.75, 1.0)
 
+@export_category("Ambient Lighting")
+@export var dawn_ambient_color: Color = Color.WHITE
+@export var day_ambient_color: Color = Color.WHITE
+@export var evening_ambient_color: Color = Color.WHITE
+@export var night_ambient_color: Color = Color.WHITE
+@export var dawn_ambient_energy: float = 0.5
+@export var day_ambient_energy: float = 1.0
+@export var evening_ambient_energy: float = 0.5
+@export var night_ambient_energy: float = 0.1
+
 func _ready():
 	setup_runtime_environment()
 	update_environment()
@@ -39,6 +49,7 @@ func _process(_delta):
 	update_environment()
 	update_sun()
 	update_moon()
+	update_ambient_lighting()
 
 func setup_runtime_environment():
 	if environment == null:
@@ -426,6 +437,154 @@ func update_moon():
 	# Moon colour
 	# --------------------------------------------------
 	moon.light_color = moon_color
+
+func update_ambient_lighting():
+	var current_time: float = (
+		GameTimeManager.hour +
+		(GameTimeManager.minute / 60.0)
+	)
+	
+	var dawn_start: float = (
+		dawn_time -
+		transition_hours
+	)
+	
+	var dawn_end: float = (
+		dawn_time +
+		transition_hours
+	)
+	
+	var evening_start: float = (
+		evening_time -
+		transition_hours
+	)
+	
+	var evening_end: float = (
+		evening_time +
+		transition_hours
+	)
+	# --------------------------------------------------
+	# Night → Dawn
+	# --------------------------------------------------
+	if current_time >= dawn_start and current_time < dawn_time:
+		var amount: float = inverse_lerp(
+			dawn_start,
+			dawn_time,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		interpolate_ambient_lighting(
+			night_ambient_color,
+			dawn_ambient_color,
+			night_ambient_energy,
+			dawn_ambient_energy,
+			amount
+		)
+	# --------------------------------------------------
+	# Dawn → Day
+	# --------------------------------------------------
+	elif current_time >= dawn_time and current_time < dawn_end:
+		var amount: float = inverse_lerp(
+			dawn_time,
+			dawn_end,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		interpolate_ambient_lighting(
+			dawn_ambient_color,
+			day_ambient_color,
+			dawn_ambient_energy,
+			day_ambient_energy,
+			amount
+		)
+	# --------------------------------------------------
+	# Day
+	# --------------------------------------------------
+	elif current_time >= dawn_end and current_time < evening_start:
+		environment.ambient_light_color = day_ambient_color
+		environment.ambient_light_energy = day_ambient_energy
+	# --------------------------------------------------
+	# Day → Evening
+	# --------------------------------------------------
+	elif current_time >= evening_start and current_time < evening_time:
+		var amount: float = inverse_lerp(
+			evening_start,
+			evening_time,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		interpolate_ambient_lighting(
+			day_ambient_color,
+			evening_ambient_color,
+			day_ambient_energy,
+			evening_ambient_energy,
+			amount
+		)
+	# --------------------------------------------------
+	# Evening → Night
+	# --------------------------------------------------
+	elif current_time >= evening_time and current_time < evening_end:
+		var amount: float = inverse_lerp(
+			evening_time,
+			evening_end,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		interpolate_ambient_lighting(
+			evening_ambient_color,
+			night_ambient_color,
+			evening_ambient_energy,
+			night_ambient_energy,
+			amount
+		)
+	# --------------------------------------------------
+	# Night
+	# --------------------------------------------------
+	else:
+		environment.ambient_light_color = night_ambient_color
+		environment.ambient_light_energy = night_ambient_energy
+
+func interpolate_ambient_lighting(
+	from_color: Color,
+	to_color: Color,
+	from_energy: float,
+	to_energy: float,
+	amount: float
+):
+	environment.ambient_light_color = from_color.lerp(
+		to_color,
+		amount
+	)
+
+	environment.ambient_light_energy = lerp(
+		from_energy,
+		to_energy,
+		amount
+	)
 
 func get_cyclic_transition_amount(
 	start_time: float,
