@@ -2,7 +2,6 @@ extends WorldEnvironment
 
 
 @export_category("Sky Presets")
-
 @export var dawn_sky: ProceduralSkyMaterial
 @export var day_sky: ProceduralSkyMaterial
 @export var evening_sky: ProceduralSkyMaterial
@@ -10,16 +9,21 @@ extends WorldEnvironment
 
 
 @export_category("Time Settings")
-
 @export_range(0.0, 23.99, 0.1)
 var dawn_time: float = 5.75
-
 @export_range(0.0, 23.99, 0.1)
 var evening_time: float = 20.75
-
 @export_range(0.1, 12.0, 0.1)
 var transition_hours: float = 1.0
 
+@export_category("Sun")
+@export var sun: DirectionalLight3D
+@export_range(-180.0, 180.0, 1.0)
+var sun_angle_offset: float = -90.0
+@export var max_sun_energy: float = 1.0
+@export var sunrise_sun_color := Color(1.0, 0.65, 0.4)
+@export var midday_sun_color := Color(1.0, 0.95, 0.85)
+@export var sunset_sun_color := Color(1.0, 0.5, 0.3)
 
 func _ready():
 	setup_runtime_environment()
@@ -28,6 +32,7 @@ func _ready():
 
 func _process(_delta):
 	update_environment()
+	update_sun()
 
 
 func setup_runtime_environment():
@@ -157,6 +162,118 @@ func update_environment():
 	else:
 		apply_sky(night_sky)
 
+func update_sun():
+	if sun == null:
+		return
+	
+	var current_time: float = (
+		GameTimeManager.hour +
+		(GameTimeManager.minute / 60.0)
+	)
+	
+	var sunrise_time: float = (
+		dawn_time -
+		transition_hours
+	)
+	
+	var sunset_time: float = (
+		evening_time +
+		transition_hours
+	)
+
+	var day_duration: float = (
+		sunset_time -
+		sunrise_time
+	)
+	
+	var day_progress: float = (
+		current_time -
+		sunrise_time
+	) / day_duration
+	
+	day_progress = clamp(
+		day_progress,
+		0.0,
+		1.0
+	)
+	
+	# --------------------------------------------------
+	# Sun rotation
+	# --------------------------------------------------
+	
+	var sun_angle: float = lerp(
+		0.0,
+		-180.0,
+		day_progress
+	)
+	
+	sun.rotation_degrees.x = sun_angle
+	
+	# --------------------------------------------------
+	# Sun energy
+	# --------------------------------------------------
+	var sun_energy: float = sin(
+		day_progress * PI
+	)
+	
+	sun.light_energy = (
+		sun_energy *
+		max_sun_energy
+	)
+	
+	# --------------------------------------------------
+	# Sun colour
+	# --------------------------------------------------
+	
+	var evening_start: float = (
+		evening_time -
+		transition_hours
+	)
+	
+	var evening_end: float = (
+		evening_time +
+		transition_hours
+	)
+	
+	if current_time < evening_start:
+		# Normal daytime colour.
+		sun.light_color = midday_sun_color
+	elif current_time < evening_time:
+		# Day → Evening.
+		var amount: float = inverse_lerp(
+			evening_start,
+			evening_time,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		sun.light_color = midday_sun_color.lerp(
+			sunset_sun_color,
+			amount
+		)
+	elif current_time < evening_end:
+		# Evening → Night.
+		sun.light_color = sunset_sun_color
+	else:
+		# Night.
+		sun.light_color = sunset_sun_color
+
+
+
+
+
+
+
+
+
+
+
+
 func get_cyclic_transition_amount(
 	start_time: float,
 	end_time: float,
@@ -187,7 +304,6 @@ func get_cyclic_transition_amount(
 		elapsed / duration
 	)
 
-
 func is_time_between(
 	current_time: float,
 	start_time: float,
@@ -207,7 +323,6 @@ func is_time_between(
 		current_time >= start_time
 		or current_time < end_time
 	)
-
 
 func apply_sky(
 	sky: ProceduralSkyMaterial
@@ -233,7 +348,6 @@ func apply_sky(
 
 	runtime_sky.sky_curve = sky.sky_curve
 	runtime_sky.ground_curve = sky.ground_curve
-
 
 func interpolate_sky(
 	from: ProceduralSkyMaterial,
