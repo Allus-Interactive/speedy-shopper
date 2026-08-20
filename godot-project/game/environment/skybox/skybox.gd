@@ -55,6 +55,11 @@ var evening_fog_density: float = 0.003
 @export_range(0.0, 1.0, 0.01)
 var night_fog_density: float = 0.003
 
+@export_category("Stars")
+@export var stars: MeshInstance3D
+@export_range(0.0, 1.0, 0.01)
+var max_star_alpha: float = 1.0
+
 func _ready():
 	setup_runtime_environment()
 	update_environment()
@@ -64,6 +69,7 @@ func _process(_delta):
 	update_environment()
 	update_sun()
 	update_moon()
+	update_stars()
 	update_ambient_lighting()
 	update_fog()
 
@@ -456,6 +462,107 @@ func update_moon():
 	# Moon colour
 	# --------------------------------------------------
 	moon.light_color = moon_color
+
+func update_stars():
+	if stars == null:
+		return
+	
+	var current_time: float = (
+		GameTimeManager.hour +
+		(GameTimeManager.minute / 60.0)
+	)
+	
+	var evening_start: float = (
+		evening_time -
+		transition_hours
+	)
+	
+	var evening_end: float = (
+		evening_time +
+		transition_hours
+	)
+	
+	var dawn_start: float = (
+		dawn_time -
+		transition_hours
+	)
+	
+	var dawn_end: float = (
+		dawn_time +
+		transition_hours
+	)
+	
+	var star_alpha: float
+	# --------------------------------------------------
+	# Day → Evening
+	# --------------------------------------------------
+	if current_time >= evening_start and current_time < evening_time:
+		var amount: float = inverse_lerp(
+			evening_start,
+			evening_time,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		star_alpha = lerp(
+			0.0,
+			max_star_alpha,
+			amount
+		)
+	# --------------------------------------------------
+	# Evening → Night
+	# --------------------------------------------------
+	elif current_time >= evening_time and current_time < evening_end:
+		star_alpha = max_star_alpha
+	# --------------------------------------------------
+	# Night
+	# --------------------------------------------------
+	elif current_time >= evening_end or current_time < dawn_start:
+		star_alpha = max_star_alpha
+	# --------------------------------------------------
+	# Night → Dawn
+	# --------------------------------------------------
+	elif current_time >= dawn_start and current_time < dawn_time:
+		var amount: float = inverse_lerp(
+			dawn_start,
+			dawn_time,
+			current_time
+		)
+		
+		amount = smoothstep(
+			0.0,
+			1.0,
+			amount
+		)
+		
+		star_alpha = lerp(
+			max_star_alpha,
+			0.0,
+			amount
+		)
+	# --------------------------------------------------
+	# Dawn → Day
+	# --------------------------------------------------
+	else:
+		star_alpha = 0.0
+	
+	var material := (
+		stars.get_active_material(0)
+		as ShaderMaterial
+	)
+	
+	if material == null:
+		return
+	
+	material.set_shader_parameter(
+		"star_alpha",
+		star_alpha
+	)
 
 func update_ambient_lighting():
 	var current_time: float = (
