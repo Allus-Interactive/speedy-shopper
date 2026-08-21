@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://dhv6h0x7mdyui"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_xd1m8"]
+[ext_resource type="PackedScene" uid="uid://bxakv50svi10" path="res://assets/products/meat/steak_rump.glb" id="2_gknhv"]
 [ext_resource type="Resource" uid="uid://mqylpfadcwek" path="res://game/resources/item/resources/meat/rump_steak.tres" id="2_xd1m8"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_i36pm"]
 
@@ -10,5 +11,7 @@ product_info = ExtResource("2_xd1m8")
 placeholder_size = Vector3(0.3, 0.1, 0.2)
 shelf_offset = Vector3(0, 0.075, 0)
 product_colour = Color(0.44210032, 0.20487851, 0.052623495, 1)
-barcode_size = Vector2(0.08, 0.04)
+barcode_size = Vector3(0.08, 0.02, 0.04)
+barcode_offset = Vector3(0.04, -0.05, 0.15)
+model = ExtResource("2_gknhv")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
