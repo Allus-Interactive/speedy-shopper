@@ -98,7 +98,8 @@ func _setup_barcode_with_texture(size: Vector3) -> void:
 		var plane = MeshInstance3D.new()
 		var quad = QuadMesh.new()
 		
-		quad.size = product_data.barcode_size
+		quad.size.x = product_data.barcode_size.x
+		quad.size.y = product_data.barcode_size.y
 		plane.mesh = quad
 		
 		var material = StandardMaterial3D.new()
@@ -124,6 +125,7 @@ func _setup_barcode_with_texture(size: Vector3) -> void:
 	
 	barcode_collider.scale.x = product_data.barcode_size.x * 10
 	barcode_collider.scale.y = product_data.barcode_size.y * 10
+	barcode_collider.scale.z = product_data.barcode_size.z * 10
 
 func _setup_label(size: Vector3) -> void:
 	label_3d.text = product_data.product_info.product_name

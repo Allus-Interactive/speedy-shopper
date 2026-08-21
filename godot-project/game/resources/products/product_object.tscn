@@ -5,17 +5,19 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_oc3nb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vyu40"]
-size = Vector3(0.1, 0.1, 0.01)
+size = Vector3(0.1, 0.1, 0.1)
 
 [node name="ProductPlaceholder" type="StaticBody3D" unique_id=243213475]
 script = ExtResource("1_vyu40")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=642379223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.069507e-05, -0.0015420914, 0)
 shape = SubResource("BoxShape3D_oc3nb")
 
 [node name="VisualRoot" type="Node3D" parent="." unique_id=1017789505]
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1312714041]
+visible = false
 pixel_size = 0.0005
 texture_filter = 0
 text = "Own Brand Cereal"
