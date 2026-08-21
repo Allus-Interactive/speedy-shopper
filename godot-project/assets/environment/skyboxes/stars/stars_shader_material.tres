@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dmpi7ur2uwl1e"]
+
+[ext_resource type="Shader" uid="uid://botritjx813d4" path="res://assets/environment/skyboxes/stars/stars_shader_material.gdshader" id="1_811s7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_811s7")
+shader_parameter/star_density = 40.0
+shader_parameter/star_brightness = 1.5
+shader_parameter/star_alpha = 1.0

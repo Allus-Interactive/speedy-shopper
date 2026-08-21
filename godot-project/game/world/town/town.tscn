@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cjsrfjrg00vbp" path="res://game/player/player.tscn" id="1_jotaf"]
 [ext_resource type="PackedScene" uid="uid://bawarmmsij6un" path="res://game/environment/skybox/skybox.tscn" id="2_trfnd"]
 [ext_resource type="PackedScene" uid="uid://yexejxsnlqvn" path="res://game/vehicle/vehicle.tscn" id="2_wnw7r"]
+[ext_resource type="Material" uid="uid://dmpi7ur2uwl1e" path="res://assets/environment/skyboxes/stars/stars_shader_material.tres" id="3_uc1da"]
 [ext_resource type="MeshLibrary" uid="uid://05lgw1fm3ia" path="res://assets/mesh_libraries/building_tiles.tres" id="4_wnw7r"]
 [ext_resource type="MeshLibrary" uid="uid://cr2p2x812x1rk" path="res://assets/mesh_libraries/road_tiles.tres" id="5_3oap8"]
 [ext_resource type="MeshLibrary" uid="uid://tls63l0cr4xm" path="res://assets/mesh_libraries/environment_tiles.tres" id="5_nflbr"]
@@ -20,13 +21,27 @@ size = Vector2(100, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_74d5v"]
 size = Vector3(100, 1, 100)
 
+[sub_resource type="SphereMesh" id="SphereMesh_t2dwb"]
+material = ExtResource("3_uc1da")
+radius = 200.0
+height = 400.0
+
 [node name="Town" type="Node3D" unique_id=1894934032]
 script = ExtResource("1_5ncuf")
 
-[node name="Skybox" parent="." unique_id=81627788 instance=ExtResource("2_trfnd")]
+[node name="Skybox" parent="." unique_id=81627788 node_paths=PackedStringArray("sun", "moon", "stars") instance=ExtResource("2_trfnd")]
+sun = NodePath("../Sun")
+moon = NodePath("../Moon")
+stars = NodePath("../Player/Stars")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=526779321]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=526779321]
+transform = Transform3D(0.9999996, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999997, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Moon" type="DirectionalLight3D" parent="." unique_id=443418501]
+transform = Transform3D(0.9999996, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999997, 0, 0, 0)
+light_color = Color(0.722018, 0.9991489, 0.9999997, 1)
+light_energy = 0.15
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=992022153]
@@ -41,6 +56,11 @@ shape = SubResource("BoxShape3D_74d5v")
 
 [node name="Player" parent="." unique_id=932964266 instance=ExtResource("1_jotaf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.43139207, 13.75)
+
+[node name="Stars" type="MeshInstance3D" parent="Player" unique_id=39438420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, -0.43139207, -13.75)
+mesh = SubResource("SphereMesh_t2dwb")
+skeleton = NodePath("../..")
 
 [node name="Vehicle" parent="." unique_id=1457488571 instance=ExtResource("2_wnw7r")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 22, 0, 5)
