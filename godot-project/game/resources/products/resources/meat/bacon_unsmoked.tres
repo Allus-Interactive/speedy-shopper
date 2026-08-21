@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://bbhpcj51ehf2k"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_mx4r1"]
+[ext_resource type="PackedScene" uid="uid://dt7wqy6l2f3mo" path="res://assets/products/meat/bacon_unsmoked.glb" id="2_aaigm"]
 [ext_resource type="Resource" uid="uid://c8xwsjueug17j" path="res://game/resources/item/resources/meat/unsmoked_bacon.tres" id="2_mx4r1"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_mxh4y"]
 
@@ -10,5 +11,7 @@ product_info = ExtResource("2_mx4r1")
 placeholder_size = Vector3(0.3, 0.1, 0.2)
 shelf_offset = Vector3(0, 0.075, 0)
 product_colour = Color(0.85735047, 0.5126205, 0.4846239, 1)
-barcode_size = Vector2(0.08, 0.04)
+barcode_size = Vector3(0.08, 0.02, 0.04)
+barcode_offset = Vector3(0.04, -0.05, 0.15)
+model = ExtResource("2_aaigm")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
