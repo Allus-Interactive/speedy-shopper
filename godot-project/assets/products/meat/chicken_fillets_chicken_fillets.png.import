@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bijnjt7f286lo"
-path.s3tc="res://.godot/imported/chicken_breast_chicken_breast.png-d95a21dc9f852e28e3d0c8ed78189715.s3tc.ctex"
+uid="uid://c8knsvvyv424y"
+path.s3tc="res://.godot/imported/chicken_fillets_chicken_fillets.png-66b398ae399b239826e370f8ae161a68.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3fc9ea7dfb1d2aa7509e4e9ab5132ab4"
+"md5": "798d690c67f01e9d06a15aab0c40e3ae"
 }
 
 [deps]
 
-source_file="res://assets/products/meat/chicken_breast_chicken_breast.png"
-dest_files=["res://.godot/imported/chicken_breast_chicken_breast.png-d95a21dc9f852e28e3d0c8ed78189715.s3tc.ctex"]
+source_file="res://assets/products/meat/chicken_fillets_chicken_fillets.png"
+dest_files=["res://.godot/imported/chicken_fillets_chicken_fillets.png-66b398ae399b239826e370f8ae161a68.s3tc.ctex"]
 
 [params]
 

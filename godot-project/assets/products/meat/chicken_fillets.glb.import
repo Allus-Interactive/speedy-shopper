@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://de7txeful0lx3"
-path="res://.godot/imported/chicken_breast.glb-25a62d26b08dc6090834856f12c530ed.scn"
+uid="uid://bln25q43e82nr"
+path="res://.godot/imported/chicken_fillets.glb-8e8ad71c6bb7c123d367fba908f7a58c.scn"
 
 [deps]
 
-source_file="res://assets/products/meat/chicken_breast.glb"
-dest_files=["res://.godot/imported/chicken_breast.glb-25a62d26b08dc6090834856f12c530ed.scn"]
+source_file="res://assets/products/meat/chicken_fillets.glb"
+dest_files=["res://.godot/imported/chicken_fillets.glb-8e8ad71c6bb7c123d367fba908f7a58c.scn"]
 
 [params]
 
