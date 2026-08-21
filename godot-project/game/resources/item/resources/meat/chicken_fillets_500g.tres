@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ymwex")
-product_name = "Chicken Thighs 500g"
+product_name = "Chicken Breast 500g"
 barcode_value = 8008
 product_price = 3.45
 product_type = 10
