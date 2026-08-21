@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://b2rks586tkg5u"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_a5j1x"]
-[ext_resource type="PackedScene" uid="uid://de7txeful0lx3" path="res://assets/products/meat/chicken_breast.glb" id="2_texov"]
+[ext_resource type="PackedScene" uid="uid://bln25q43e82nr" path="res://assets/products/meat/chicken_fillets.glb" id="2_2vj4i"]
 [ext_resource type="Resource" uid="uid://dnmmbj2fpbcir" path="res://game/resources/item/resources/meat/chicken_fillets_500g.tres" id="2_x53ua"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_w4mr5"]
 
@@ -13,5 +13,5 @@ shelf_offset = Vector3(0, 0.1, 0)
 product_colour = Color(0.81594914, 0.49392927, 0.43992922, 1)
 barcode_size = Vector3(0.08, 0.02, 0.04)
 barcode_offset = Vector3(0.04, -0.05, 0.15)
-model = ExtResource("2_texov")
+model = ExtResource("2_2vj4i")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
