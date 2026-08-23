@@ -26,6 +26,11 @@ var music_volume : float = 0.0
 var sfx_volume : float = 0.0
 var use_24_hour : bool = true
 
+# Player Stats
+var order_delivered : int = 0
+var days_worked : int = 0
+var total_earnings : float = 0.0
+
 func thread_load_scene(scene_id: String) -> void:
 	LoadingOverlay.toggle_loading(true)
 
