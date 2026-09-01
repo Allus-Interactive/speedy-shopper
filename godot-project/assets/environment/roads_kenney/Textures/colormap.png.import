@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv5oo4i2sv0no"
-path.s3tc="res://.godot/imported/empty_tile_colormap.png-4f2b1a1926fb5889fc6a0de0099eb8d7.s3tc.ctex"
+uid="uid://d0rtc3p8koe05"
+path.s3tc="res://.godot/imported/colormap.png-45395a3a989444cef2765fdf3c8ea00d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/environment/roads/empty_tile_colormap.png"
-dest_files=["res://.godot/imported/empty_tile_colormap.png-4f2b1a1926fb5889fc6a0de0099eb8d7.s3tc.ctex"]
+source_file="res://assets/environment/roads_kenney/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-45395a3a989444cef2765fdf3c8ea00d.s3tc.ctex"]
 
 [params]
 

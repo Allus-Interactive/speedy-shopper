@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ckno2tuyh7i4"
-path="res://.godot/imported/road_straight.glb-975c13932ae374973d5fe9255634d3f3.scn"
+uid="uid://cbs5omabffcc5"
+path="res://.godot/imported/road_bend_pavement.glb-9eac448626a6d3c5822e98765250b6af.scn"
 
 [deps]
 
-source_file="res://assets/environment/roads/road_straight.glb"
-dest_files=["res://.godot/imported/road_straight.glb-975c13932ae374973d5fe9255634d3f3.scn"]
+source_file="res://assets/environment/roads_kenney/road_bend_pavement.glb"
+dest_files=["res://.godot/imported/road_bend_pavement.glb-9eac448626a6d3c5822e98765250b6af.scn"]
 
 [params]
 
@@ -41,14 +41,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"road_straight_road-straight": {
+"road_bend_pavement_road-bend-sidewalk": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/environment/roads/road_straight.tres",
-"save_to_file/path": "uid://cb2d8o4w1n3fo"
+"save_to_file/fallback_path": "res://assets/environment/roads_kenney/road_bend_pavement.tres",
+"save_to_file/path": "uid://bftd3hg885v1u"
 }
 }
 }

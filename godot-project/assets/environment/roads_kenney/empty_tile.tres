@@ -1,14 +1,14 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://damng3bf7jyyi"]
 
-[ext_resource type="Texture2D" uid="uid://bv5oo4i2sv0no" path="res://assets/environment/roads/empty_tile_colormap.png" id="1_aukhx"]
+[ext_resource type="Texture2D" uid="uid://bv5oo4i2sv0no" path="res://assets/environment/roads_kenney/empty_tile_colormap.png" id="1_aukhx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eug4q"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti375"]
 resource_name = "colormap.003"
 cull_mode = 2
 albedo_texture = ExtResource("1_aukhx")
 texture_filter = 2
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_u14rw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_e5fp6"]
 _surfaces = [{
 "aabb": AABB(-7.5, 0, -7.5, 15, 0.29999998, 15),
 "format": 34359742465,
@@ -30,7 +30,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
-"material": SubResource("StandardMaterial3D_eug4q"),
+"material": SubResource("StandardMaterial3D_ti375"),
 "name": "colormap.003",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -38,4 +38,4 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AADwwJmZmT4AAPDAAADwwAAAAAAAAPDAAADwQAAAAAAAAPDAAADwQJmZmT4AAPDAAADwQJmZmT4AAPBAAADwQAAAAAAAAPBAAADwwAAAAAAAAPBAAADwwJmZmT4AAPBAAADwQJmZmT4AAPBAAADwQJmZmT4AAPDAAADwQAAAAAAAAPDAAADwQAAAAAAAAPBAAADwwJmZmT4AAPDAAADwQJmZmT4AAPDAAADwQJmZmT4AAPBAAADwwJmZmT4AAPBAAADwwAAAAAAAAPBAAADwQAAAAAAAAPBAAADwQAAAAAAAAPDAAADwwAAAAAAAAPDAAADwwAAAAAAAAPBAAADwwAAAAAAAAPDAAADwwJmZmT4AAPDAAADwwJmZmT4AAPBA/////////7//////////v/////////+//////////7//f/9/////P/9//3////8//3//f////z//f/9/////P////3////+/////f////7////9/////v////3////+//3///////7//f///////v/9///////+//3///////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_u14rw")
+shadow_mesh = SubResource("ArrayMesh_e5fp6")

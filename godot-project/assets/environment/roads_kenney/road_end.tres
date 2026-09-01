@@ -1,14 +1,14 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://cuiel1ftxmewe"]
 
-[ext_resource type="Texture2D" uid="uid://bjfaqmx5fxfmi" path="res://assets/environment/roads/road_end_colormap.png" id="1_0kb4w"]
+[ext_resource type="Texture2D" uid="uid://bjfaqmx5fxfmi" path="res://assets/environment/roads_kenney/road_end_colormap.png" id="1_0kb4w"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hsd1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5nqx"]
 resource_name = "colormap"
 cull_mode = 2
 albedo_texture = ExtResource("1_0kb4w")
 texture_filter = 2
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_10pik"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_bqyco"]
 _surfaces = [{
 "aabb": AABB(-7.5, 0, -7.5, 15, 0.29999998, 15),
 "format": 34359742465,
@@ -30,7 +30,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 126,
 "index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAEwAUABAAFQAQABQAFgAVABQAFAAXABYAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJwAkACYAJwAmACgAJwAoACkAJwApACoAKwAnACoAKwAqACwALAAtACsALgAvADAAMAAxAC4AMQAyAC4AMwAuADIAMwAyADQANAA1ADMANgA3ADgAOAA5ADYAOQA6ADYAOwA2ADoAPAA7ADoAOgA9ADwAPgA/AEAAQABBAD4A"),
-"material": SubResource("StandardMaterial3D_8hsd1"),
+"material": SubResource("StandardMaterial3D_q5nqx"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -38,4 +38,4 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AADwQJmZGT4AAMDAAADAwJmZGT4AAMDAAADAwJmZmT4AAMDAAADwQJmZmT4AAMDAAADwwJmZmT4AAPDAAADwwAAAAAAAAPDAAADwQAAAAAAAAPDAAADwQJmZmT4AAPDAAADAwJmZmT4AAMBAAADAwJmZGT4AAMBAAADwQJmZGT4AAMBAAADwQJmZmT4AAMBAAADwwAAAAAAAAPBAAADwQAAAAAAAAPBAAADwQAAAAAAAAPDAAADwwAAAAAAAAPDAAADwwJmZmT4AAPDAAADwQJmZmT4AAPDAAADwQJmZmT4AAMDAAADAwJmZmT4AAMDAAADAwJmZmT4AAMBAAADwwJmZmT4AAPBAAADwQJmZmT4AAPBAAADwQJmZmT4AAMBAAADwQJmZmT4AAPBAAADwQAAAAAAAAPBAAADwwAAAAAAAAPBAAADwwJmZmT4AAPBAAADwwAAAAAAAAPBAAADwwAAAAAAAAPDAAADwwJmZmT4AAPDAAADwwJmZmT4AAPBAAADAwJmZmT4AAMBAAADAwJmZmT4AAMDAAADAwJmZGT4AAMDAAADAwJmZGT4AAMBAAADwQJmZmT4AAPBAAADwQJmZmT4AAMBAAADwQJmZGT4AAMBAAADwQAAAAAAAAPBAAADwQJmZGT4AAJBAAADwQJmZGT4AAJDAAADwQJmZGT4AAMDAAADwQAAAAAAAAPDAAADwQJmZmT4AAMDAAADwQJmZmT4AAPDAAACQwJmZGT4AAJDAAADwQJmZGT4AAJDAAADwQJmZGT6ZmRm+kJkZvpmZGT6ZmRm+kJkZvpmZGT6ZmRk+AACQwJmZGT4AAJBAAADwQJmZGT6ZmRk+AADwQJmZGT4AAJBA//+/wJmZGT4AAMDAAADwQJmZGT4AAMDAAADwQJmZGT4AAJDA//+PwJmZGT4AAJDA//+PwJmZGT4AAJBA//+/wJmZGT4AAMBAAADwQJmZGT4AAMBAAADwQJmZGT4AAJBAn5kZvpmZGT6ZmRm+AADwQJmZGT6ZmRm+AADwQJmZGT6ZmRk+n5kZvpmZGT6ZmRk+/3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////v/////////+//////////7//////////v/////////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3//f////z//f/9/////P/9//3////8//3//f////z8AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_10pik")
+shadow_mesh = SubResource("ArrayMesh_bqyco")

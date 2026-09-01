@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtdguin70u14o"
-path="res://.godot/imported/road_end.glb-e5fcacceced31d6716de640bda8ef1ac.scn"
+uid="uid://dxr7pdhgcf0sl"
+path="res://.godot/imported/empty_tile.glb-4f7f91d8de7a61e2292068c31d83a569.scn"
 
 [deps]
 
-source_file="res://assets/environment/roads/road_end.glb"
-dest_files=["res://.godot/imported/road_end.glb-e5fcacceced31d6716de640bda8ef1ac.scn"]
+source_file="res://assets/environment/roads_kenney/empty_tile.glb"
+dest_files=["res://.godot/imported/empty_tile.glb-4f7f91d8de7a61e2292068c31d83a569.scn"]
 
 [params]
 
@@ -41,14 +41,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"road_end_road-end": {
+"empty_tile_tile-low": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/environment/roads/road_end.tres",
-"save_to_file/path": "uid://cuiel1ftxmewe"
+"save_to_file/fallback_path": "res://assets/environment/roads_kenney/empty_tile.tres",
+"save_to_file/path": "uid://damng3bf7jyyi"
 }
 }
 }

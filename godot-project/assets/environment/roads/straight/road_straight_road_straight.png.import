@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0rtc3p8koe05"
-path.s3tc="res://.godot/imported/colormap.png-818d4700e5608f6b63c1fe430991dcda.s3tc.ctex"
+uid="uid://b5aa2ku3w6ryr"
+path.s3tc="res://.godot/imported/road_straight_road_straight.png-024108e00dd537a5913c02d6351201d5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "70c29c0a4d2eb2b99857c325a5f01f4e"
+}
 
 [deps]
 
-source_file="res://assets/environment/roads/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-818d4700e5608f6b63c1fe430991dcda.s3tc.ctex"]
+source_file="res://assets/environment/roads/straight/road_straight_road_straight.png"
+dest_files=["res://.godot/imported/road_straight_road_straight.png-024108e00dd537a5913c02d6351201d5.s3tc.ctex"]
 
 [params]
 

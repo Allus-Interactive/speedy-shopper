@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjfaqmx5fxfmi"
-path.s3tc="res://.godot/imported/road_end_colormap.png-38e756b8e79858f8e365aa383380520f.s3tc.ctex"
+uid="uid://cxhhwmjnu05e2"
+path.s3tc="res://.godot/imported/road_bend_colormap.png-42e1c4dcebaa0161286dbc63ffe1fb32.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/environment/roads/road_end_colormap.png"
-dest_files=["res://.godot/imported/road_end_colormap.png-38e756b8e79858f8e365aa383380520f.s3tc.ctex"]
+source_file="res://assets/environment/roads_kenney/road_bend_colormap.png"
+dest_files=["res://.godot/imported/road_bend_colormap.png-42e1c4dcebaa0161286dbc63ffe1fb32.s3tc.ctex"]
 
 [params]
 

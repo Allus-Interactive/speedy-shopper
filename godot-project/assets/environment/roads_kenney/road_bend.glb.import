@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dxr7pdhgcf0sl"
-path="res://.godot/imported/empty_tile.glb-655b0cc6a96c850cb14a19a3bbe0b6fc.scn"
+uid="uid://djkw3qkxjoya3"
+path="res://.godot/imported/road_bend.glb-e756c278a4b8b256a7c44cc6bf742a2a.scn"
 
 [deps]
 
-source_file="res://assets/environment/roads/empty_tile.glb"
-dest_files=["res://.godot/imported/empty_tile.glb-655b0cc6a96c850cb14a19a3bbe0b6fc.scn"]
+source_file="res://assets/environment/roads_kenney/road_bend.glb"
+dest_files=["res://.godot/imported/road_bend.glb-e756c278a4b8b256a7c44cc6bf742a2a.scn"]
 
 [params]
 
@@ -41,14 +41,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"empty_tile_tile-low": {
+"road_bend_road-bend": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/environment/roads/empty_tile.tres",
-"save_to_file/path": "uid://damng3bf7jyyi"
+"save_to_file/fallback_path": "res://assets/environment/roads_kenney/road_bend.tres",
+"save_to_file/path": "uid://bmsmw5st83fku"
 }
 }
 }
