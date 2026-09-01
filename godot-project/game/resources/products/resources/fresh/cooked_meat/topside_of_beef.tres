@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://dw8n6wf33r7hc"]
 
-[ext_resource type="PackedScene" uid="uid://b34h5ekf88dmm" path="res://assets/products/fresh/cooked_meat/topside_of_beef.glb" id="1_d71rj"]
+[ext_resource type="PackedScene" uid="uid://bg7606thw1ahm" path="res://assets/products/fresh/cooked_meat/topside_of_beef.glb" id="1_d71rj"]
 [ext_resource type="Resource" uid="uid://ccgafbmf4r0gj" path="res://game/resources/item/resources/fresh/cooked_meat/topside_of_beef.tres" id="2_d71rj"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_fnrt0"]
 

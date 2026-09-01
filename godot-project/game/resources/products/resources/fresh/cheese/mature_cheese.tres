@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Product" format=3 uid="uid://c5mbg0p1sra7c"]
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_mbedd"]
+[ext_resource type="PackedScene" uid="uid://ceoutejsudgch" path="res://assets/products/fresh/cheese/mature_cheese.glb" id="2_5qs7e"]
 [ext_resource type="Resource" uid="uid://yi1sfiebi1xf" path="res://game/resources/item/resources/fresh/cheese/mature_cheese.tres" id="2_mbedd"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_rcj5d"]
 
@@ -12,5 +13,7 @@ shelf_offset = Vector3(0, 0.075, 0)
 default_shelf_quantity = 6
 label_size = 2
 product_colour = Color(0.7090717, 0.25392348, 0.07493863, 1)
-barcode_size = Vector2(0.08, 0.04)
+barcode_size = Vector3(0.04, 0.02, 0.03)
+barcode_offset = Vector3(-0.035, -0.05, 0.05)
+model = ExtResource("2_5qs7e")
 metadata/_custom_type_script = "uid://c485xiqer6nrc"
