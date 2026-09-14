@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dk51n6xa4bbt"
-path="res://.godot/imported/road_bend.glb-6e692196060b69b6a202ebc314bbfa89.scn"
+uid="uid://c1rpeeoy1cblo"
+path="res://.godot/imported/road_bend_coloured.glb-10c75f7ee784ca0e7ddac04f7a9ee302.scn"
 
 [deps]
 
-source_file="res://assets/environment/roads/coloured/bend/road_bend.glb"
-dest_files=["res://.godot/imported/road_bend.glb-6e692196060b69b6a202ebc314bbfa89.scn"]
+source_file="res://assets/environment/roads/coloured/bend/road_bend_coloured.glb"
+dest_files=["res://.godot/imported/road_bend_coloured.glb-10c75f7ee784ca0e7ddac04f7a9ee302.scn"]
 
 [params]
 
@@ -41,14 +41,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"road_bend_Cube_001": {
+"road_bend_coloured_Cube_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://assets/environment/roads/coloured/bend/road_bend_coloured.tres",
-"save_to_file/path": "uid://wkgrcgqkg2vs"
+"save_to_file/path": "uid://c7xyefemippe2"
 }
 }
 }

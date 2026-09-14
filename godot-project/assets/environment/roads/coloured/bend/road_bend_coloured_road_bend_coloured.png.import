@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c313iwpn24k5r"
-path.s3tc="res://.godot/imported/road_bend_road_bend_coloured.png-639c71caab0e6aee5ffe4b77c3a1432c.s3tc.ctex"
+uid="uid://u7fqhftr8ux"
+path.s3tc="res://.godot/imported/road_bend_coloured_road_bend_coloured.png-4947ef52840a84bbbca38d41deb636cf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "fcce1ea8454287655679242aac9b6fff"
+"md5": "c6ec53723422e70c88ee616717b391d9"
 }
 
 [deps]
 
-source_file="res://assets/environment/roads/coloured/bend/road_bend_road_bend_coloured.png"
-dest_files=["res://.godot/imported/road_bend_road_bend_coloured.png-639c71caab0e6aee5ffe4b77c3a1432c.s3tc.ctex"]
+source_file="res://assets/environment/roads/coloured/bend/road_bend_coloured_road_bend_coloured.png"
+dest_files=["res://.godot/imported/road_bend_coloured_road_bend_coloured.png-4947ef52840a84bbbca38d41deb636cf.s3tc.ctex"]
 
 [params]
 

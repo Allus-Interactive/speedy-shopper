@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dhbvpq1mkn0wy" path="res://assets/environment/roads/coloured/straight/road_straight_coloured.tres" id="2_vnplk"]
 [ext_resource type="ArrayMesh" uid="uid://cuiel1ftxmewe" path="res://assets/environment/roads_kenney/road_end.tres" id="3_e2mav"]
 [ext_resource type="ArrayMesh" uid="uid://djqgohki8xwrw" path="res://assets/environment/roads_kenney/road_intersection.tres" id="4_7asxu"]
-[ext_resource type="ArrayMesh" uid="uid://blha3jgivc4co" path="res://assets/environment/roads/coloured/bend/road_bend_coloured.tres" id="4_v14t3"]
+[ext_resource type="ArrayMesh" uid="uid://c7xyefemippe2" path="res://assets/environment/roads/coloured/bend/road_bend_coloured.tres" id="4_v14t3"]
 [ext_resource type="ArrayMesh" uid="uid://damng3bf7jyyi" path="res://assets/environment/roads_kenney/empty_tile.tres" id="5_7asxu"]
 [ext_resource type="ArrayMesh" uid="uid://fvfc4dlxrdp0" path="res://assets/environment/roads/coloured/end/road_end_coloured.tres" id="6_8awij"]
 [ext_resource type="Material" uid="uid://b3cck6sigu5b3" path="res://assets/materials/grass.tres" id="6_m8ulg"]
@@ -139,7 +139,7 @@ shape = SubResource("BoxShape3D_8awij")
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 4, 0.15, -4)
 shape = SubResource("BoxShape3D_2jkdo")
 
-[node name="RoadBend" type="MeshInstance3D" parent="." unique_id=2019916323]
+[node name="RoadBend" type="MeshInstance3D" parent="." unique_id=732865526]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 mesh = ExtResource("4_v14t3")
 
