@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckt4whqg621h7"
-path.s3tc="res://.godot/imported/road_3_way_junction_road_3_way_junction.png-26264e21db2b03d224bdd492213988d7.s3tc.ctex"
+uid="uid://20uolr14ce6q"
+path.s3tc="res://.godot/imported/road_corner_coloured_road_corner_coloured.png-7e79007598f6473b1c49778d2a366188.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "57e1490e2c63964510b0d765166816a9"
+"md5": "987ef55e115a82e7b4ac01a02c204925"
 }
 
 [deps]
 
-source_file="res://assets/environment/roads/three_way_junction/road_3_way_junction_road_3_way_junction.png"
-dest_files=["res://.godot/imported/road_3_way_junction_road_3_way_junction.png-26264e21db2b03d224bdd492213988d7.s3tc.ctex"]
+source_file="res://assets/environment/roads/coloured/corner/road_corner_coloured_road_corner_coloured.png"
+dest_files=["res://.godot/imported/road_corner_coloured_road_corner_coloured.png-7e79007598f6473b1c49778d2a366188.s3tc.ctex"]
 
 [params]
 

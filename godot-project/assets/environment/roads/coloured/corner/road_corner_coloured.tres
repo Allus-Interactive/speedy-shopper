@@ -1,0 +1,42 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://c1qb0n0ad5vij"]
+
+[ext_resource type="Texture2D" uid="uid://20uolr14ce6q" path="res://assets/environment/roads/coloured/corner/road_corner_coloured_road_corner_coloured.png" id="1_hrn6w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w0ax"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_hrn6w")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e3jcw"]
+_surfaces = [{
+"aabb": AABB(-7.5, -0.15, -7.5, 15, 0.3, 15),
+"format": 34896613377,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAQAEAAIAAwACAAQAAAAFAAEAAwAGAAAABQAAAAYABwADAAQAAQAIAAQABwAEAAgACAABAAkABQAJAAEACAAJAAoABQALAAkACwAKAAkABQAGAAsACAAKAAwACwAMAAoACAAMAAcACwANAAwADQAHAAwABgANAAsABwAOAAMABgADAA4ABwAPAA4ADwAHAA0ABgAOABAADgAPABEADgARABAADQARAA8ABgAQABIADQAGABIAEQASABAADQASABMAEQATABIADQATABEA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAmRn/f///AACZGf////8AAAAAAAAAAAAA//8AAP//AACZGf9/mRkAAJkZ//+ZGQAA/////wAAAAD/////mRkAAP//AAAAAAAA////f5kZAAD///9/ZeYAAGXm/3///wAAZeb/f2XmAABl5v////8AAGXm//9l5gAA////////AAD/////ZeYAAA==")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "road_corner_coloured_Cube_001"
+_surfaces = [{
+"aabb": AABB(-7.5, -0.15, -7.5, 15, 0.3, 15),
+"attribute_data": PackedByteArray("moIMgAyA8v8MgAyAmoLy/0KFDICzgvL/s4IMgEKF8v+jhtaM6ocMgOqH1oxbhQyAW4Xy/6OGKPPqhyjz6ofy/0uJKPMDiPL/A4go85KK8v+SigyAS4nWjAOI1owDiAyA8n8MAAwA8n8MAAwA8n/yf9YM1ozyfwyA8n/WjAwADIDWDPL/DADy/2yNKPM2mvL/bI3y/zaaKPPyi9aMq4ry/6uK1ozyi/L/s45h2WyNK+ZsjWHZs44r5ijzKHMMgNYMKPPWDF3mKHNd5vJ/DIDyf2yNROazjg/zbI0P87OOROYLjPL/U43WjFON8v8LjNaM"),
+"format": 34896613399,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkACwAIAAwADAAIAA0ADAANAA4ADAAOAA8AEAARABIAEAATABEAEAAUABMAFAAQABUAFAAVABYAFAAWABcAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AHwAcACAAHwAgACEAIgAjACQAIgAlACMAJgAnACgAJgApACcAKgArACwAKgAtACsALgAvADAAMQAvAC4ALwAxADIALwAyADMANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkA"),
+"material": SubResource("StandardMaterial3D_2w0ax"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD//////39l5lTV////////VNX/////ZeZU1f//AAD//1TV//8AAAAAVNX///9/mRlU1f////+ZGVTV/////wAAVNWZGf9/////vwAA//////+/mRn//////78AAAAA////v///AAD///+/Zeb/f////79l5v//////v/////////+/AAAAAAAA/////wAA////////AAAAAP//AAAAAP////+ZGf//mRn/v/////8AAP+//////5kZ/78AAP//AAD/v5kZ//////+/AAD//////79l5v//Zeb/v/////////+/Zeb//////7//////Zeb/v5kZ//+ZGf+/////f5kZ/7+ZGf9/mRn/v/////+ZGf+/Zeb/f///VNVl5v//ZeZU1WXm/////1TVZeb/f2XmVNX///9/Zeb/v5kZ/3+ZGf+/////f5kZ/79l5v9/Zeb/v2Xm/3////+/mRn/f////7////9/Zeb//2Xm//9l5v//Zeb/f2Xm////////Zeb//5kZ/3+ZGVTVmRn/////VNWZGf//mRlU1ZkZ/3///1TVVFWqqlRVqqpUVaqqVFWqqv8//7//P/+//z//v/8//7+qKqoqqiqqKqoqqiqqKqoqqiqqKqoqqiqqKqoqqiqqKv9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//P/9//z//f/8//3//P/7//3////9/////f/7//3////9/////f////3////9/////f////3//////////////////////VFWqqlRVqqpUVaqqVFWqqv///3////9/////f/7//3/+//9/////f/+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_e3jcw")

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cvy3ryb075gc6"
-path="res://.godot/imported/road_3_way_junction.glb-43930cbdd066bd28a9a9ce5c125a9eba.scn"
+uid="uid://dk51n6xa4bbt"
+path="res://.godot/imported/road_bend.glb-6e692196060b69b6a202ebc314bbfa89.scn"
 
 [deps]
 
-source_file="res://assets/environment/roads/three_way_junction/road_3_way_junction.glb"
-dest_files=["res://.godot/imported/road_3_way_junction.glb-43930cbdd066bd28a9a9ce5c125a9eba.scn"]
+source_file="res://assets/environment/roads/coloured/bend/road_bend.glb"
+dest_files=["res://.godot/imported/road_bend.glb-6e692196060b69b6a202ebc314bbfa89.scn"]
 
 [params]
 
@@ -41,14 +41,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"road_3_way_junction_Cube_001": {
+"road_bend_Cube_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/environment/roads/three_way_junction/road_3_way_junction.tres",
-"save_to_file/path": "uid://2tgwtrtrbw3x"
+"save_to_file/fallback_path": "res://assets/environment/roads/coloured/bend/road_bend_coloured.tres",
+"save_to_file/path": "uid://wkgrcgqkg2vs"
 }
 }
 }

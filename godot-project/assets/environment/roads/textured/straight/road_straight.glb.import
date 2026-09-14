@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://btgl21mjsjbhc"
-path="res://.godot/imported/road_end.glb-6dd4804e993f6e7fdb51e58e8a22cd22.scn"
+uid="uid://bdqvcy17i4uel"
+path="res://.godot/imported/road_straight.glb-cc52bfab24928cc3dfa26c97843ee86f.scn"
 
 [deps]
 
-source_file="res://assets/environment/roads/end/road_end.glb"
-dest_files=["res://.godot/imported/road_end.glb-6dd4804e993f6e7fdb51e58e8a22cd22.scn"]
+source_file="res://assets/environment/roads/textured/straight/road_straight.glb"
+dest_files=["res://.godot/imported/road_straight.glb-cc52bfab24928cc3dfa26c97843ee86f.scn"]
 
 [params]
 
@@ -41,14 +41,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"road_end_Cube_001": {
+"road_straight_Cube_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/environment/roads/end/road_end.tres",
-"save_to_file/path": "uid://cef07nfxm6vg"
+"save_to_file/fallback_path": "res://assets/environment/roads/textured/straight/road_straight.tres",
+"save_to_file/path": "uid://buti7yeiwfpod"
 }
 }
 }
