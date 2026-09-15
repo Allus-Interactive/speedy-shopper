@@ -8,8 +8,8 @@
 [ext_resource type="ArrayMesh" uid="uid://c7xyefemippe2" path="res://assets/environment/roads/coloured/bend/road_bend_coloured.tres" id="4_v14t3"]
 [ext_resource type="ArrayMesh" uid="uid://damng3bf7jyyi" path="res://assets/environment/roads_kenney/empty_tile.tres" id="5_7asxu"]
 [ext_resource type="ArrayMesh" uid="uid://fvfc4dlxrdp0" path="res://assets/environment/roads/coloured/end/road_end_coloured.tres" id="6_8awij"]
-[ext_resource type="Material" uid="uid://b3cck6sigu5b3" path="res://assets/materials/grass.tres" id="6_m8ulg"]
 [ext_resource type="ArrayMesh" uid="uid://br7wschubofts" path="res://assets/environment/roads/coloured/three_way_junction/road_3_way_junction_coloured.tres" id="8_2jkdo"]
+[ext_resource type="PackedScene" uid="uid://c1iff15u6wcbv" path="res://assets/environment/roads/coloured/grass/grass_coloured.glb" id="10_vnplk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7asxu"]
 size = Vector3(15, 0.15, 15)
@@ -141,6 +141,7 @@ shape = SubResource("BoxShape3D_2jkdo")
 
 [node name="RoadBend" type="MeshInstance3D" parent="." unique_id=732865526]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = ExtResource("4_v14t3")
 
 [node name="RoadBend" type="StaticBody3D" parent="RoadBend" unique_id=15563774]
@@ -297,10 +298,7 @@ mesh = ExtResource("5_7asxu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("BoxShape3D_v14t3")
 
-[node name="Grass" type="MeshInstance3D" parent="." unique_id=1040290620]
-visible = false
-material_override = ExtResource("6_m8ulg")
-mesh = ExtResource("5_7asxu")
+[node name="Grass" parent="." unique_id=355018668 instance=ExtResource("10_vnplk")]
 
 [node name="Grass" type="StaticBody3D" parent="Grass" unique_id=1415650949]
 
