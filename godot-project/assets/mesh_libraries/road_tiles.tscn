@@ -9,7 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://damng3bf7jyyi" path="res://assets/environment/roads_kenney/empty_tile.tres" id="5_7asxu"]
 [ext_resource type="ArrayMesh" uid="uid://fvfc4dlxrdp0" path="res://assets/environment/roads/coloured/end/road_end_coloured.tres" id="6_8awij"]
 [ext_resource type="ArrayMesh" uid="uid://br7wschubofts" path="res://assets/environment/roads/coloured/three_way_junction/road_3_way_junction_coloured.tres" id="8_2jkdo"]
-[ext_resource type="PackedScene" uid="uid://c1iff15u6wcbv" path="res://assets/environment/roads/coloured/grass/grass_coloured.glb" id="10_vnplk"]
+[ext_resource type="ArrayMesh" uid="uid://q56tk81atf2j" path="res://assets/environment/roads/coloured/grass/grass_coloured.tres" id="10_vnplk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7asxu"]
 size = Vector3(15, 0.15, 15)
@@ -298,10 +298,11 @@ mesh = ExtResource("5_7asxu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("BoxShape3D_v14t3")
 
-[node name="Grass" parent="." unique_id=355018668 instance=ExtResource("10_vnplk")]
+[node name="Grass" type="MeshInstance3D" parent="." unique_id=193073319]
+mesh = ExtResource("10_vnplk")
+skeleton = NodePath("Grass")
 
 [node name="Grass" type="StaticBody3D" parent="Grass" unique_id=1415650949]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Grass/Grass" unique_id=1294882106]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("BoxShape3D_v14t3")
