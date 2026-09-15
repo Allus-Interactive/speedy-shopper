@@ -593,6 +593,11 @@ func exit_vehicle(v: Vehicle) -> void:
 	# move player beside veihcle
 	global_position = v.global_position + Vector3(3, 0, 3)
 	
+	# store vehicle location
+	# TODO: save these values in the save file
+	GameManager.van_position = v.global_position
+	GameManager.van_rotation = v.global_rotation
+	
 	# restore player camera
 	var look = v.get_node("look")
 	var van_camera = look.get_node("ThirdPersonCam")

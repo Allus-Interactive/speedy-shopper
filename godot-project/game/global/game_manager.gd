@@ -31,6 +31,9 @@ var order_delivered : int = 0
 var days_worked : int = 0
 var total_earnings : float = 0.0
 
+var van_position : Vector3 = Vector3.ZERO
+var van_rotation : Vector3 = Vector3.ZERO
+
 func thread_load_scene(scene_id: String) -> void:
 	LoadingOverlay.toggle_loading(true)
 
