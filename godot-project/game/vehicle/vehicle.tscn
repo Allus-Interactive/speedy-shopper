@@ -6,7 +6,9 @@
 [ext_resource type="ArrayMesh" uid="uid://cmxtwsfcwbiil" path="res://assets/vehicles/van/van_wheel_front_right.tres" id="4_qqfut"]
 [ext_resource type="ArrayMesh" uid="uid://bwykf0sqiiesh" path="res://assets/vehicles/van/van_wheel_back_left.tres" id="5_1wjtb"]
 [ext_resource type="ArrayMesh" uid="uid://p0celopgg8yr" path="res://assets/vehicles/van/van_wheel_back_right.tres" id="6_2uabk"]
-[ext_resource type="ArrayMesh" uid="uid://euhrg8yx65wl" path="res://assets/vehicles/van/kenney_van_body.tres" id="8_qqfut"]
+[ext_resource type="Texture2D" uid="uid://dclc0ebpejsnl" path="res://assets/ui/driving/digital_speedo_no_gears.png" id="8_1wjtb"]
+[ext_resource type="ArrayMesh" uid="uid://dx0gs5qpntloy" path="res://assets/vehicles/van/kenney_van_body.tres" id="8_qqfut"]
+[ext_resource type="Texture2D" uid="uid://licm1vq5h52e" path="res://assets/ui/driving/driving.png" id="9_qqfut"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mm2gk"]
 size = Vector3(2.277, 1.569, 1.359)
@@ -137,3 +139,42 @@ shape = SubResource("BoxShape3D_xaafv")
 [node name="RearBumper" type="CollisionShape3D" parent="Van" unique_id=1344459511]
 transform = Transform3D(4.3711385e-08, 0.99999976, -8.742277e-08, 1, -4.37114e-08, 0, -3.8213684e-15, -8.742277e-08, -0.99999976, 0.0013190495, 0.4120211, -2.6713035)
 shape = SubResource("CapsuleShape3D_7kmqy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1392315928]
+
+[node name="Speedometer" type="TextureRect" parent="CanvasLayer" unique_id=584707467]
+offset_left = 1015.0
+offset_top = 515.0
+offset_right = 1255.0
+offset_bottom = 695.0
+texture = ExtResource("8_1wjtb")
+expand_mode = 2
+
+[node name="Speed" type="Label" parent="CanvasLayer/Speedometer" unique_id=1456141107]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 23.0
+offset_right = 155.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 64
+text = "50"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Units" type="Label" parent="CanvasLayer/Speedometer" unique_id=257089080]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 93.0
+offset_right = 140.0
+offset_bottom = 116.0
+text = "MPH"
+horizontal_alignment = 1
+
+[node name="Gears" type="TextureRect" parent="CanvasLayer/Speedometer" unique_id=832223235]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 31.0
+offset_right = 221.0
+offset_bottom = 117.0
+texture = ExtResource("9_qqfut")
+expand_mode = 4

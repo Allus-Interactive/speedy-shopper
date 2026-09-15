@@ -15,7 +15,6 @@ var crouch_lerp_speed: float = 10.0
 
 # Vehicle variables
 var vehicle: Vehicle = null
-var is_in_vehicle: bool = false
 
 var is_carrying_crate: bool = false
 var delivery_crate: DeliveryCrate = null
@@ -181,11 +180,11 @@ func _physics_process(delta: float) -> void:
 			TutorialManager.next_step()
 
 func _process(delta: float) -> void:
-	# TODO: why did I disable this when driving?
-	#if is_in_vehicle:
-		#earnings_label.visible = false
-	#else:
-		#earnings_label.visible = true
+	# TODO: do we want/need this disabled when driving?
+	if GameManager.is_in_vehicle:
+		ui_panel.visible = false
+	else:
+		ui_panel.visible = true
 	
 	if is_inspecting_product:
 		handle_product_inspection_input(delta)
@@ -559,7 +558,7 @@ func switch_camera() -> void:
 		third_person_camera.current = false
 
 func enter_vehicle(v: Vehicle) -> void:
-	is_in_vehicle = true
+	GameManager.is_in_vehicle = true
 	
 	vehicle = v
 	v.is_player_inside = true
@@ -585,7 +584,7 @@ func enter_vehicle(v: Vehicle) -> void:
 		push_error("No Van Camera found")
 
 func exit_vehicle(v: Vehicle) -> void:
-	is_in_vehicle = false
+	GameManager.is_in_vehicle = false
 	v.is_player_inside = false
 	visible = true
 	collision_shape_3d.disabled = false

@@ -2,6 +2,10 @@ extends VehicleBody3D
 
 class_name Vehicle
 
+@onready var speedometer: TextureRect = $"../CanvasLayer/Speedometer"
+@onready var speed_label: Label = $"../CanvasLayer/Speedometer/Speed"
+@onready var gears: TextureRect = $"../CanvasLayer/Speedometer/Gears"
+
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.4
 var steer_target = 0
@@ -13,16 +17,46 @@ var gear_locked = false
 
 var forward_speed : float
 var speed: float
+var whole_speed: int
 
 var is_player_inside = false
 var player : Player = null
+
+var drive_icon : CompressedTexture2D = preload("res://assets/ui/driving/driving.png")
+var reverse_icon : CompressedTexture2D = preload("res://assets/ui/driving/reverse.png")
+var neutral_icon : CompressedTexture2D = preload("res://assets/ui/driving/neutral.png")
+var park_icon : CompressedTexture2D = preload("res://assets/ui/driving/park.png")
+
+func _ready() -> void:
+	speed_label.text = "0"
+	speedometer.visible = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("park"):
+		GameManager.handbrake_engaged = !GameManager.handbrake_engaged
 
 func _physics_process(delta):
 	if not is_player_inside:
 		return
 	
+	if GameManager.handbrake_engaged:
+		$wheel_front_left.brake = 1000.0
+		$wheel_front_right.brake = 1000.0
+		$wheel_rear_left.brake = 1000.0
+		$wheel_rear_right.brake = 1000.0
+		# Prevent tiny physics movement
+		# TODO: investigate weird model behaviour when using this
+		#if linear_velocity.length() < 0.5:
+			#linear_velocity = Vector3.ZERO
+	else:
+		$wheel_front_left.brake = 0
+		$wheel_front_right.brake = 0
+		$wheel_rear_left.brake = 0
+		$wheel_rear_right.brake = 0
+	
 	var speed_mph = linear_velocity.length() * 2.23694
-	print("Speed:", speed_mph, "mph")
+	whole_speed = (int(round(speed_mph)))
+	speed_label.text = str(whole_speed)
 	
 	speed = linear_velocity.length() * Engine.get_frames_per_second() * delta
 	forward_speed = linear_velocity.dot(-transform.basis.z)
@@ -30,6 +64,7 @@ func _physics_process(delta):
 	process_accel(delta)
 	process_steer(delta)
 	process_brake(delta)
+	_process_gears()
 
 func process_accel(_delta):
 	if Input.is_action_pressed("forwards"):
@@ -71,6 +106,25 @@ func process_brake(_delta):
 		$wheel_rear_left.wheel_friction_slip=2.9
 		$wheel_rear_right.wheel_friction_slip=2.9
 
+func _process_gears() -> void:
+	var forward_direction = -global_transform.basis.z
+	var movement_direction = linear_velocity.normalized()
+
+	var direction = forward_direction.dot(movement_direction)
+	if GameManager.handbrake_engaged:
+		print("Parked")
+		gears.texture = park_icon
+	elif whole_speed == 0:
+		print("Neutral")
+		gears.texture = neutral_icon
+	else:
+		if direction > 0:
+			print("Reverse")
+			gears.texture = reverse_icon
+		if direction < 0 :
+			print("drive")
+			gears.texture = drive_icon
+
 func traction(_traction_speed):
 	#apply_central_force(Vector3.DOWN * traction_speed)
 	apply_central_force(-linear_velocity * 25.0)
@@ -88,7 +142,9 @@ func get_interaction_tooltip(_player: Player) -> String:
 func interact(p: Player) -> void:
 	player = p
 	p.enter_vehicle(self)
+	speedometer.visible = true
 
 func exit_vehicle() -> void:
 	if player:
 		player.exit_vehicle(self)
+		speedometer.visible = false
