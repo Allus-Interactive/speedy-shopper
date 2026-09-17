@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5mty81xoue3a" path="res://game/ui/notification_ui/notification_ui.tscn" id="4_a4w0n"]
 [ext_resource type="PackedScene" uid="uid://gnqq0wgbnm5k" path="res://game/ui/dialog_ui/dialog_ui.tscn" id="6_4ste8"]
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="7_anr75"]
+[ext_resource type="Script" uid="uid://d31w4nmmoip68" path="res://game/player/fade_to_black.gd" id="8_epvkq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_obar5"]
 radius = 0.4
@@ -161,3 +162,15 @@ transform = Transform2D(1, 0, 0, 1, 290, 100)
 visible = false
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("7_anr75")]
+
+[node name="FadeToBlack" type="CanvasLayer" parent="." unique_id=1079287460]
+
+[node name="Fade" type="ColorRect" parent="FadeToBlack" unique_id=1580918845]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+script = ExtResource("8_epvkq")

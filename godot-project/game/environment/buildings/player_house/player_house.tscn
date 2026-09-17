@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dyjua8hlmv5hr"]
+
+[ext_resource type="ArrayMesh" uid="uid://cjfhnkt8ocmo5" path="res://assets/environment/buildings/residential/house_g.tres" id="1_my2p8"]
+[ext_resource type="Script" uid="uid://ln6s712crl8o" path="res://game/environment/buildings/player_house/player_house_interaction.gd" id="2_k23xy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_my2p8"]
+size = Vector3(4, 3, 0.25)
+
+[node name="PlayerHouse" type="Node3D" unique_id=1333288050]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="HouseG" type="MeshInstance3D" parent="." unique_id=1578850721]
+mesh = ExtResource("1_my2p8")
+
+[node name="HouseNumber" type="Label3D" parent="." unique_id=1770527224]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.275, 3, -4.34)
+double_sided = false
+text = "6"
+font_size = 96
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=341487852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.7494545)
+script = ExtResource("2_k23xy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1916469982]
+shape = SubResource("BoxShape3D_my2p8")
+debug_color = Color(0.8284457, 0.50202274, 0.2541949, 0.41960785)

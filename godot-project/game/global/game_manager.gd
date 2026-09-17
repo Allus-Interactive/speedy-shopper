@@ -19,6 +19,7 @@ var order_id: int = 1
 var is_in_game: bool = false
 var is_in_vehicle: bool = false
 var handbrake_engaged: bool = true
+var is_speed_limiter_active: bool = false
 
 # Settings
 var is_paused : bool = false

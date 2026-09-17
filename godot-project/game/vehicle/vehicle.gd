@@ -18,6 +18,7 @@ var gear_locked = false
 var forward_speed : float
 var speed: float
 var whole_speed: int
+const MAX_SPEED: float = 30.0
 
 var is_player_inside = false
 var player : Player = null
@@ -34,6 +35,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("park"):
 		GameManager.handbrake_engaged = !GameManager.handbrake_engaged
+	if event.is_action_pressed("speed_limiter"):
+		GameManager.is_speed_limiter_active = !GameManager.is_speed_limiter_active
 
 func _physics_process(delta):
 	if not is_player_inside:

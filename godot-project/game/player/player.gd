@@ -76,6 +76,9 @@ var is_inspecting_product: bool = false
 @onready var barcode_beep: AudioStream = preload("res://assets/sfx/barcode_beep.mp3")
 @onready var wrong_barcode_beep: AudioStream = preload("res://assets/sfx/wrong_barcode_beep.mp3")
 
+# Fade To Black
+@onready var fade: ColorRect = $FadeToBlack/Fade
+
 func _ready() -> void:
 	tooltip_panel.hide()
 	
@@ -642,3 +645,13 @@ func _zoom_product(direction: int) -> void:
 func reset_inspect_distance() -> void:
 	inspect_distance = default_inspect_distance
 	hold_point.position.z = -inspect_distance
+
+func fade_out(duration := 1.0):
+	var tween = create_tween()
+	tween.tween_property(fade, "color:a", 1.0, duration)
+	await tween.finished
+
+func fade_in(duration := 1.0):
+	var tween = create_tween()
+	tween.tween_property(fade, "color:a", 0.0, duration)
+	await tween.finished

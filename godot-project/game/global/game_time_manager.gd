@@ -45,6 +45,12 @@ func advance_day() -> void:
 	day = (day + 1) % 7
 	day_changed.emit()
 
+func rest() -> void:
+	day = (day + 1) & 7
+	hour = 9
+	minute = 30
+	day_changed.emit()
+
 func get_time_string(use_24_hour: bool) -> String:
 	if use_24_hour:
 		return "%02d:%02d" % [hour, minute]
