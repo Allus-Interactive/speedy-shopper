@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://biweio0scbu1j"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_r16n7"]
+
+[resource]
+script = ExtResource("1_r16n7")
+title = 2
+first_name = "Skylar"
+last_name = "Bruce"
+address = "5 Main Street"
+dob_year = 1987
+dob_month = 6
+dob_day = 11
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

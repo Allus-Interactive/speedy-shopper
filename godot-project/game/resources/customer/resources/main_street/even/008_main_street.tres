@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://bgc3wl0wm20ym"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_2ipot"]
+
+[resource]
+script = ExtResource("1_2ipot")
+first_name = "Matthew"
+last_name = "Lucero"
+address = "8 Main Street"
+dob_year = 1991
+dob_month = 8
+dob_day = 29
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

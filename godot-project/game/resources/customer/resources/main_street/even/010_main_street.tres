@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://e1oknk58j5ab"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_8jdvh"]
+
+[resource]
+script = ExtResource("1_8jdvh")
+title = 4
+first_name = "Hayley"
+last_name = "Walsh"
+address = "10 Main Street"
+dob_year = 1986
+dob_month = 9
+dob_day = 21
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

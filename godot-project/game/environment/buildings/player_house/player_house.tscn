@@ -13,10 +13,10 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 mesh = ExtResource("1_my2p8")
 
 [node name="HouseNumber" type="Label3D" parent="." unique_id=1770527224]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.275, 3, -4.34)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.3, 3, -4.35)
 double_sided = false
-text = "6"
-font_size = 96
+text = "26"
+font_size = 80
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=341487852]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.7494545)

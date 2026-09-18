@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Customer" format=3 uid="uid://do6dbr633ehju"]
 
-[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_jdeqe"]
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_xta0j"]
 
 [resource]
-script = ExtResource("1_jdeqe")
+script = ExtResource("1_xta0j")
 title = 1
 first_name = "Jemma"
 last_name = "Bradley"
-address = "8 First Street"
+address = "24 Main Street"
 dob_year = 1992
 dob_month = 7
 dob_day = 6

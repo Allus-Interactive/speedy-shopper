@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://b46fc78i8dy72"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_675h8"]
+
+[resource]
+script = ExtResource("1_675h8")
+title = 1
+first_name = "Celine"
+last_name = "Montoya"
+address = "6 Main Street"
+dob_year = 1985
+dob_month = 12
+dob_day = 24
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"
