@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://do6dbr633ehju"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_jdeqe"]
+
+[resource]
+script = ExtResource("1_jdeqe")
+title = 1
+first_name = "Jemma"
+last_name = "Bradley"
+address = "8 First Street"
+dob_year = 1992
+dob_month = 7
+dob_day = 6
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://gu8mr36fd2sw"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_q1auu"]
+
+[resource]
+script = ExtResource("1_q1auu")
+title = 3
+first_name = "Madalynn"
+last_name = " Marshall"
+address = "2 First Street"
+dob_year = 1995
+dob_month = 5
+dob_day = 13
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

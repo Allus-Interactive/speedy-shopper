@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://dyhfsci270pac"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_qftpr"]
+
+[resource]
+script = ExtResource("1_qftpr")
+first_name = "Martin"
+last_name = "Gutierrez"
+address = "4 First Street"
+dob_year = 1997
+dob_month = 3
+dob_day = 20
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"
