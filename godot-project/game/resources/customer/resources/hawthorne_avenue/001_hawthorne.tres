@@ -4,10 +4,11 @@
 
 [resource]
 script = ExtResource("1_p215v")
-first_name = "Liam"
+title = 1
+first_name = "Rosie"
 last_name = "Fraser"
 address = "1 Hawthorne Avenue"
-dob_year = 1981
+dob_year = 1967
 dob_month = 6
 dob_day = 7
 metadata/_custom_type_script = "uid://bdy0iaghvk05f"

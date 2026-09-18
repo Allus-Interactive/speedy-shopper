@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://bmedtsaxomv47"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_hs7yc"]
+
+[resource]
+script = ExtResource("1_hs7yc")
+title = 1
+first_name = "Rhianne"
+last_name = "McDonald"
+address = "4 Hawthorne Avenue"
+dob_year = 1995
+dob_month = 1
+dob_day = 29
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://xl6jfo8aidxi"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_n7u0r"]
+
+[resource]
+script = ExtResource("1_n7u0r")
+title = 2
+first_name = "Yvonne"
+last_name = "Peters"
+address = "5 Hawthorne Avenue"
+dob_year = 1969
+dob_month = 10
+dob_day = 23
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

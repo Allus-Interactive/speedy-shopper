@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://blw3l84okqw6o"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_t7xv5"]
+
+[resource]
+script = ExtResource("1_t7xv5")
+title = 1
+first_name = "Leonie"
+last_name = "Clark"
+address = "3 Hawthorne Avenue"
+dob_year = 1988
+dob_month = 5
+dob_day = 3
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

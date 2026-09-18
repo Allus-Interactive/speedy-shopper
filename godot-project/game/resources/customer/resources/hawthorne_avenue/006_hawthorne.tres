@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://ditnmh4wo41jt"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_ftug8"]
+
+[resource]
+script = ExtResource("1_ftug8")
+title = 3
+first_name = "Tasha"
+last_name = "Walker"
+address = "6 Hawthorne Avenue"
+dob_year = 2000
+dob_month = 10
+dob_day = 9
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

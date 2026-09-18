@@ -27,7 +27,13 @@
 [ext_resource type="PackedScene" uid="uid://b3qea7gckkmpd" path="res://game/environment/buildings/customer_houses/customer_house_a.tscn" id="15_mu2bj"]
 [ext_resource type="Resource" uid="uid://b46fc78i8dy72" path="res://game/resources/customer/resources/main_street/even/006_main_street.tres" id="16_ahupy"]
 [ext_resource type="Resource" uid="uid://bgc3wl0wm20ym" path="res://game/resources/customer/resources/main_street/even/008_main_street.tres" id="17_5fykb"]
+[ext_resource type="Resource" uid="uid://biytf8olofg1y" path="res://game/resources/customer/resources/hawthorne_avenue/001_hawthorne.tres" id="18_6pt7a"]
 [ext_resource type="Resource" uid="uid://e1oknk58j5ab" path="res://game/resources/customer/resources/main_street/even/010_main_street.tres" id="18_ynsmr"]
+[ext_resource type="Resource" uid="uid://2fa71rnvuj60" path="res://game/resources/customer/resources/hawthorne_avenue/002_hawthorne.tres" id="19_yo80q"]
+[ext_resource type="Resource" uid="uid://blw3l84okqw6o" path="res://game/resources/customer/resources/hawthorne_avenue/003_hawthorne.tres" id="20_b323c"]
+[ext_resource type="Resource" uid="uid://bmedtsaxomv47" path="res://game/resources/customer/resources/hawthorne_avenue/004_hawthorne.tres" id="21_lv4hx"]
+[ext_resource type="Resource" uid="uid://xl6jfo8aidxi" path="res://game/resources/customer/resources/hawthorne_avenue/005_hawthorne.tres" id="22_5ng0e"]
+[ext_resource type="Resource" uid="uid://ditnmh4wo41jt" path="res://game/resources/customer/resources/hawthorne_avenue/006_hawthorne.tres" id="23_kvgsg"]
 [ext_resource type="PackedScene" uid="uid://8gv0kco8bu08" path="res://game/environment/road_sign/road_sign.tscn" id="23_y8416"]
 [ext_resource type="Resource" uid="uid://ddyhd6k8wcave" path="res://game/resources/customer/resources/leuchars_lane/001_leuchars.tres" id="23_ynsmr"]
 [ext_resource type="Resource" uid="uid://coi6vi8h2vlj0" path="res://game/resources/customer/resources/leuchars_lane/002_leuchars.tres" id="24_2r6j2"]
@@ -109,7 +115,7 @@ data = {
 mesh_library = ExtResource("4_wnw7r")
 cell_size = Vector3(15, 0.3, 15)
 data = {
-"cells": PackedInt32Array(1, 1, 0, 11, 8, 1441794, 11, 10, 1441794, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2, 11, 65533, 655362, 9, 65533, 655362, 7, 65533, 655362, 7, 65535, 2, 9, 65535, 2, 11, 65535, 2)
+"cells": PackedInt32Array(1, 1, 0, 11, 8, 1441794, 11, 10, 1441794, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2)
 }
 
 [node name="EnvironmentGridMap" type="GridMap" parent="." unique_id=431475957]
@@ -173,6 +179,46 @@ house_number = 3
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 143, 0, 127)
 customer_details = ExtResource("14_l1w7i")
 house_number = 4
+
+[node name="Hawthorne Avenue" type="Node" parent="." unique_id=565114768]
+
+[node name="RoadSigns" type="Node" parent="Hawthorne Avenue" unique_id=1794506150]
+
+[node name="RoadSign" parent="Hawthorne Avenue/RoadSigns" unique_id=1559047665 instance=ExtResource("23_y8416")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 267, 0, -14)
+
+[node name="RoadSign2" parent="Hawthorne Avenue/RoadSigns" unique_id=2137933393 instance=ExtResource("23_y8416")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 77, 0, -31)
+
+[node name="CustomerHouse1" parent="Hawthorne Avenue" unique_id=1327775458 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 173, 0, -8)
+customer_details = ExtResource("18_6pt7a")
+house_number = 1
+
+[node name="CustomerHouse2" parent="Hawthorne Avenue" unique_id=1985306384 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, 173, 0, -38)
+customer_details = ExtResource("19_yo80q")
+house_number = 2
+
+[node name="CustomerHouse3" parent="Hawthorne Avenue" unique_id=1766162711 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 143, 0, -8)
+customer_details = ExtResource("20_b323c")
+house_number = 3
+
+[node name="CustomerHouse4" parent="Hawthorne Avenue" unique_id=478695597 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, 143, 0, -38)
+customer_details = ExtResource("21_lv4hx")
+house_number = 4
+
+[node name="CustomerHouse5" parent="Hawthorne Avenue" unique_id=352393264 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 113, 0, -8)
+customer_details = ExtResource("22_5ng0e")
+house_number = 5
+
+[node name="CustomerHouse6" parent="Hawthorne Avenue" unique_id=780199926 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, 113, 0, -38)
+customer_details = ExtResource("23_kvgsg")
+house_number = 6
 
 [node name="LeucharsLane" type="Node" parent="." unique_id=492230757]
 

@@ -17,11 +17,17 @@
 [ext_resource type="Resource" uid="uid://d3itr7lb3slit" path="res://game/resources/customer/resources/birchwood_close/001_birchwood.tres" id="24_mb5cl"]
 [ext_resource type="Resource" uid="uid://dhklnlqt2rqre" path="res://game/resources/customer/resources/cedar_grove/003_cedar_grove.tres" id="25_m12ly"]
 [ext_resource type="Resource" uid="uid://bo3rmwbtg085i" path="res://game/resources/customer/resources/birchwood_close/003_birchwood.tres" id="25_otdps"]
+[ext_resource type="Resource" uid="uid://biytf8olofg1y" path="res://game/resources/customer/resources/hawthorne_avenue/001_hawthorne.tres" id="26_arns1"]
 [ext_resource type="Resource" uid="uid://idcrnlnkgfis" path="res://game/resources/customer/resources/cedar_grove/004_cedar_grove.tres" id="26_yo5d8"]
+[ext_resource type="Resource" uid="uid://2fa71rnvuj60" path="res://game/resources/customer/resources/hawthorne_avenue/002_hawthorne.tres" id="27_h1cjb"]
 [ext_resource type="Resource" uid="uid://be40xbs2qjwn2" path="res://game/resources/customer/resources/oakfield_road/001_oakfield.tres" id="27_xhhgs"]
 [ext_resource type="Resource" uid="uid://cc174hpg5tcig" path="res://game/resources/customer/resources/oakfield_road/002_oakfield.tres" id="28_ipltx"]
+[ext_resource type="Resource" uid="uid://blw3l84okqw6o" path="res://game/resources/customer/resources/hawthorne_avenue/003_hawthorne.tres" id="28_ukjxk"]
 [ext_resource type="Resource" uid="uid://co51fghe3tt4" path="res://game/resources/customer/resources/oakfield_road/003_oakfield.tres" id="29_n50sf"]
+[ext_resource type="Resource" uid="uid://bmedtsaxomv47" path="res://game/resources/customer/resources/hawthorne_avenue/004_hawthorne.tres" id="29_xhhgs"]
 [ext_resource type="Resource" uid="uid://sn6dwv2bx673" path="res://game/resources/customer/resources/oakfield_road/004_oakfield.tres" id="30_0mvmc"]
+[ext_resource type="Resource" uid="uid://xl6jfo8aidxi" path="res://game/resources/customer/resources/hawthorne_avenue/005_hawthorne.tres" id="30_ipltx"]
+[ext_resource type="Resource" uid="uid://ditnmh4wo41jt" path="res://game/resources/customer/resources/hawthorne_avenue/006_hawthorne.tres" id="31_n50sf"]
 [ext_resource type="Resource" uid="uid://b2fhhiioy307d" path="res://game/resources/customer/resources/oakfield_road/005_oakfield.tres" id="31_wjxka"]
 [ext_resource type="Resource" uid="uid://v7wkvlgc5bj8" path="res://game/resources/customer/resources/oakfield_road/006_oakfield.tres" id="32_smlma"]
 [ext_resource type="Resource" uid="uid://bh5p24gk7jrkt" path="res://game/resources/customer/resources/oakfield_road/007_oakfield.tres" id="33_1gwxg"]
@@ -29,5 +35,5 @@
 
 [node name="CustomerManager" type="Node" unique_id=115059877]
 script = ExtResource("1_k345p")
-all_customers = Array[ExtResource("2_18e5q")]([ExtResource("14_qhuox"), ExtResource("15_503pj"), ExtResource("16_l07vn"), ExtResource("17_rwlx8"), ExtResource("18_6ohtg"), ExtResource("19_pvhn2"), ExtResource("20_6wu0w"), ExtResource("21_mb5cl"), ExtResource("22_otdps"), ExtResource("23_otdps"), ExtResource("24_kcx15"), ExtResource("25_m12ly"), ExtResource("26_yo5d8"), ExtResource("27_xhhgs"), ExtResource("28_ipltx"), ExtResource("29_n50sf"), ExtResource("30_0mvmc"), ExtResource("31_wjxka"), ExtResource("32_smlma"), ExtResource("33_1gwxg"), ExtResource("34_0vpe3"), ExtResource("24_mb5cl"), ExtResource("25_otdps")])
+all_customers = Array[ExtResource("2_18e5q")]([ExtResource("14_qhuox"), ExtResource("15_503pj"), ExtResource("16_l07vn"), ExtResource("17_rwlx8"), ExtResource("18_6ohtg"), ExtResource("19_pvhn2"), ExtResource("20_6wu0w"), ExtResource("21_mb5cl"), ExtResource("22_otdps"), ExtResource("23_otdps"), ExtResource("24_kcx15"), ExtResource("25_m12ly"), ExtResource("26_yo5d8"), ExtResource("27_xhhgs"), ExtResource("28_ipltx"), ExtResource("29_n50sf"), ExtResource("30_0mvmc"), ExtResource("31_wjxka"), ExtResource("32_smlma"), ExtResource("33_1gwxg"), ExtResource("34_0vpe3"), ExtResource("24_mb5cl"), ExtResource("25_otdps"), ExtResource("26_arns1"), ExtResource("27_h1cjb"), ExtResource("28_ukjxk"), ExtResource("29_xhhgs"), ExtResource("30_ipltx"), ExtResource("31_n50sf")])
 tutorial_customers = Array[ExtResource("2_18e5q")]([ExtResource("3_v3w5l")])
