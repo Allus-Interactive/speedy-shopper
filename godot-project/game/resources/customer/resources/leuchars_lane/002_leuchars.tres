@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://coi6vi8h2vlj0"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_xfbnk"]
+
+[resource]
+script = ExtResource("1_xfbnk")
+first_name = "Oliver"
+last_name = "Graham"
+address = "2 Leuchars Lane"
+dob_year = 1983
+dob_month = 4
+dob_day = 9
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

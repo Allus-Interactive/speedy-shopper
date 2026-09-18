@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://bw4dnb6h2uw01"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_n42hl"]
+
+[resource]
+script = ExtResource("1_n42hl")
+first_name = "Callum"
+last_name = "Reid"
+address = "3 Leuchars Lane"
+dob_year = 1997
+dob_month = 7
+dob_day = 5
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"
