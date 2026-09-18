@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://dyhfsci270pac"]
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://gu8mr36fd2sw"]
 
-[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_rcd3q"]
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_k13w6"]
 
 [resource]
-script = ExtResource("1_rcd3q")
-first_name = "Martin"
-last_name = "Gutierrez"
+script = ExtResource("1_k13w6")
+title = 3
+first_name = "Madalynn"
+last_name = " Marshall"
 address = "28 Main Street"
-dob_year = 1997
-dob_month = 3
-dob_day = 20
+dob_year = 1995
+dob_month = 5
+dob_day = 13
 metadata/_custom_type_script = "uid://bdy0iaghvk05f"
