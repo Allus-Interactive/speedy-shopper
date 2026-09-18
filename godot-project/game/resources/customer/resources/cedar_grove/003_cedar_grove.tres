@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://dhklnlqt2rqre"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_g7i6j"]
+
+[resource]
+script = ExtResource("1_g7i6j")
+title = 3
+first_name = "Jessica"
+last_name = "Turner"
+address = "3 Cedar Grove"
+dob_year = 1987
+dob_month = 12
+dob_day = 23
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

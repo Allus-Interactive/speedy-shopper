@@ -9,13 +9,17 @@
 [ext_resource type="MeshLibrary" uid="uid://cr2p2x812x1rk" path="res://assets/mesh_libraries/road_tiles.tres" id="5_3oap8"]
 [ext_resource type="MeshLibrary" uid="uid://tls63l0cr4xm" path="res://assets/mesh_libraries/environment_tiles.tres" id="5_nflbr"]
 [ext_resource type="PackedScene" uid="uid://bw5rwejnjhw31" path="res://game/world/exit_entry/exit_entry.tscn" id="5_qlrgr"]
+[ext_resource type="Resource" uid="uid://4j88ihafleag" path="res://game/resources/customer/resources/cedar_grove/001_cedar_grove.tres" id="11_d8e8i"]
 [ext_resource type="Resource" uid="uid://brf4frkpxvupc" path="res://game/resources/customer/resources/main_street/odd/001_main_street.tres" id="11_naxfj"]
 [ext_resource type="Resource" uid="uid://gu8mr36fd2sw" path="res://game/resources/customer/resources/main_street/even/030_main_street.tres" id="11_uc1da"]
 [ext_resource type="Resource" uid="uid://dyhfsci270pac" path="res://game/resources/customer/resources/main_street/even/028_main_street.tres" id="12_a7q3w"]
+[ext_resource type="Resource" uid="uid://dieeetaoqw8dd" path="res://game/resources/customer/resources/cedar_grove/002_cedar_grove.tres" id="12_ba124"]
 [ext_resource type="Resource" uid="uid://dp1yajhrgrtuj" path="res://game/resources/customer/resources/main_street/even/002_main_street.tres" id="12_elwot"]
 [ext_resource type="Resource" uid="uid://c37jbx8cmglje" path="res://game/resources/customer/resources/main_street/odd/003_main_street.tres" id="12_gxb3r"]
 [ext_resource type="Resource" uid="uid://biweio0scbu1j" path="res://game/resources/customer/resources/main_street/odd/005_main_street.tres" id="13_elwot"]
+[ext_resource type="Resource" uid="uid://dhklnlqt2rqre" path="res://game/resources/customer/resources/cedar_grove/003_cedar_grove.tres" id="13_p0f41"]
 [ext_resource type="Resource" uid="uid://bnr1047vs53mn" path="res://game/resources/customer/resources/main_street/even/004_main_street.tres" id="14_5eqng"]
+[ext_resource type="Resource" uid="uid://idcrnlnkgfis" path="res://game/resources/customer/resources/cedar_grove/004_cedar_grove.tres" id="14_l1w7i"]
 [ext_resource type="Resource" uid="uid://do6dbr633ehju" path="res://game/resources/customer/resources/main_street/even/024_main_street.tres" id="14_mu2bj"]
 [ext_resource type="PackedScene" uid="uid://dyjua8hlmv5hr" path="res://game/environment/buildings/player_house/player_house.tscn" id="15_a7q3w"]
 [ext_resource type="PackedScene" uid="uid://b3qea7gckkmpd" path="res://game/environment/buildings/customer_houses/customer_house_a.tscn" id="15_mu2bj"]
@@ -77,6 +81,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.43139207, 13.75)
 
 [node name="Stars" type="MeshInstance3D" parent="Player" unique_id=39438420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, -0.43139207, -13.75)
+visible = false
 mesh = SubResource("SphereMesh_t2dwb")
 skeleton = NodePath("../..")
 
@@ -94,7 +99,7 @@ data = {
 mesh_library = ExtResource("4_wnw7r")
 cell_size = Vector3(15, 0.3, 15)
 data = {
-"cells": PackedInt32Array(1, 1, 0, 15, 65532, 1048578, 15, 65530, 1048578, 15, 2, 1048578, 15, 0, 1048578, 14, 5, 2, 16, 5, 2, 13, 0, 1441794, 13, 2, 1441794, 11, 8, 1441794, 11, 10, 1441794, 7, 10, 1441794, 7, 8, 1441794, 9, 10, 1048578, 9, 8, 1048578, 13, 65532, 1441794, 13, 65530, 1441794, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2, 11, 65533, 655362, 9, 65533, 655362, 7, 65533, 655362, 7, 65535, 2, 9, 65535, 2, 11, 65535, 2)
+"cells": PackedInt32Array(1, 1, 0, 15, 65532, 1048578, 15, 65530, 1048578, 15, 2, 1048578, 15, 0, 1048578, 14, 5, 2, 16, 5, 2, 13, 0, 1441794, 13, 2, 1441794, 11, 8, 1441794, 11, 10, 1441794, 13, 65532, 1441794, 13, 65530, 1441794, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2, 11, 65533, 655362, 9, 65533, 655362, 7, 65533, 655362, 7, 65535, 2, 9, 65535, 2, 11, 65535, 2)
 }
 
 [node name="EnvironmentGridMap" type="GridMap" parent="." unique_id=431475957]
@@ -105,9 +110,71 @@ cell_size = Vector3(3, 0.3, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 2, 16)
 is_in_shop = false
 
+[node name="Cedar Grove" type="Node" parent="." unique_id=1443290711]
+
+[node name="Road Signs" type="Node" parent="Cedar Grove" unique_id=248684764]
+
+[node name="RoadSign" parent="Cedar Grove/Road Signs" unique_id=574591718 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 118, 0, 178)
+road_name = "Cedar Grove"
+
+[node name="RoadSign2" parent="Cedar Grove/Road Signs" unique_id=343398270 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 136, 0, 107)
+road_name = "Cedar Grove"
+
+[node name="CustomerHouse01" parent="Cedar Grove" unique_id=1333288050 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 113, 0, 157)
+customer_details = ExtResource("11_d8e8i")
+house_number = 1
+
+[node name="CustomerHouse02" parent="Cedar Grove" unique_id=110422991 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 143, 0, 157)
+customer_details = ExtResource("12_ba124")
+house_number = 2
+
+[node name="CustomerHouse03" parent="Cedar Grove" unique_id=2060040641 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 113, 0, 127)
+customer_details = ExtResource("13_p0f41")
+house_number = 3
+
+[node name="CustomerHouse04" parent="Cedar Grove" unique_id=1768545969 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 143, 0, 127)
+customer_details = ExtResource("14_l1w7i")
+house_number = 4
+
+[node name="LeucharsLane" type="Node" parent="." unique_id=492230757]
+
+[node name="RoadSigns" type="Node" parent="LeucharsLane" unique_id=1037769501]
+
+[node name="RoadSign" parent="LeucharsLane/RoadSigns" unique_id=536668855 instance=ExtResource("23_y8416")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 267, 0, 136)
+
+[node name="RoadSign2" parent="LeucharsLane/RoadSigns" unique_id=1734807865 instance=ExtResource("23_y8416")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 197, 0, 119)
+
+[node name="CustomerHouse1" parent="LeucharsLane" unique_id=1315915122 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 248, 0, 142)
+customer_details = ExtResource("23_ynsmr")
+house_number = 1
+
+[node name="CustomerHouse2" parent="LeucharsLane" unique_id=1745957917 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, 248, 0, 112)
+customer_details = ExtResource("24_2r6j2")
+house_number = 2
+
+[node name="CustomerHouse3" parent="LeucharsLane" unique_id=1154833566 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 218, 0, 142)
+customer_details = ExtResource("25_y8416")
+house_number = 3
+
+[node name="CustomerHouse4" parent="LeucharsLane" unique_id=869157403 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, 218, 0, 112)
+customer_details = ExtResource("26_tl88k")
+house_number = 4
+
 [node name="MainStreet" type="Node" parent="." unique_id=192161911]
 
-[node name="CustomerHouse01" parent="MainStreet" unique_id=1333288050 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse01" parent="MainStreet" unique_id=1222941272 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 53, 0, 157)
 customer_details = ExtResource("11_naxfj")
 house_number = 1
@@ -164,36 +231,6 @@ house_number = 28
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 263, 0, 37)
 customer_details = ExtResource("11_uc1da")
 house_number = 30
-
-[node name="LeucharsLane" type="Node" parent="." unique_id=492230757]
-
-[node name="RoadSigns" type="Node" parent="LeucharsLane" unique_id=1037769501]
-
-[node name="RoadSign" parent="LeucharsLane/RoadSigns" unique_id=574591718 instance=ExtResource("23_y8416")]
-transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 267, 0, 136)
-
-[node name="RoadSign2" parent="LeucharsLane/RoadSigns" unique_id=1734807865 instance=ExtResource("23_y8416")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 197, 0, 119)
-
-[node name="CustomerHouse1" parent="LeucharsLane" unique_id=1315915122 instance=ExtResource("15_mu2bj")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 248, 0, 142)
-customer_details = ExtResource("23_ynsmr")
-house_number = 1
-
-[node name="CustomerHouse2" parent="LeucharsLane" unique_id=1745957917 instance=ExtResource("15_mu2bj")]
-transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, 248, 0, 112)
-customer_details = ExtResource("24_2r6j2")
-house_number = 2
-
-[node name="CustomerHouse3" parent="LeucharsLane" unique_id=1154833566 instance=ExtResource("15_mu2bj")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 218, 0, 142)
-customer_details = ExtResource("25_y8416")
-house_number = 3
-
-[node name="CustomerHouse4" parent="LeucharsLane" unique_id=869157403 instance=ExtResource("15_mu2bj")]
-transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, 218, 0, 112)
-customer_details = ExtResource("26_tl88k")
-house_number = 4
 
 [node name="MarketStreet" type="Node" parent="." unique_id=70923693]
 

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://dieeetaoqw8dd"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_c4eg6"]
+
+[resource]
+script = ExtResource("1_c4eg6")
+first_name = "Adam"
+last_name = "MacKenzie"
+address = " Cedar Grove"
+dob_year = 1991
+dob_month = 5
+dob_day = 8
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"
