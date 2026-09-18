@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://b2fhhiioy307d"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_hylie"]
+
+[resource]
+script = ExtResource("1_hylie")
+first_name = "Matthew"
+last_name = "Ross"
+address = "5 Oakfield Road"
+dob_year = 1985
+dob_month = 9
+dob_day = 25
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

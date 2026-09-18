@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://co51fghe3tt4"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_krfhp"]
+
+[resource]
+script = ExtResource("1_krfhp")
+first_name = "Scott"
+last_name = "Graham"
+address = "3 Oakfield Road"
+dob_year = 1989
+dob_month = 1
+dob_day = 6
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

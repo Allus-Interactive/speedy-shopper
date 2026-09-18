@@ -36,6 +36,14 @@
 [ext_resource type="Resource" uid="uid://bj8oeycgtrg24" path="res://game/resources/customer/resources/market_street/008_market.tres" id="29_c13pa"]
 [ext_resource type="Resource" uid="uid://55kl222k2o0b" path="res://game/resources/customer/resources/market_street/004_market.tres" id="29_d8e8i"]
 [ext_resource type="Resource" uid="uid://qakmg2p74dfq" path="res://game/resources/customer/resources/market_street/010_market.tres" id="30_l721y"]
+[ext_resource type="Resource" uid="uid://be40xbs2qjwn2" path="res://game/resources/customer/resources/oakfield_road/001_oakfield.tres" id="37_cga7u"]
+[ext_resource type="Resource" uid="uid://cc174hpg5tcig" path="res://game/resources/customer/resources/oakfield_road/002_oakfield.tres" id="38_orx8h"]
+[ext_resource type="Resource" uid="uid://co51fghe3tt4" path="res://game/resources/customer/resources/oakfield_road/003_oakfield.tres" id="39_myrlx"]
+[ext_resource type="Resource" uid="uid://sn6dwv2bx673" path="res://game/resources/customer/resources/oakfield_road/004_oakfield.tres" id="40_yohk3"]
+[ext_resource type="Resource" uid="uid://b2fhhiioy307d" path="res://game/resources/customer/resources/oakfield_road/005_oakfield.tres" id="41_tvpuy"]
+[ext_resource type="Resource" uid="uid://v7wkvlgc5bj8" path="res://game/resources/customer/resources/oakfield_road/006_oakfield.tres" id="42_r7myf"]
+[ext_resource type="Resource" uid="uid://bh5p24gk7jrkt" path="res://game/resources/customer/resources/oakfield_road/007_oakfield.tres" id="43_2ihah"]
+[ext_resource type="Resource" uid="uid://87ru5vyxdklt" path="res://game/resources/customer/resources/oakfield_road/008_oakfield.tres" id="44_hp8nb"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_glehq"]
 size = Vector2(100, 100)
@@ -99,7 +107,7 @@ data = {
 mesh_library = ExtResource("4_wnw7r")
 cell_size = Vector3(15, 0.3, 15)
 data = {
-"cells": PackedInt32Array(1, 1, 0, 15, 65532, 1048578, 15, 65530, 1048578, 15, 2, 1048578, 15, 0, 1048578, 14, 5, 2, 16, 5, 2, 13, 0, 1441794, 13, 2, 1441794, 11, 8, 1441794, 11, 10, 1441794, 13, 65532, 1441794, 13, 65530, 1441794, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2, 11, 65533, 655362, 9, 65533, 655362, 7, 65533, 655362, 7, 65535, 2, 9, 65535, 2, 11, 65535, 2)
+"cells": PackedInt32Array(1, 1, 0, 14, 5, 2, 16, 5, 2, 11, 8, 1441794, 11, 10, 1441794, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2, 11, 65533, 655362, 9, 65533, 655362, 7, 65533, 655362, 7, 65535, 2, 9, 65535, 2, 11, 65535, 2)
 }
 
 [node name="EnvironmentGridMap" type="GridMap" parent="." unique_id=431475957]
@@ -276,3 +284,63 @@ house_number = 8
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 23, 0, 97)
 customer_details = ExtResource("30_l721y")
 house_number = 10
+
+[node name="Oakfield Road" type="Node" parent="." unique_id=560438281]
+
+[node name="Road Signs" type="Node" parent="Oakfield Road" unique_id=469285525]
+
+[node name="RoadSign" parent="Oakfield Road/Road Signs" unique_id=182926736 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 208, 0, 58)
+road_name = "Oakfield Road"
+
+[node name="RoadSign2" parent="Oakfield Road/Road Signs" unique_id=171715405 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 226, 0, -13)
+road_name = "Oakfield Road"
+
+[node name="RoadSign4" parent="Oakfield Road/Road Signs" unique_id=1354261176 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 226, 0, -103)
+road_name = "Oakfield Road"
+
+[node name="RoadSign3" parent="Oakfield Road/Road Signs" unique_id=84902297 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 208, 0, -32)
+road_name = "Oakfield Road"
+
+[node name="CustomerHouse1" parent="Oakfield Road" unique_id=107342849 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 203, 0, 37)
+customer_details = ExtResource("37_cga7u")
+house_number = 1
+
+[node name="CustomerHouse2" parent="Oakfield Road" unique_id=267410990 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 233, 0, 37)
+customer_details = ExtResource("38_orx8h")
+house_number = 2
+
+[node name="CustomerHouse3" parent="Oakfield Road" unique_id=166525433 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 203, 0, 7)
+customer_details = ExtResource("39_myrlx")
+house_number = 3
+
+[node name="CustomerHouse4" parent="Oakfield Road" unique_id=38758249 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 233, 0, 7)
+customer_details = ExtResource("40_yohk3")
+house_number = 4
+
+[node name="CustomerHouse5" parent="Oakfield Road" unique_id=666916638 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 203, 0, -53)
+customer_details = ExtResource("41_tvpuy")
+house_number = 5
+
+[node name="CustomerHouse6" parent="Oakfield Road" unique_id=223813645 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 233, 0, -53)
+customer_details = ExtResource("42_r7myf")
+house_number = 6
+
+[node name="CustomerHouse7" parent="Oakfield Road" unique_id=630544738 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 203, 0, -83)
+customer_details = ExtResource("43_2ihah")
+house_number = 7
+
+[node name="CustomerHouse8" parent="Oakfield Road" unique_id=2049896897 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 233, 0, -83)
+customer_details = ExtResource("44_hp8nb")
+house_number = 8

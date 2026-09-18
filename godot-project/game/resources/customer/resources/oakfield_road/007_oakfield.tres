@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://bh5p24gk7jrkt"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_nwye2"]
+
+[resource]
+script = ExtResource("1_nwye2")
+title = 1
+first_name = "Laura"
+last_name = "Cameron"
+address = "7 Oakfield Road"
+dob_year = 1990
+dob_month = 2
+dob_day = 21
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"
