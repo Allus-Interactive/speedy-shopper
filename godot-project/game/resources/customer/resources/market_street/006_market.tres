@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://dsnexi0icugqr"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_5x455"]
+
+[resource]
+script = ExtResource("1_5x455")
+title = 3
+first_name = "Lauren"
+last_name = "Mitchell"
+address = "6 Market Street"
+dob_year = 1993
+dob_month = 6
+dob_day = 27
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

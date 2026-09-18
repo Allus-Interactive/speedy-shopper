@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://55kl222k2o0b"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_8k5m6"]
+
+[resource]
+script = ExtResource("1_8k5m6")
+first_name = "Jack"
+last_name = "Henderson"
+address = "4 Market Street"
+dob_year = 1988
+dob_month = 11
+dob_day = 4
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

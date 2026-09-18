@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://qakmg2p74dfq"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_3w3wr"]
+
+[resource]
+script = ExtResource("1_3w3wr")
+first_name = "Nathan"
+last_name = "Cooper"
+address = "10 Market Street"
+dob_year = 1982
+dob_month = 1
+dob_day = 31
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

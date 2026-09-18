@@ -18,8 +18,13 @@
 [ext_resource type="Resource" uid="uid://coi6vi8h2vlj0" path="res://game/resources/customer/resources/leuchars_lane/002_leuchars.tres" id="15_503pj"]
 [ext_resource type="Resource" uid="uid://bw4dnb6h2uw01" path="res://game/resources/customer/resources/leuchars_lane/003_leuchars.tres" id="16_l07vn"]
 [ext_resource type="Resource" uid="uid://ba6456n4vh5uw" path="res://game/resources/customer/resources/leuchars_lane/004_leuchars.tres" id="17_rwlx8"]
+[ext_resource type="Resource" uid="uid://t3us0ubkkufm" path="res://game/resources/customer/resources/market_street/002_market.tres" id="18_6ohtg"]
+[ext_resource type="Resource" uid="uid://55kl222k2o0b" path="res://game/resources/customer/resources/market_street/004_market.tres" id="19_pvhn2"]
+[ext_resource type="Resource" uid="uid://dsnexi0icugqr" path="res://game/resources/customer/resources/market_street/006_market.tres" id="20_6wu0w"]
+[ext_resource type="Resource" uid="uid://bj8oeycgtrg24" path="res://game/resources/customer/resources/market_street/008_market.tres" id="21_mb5cl"]
+[ext_resource type="Resource" uid="uid://qakmg2p74dfq" path="res://game/resources/customer/resources/market_street/010_market.tres" id="22_otdps"]
 
 [node name="CustomerManager" type="Node" unique_id=115059877]
 script = ExtResource("1_k345p")
-all_customers = Array[ExtResource("2_18e5q")]([ExtResource("3_ou6ss"), ExtResource("4_kxwxs"), ExtResource("5_itnu1"), ExtResource("5_gmgwh"), ExtResource("4_v3w5l"), ExtResource("3_argt7"), ExtResource("9_itnu1"), ExtResource("10_138uq"), ExtResource("11_pj4tu"), ExtResource("12_d40pq"), ExtResource("13_431cf"), ExtResource("14_qhuox"), ExtResource("15_503pj"), ExtResource("16_l07vn"), ExtResource("17_rwlx8")])
+all_customers = Array[ExtResource("2_18e5q")]([ExtResource("3_ou6ss"), ExtResource("4_kxwxs"), ExtResource("5_itnu1"), ExtResource("5_gmgwh"), ExtResource("4_v3w5l"), ExtResource("3_argt7"), ExtResource("9_itnu1"), ExtResource("10_138uq"), ExtResource("11_pj4tu"), ExtResource("12_d40pq"), ExtResource("13_431cf"), ExtResource("14_qhuox"), ExtResource("15_503pj"), ExtResource("16_l07vn"), ExtResource("17_rwlx8"), ExtResource("18_6ohtg"), ExtResource("19_pvhn2"), ExtResource("20_6wu0w"), ExtResource("21_mb5cl"), ExtResource("22_otdps")])
 tutorial_customers = Array[ExtResource("2_18e5q")]([ExtResource("3_v3w5l")])
