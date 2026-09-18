@@ -102,7 +102,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.43139207, 13.75)
 
 [node name="Stars" type="MeshInstance3D" parent="Player" unique_id=39438420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, -0.43139207, -13.75)
-visible = false
 mesh = SubResource("SphereMesh_t2dwb")
 skeleton = NodePath("../..")
 
@@ -117,7 +116,6 @@ data = {
 }
 
 [node name="BuildingGridMap" type="GridMap" parent="." unique_id=838364528]
-visible = false
 mesh_library = ExtResource("4_wnw7r")
 cell_size = Vector3(15, 0.3, 15)
 data = {
@@ -258,87 +256,113 @@ transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0
 customer_details = ExtResource("26_tl88k")
 house_number = 4
 
-[node name="MainStreet" type="Node" parent="." unique_id=192161911]
+[node name="Main Street" type="Node" parent="." unique_id=192161911]
 
-[node name="CustomerHouse01" parent="MainStreet" unique_id=1222941272 instance=ExtResource("15_mu2bj")]
+[node name="Road Signs" type="Node" parent="Main Street" unique_id=839729857]
+
+[node name="RoadSign" parent="Main Street/Road Signs" unique_id=1931961819 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 58, 0, 178)
+road_name = "Main Street"
+
+[node name="RoadSign2" parent="Main Street/Road Signs" unique_id=320888090 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 58, 0, -22.5)
+road_name = "Main Street"
+
+[node name="RoadSign3" parent="Main Street/Road Signs" unique_id=382786368 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 286, 0, -22.5)
+road_name = "Main Street"
+
+[node name="RoadSign4" parent="Main Street/Road Signs" unique_id=821804023 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 286, 0, 67.5)
+road_name = "Main Street"
+
+[node name="RoadSign5" parent="Main Street/Road Signs" unique_id=396761025 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 286, 0, 127.5)
+road_name = "Main Street"
+
+[node name="RoadSign6" parent="Main Street/Road Signs" unique_id=1074804287 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 286, 0, 177.5)
+road_name = "Main Street"
+
+[node name="CustomerHouse01" parent="Main Street" unique_id=1222941272 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 53, 0, 157)
 customer_details = ExtResource("11_naxfj")
 house_number = 1
 
-[node name="CustomerHouse02" parent="MainStreet" unique_id=701082564 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse02" parent="Main Street" unique_id=701082564 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 83, 0, 157)
 customer_details = ExtResource("12_elwot")
 house_number = 2
 
-[node name="CustomerHouse03" parent="MainStreet" unique_id=1660106776 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse03" parent="Main Street" unique_id=1660106776 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 53, 0, 127)
 customer_details = ExtResource("12_gxb3r")
 house_number = 3
 
-[node name="CustomerHouse04" parent="MainStreet" unique_id=593415410 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse04" parent="Main Street" unique_id=593415410 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 83, 0, 127)
 customer_details = ExtResource("14_5eqng")
 house_number = 4
 
-[node name="CustomerHouse05" parent="MainStreet" unique_id=706051933 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse05" parent="Main Street" unique_id=706051933 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 53, 0, 97)
 customer_details = ExtResource("13_elwot")
 house_number = 5
 
-[node name="CustomerHouse06" parent="MainStreet" unique_id=754949575 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse06" parent="Main Street" unique_id=754949575 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 83, 0, 67)
 customer_details = ExtResource("16_ahupy")
 house_number = 6
 
-[node name="CustomerHouse08" parent="MainStreet" unique_id=1497679117 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse08" parent="Main Street" unique_id=1497679117 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 83, 0, 37)
 customer_details = ExtResource("17_5fykb")
 house_number = 8
 
-[node name="CustomerHouse10" parent="MainStreet" unique_id=1801129004 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse10" parent="Main Street" unique_id=1801129004 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 83, 0, 7)
 customer_details = ExtResource("18_ynsmr")
 house_number = 10
 
-[node name="CustomerHouse12" parent="MainStreet" unique_id=2096093064 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse12" parent="Main Street" unique_id=2096093064 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 83, 0, -53)
 customer_details = ExtResource("36_b323c")
 house_number = 12
 
-[node name="CustomerHouse14" parent="MainStreet" unique_id=1756671748 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse14" parent="Main Street" unique_id=1756671748 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 83, 0, -83)
 customer_details = ExtResource("37_lv4hx")
 house_number = 14
 
-[node name="CustomerHouse16" parent="MainStreet" unique_id=658414624 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse16" parent="Main Street" unique_id=658414624 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 113, 0, -98)
 customer_details = ExtResource("38_kvgsg")
 house_number = 16
 
-[node name="CustomerHouse18" parent="MainStreet" unique_id=2042186429 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse18" parent="Main Street" unique_id=2042186429 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 143, 0, -98)
 customer_details = ExtResource("39_fd1qj")
 house_number = 18
 
-[node name="CustomerHouse20" parent="MainStreet" unique_id=495325634 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse20" parent="Main Street" unique_id=495325634 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 173, 0, -98)
 customer_details = ExtResource("40_t6n47")
 house_number = 20
 
-[node name="CustomerHouse22" parent="MainStreet" unique_id=1253725748 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse22" parent="Main Street" unique_id=1253725748 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 263, 0, -83)
 customer_details = ExtResource("14_mu2bj")
 house_number = 22
 
-[node name="CustomerHouse24" parent="MainStreet" unique_id=1764563864 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse24" parent="Main Street" unique_id=1764563864 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 263, 0, -53)
 customer_details = ExtResource("12_a7q3w")
 house_number = 24
 
-[node name="PlayerHouse" parent="MainStreet" unique_id=1226060873 instance=ExtResource("15_a7q3w")]
+[node name="PlayerHouse" parent="Main Street" unique_id=1226060873 instance=ExtResource("15_a7q3w")]
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 263, 0, 7)
 
-[node name="CustomerHouse28" parent="MainStreet" unique_id=848842858 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse28" parent="Main Street" unique_id=848842858 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 263, 0, 37)
 customer_details = ExtResource("11_uc1da")
 house_number = 28
