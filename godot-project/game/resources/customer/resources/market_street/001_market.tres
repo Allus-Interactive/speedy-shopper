@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://t3us0ubkkufm"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_yf7bn"]
+
+[resource]
+script = ExtResource("1_yf7bn")
+first_name = "Connor"
+last_name = "Wallace"
+address = "1 Market Street"
+dob_year = 1989
+dob_month = 1
+dob_day = 18
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

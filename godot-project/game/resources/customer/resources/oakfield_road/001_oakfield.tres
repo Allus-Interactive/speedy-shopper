@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://be40xbs2qjwn2"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_7d745"]
+
+[resource]
+script = ExtResource("1_7d745")
+title = 2
+first_name = "Rebecca"
+last_name = "Sinclair"
+address = "1 Oakfield Road"
+dob_year = 1994
+dob_month = 7
+dob_day = 3
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

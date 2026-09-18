@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://d3itr7lb3slit"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_m5h4i"]
+
+[resource]
+script = ExtResource("1_m5h4i")
+first_name = "Daniel"
+last_name = "Mercer"
+address = "1 Birchwood Close"
+dob_year = 1987
+dob_month = 3
+dob_day = 14
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

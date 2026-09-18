@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://dnvfupwp3e7il"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_5b0ox"]
+
+[resource]
+script = ExtResource("1_5b0ox")
+first_name = "Jamie"
+last_name = "Morrison"
+address = "1 Parkview Road"
+dob_year = 1958
+dob_month = 12
+dob_day = 26
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

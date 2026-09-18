@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://4j88ihafleag"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_v5tx1"]
+
+[resource]
+script = ExtResource("1_v5tx1")
+title = 3
+first_name = "Sophie"
+last_name = "Callaghan"
+address = "1 Cedar Grove"
+dob_year = 1992
+dob_month = 11
+dob_day = 29
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"

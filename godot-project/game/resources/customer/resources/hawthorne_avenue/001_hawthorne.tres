@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Customer" format=3 uid="uid://biytf8olofg1y"]
+
+[ext_resource type="Script" uid="uid://bdy0iaghvk05f" path="res://game/resources/customer/customer.gd" id="1_p215v"]
+
+[resource]
+script = ExtResource("1_p215v")
+first_name = "Liam"
+last_name = "Fraser"
+address = "1 Hawthorne Avenue"
+dob_year = 1981
+dob_month = 6
+dob_day = 7
+metadata/_custom_type_script = "uid://bdy0iaghvk05f"
