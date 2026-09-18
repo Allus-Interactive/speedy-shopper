@@ -115,7 +115,7 @@ data = {
 mesh_library = ExtResource("4_wnw7r")
 cell_size = Vector3(15, 0.3, 15)
 data = {
-"cells": PackedInt32Array(1, 1, 0, 11, 8, 1441794, 11, 10, 1441794, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2)
+"cells": PackedInt32Array(1, 1, 0, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2)
 }
 
 [node name="EnvironmentGridMap" type="GridMap" parent="." unique_id=431475957]
@@ -416,3 +416,33 @@ house_number = 7
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 233, 0, -83)
 customer_details = ExtResource("44_hp8nb")
 house_number = 8
+
+[node name="Parkview Road" type="Node" parent="." unique_id=1670232258]
+
+[node name="Road Signs" type="Node" parent="Parkview Road" unique_id=53358175]
+
+[node name="RoadSign" parent="Parkview Road/Road Signs" unique_id=430244374 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 178, 0, 178)
+road_name = "Parkview Road"
+
+[node name="RoadSign2" parent="Parkview Road/Road Signs" unique_id=403333899 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 166, 0, -13)
+road_name = "Parkview Road"
+
+[node name="RoadSign3" parent="Parkview Road/Road Signs" unique_id=1109694392 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 179, 0, 67.5)
+road_name = "Parkview Road"
+
+[node name="RoadSign4" parent="Parkview Road/Road Signs" unique_id=1184202944 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 196, 0, 97.5)
+road_name = "Parkview Road"
+
+[node name="CustomerHouse01" parent="Parkview Road" unique_id=906209966 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 173, 0, 157)
+customer_details = ExtResource("11_d8e8i")
+house_number = 1
+
+[node name="CustomerHouse03" parent="Parkview Road" unique_id=688414218 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 173, 0, 127)
+customer_details = ExtResource("13_p0f41")
+house_number = 3
