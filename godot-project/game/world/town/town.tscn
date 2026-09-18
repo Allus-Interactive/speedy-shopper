@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://b46fc78i8dy72" path="res://game/resources/customer/resources/main_street/even/006_main_street.tres" id="16_ahupy"]
 [ext_resource type="Resource" uid="uid://bgc3wl0wm20ym" path="res://game/resources/customer/resources/main_street/even/008_main_street.tres" id="17_5fykb"]
 [ext_resource type="Resource" uid="uid://e1oknk58j5ab" path="res://game/resources/customer/resources/main_street/even/010_main_street.tres" id="18_ynsmr"]
+[ext_resource type="PackedScene" uid="uid://8gv0kco8bu08" path="res://game/environment/road_sign/road_sign.tscn" id="23_y8416"]
 [ext_resource type="Resource" uid="uid://ddyhd6k8wcave" path="res://game/resources/customer/resources/leuchars_lane/001_leuchars.tres" id="23_ynsmr"]
 [ext_resource type="Resource" uid="uid://coi6vi8h2vlj0" path="res://game/resources/customer/resources/leuchars_lane/002_leuchars.tres" id="24_2r6j2"]
 [ext_resource type="Resource" uid="uid://bw4dnb6h2uw01" path="res://game/resources/customer/resources/leuchars_lane/003_leuchars.tres" id="25_y8416"]
@@ -160,6 +161,14 @@ customer_details = ExtResource("11_uc1da")
 house_number = 30
 
 [node name="LeucharsLane" type="Node" parent="." unique_id=492230757]
+
+[node name="RoadSigns" type="Node" parent="LeucharsLane" unique_id=1037769501]
+
+[node name="RoadSign" parent="LeucharsLane/RoadSigns" unique_id=574591718 instance=ExtResource("23_y8416")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 267, 0, 136)
+
+[node name="RoadSign2" parent="LeucharsLane/RoadSigns" unique_id=1734807865 instance=ExtResource("23_y8416")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 197, 0, 119)
 
 [node name="CustomerHouse1" parent="LeucharsLane" unique_id=1315915122 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 248, 0, 142)

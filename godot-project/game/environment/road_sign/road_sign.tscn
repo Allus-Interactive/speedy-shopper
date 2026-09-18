@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://8gv0kco8bu08"]
+
+[ext_resource type="Script" uid="uid://dwxxc7o6dsy1r" path="res://game/environment/road_sign/road_sign.gd" id="1_38ouy"]
+[ext_resource type="ArrayMesh" uid="uid://dapqfvf4c640k" path="res://assets/environment/road_signs/road_sign.tres" id="1_t0gsh"]
+
+[node name="RoadSign" type="Node3D" unique_id=574591718]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_38ouy")
+
+[node name="RoadSign" type="MeshInstance3D" parent="." unique_id=835152594]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_t0gsh")
+
+[node name="RoadSignLabel" type="Label3D" parent="RoadSign" unique_id=1816776460]
+transform = Transform3D(-2.9140914e-09, 0, -0.06666663, 0, 0.06666663, 0, 0.06666663, 0, -2.9140914e-09, -0.052, 0.295, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "HAWTHORNE AVENUE"
+font_size = 192
