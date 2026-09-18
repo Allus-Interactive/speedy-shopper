@@ -115,17 +115,13 @@ func _process_gears() -> void:
 
 	var direction = forward_direction.dot(movement_direction)
 	if GameManager.handbrake_engaged:
-		print("Parked")
 		gears.texture = park_icon
 	elif whole_speed == 0:
-		print("Neutral")
 		gears.texture = neutral_icon
 	else:
 		if direction > 0:
-			print("Reverse")
 			gears.texture = reverse_icon
 		if direction < 0 :
-			print("drive")
 			gears.texture = drive_icon
 
 func traction(_traction_speed):

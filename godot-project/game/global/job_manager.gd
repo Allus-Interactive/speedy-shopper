@@ -61,8 +61,6 @@ func generate_order() -> void:
 		available_orders.append(order)
 		
 		order_id += 1
-	
-	print("Orders: ", available_orders.size())
 
 func generate_tutorial_order() -> void:
 	available_orders.clear()
@@ -106,8 +104,6 @@ func generate_tutorial_order() -> void:
 	order.price = calculate_order_price(products_in_order)
 	
 	available_orders.append(order)
-	
-	print("Orders: ", available_orders.size())
 
 func select_order_by_id(id: int) -> void:
 	for order in available_orders:
