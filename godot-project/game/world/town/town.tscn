@@ -12,11 +12,13 @@
 [ext_resource type="Resource" uid="uid://4j88ihafleag" path="res://game/resources/customer/resources/cedar_grove/001_cedar_grove.tres" id="11_d8e8i"]
 [ext_resource type="Resource" uid="uid://brf4frkpxvupc" path="res://game/resources/customer/resources/main_street/odd/001_main_street.tres" id="11_naxfj"]
 [ext_resource type="Resource" uid="uid://gu8mr36fd2sw" path="res://game/resources/customer/resources/main_street/even/030_main_street.tres" id="11_uc1da"]
+[ext_resource type="Resource" uid="uid://d3itr7lb3slit" path="res://game/resources/customer/resources/birchwood_close/001_birchwood.tres" id="12_2ihah"]
 [ext_resource type="Resource" uid="uid://dyhfsci270pac" path="res://game/resources/customer/resources/main_street/even/028_main_street.tres" id="12_a7q3w"]
 [ext_resource type="Resource" uid="uid://dieeetaoqw8dd" path="res://game/resources/customer/resources/cedar_grove/002_cedar_grove.tres" id="12_ba124"]
 [ext_resource type="Resource" uid="uid://dp1yajhrgrtuj" path="res://game/resources/customer/resources/main_street/even/002_main_street.tres" id="12_elwot"]
 [ext_resource type="Resource" uid="uid://c37jbx8cmglje" path="res://game/resources/customer/resources/main_street/odd/003_main_street.tres" id="12_gxb3r"]
 [ext_resource type="Resource" uid="uid://biweio0scbu1j" path="res://game/resources/customer/resources/main_street/odd/005_main_street.tres" id="13_elwot"]
+[ext_resource type="Resource" uid="uid://bo3rmwbtg085i" path="res://game/resources/customer/resources/birchwood_close/003_birchwood.tres" id="13_hp8nb"]
 [ext_resource type="Resource" uid="uid://dhklnlqt2rqre" path="res://game/resources/customer/resources/cedar_grove/003_cedar_grove.tres" id="13_p0f41"]
 [ext_resource type="Resource" uid="uid://bnr1047vs53mn" path="res://game/resources/customer/resources/main_street/even/004_main_street.tres" id="14_5eqng"]
 [ext_resource type="Resource" uid="uid://idcrnlnkgfis" path="res://game/resources/customer/resources/cedar_grove/004_cedar_grove.tres" id="14_l1w7i"]
@@ -107,7 +109,7 @@ data = {
 mesh_library = ExtResource("4_wnw7r")
 cell_size = Vector3(15, 0.3, 15)
 data = {
-"cells": PackedInt32Array(1, 1, 0, 14, 5, 2, 16, 5, 2, 11, 8, 1441794, 11, 10, 1441794, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2, 11, 65533, 655362, 9, 65533, 655362, 7, 65533, 655362, 7, 65535, 2, 9, 65535, 2, 11, 65535, 2)
+"cells": PackedInt32Array(1, 1, 0, 11, 8, 1441794, 11, 10, 1441794, 5, 65532, 1048578, 5, 65530, 1048578, 11, 65529, 2, 7, 65529, 2, 9, 65529, 2, 11, 65533, 655362, 9, 65533, 655362, 7, 65533, 655362, 7, 65535, 2, 9, 65535, 2, 11, 65535, 2)
 }
 
 [node name="EnvironmentGridMap" type="GridMap" parent="." unique_id=431475957]
@@ -118,11 +120,33 @@ cell_size = Vector3(3, 0.3, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 2, 16)
 is_in_shop = false
 
+[node name="Birchwood Close" type="Node" parent="." unique_id=448754309]
+
+[node name="RoadSigns" type="Node" parent="Birchwood Close" unique_id=999933128]
+
+[node name="RoadSign" parent="Birchwood Close/RoadSigns" unique_id=574591718 instance=ExtResource("23_y8416")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 267, 0, 76)
+road_name = "Birchwood Close"
+
+[node name="RoadSign2" parent="Birchwood Close/RoadSigns" unique_id=1341648122 instance=ExtResource("23_y8416")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 197, 0, 59)
+road_name = "Birchwood Close"
+
+[node name="CustomerHouse1" parent="Birchwood Close" unique_id=1333288050 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 248, 0, 82)
+customer_details = ExtResource("12_2ihah")
+house_number = 1
+
+[node name="CustomerHouse3" parent="Birchwood Close" unique_id=95526297 instance=ExtResource("15_mu2bj")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 218, 0, 82)
+customer_details = ExtResource("13_hp8nb")
+house_number = 3
+
 [node name="Cedar Grove" type="Node" parent="." unique_id=1443290711]
 
 [node name="Road Signs" type="Node" parent="Cedar Grove" unique_id=248684764]
 
-[node name="RoadSign" parent="Cedar Grove/Road Signs" unique_id=574591718 instance=ExtResource("23_y8416")]
+[node name="RoadSign" parent="Cedar Grove/Road Signs" unique_id=567437803 instance=ExtResource("23_y8416")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 118, 0, 178)
 road_name = "Cedar Grove"
 
@@ -130,7 +154,7 @@ road_name = "Cedar Grove"
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 136, 0, 107)
 road_name = "Cedar Grove"
 
-[node name="CustomerHouse01" parent="Cedar Grove" unique_id=1333288050 instance=ExtResource("15_mu2bj")]
+[node name="CustomerHouse01" parent="Cedar Grove" unique_id=118025180 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 113, 0, 157)
 customer_details = ExtResource("11_d8e8i")
 house_number = 1
@@ -156,9 +180,11 @@ house_number = 4
 
 [node name="RoadSign" parent="LeucharsLane/RoadSigns" unique_id=536668855 instance=ExtResource("23_y8416")]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 267, 0, 136)
+road_name = "Leuchars Lane"
 
 [node name="RoadSign2" parent="LeucharsLane/RoadSigns" unique_id=1734807865 instance=ExtResource("23_y8416")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 197, 0, 119)
+road_name = "Leuchars Lane"
 
 [node name="CustomerHouse1" parent="LeucharsLane" unique_id=1315915122 instance=ExtResource("15_mu2bj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 248, 0, 142)
@@ -297,12 +323,12 @@ road_name = "Oakfield Road"
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 226, 0, -13)
 road_name = "Oakfield Road"
 
-[node name="RoadSign4" parent="Oakfield Road/Road Signs" unique_id=1354261176 instance=ExtResource("23_y8416")]
-transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 226, 0, -103)
-road_name = "Oakfield Road"
-
 [node name="RoadSign3" parent="Oakfield Road/Road Signs" unique_id=84902297 instance=ExtResource("23_y8416")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 208, 0, -32)
+road_name = "Oakfield Road"
+
+[node name="RoadSign4" parent="Oakfield Road/Road Signs" unique_id=1354261176 instance=ExtResource("23_y8416")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 226, 0, -103)
 road_name = "Oakfield Road"
 
 [node name="CustomerHouse1" parent="Oakfield Road" unique_id=107342849 instance=ExtResource("15_mu2bj")]
