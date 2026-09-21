@@ -28,6 +28,8 @@ var sfx_bus : int = AudioServer.get_bus_index("SFX")
 var music_volume : float = 0.0
 var sfx_volume : float = 0.0
 var use_24_hour : bool = true
+var use_directional_arrow : bool = true
+var display_directional_arrow : bool = false
 
 # Player Stats
 var order_delivered : int = 0

@@ -100,10 +100,33 @@ vertical_alignment = 1
 
 [node name="TimeCheckButton" type="CheckButton" parent="." unique_id=1730348406]
 layout_mode = 0
-offset_left = 440.0
+offset_left = 520.0
 offset_top = 367.0
-offset_right = 484.0
+offset_right = 564.0
 offset_bottom = 391.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_gc4gq")
+
+[node name="ArrowNavigationLabel" type="Label" parent="." unique_id=1770563042]
+custom_minimum_size = Vector2(640, 32)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 416.0
+offset_right = 960.0
+offset_bottom = 459.0
+theme = ExtResource("2_gc4gq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Show Arrow Navigation
+"
+vertical_alignment = 1
+
+[node name="ArrowNavigationButton" type="CheckButton" parent="." unique_id=86736144]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 403.0
+offset_right = 564.0
+offset_bottom = 427.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
 
@@ -123,4 +146,5 @@ texture_hover = ExtResource("6_3s7ga")
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="SfxSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="TimeCheckButton" to="." method="_on_time_check_button_toggled"]
+[connection signal="toggled" from="ArrowNavigationButton" to="." method="_on_time_check_button_toggled"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

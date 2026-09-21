@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://27douiywqnbl"]
+
+[ext_resource type="Script" uid="uid://cf4fc43k5x6v7" path="res://game/world/directional_arrow/directional_arrow.gd" id="1_nxuws"]
+[ext_resource type="ArrayMesh" uid="uid://coxwsbmekjgke" path="res://assets/directional_arrow/directional_arrow.tres" id="3_x2s44"]
+
+[node name="DirectionalArrow" type="Node3D" unique_id=1286428228]
+script = ExtResource("1_nxuws")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1852592745]
+transform = Transform3D(0.35355338, 0, -0.35355338, 0, 0.3, 0, 0.35355338, 0, 0.35355338, 0, 0, -1)
+cast_shadow = 0
+mesh = ExtResource("3_x2s44")

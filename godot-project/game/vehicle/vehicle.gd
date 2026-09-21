@@ -28,9 +28,13 @@ var reverse_icon : CompressedTexture2D = preload("res://assets/ui/driving/revers
 var neutral_icon : CompressedTexture2D = preload("res://assets/ui/driving/neutral.png")
 var park_icon : CompressedTexture2D = preload("res://assets/ui/driving/park.png")
 
+# directional arrow
+@onready var directional_arrow: DirectionalArrow = $DirectionalArrow
+
 func _ready() -> void:
 	speed_label.text = "0"
 	speedometer.visible = false
+	SignalManager.new_delivery_accepted.connect(_show_directional_arrow)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("park"):
@@ -142,8 +146,14 @@ func interact(p: Player) -> void:
 	player = p
 	p.enter_vehicle(self)
 	speedometer.visible = true
+	_show_directional_arrow()
 
 func exit_vehicle() -> void:
 	if player:
 		player.exit_vehicle(self)
 		speedometer.visible = false
+		directional_arrow.disable()
+
+func _show_directional_arrow() -> void:
+	if GameManager.use_directional_arrow and OrderManager.active_delivery != null and GameManager.is_in_vehicle:
+		directional_arrow.initialize_arrow()

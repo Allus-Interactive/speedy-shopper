@@ -14,7 +14,7 @@ script = ExtResource("1_k3ugt")
 [node name="HouseG" type="MeshInstance3D" parent="." unique_id=1578850721]
 mesh = ExtResource("1_o5dfo")
 
-[node name="HouseNumber" type="Label3D" parent="." unique_id=1770527224]
+[node name="HouseNumber" type="Label3D" parent="." unique_id=1770527224 groups=["customer_house"]]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.3, 3, -4.35)
 double_sided = false
 text = "26"

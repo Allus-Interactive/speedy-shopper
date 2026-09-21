@@ -6,6 +6,7 @@ class_name SettingsScreen#
 @onready var sfx_slider: HSlider = $SfxSlider
 @onready var sfx_player: SfxPlayer = $SFXPlayer
 @onready var time_check_button: CheckButton = $TimeCheckButton
+@onready var arrow_navigation_button: CheckButton = $ArrowNavigationButton
 
 @onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
@@ -22,16 +23,21 @@ func _ready() -> void:
 	music_slider.value = GameManager.music_volume
 	sfx_slider.value = GameManager.sfx_volume
 	time_check_button.button_pressed = GameManager.use_24_hour
+	arrow_navigation_button.button_pressed = GameManager.use_directional_arrow
 
 func save_settings() -> void:
 	config.set_value("audio", "music", music_slider.value)
 	config.set_value("audio", "sfx", sfx_slider.value)
+	config.set_value("button", "time", time_check_button.button_pressed)
+	config.set_value("button", "arrow", arrow_navigation_button.button_pressed)
 	config.save("user://speedy_shopper_settings.cfg")
 
 func load_settings() -> void:
 	if config.load("user://speedy_shopper_settings.cfg") == OK:
 		music_slider.value = config.get_value("audio", "music", 0)
 		sfx_slider.value = config.get_value("audio", "sfx", 0)
+		time_check_button.button_pressed = config.get_value("button", "time", 0)
+		arrow_navigation_button.button_pressed = config.get_value("button", "arrow", 0)
 
 func _on_music_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(music_bus, value)

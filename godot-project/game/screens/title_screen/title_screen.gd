@@ -18,6 +18,8 @@ func load_settings() -> void:
 	if config.load("user://speedy_shopper_settings.cfg") == OK:
 		GameManager.music_volume = config.get_value("audio", "music", 0)
 		GameManager.sfx_volume = config.get_value("audio", "sfx", 0)
+		GameManager.use_24_hour = config.get_value("button", "time", 0)
+		GameManager.use_directional_arrow = config.get_value("button", "arrow", 0)
 		
 		AudioServer.set_bus_volume_db(music_bus, GameManager.music_volume)
 		AudioServer.set_bus_volume_db(sfx_bus, GameManager.sfx_volume)

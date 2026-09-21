@@ -7,6 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bwykf0sqiiesh" path="res://assets/vehicles/van/van_wheel_back_left.tres" id="5_1wjtb"]
 [ext_resource type="ArrayMesh" uid="uid://p0celopgg8yr" path="res://assets/vehicles/van/van_wheel_back_right.tres" id="6_2uabk"]
 [ext_resource type="Texture2D" uid="uid://dclc0ebpejsnl" path="res://assets/ui/driving/digital_speedo_no_gears.png" id="8_1wjtb"]
+[ext_resource type="PackedScene" uid="uid://27douiywqnbl" path="res://game/world/directional_arrow/directional_arrow.tscn" id="8_2uabk"]
 [ext_resource type="ArrayMesh" uid="uid://dx0gs5qpntloy" path="res://assets/vehicles/van/kenney_van_body.tres" id="8_qqfut"]
 [ext_resource type="Texture2D" uid="uid://licm1vq5h52e" path="res://assets/ui/driving/driving.png" id="9_qqfut"]
 
@@ -139,6 +140,9 @@ shape = SubResource("BoxShape3D_xaafv")
 [node name="RearBumper" type="CollisionShape3D" parent="Van" unique_id=1344459511]
 transform = Transform3D(4.3711385e-08, 0.99999976, -8.742277e-08, 1, -4.37114e-08, 0, -3.8213684e-15, -8.742277e-08, -0.99999976, 0.0013190495, 0.4120211, -2.6713035)
 shape = SubResource("CapsuleShape3D_7kmqy")
+
+[node name="DirectionalArrow" parent="Van" unique_id=1286428228 instance=ExtResource("8_2uabk")]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0, 5, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1392315928]
 

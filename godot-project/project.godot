@@ -39,12 +39,17 @@ TutorialManager="*uid://iwanrbaoco20"
 LoadingOverlay="*uid://3uwajgjnnnrn"
 PauseOverlay="*uid://li24ord1cfkc"
 GameTimeManager="*uid://dsa8kr61chpsx"
+SignalManager="*uid://duwutevcb1dl7"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/extend_to_title=true
+
+[global_group]
+
+customer_house=""
 
 [input]
 
