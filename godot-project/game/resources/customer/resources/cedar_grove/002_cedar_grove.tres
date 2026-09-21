@@ -6,7 +6,7 @@
 script = ExtResource("1_c4eg6")
 first_name = "Adam"
 last_name = "MacKenzie"
-address = " Cedar Grove"
+address = "2 Cedar Grove"
 dob_year = 1991
 dob_month = 5
 dob_day = 8
