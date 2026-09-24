@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://by64gyav16ry7"]
 
 [ext_resource type="Script" uid="uid://vuugthcjcxll" path="res://game/screens/title_screen/title_screen.gd" id="1_s6vu8"]
-[ext_resource type="Texture2D" uid="uid://v1d3ee5q0u6h" path="res://assets/backgrounds/title_screen_logo.png" id="2_ej2s8"]
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="2_kxwh2"]
+[ext_resource type="Texture2D" uid="uid://bd47gx27yglwh" path="res://assets/backgrounds/title_screen_logoless.png" id="2_ot2xe"]
+[ext_resource type="Texture2D" uid="uid://s6pi86qw73f7" path="res://assets/logos/logo.png" id="3_km4st"]
 [ext_resource type="Texture2D" uid="uid://b7yleo0crao5b" path="res://assets/buttons/play/play.png" id="4_c22wc"]
 [ext_resource type="Texture2D" uid="uid://bqdakajcvpr1w" path="res://assets/buttons/play/play_pressed.png" id="5_3u6mi"]
 [ext_resource type="Texture2D" uid="uid://7kjlvdr6mwmn" path="res://assets/buttons/play/play_hover.png" id="6_q7yvo"]
@@ -15,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://c052dckjwe4v5" path="res://assets/buttons/stats/stats_hover.png" id="11_ar6uq"]
 [ext_resource type="Texture2D" uid="uid://djumdjuqwt18s" path="res://assets/buttons/settings/settings_pressed.png" id="11_km4st"]
 [ext_resource type="Texture2D" uid="uid://caxp7q5qi4md2" path="res://assets/buttons/settings/settings_hover.png" id="12_ar6uq"]
+[ext_resource type="Texture2D" uid="uid://crqij3ufl1gj0" path="res://assets/buttons/exit/exit.png" id="16_2lack"]
+[ext_resource type="Texture2D" uid="uid://dddw35v38awq" path="res://assets/buttons/exit/exit_hover.png" id="17_26f05"]
+[ext_resource type="Texture2D" uid="uid://cq06g746ehnm3" path="res://assets/buttons/exit/exit_pressed.png" id="18_cb66b"]
 
 [node name="TitleScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -30,15 +34,23 @@ custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 721.0
-texture = ExtResource("2_ej2s8")
+texture = ExtResource("2_ot2xe")
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1027634799]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 208.0
+offset_right = 688.0
+offset_bottom = 512.0
+texture = ExtResource("3_km4st")
 
 [node name="PlayButton" type="TextureButton" parent="." unique_id=1894007877]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
-offset_left = 315.0
-offset_top = 470.0
-offset_right = 615.0
-offset_bottom = 520.0
+offset_left = 950.0
+offset_top = 50.0
+offset_right = 1250.0
+offset_bottom = 100.0
 texture_normal = ExtResource("4_c22wc")
 texture_pressed = ExtResource("5_3u6mi")
 texture_hover = ExtResource("6_q7yvo")
@@ -46,10 +58,10 @@ texture_hover = ExtResource("6_q7yvo")
 [node name="TutorialButton" type="TextureButton" parent="." unique_id=522048761]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
-offset_left = 665.0
-offset_top = 470.0
-offset_right = 965.0
-offset_bottom = 520.0
+offset_left = 950.0
+offset_top = 125.0
+offset_right = 1250.0
+offset_bottom = 175.0
 texture_normal = ExtResource("7_4oe75")
 texture_pressed = ExtResource("8_tdblo")
 texture_hover = ExtResource("9_c7fsb")
@@ -57,10 +69,10 @@ texture_hover = ExtResource("9_c7fsb")
 [node name="StatsButton" type="TextureButton" parent="." unique_id=1816748276]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
-offset_left = 490.0
-offset_top = 545.0
-offset_right = 790.0
-offset_bottom = 595.0
+offset_left = 950.0
+offset_top = 200.0
+offset_right = 1250.0
+offset_bottom = 250.0
 texture_normal = ExtResource("9_ot2xe")
 texture_pressed = ExtResource("10_km4st")
 texture_hover = ExtResource("11_ar6uq")
@@ -68,13 +80,24 @@ texture_hover = ExtResource("11_ar6uq")
 [node name="SettingsButton" type="TextureButton" parent="." unique_id=714299994]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
-offset_left = 490.0
-offset_top = 620.0
-offset_right = 790.0
-offset_bottom = 670.0
+offset_left = 950.0
+offset_top = 275.0
+offset_right = 1250.0
+offset_bottom = 325.0
 texture_normal = ExtResource("10_ot2xe")
 texture_pressed = ExtResource("11_km4st")
 texture_hover = ExtResource("12_ar6uq")
+
+[node name="ExitButton" type="TextureButton" parent="." unique_id=574076534]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 0
+offset_left = 950.0
+offset_top = 350.0
+offset_right = 1250.0
+offset_bottom = 400.0
+texture_normal = ExtResource("16_2lack")
+texture_pressed = ExtResource("17_26f05")
+texture_hover = ExtResource("18_cb66b")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_kxwh2")]
 position = Vector2(490, 560)
@@ -83,3 +106,4 @@ position = Vector2(490, 560)
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="StatsButton" to="." method="_on_stats_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
