@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://3ew2mrolve87"]
+
+[ext_resource type="Script" uid="uid://beaynf7opuj6a" path="res://game/screens/controls_screen/controls_screen.gd" id="1_1uf0h"]
+[ext_resource type="Texture2D" uid="uid://bd47gx27yglwh" path="res://assets/backgrounds/title_screen_logoless.png" id="2_ad3a4"]
+[ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="3_el5nh"]
+[ext_resource type="Texture2D" uid="uid://bt327e87vcc0j" path="res://assets/buttons/back/back.png" id="4_f0yqh"]
+[ext_resource type="Texture2D" uid="uid://bn6d88n03fhwq" path="res://assets/buttons/back/back_pressed.png" id="5_kefsj"]
+[ext_resource type="Texture2D" uid="uid://y6jrh2g7iate" path="res://assets/buttons/back/back_hover.png" id="6_ff2oh"]
+[ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="7_ip4nh"]
+
+[node name="ControlsScreen" type="Control" unique_id=585573657]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1uf0h")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1285739726]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ad3a4")
+
+[node name="Label" type="Label" parent="." unique_id=999125562]
+custom_minimum_size = Vector2(1280, 200)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 200.0
+theme = ExtResource("3_el5nh")
+theme_override_font_sizes/font_size = 64
+text = "CONTROLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlLabel" type="Label" parent="." unique_id=848461063]
+custom_minimum_size = Vector2(250, 32)
+layout_mode = 0
+offset_left = 435.0
+offset_top = 129.0
+offset_right = 685.0
+offset_bottom = 586.0
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "WALKING
+Movement
+Crouch
+Interact
+Open/Close PDA
+
+DRIVING
+Drive
+Enter/Exit Vehicle
+Parking Brake
+
+INTERACTING WITH PRODUCTS
+Rotate
+Scan
+Zoom
+Exit Interaction
+
+UI
+Navigate PDA
+Select UI Element"
+vertical_alignment = 1
+
+[node name="KeyboardControls" type="Label" parent="." unique_id=2079065856]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 0
+offset_left = 685.0
+offset_top = 129.0
+offset_right = 845.0
+offset_bottom = 586.0
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "KEYBOARD
+WASD
+C/Ctrl
+E
+T
+
+
+WASD
+E
+P
+
+
+WASD
+Left Mouse Click
+Mouse Wheel
+R
+
+
+Arrow Keys
+Space"
+vertical_alignment = 1
+
+[node name="GamepadControls" type="Label" parent="." unique_id=1690265964]
+visible = false
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 129.0
+offset_right = 1005.0
+offset_bottom = 586.0
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "GAMEPAD
+Left Stick
+Left Trigger
+A
+D-Pad Up
+
+
+Left Stick
+A
+X
+
+
+Left Stick
+A
+Left/Right Triggers
+B
+
+
+D-Pad
+Y"
+vertical_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1941135018]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 620.0
+offset_right = 790.0
+offset_bottom = 670.0
+texture_normal = ExtResource("4_f0yqh")
+texture_pressed = ExtResource("5_kefsj")
+texture_hover = ExtResource("6_ff2oh")
+
+[node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("7_ip4nh")]
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

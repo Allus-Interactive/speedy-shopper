@@ -17,8 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://djumdjuqwt18s" path="res://assets/buttons/settings/settings_pressed.png" id="11_km4st"]
 [ext_resource type="Texture2D" uid="uid://caxp7q5qi4md2" path="res://assets/buttons/settings/settings_hover.png" id="12_ar6uq"]
 [ext_resource type="Texture2D" uid="uid://crqij3ufl1gj0" path="res://assets/buttons/exit/exit.png" id="16_2lack"]
+[ext_resource type="Texture2D" uid="uid://by08cnauropwt" path="res://assets/buttons/controls/controls.png" id="16_s6v1e"]
 [ext_resource type="Texture2D" uid="uid://dddw35v38awq" path="res://assets/buttons/exit/exit_hover.png" id="17_26f05"]
+[ext_resource type="Texture2D" uid="uid://c3uihoo7x5pup" path="res://assets/buttons/controls/controls_pressed.png" id="17_ie1m7"]
 [ext_resource type="Texture2D" uid="uid://cq06g746ehnm3" path="res://assets/buttons/exit/exit_pressed.png" id="18_cb66b"]
+[ext_resource type="Texture2D" uid="uid://dlx35k1iprbej" path="res://assets/buttons/controls/controls_hover.png" id="18_jfsmh"]
 
 [node name="TitleScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -88,13 +91,24 @@ texture_normal = ExtResource("10_ot2xe")
 texture_pressed = ExtResource("11_km4st")
 texture_hover = ExtResource("12_ar6uq")
 
-[node name="ExitButton" type="TextureButton" parent="." unique_id=574076534]
+[node name="ControlsButton" type="TextureButton" parent="." unique_id=779732354]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
 offset_left = 950.0
 offset_top = 350.0
 offset_right = 1250.0
 offset_bottom = 400.0
+texture_normal = ExtResource("16_s6v1e")
+texture_pressed = ExtResource("17_ie1m7")
+texture_hover = ExtResource("18_jfsmh")
+
+[node name="ExitButton" type="TextureButton" parent="." unique_id=574076534]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 0
+offset_left = 950.0
+offset_top = 425.0
+offset_right = 1250.0
+offset_bottom = 475.0
 texture_normal = ExtResource("16_2lack")
 texture_pressed = ExtResource("17_26f05")
 texture_hover = ExtResource("18_cb66b")
@@ -106,4 +120,5 @@ position = Vector2(490, 560)
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="StatsButton" to="." method="_on_stats_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

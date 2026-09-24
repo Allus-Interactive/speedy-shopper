@@ -7,12 +7,10 @@ extends Control
 
 @onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	days_worked_stat.text = str(GameManager.days_worked) + " Days"
 	orders_delivered_stat.text = str(GameManager.orders_delivered) + " Orders"
 	total_earnings_stat.text = "£" + "%0.2f" % GameManager.daily_earnings
-
 
 func _on_back_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
