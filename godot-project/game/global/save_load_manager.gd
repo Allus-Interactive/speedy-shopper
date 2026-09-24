@@ -13,6 +13,8 @@ func save_game_data() -> void:
 	config.set_value("time", "hour", GameTimeManager.hour)
 	config.set_value("time", "minute", GameTimeManager.minute)
 	config.set_value("time", "day", GameTimeManager.day)
+	config.set_value("gameplay", "player_position", GameManager.player_position)
+	config.set_value("gameplay", "player_rotation", GameManager.player_rotation)
 	config.set_value("gameplay", "van_position", GameManager.van_position)
 	config.set_value("gameplay", "van_rotation", GameManager.van_rotation)
 	config.save("user://speedy_shopper_save_file.cfg")
@@ -26,8 +28,10 @@ func load_game_data() -> void:
 		GameTimeManager.hour = config.get_value("time", "hour", 10)
 		GameTimeManager.minute = config.get_value("time", "minute", 0)
 		GameTimeManager.day = config.get_value("time", "day", 0)
-		GameManager.van_position = config.get_value("gameplay", "van_position", 0)
-		GameManager.van_rotation = config.get_value("gameplay", "van_rotation", 0)
+		GameManager.player_position = config.get_value("gameplay", "player_position", Vector3.ZERO)
+		GameManager.player_rotation = config.get_value("gameplay", "player_rotation", Vector3.ZERO)
+		GameManager.van_position = config.get_value("gameplay", "van_position", Vector3.ZERO)
+		GameManager.van_rotation = config.get_value("gameplay", "van_rotation", Vector3.ZERO)
 
 func reset_game_data() -> void:
 	GameManager.days_worked = 0

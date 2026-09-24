@@ -1,7 +1,6 @@
 extends Node
 
 var daily_earnings: float = 0
-var player_money: float = 0
 
 var is_scanner_open: bool = false
 
@@ -36,8 +35,15 @@ var orders_delivered : int = 0
 var days_worked : int = 0
 var total_earnings : float = 0.0
 
+# Player positioning
+var player_position : Vector3 = Vector3.ZERO
+var player_rotation : Vector3 = Vector3.ZERO
+
+# Van positioning
 var van_position : Vector3 = Vector3.ZERO
 var van_rotation : Vector3 = Vector3.ZERO
+
+var previous_scene : String = ""
 
 func thread_load_scene(scene_id: String) -> void:
 	LoadingOverlay.toggle_loading(true)

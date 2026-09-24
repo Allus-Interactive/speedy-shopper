@@ -3,7 +3,13 @@ extends Node3D
 @onready var crate_hold_point: Marker3D = $CrateHoldPoint
 @onready var delivery_crate: DeliveryCrate = $CrateHoldPoint/DeliveryCrate
 
+@onready var player: Player = $Player
+
 func _ready() -> void:
+	# Set global position of player to override saved values used for town scene
+	player.global_position = Vector3(-5.5, 0, 0)
+	player.global_rotation = Vector3.ZERO
+	
 	GameManager.crate_hold_point = crate_hold_point
 	GameManager.delivery_crate = delivery_crate
 	

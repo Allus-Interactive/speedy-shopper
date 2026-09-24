@@ -80,7 +80,13 @@ var is_inspecting_product: bool = false
 @onready var fade: ColorRect = $FadeToBlack/Fade
 
 func _ready() -> void:
+	# Initialize earnings label
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
+	
+	# use saved player position if entering scene from title screen
+	if GameManager.previous_scene == "Title":
+		self.global_position = GameManager.player_position
+		self.global_rotation = GameManager.player_rotation
 	
 	tooltip_panel.hide()
 	
@@ -393,6 +399,10 @@ func complete_order() -> void:
 func complete_delivery() -> void:
 	# TODO: Animate delivery
 	
+	# store player position
+	GameManager.player_position = self.global_position
+	GameManager.player_rotation = self.global_rotation
+	
 	# Pay the player
 	GameManager.daily_earnings += calculate_player_tip()
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
@@ -606,7 +616,6 @@ func exit_vehicle(v: Vehicle) -> void:
 	global_position = v.global_position + Vector3(3, 0, 3)
 	
 	# store vehicle location
-	# TODO: save these values in the save file
 	GameManager.van_position = v.global_position
 	GameManager.van_rotation = v.global_rotation
 	
