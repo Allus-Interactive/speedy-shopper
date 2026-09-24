@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://ch1vbujua1g7t"]
+
+[ext_resource type="Script" uid="uid://d2yskqgck6m0v" path="res://game/screens/stats_screen/stats_screen.gd" id="1_v3kpb"]
+[ext_resource type="Texture2D" uid="uid://bd47gx27yglwh" path="res://assets/backgrounds/title_screen_logoless.png" id="2_6wb13"]
+[ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="3_l3t6t"]
+[ext_resource type="Texture2D" uid="uid://bt327e87vcc0j" path="res://assets/buttons/back/back.png" id="4_adkyy"]
+[ext_resource type="Texture2D" uid="uid://bn6d88n03fhwq" path="res://assets/buttons/back/back_pressed.png" id="5_82qlm"]
+[ext_resource type="Texture2D" uid="uid://y6jrh2g7iate" path="res://assets/buttons/back/back_hover.png" id="6_ipdbh"]
+[ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="7_3sdf8"]
+
+[node name="StatsScreen" type="Control" unique_id=585573657]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v3kpb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1285739726]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_6wb13")
+
+[node name="Label" type="Label" parent="." unique_id=999125562]
+custom_minimum_size = Vector2(1280, 200)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 200.0
+theme = ExtResource("3_l3t6t")
+theme_override_font_sizes/font_size = 64
+text = "PLAYER STATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DaysWorkedLabel" type="Label" parent="." unique_id=848461063]
+custom_minimum_size = Vector2(320, 32)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 248.0
+offset_right = 640.0
+offset_bottom = 280.0
+theme = ExtResource("3_l3t6t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Total Days Worked:"
+vertical_alignment = 1
+
+[node name="DaysWorkedStat" type="Label" parent="." unique_id=2079065856]
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 0
+offset_left = 640.0
+offset_top = 248.0
+offset_right = 672.0
+offset_bottom = 280.0
+theme = ExtResource("3_l3t6t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "0"
+vertical_alignment = 1
+
+[node name="OrdersDeliveredLabel" type="Label" parent="." unique_id=2050105589]
+custom_minimum_size = Vector2(320, 32)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 280.0
+offset_right = 640.0
+offset_bottom = 312.0
+theme = ExtResource("3_l3t6t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Number of Orders Delivered:"
+vertical_alignment = 1
+
+[node name="OrdersDeliveredStat" type="Label" parent="." unique_id=2016412063]
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 0
+offset_left = 640.0
+offset_top = 280.0
+offset_right = 672.0
+offset_bottom = 312.0
+theme = ExtResource("3_l3t6t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "0"
+vertical_alignment = 1
+
+[node name="TotalEarningsLabel" type="Label" parent="." unique_id=1250745208]
+custom_minimum_size = Vector2(320, 32)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 312.0
+offset_right = 640.0
+offset_bottom = 344.0
+theme = ExtResource("3_l3t6t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Total Earnings:"
+vertical_alignment = 1
+
+[node name="TotalEarningsStat" type="Label" parent="." unique_id=931420703]
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 0
+offset_left = 640.0
+offset_top = 312.0
+offset_right = 689.0
+offset_bottom = 344.0
+theme = ExtResource("3_l3t6t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "£0.00"
+vertical_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1941135018]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 620.0
+offset_right = 790.0
+offset_bottom = 670.0
+texture_normal = ExtResource("4_adkyy")
+texture_pressed = ExtResource("5_82qlm")
+texture_hover = ExtResource("6_ipdbh")
+
+[node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("7_3sdf8")]
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
