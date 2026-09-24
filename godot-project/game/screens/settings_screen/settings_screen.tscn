@@ -4,9 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="2_4ph8p"]
 [ext_resource type="Texture2D" uid="uid://bd47gx27yglwh" path="res://assets/backgrounds/title_screen_logoless.png" id="2_fc052"]
 [ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="2_gc4gq"]
+[ext_resource type="Texture2D" uid="uid://k1pywun2rrlr" path="res://assets/buttons/delete/delete.png" id="4_aqdlb"]
 [ext_resource type="Texture2D" uid="uid://bt327e87vcc0j" path="res://assets/buttons/back/back.png" id="4_vwcgb"]
 [ext_resource type="Texture2D" uid="uid://bn6d88n03fhwq" path="res://assets/buttons/back/back_pressed.png" id="5_kthwt"]
+[ext_resource type="Texture2D" uid="uid://cx4abk04togfr" path="res://assets/buttons/delete/delete_pressed.png" id="5_tjwro"]
 [ext_resource type="Texture2D" uid="uid://y6jrh2g7iate" path="res://assets/buttons/back/back_hover.png" id="6_3s7ga"]
+[ext_resource type="Texture2D" uid="uid://c8vnj7sp0qi10" path="res://assets/buttons/delete/delete_hover.png" id="6_7i408"]
 
 [node name="SettingsScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -130,16 +133,31 @@ offset_bottom = 427.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
 
-[node name="DeleteDataButton" type="TextureButton" parent="." unique_id=1506868671]
-custom_minimum_size = Vector2(300, 50)
+[node name="DeleteLabel" type="Label" parent="." unique_id=678791393]
+custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
-offset_left = 490.0
-offset_top = 500.0
-offset_right = 790.0
-offset_bottom = 550.0
-texture_normal = ExtResource("4_vwcgb")
-texture_pressed = ExtResource("5_kthwt")
-texture_hover = ExtResource("6_3s7ga")
+offset_left = 320.0
+offset_top = 463.0
+offset_right = 960.0
+offset_bottom = 506.0
+theme = ExtResource("2_gc4gq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Clear Saved Data"
+vertical_alignment = 1
+
+[node name="DeleteDataButton" type="TextureButton" parent="." unique_id=1506868671]
+custom_minimum_size = Vector2(200, 33.35)
+layout_mode = 0
+offset_left = 549.0
+offset_top = 466.0
+offset_right = 749.0
+offset_bottom = 499.35
+texture_normal = ExtResource("4_aqdlb")
+texture_pressed = ExtResource("5_tjwro")
+texture_hover = ExtResource("6_7i408")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=1941135018]
 custom_minimum_size = Vector2(300, 50)
