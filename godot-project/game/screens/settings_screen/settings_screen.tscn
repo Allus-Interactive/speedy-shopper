@@ -130,6 +130,17 @@ offset_bottom = 427.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
 
+[node name="DeleteDataButton" type="TextureButton" parent="." unique_id=1506868671]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 500.0
+offset_right = 790.0
+offset_bottom = 550.0
+texture_normal = ExtResource("4_vwcgb")
+texture_pressed = ExtResource("5_kthwt")
+texture_hover = ExtResource("6_3s7ga")
+
 [node name="BackButton" type="TextureButton" parent="." unique_id=1941135018]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
@@ -147,4 +158,5 @@ texture_hover = ExtResource("6_3s7ga")
 [connection signal="value_changed" from="SfxSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="TimeCheckButton" to="." method="_on_time_check_button_toggled"]
 [connection signal="toggled" from="ArrowNavigationButton" to="." method="_on_time_check_button_toggled"]
+[connection signal="pressed" from="DeleteDataButton" to="." method="_on_delete_data_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

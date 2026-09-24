@@ -52,6 +52,7 @@ func rest() -> void:
 	minute = 30
 	day_changed.emit()
 	_update_player_stats()
+	SaveLoadManager.save_game_data()
 
 func get_time_string(use_24_hour: bool) -> String:
 	if use_24_hour:

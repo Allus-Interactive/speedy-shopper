@@ -80,6 +80,8 @@ var is_inspecting_product: bool = false
 @onready var fade: ColorRect = $FadeToBlack/Fade
 
 func _ready() -> void:
+	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
+	
 	tooltip_panel.hide()
 	
 	GameManager.tutorial_panel = tutorial_panel
@@ -188,6 +190,8 @@ func _process(delta: float) -> void:
 		ui_panel.visible = false
 	else:
 		ui_panel.visible = true
+	
+	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
 	
 	if is_inspecting_product:
 		handle_product_inspection_input(delta)
@@ -402,6 +406,9 @@ func complete_delivery() -> void:
 	
 	# Increment player stats
 	GameManager.orders_delivered += 1
+	
+	# Save Data
+	SaveLoadManager.save_game_data()
 	
 	# Generate next orders if no available orders or orders to be delivered
 	if JobManager.available_orders.size() == 0 and JobManager.picked_orders.size() == 0:

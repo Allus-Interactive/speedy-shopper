@@ -13,6 +13,7 @@ var sfx_bus : int = GameManager.sfx_bus
 
 func _ready() -> void:
 	load_settings()
+	SaveLoadManager.load_game_data()
 
 func load_settings() -> void:
 	if config.load("user://speedy_shopper_settings.cfg") == OK:

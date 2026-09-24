@@ -49,7 +49,11 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 
 func _on_time_check_button_toggled(toggled_on: bool) -> void:
 	GameManager.use_24_hour = toggled_on
-	
+
+func _on_delete_data_button_pressed() -> void:
+	DirAccess.remove_absolute("user://speedy_shopper_save_file.cfg")
+	SaveLoadManager.reset_game_data()
+
 func _on_back_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
 	save_settings()
