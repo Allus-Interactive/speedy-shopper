@@ -32,7 +32,7 @@ var use_directional_arrow : bool = true
 var display_directional_arrow : bool = false
 
 # Player Stats
-var order_delivered : int = 0
+var orders_delivered : int = 0
 var days_worked : int = 0
 var total_earnings : float = 0.0
 

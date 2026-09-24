@@ -400,6 +400,9 @@ func complete_delivery() -> void:
 	# clear active delivery
 	OrderManager.active_delivery = null
 	
+	# Increment player stats
+	GameManager.orders_delivered += 1
+	
 	# Generate next orders if no available orders or orders to be delivered
 	if JobManager.available_orders.size() == 0 and JobManager.picked_orders.size() == 0:
 		# restock products before generating new orders

@@ -44,12 +44,14 @@ func advance_minute() -> void:
 func advance_day() -> void:
 	day = (day + 1) % 7
 	day_changed.emit()
+	_update_player_stats()
 
 func rest() -> void:
-	day = (day + 1) & 7
+	day = (day + 1) % 7
 	hour = 9
 	minute = 30
 	day_changed.emit()
+	_update_player_stats()
 
 func get_time_string(use_24_hour: bool) -> String:
 	if use_24_hour:
@@ -76,3 +78,8 @@ func get_day_string() -> String:
 	]
 	
 	return days[day]
+
+func _update_player_stats() -> void:
+	GameManager.days_worked += 1
+	GameManager.total_earnings += GameManager.daily_earnings
+	GameManager.daily_earnings = 0
