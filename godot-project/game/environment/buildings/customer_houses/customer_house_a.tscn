@@ -7,6 +7,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_my2p8"]
 size = Vector3(4, 3, 0.25)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2va7"]
+size = Vector3(20, 10, 13)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxha2"]
+size = Vector3(6, 3, 5)
+
 [node name="CustomerHouseA" type="Node3D" unique_id=1333288050]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 script = ExtResource("1_k3ugt")
@@ -28,3 +34,24 @@ customer_house = NodePath("..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionPoint" unique_id=1916469982]
 shape = SubResource("BoxShape3D_my2p8")
 debug_color = Color(0.8284457, 0.50202274, 0.2541949, 0.41960785)
+
+[node name="HouseCollider" type="StaticBody3D" parent="." unique_id=512997929]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.033333384, 3, 2.316667)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HouseCollider" unique_id=340040382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2351742e-08, 1.3333335, 0.27781153)
+shape = SubResource("BoxShape3D_m2va7")
+
+[node name="PlantColliderLeft" type="StaticBody3D" parent="." unique_id=515924354]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.033333384, 3, 2.316667)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantColliderLeft" unique_id=705472164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -1.333, 8.278)
+shape = SubResource("BoxShape3D_oxha2")
+
+[node name="PlantColliderRight" type="StaticBody3D" parent="." unique_id=1102340781]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.0388637, 3, -4.9858475)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantColliderRight" unique_id=1250214875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5005938, 0)
+shape = SubResource("BoxShape3D_oxha2")

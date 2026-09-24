@@ -186,6 +186,12 @@ size = Vector2(100, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_74d5v"]
 size = Vector3(100, 1, 100)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2dwb"]
+size = Vector3(15, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2va7"]
+size = Vector3(1, 10, 15)
+
 [node name="Shop" type="Node3D" unique_id=1894934032]
 script = ExtResource("1_u503x")
 
@@ -379,3 +385,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.5, 2)
 [node name="Shop" type="MeshInstance3D" parent="." unique_id=2098293408]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6, 0, -5)
 mesh = ExtResource("164_f71ri")
+
+[node name="Boundaries" type="Node" parent="." unique_id=1104362400]
+
+[node name="SouthBoundary" type="StaticBody3D" parent="Boundaries" unique_id=388067098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 1.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/SouthBoundary" unique_id=743830882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_t2dwb")
+
+[node name="NorthBoundary" type="StaticBody3D" parent="Boundaries" unique_id=1644127498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -11.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/NorthBoundary" unique_id=788120977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_t2dwb")
+
+[node name="EastBoundary" type="StaticBody3D" parent="Boundaries" unique_id=1154921014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/EastBoundary" unique_id=747271644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 1)
+shape = SubResource("BoxShape3D_m2va7")
+
+[node name="WestBoundary" type="StaticBody3D" parent="Boundaries" unique_id=549172006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -6.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/WestBoundary" unique_id=1655807279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 1)
+shape = SubResource("BoxShape3D_m2va7")
