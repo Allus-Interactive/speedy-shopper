@@ -69,6 +69,12 @@ material = ExtResource("3_uc1da")
 radius = 200.0
 height = 400.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2dwb"]
+size = Vector3(5, 25, 350)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2va7"]
+size = Vector3(350, 25, 5)
+
 [node name="Town" type="Node3D" unique_id=1894934032]
 script = ExtResource("1_5ncuf")
 
@@ -501,3 +507,33 @@ house_number = 1
 transform = Transform3D(8.94366e-09, 0, -0.75, 0, 0.75, 0, 0.75, 0, 8.94366e-09, 173, 0, 127)
 customer_details = ExtResource("13_p0f41")
 house_number = 3
+
+[node name="Boundaries" type="Node" parent="." unique_id=2090705014]
+
+[node name="NorthBoundary" type="StaticBody3D" parent="Boundaries" unique_id=277595264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 94)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/NorthBoundary" unique_id=1346726856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 10, -53)
+shape = SubResource("BoxShape3D_t2dwb")
+
+[node name="SouthBoundary" type="StaticBody3D" parent="Boundaries" unique_id=1494031507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, 94)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/SouthBoundary" unique_id=1056915716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 10, -53)
+shape = SubResource("BoxShape3D_t2dwb")
+
+[node name="WestBoundary" type="StaticBody3D" parent="Boundaries" unique_id=1513475133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 0, 223)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/WestBoundary" unique_id=1050741016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 10, -10)
+shape = SubResource("BoxShape3D_m2va7")
+
+[node name="EastBoundary" type="StaticBody3D" parent="Boundaries" unique_id=1525361145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 0, -122)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/EastBoundary" unique_id=1225395072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 10, -10)
+shape = SubResource("BoxShape3D_m2va7")
