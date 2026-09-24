@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://c3uihoo7x5pup" path="res://assets/buttons/controls/controls_pressed.png" id="17_ie1m7"]
 [ext_resource type="Texture2D" uid="uid://cq06g746ehnm3" path="res://assets/buttons/exit/exit_pressed.png" id="18_cb66b"]
 [ext_resource type="Texture2D" uid="uid://dlx35k1iprbej" path="res://assets/buttons/controls/controls_hover.png" id="18_jfsmh"]
+[ext_resource type="Texture2D" uid="uid://2ly6ixeyepdn" path="res://assets/buttons/credits/credits.png" id="19_fvqoh"]
+[ext_resource type="Texture2D" uid="uid://mlryddygu4xp" path="res://assets/buttons/credits/credits_pressed.png" id="20_cj0x8"]
+[ext_resource type="Texture2D" uid="uid://b0dbinnh638n0" path="res://assets/buttons/credits/credits_hover.png" id="21_atp2w"]
 
 [node name="TitleScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -102,16 +105,27 @@ texture_normal = ExtResource("16_s6v1e")
 texture_pressed = ExtResource("17_ie1m7")
 texture_hover = ExtResource("18_jfsmh")
 
-[node name="ExitButton" type="TextureButton" parent="." unique_id=574076534]
+[node name="CreditsButton" type="TextureButton" parent="." unique_id=381853519]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
 offset_left = 950.0
 offset_top = 425.0
 offset_right = 1250.0
 offset_bottom = 475.0
+texture_normal = ExtResource("19_fvqoh")
+texture_pressed = ExtResource("20_cj0x8")
+texture_hover = ExtResource("21_atp2w")
+
+[node name="ExitButton" type="TextureButton" parent="." unique_id=574076534]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 0
+offset_left = 950.0
+offset_top = 500.0
+offset_right = 1250.0
+offset_bottom = 550.0
 texture_normal = ExtResource("16_2lack")
-texture_pressed = ExtResource("17_26f05")
-texture_hover = ExtResource("18_cb66b")
+texture_pressed = ExtResource("18_cb66b")
+texture_hover = ExtResource("17_26f05")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_kxwh2")]
 position = Vector2(490, 560)
@@ -121,4 +135,5 @@ position = Vector2(490, 560)
 [connection signal="pressed" from="StatsButton" to="." method="_on_stats_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="ControlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

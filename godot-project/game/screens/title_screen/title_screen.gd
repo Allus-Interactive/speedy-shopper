@@ -60,5 +60,11 @@ func _on_controls_button_pressed() -> void:
 	
 	get_tree().change_scene_to_file(Constants.CONTROLS_SCREEN)
 
+func _on_credits_button_pressed() -> void:
+	sfx_player.play_sfx(button_press_sfx)
+	await get_tree().create_timer(0.1).timeout
+	
+	get_tree().change_scene_to_file(Constants.CREDITS_SCREEN)
+
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
