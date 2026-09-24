@@ -10,6 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://cx4abk04togfr" path="res://assets/buttons/delete/delete_pressed.png" id="5_tjwro"]
 [ext_resource type="Texture2D" uid="uid://y6jrh2g7iate" path="res://assets/buttons/back/back_hover.png" id="6_3s7ga"]
 [ext_resource type="Texture2D" uid="uid://c8vnj7sp0qi10" path="res://assets/buttons/delete/delete_hover.png" id="6_7i408"]
+[ext_resource type="Texture2D" uid="uid://df7co0g1uu05v" path="res://assets/buttons/yes/yes.png" id="11_ba7ur"]
+[ext_resource type="Texture2D" uid="uid://vt5ukvytnl4v" path="res://assets/buttons/yes/yes_pressed.png" id="12_k4l08"]
+[ext_resource type="Texture2D" uid="uid://b8hgt4bt1ga1x" path="res://assets/buttons/yes/yes_hover.png" id="13_5o7uj"]
+[ext_resource type="Texture2D" uid="uid://c8eiwxkh1rqy8" path="res://assets/buttons/no/no.png" id="14_8eb85"]
+[ext_resource type="Texture2D" uid="uid://c61qrek148o6n" path="res://assets/buttons/no/no_pressed.png" id="15_a1wwx"]
+[ext_resource type="Texture2D" uid="uid://b5b2qkid3vugv" path="res://assets/buttons/no/no_hover.png" id="16_u2akl"]
 
 [node name="SettingsScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -159,6 +165,19 @@ texture_hover = ExtResource("6_7i408")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="DeleteConfirmLabel" type="Label" parent="." unique_id=1594323248]
+custom_minimum_size = Vector2(640, 32)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 500.0
+offset_right = 960.0
+offset_bottom = 543.0
+theme = ExtResource("2_gc4gq")
+theme_override_colors/font_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
+theme_override_font_sizes/font_size = 16
+text = "Save Data Deleted"
+vertical_alignment = 1
+
 [node name="BackButton" type="TextureButton" parent="." unique_id=1941135018]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
@@ -172,9 +191,78 @@ texture_hover = ExtResource("6_3s7ga")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_4ph8p")]
 
+[node name="ConfirmationPopupOverlay" type="ColorRect" parent="." unique_id=462943236]
+visible = false
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.49803922)
+
+[node name="ConfirmationPopup" type="ColorRect" parent="ConfirmationPopupOverlay" unique_id=349156120]
+custom_minimum_size = Vector2(430, 240)
+layout_mode = 0
+offset_left = 425.0
+offset_top = 240.0
+offset_right = 855.0
+offset_bottom = 480.0
+color = Color(0.9882353, 0.95686275, 0.89411765, 1)
+
+[node name="PopupTitle" type="Label" parent="ConfirmationPopupOverlay/ConfirmationPopup" unique_id=1183968245]
+custom_minimum_size = Vector2(430, 50)
+layout_mode = 0
+offset_right = 430.0
+offset_bottom = 58.0
+theme = ExtResource("2_gc4gq")
+theme_override_font_sizes/font_size = 32
+text = "ARE YOU SURE?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopupText" type="Label" parent="ConfirmationPopupOverlay/ConfirmationPopup" unique_id=353389773]
+custom_minimum_size = Vector2(430, 100)
+layout_mode = 0
+offset_top = 50.0
+offset_right = 430.0
+offset_bottom = 108.0
+theme = ExtResource("2_gc4gq")
+theme_override_font_sizes/font_size = 18
+text = "Do you definitely want to delete your save data? This cannot be undone."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ConfirmButton" type="TextureButton" parent="ConfirmationPopupOverlay/ConfirmationPopup" unique_id=709352100]
+custom_minimum_size = Vector2(200, 33.35)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 160.0
+offset_right = 210.0
+offset_bottom = 193.35
+texture_normal = ExtResource("11_ba7ur")
+texture_pressed = ExtResource("12_k4l08")
+texture_hover = ExtResource("13_5o7uj")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="CancelButton" type="TextureButton" parent="ConfirmationPopupOverlay/ConfirmationPopup" unique_id=435768200]
+custom_minimum_size = Vector2(200, 33.35)
+layout_mode = 0
+offset_left = 220.0
+offset_top = 160.0
+offset_right = 420.0
+offset_bottom = 193.35
+texture_normal = ExtResource("14_8eb85")
+texture_pressed = ExtResource("15_a1wwx")
+texture_hover = ExtResource("16_u2akl")
+ignore_texture_size = true
+stretch_mode = 4
+
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="SfxSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="TimeCheckButton" to="." method="_on_time_check_button_toggled"]
 [connection signal="toggled" from="ArrowNavigationButton" to="." method="_on_time_check_button_toggled"]
 [connection signal="pressed" from="DeleteDataButton" to="." method="_on_delete_data_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ConfirmationPopupOverlay/ConfirmationPopup/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="ConfirmationPopupOverlay/ConfirmationPopup/CancelButton" to="." method="_on_cancel_button_pressed"]
