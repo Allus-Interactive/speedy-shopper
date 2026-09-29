@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cltj41kafypvn"]
+
+[ext_resource type="Script" uid="uid://c20hjtf8vquaw" path="res://game/autosave/autosave_spinner.gd" id="1_3xjfl"]
+[ext_resource type="Texture2D" uid="uid://ccyj43m0scu2v" path="res://assets/autosave_icon/spinning_wheel/autosave_9.png" id="1_h1sak"]
+[ext_resource type="Texture2D" uid="uid://dyav8c0y5kgs0" path="res://assets/autosave_icon/spinning_wheel/autosave_1.png" id="2_3xjfl"]
+[ext_resource type="Texture2D" uid="uid://cw1xu8gp6naqe" path="res://assets/autosave_icon/spinning_wheel/autosave_8.png" id="3_lfvju"]
+[ext_resource type="Texture2D" uid="uid://dvl71qfyjfm82" path="res://assets/autosave_icon/spinning_wheel/autosave_7.png" id="4_i1vlh"]
+[ext_resource type="Texture2D" uid="uid://cgcm6c0fqhdwk" path="res://assets/autosave_icon/spinning_wheel/autosave_6.png" id="5_08wt4"]
+[ext_resource type="Texture2D" uid="uid://cs1wnw663l5gc" path="res://assets/autosave_icon/spinning_wheel/autosave_5.png" id="6_488hv"]
+[ext_resource type="Texture2D" uid="uid://dgg8c2ixlg1eb" path="res://assets/autosave_icon/spinning_wheel/autosave_4.png" id="7_d0nuq"]
+[ext_resource type="Texture2D" uid="uid://g4rf3uy48eq4" path="res://assets/autosave_icon/spinning_wheel/autosave_3.png" id="8_svbbt"]
+[ext_resource type="Texture2D" uid="uid://m4ot0cjctrm2" path="res://assets/autosave_icon/spinning_wheel/autosave_2.png" id="9_tx4ir"]
+
+[sub_resource type="Animation" id="Animation_gvobp"]
+length = 0.39999999999999997
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_h1sak"), ExtResource("3_lfvju"), ExtResource("4_i1vlh"), ExtResource("5_08wt4"), ExtResource("6_488hv"), ExtResource("7_d0nuq"), ExtResource("8_svbbt"), ExtResource("9_tx4ir"), ExtResource("2_3xjfl")]
+}
+
+[sub_resource type="Animation" id="Animation_4dm3a"]
+resource_name = "auto_save_wheel"
+length = 0.4
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_h1sak"), ExtResource("3_lfvju"), ExtResource("4_i1vlh"), ExtResource("5_08wt4"), ExtResource("6_488hv"), ExtResource("7_d0nuq"), ExtResource("8_svbbt"), ExtResource("9_tx4ir"), ExtResource("2_3xjfl")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f4qv4"]
+_data = {
+&"RESET": SubResource("Animation_gvobp"),
+&"auto_save_wheel": SubResource("Animation_4dm3a")
+}
+
+[node name="AutosaveSpinner" type="Control" unique_id=816407239]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 50.0
+script = ExtResource("1_3xjfl")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=581324193]
+position = Vector2(25, 25)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h1sak")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=170593520]
+libraries/ = SubResource("AnimationLibrary_f4qv4")
+autoplay = &"auto_save_wheel"
+
+[node name="Label" type="Label" parent="." unique_id=946814833]
+custom_minimum_size = Vector2(425, 37)
+layout_mode = 0
+offset_left = 55.0
+offset_top = 7.5
+offset_right = 500.0
+offset_bottom = 44.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "An autosave icon will appear when your progress is being saved. Please do not quit the game while the icon is displayed."
+autowrap_mode = 2

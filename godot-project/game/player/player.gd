@@ -79,9 +79,15 @@ var is_inspecting_product: bool = false
 # Fade To Black
 @onready var fade: ColorRect = $FadeToBlack/Fade
 
+# Autosave Spinner
+@onready var auto_save_icon: CanvasLayer = $AutoSaveIcon
+
 func _ready() -> void:
 	# Initialize earnings label
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
+	
+	# Hide Autosave spinner
+	auto_save_icon.visible = false
 	
 	# use saved player position if entering scene from title screen
 	if GameManager.previous_scene == "Title":
@@ -397,6 +403,8 @@ func complete_order() -> void:
 		JobManager.generate_order()
 
 func complete_delivery() -> void:
+	# Display Saving Spinner
+	auto_save_icon.visible = true
 	# TODO: Animate delivery
 	
 	# store player position
@@ -426,6 +434,10 @@ func complete_delivery() -> void:
 		# TODO: move restock logic to when player returns to shop after deliveries
 		# ProductManager.restock_products()
 		JobManager.generate_order()
+	
+	await get_tree().create_timer(2.0).timeout
+	
+	auto_save_icon.visible = false
 
 func load_order_into_van() -> void:
 	### START OF TEMP LOGIC

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gnqq0wgbnm5k" path="res://game/ui/dialog_ui/dialog_ui.tscn" id="6_4ste8"]
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="7_anr75"]
 [ext_resource type="Script" uid="uid://d31w4nmmoip68" path="res://game/player/fade_to_black.gd" id="8_epvkq"]
+[ext_resource type="PackedScene" uid="uid://cltj41kafypvn" path="res://game/autosave/autosave_spinner.tscn" id="9_5ghna"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_obar5"]
 radius = 0.4
@@ -174,3 +175,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 script = ExtResource("8_epvkq")
+
+[node name="AutoSaveIcon" type="CanvasLayer" parent="." unique_id=959898024]
+
+[node name="AutosaveSpinner" parent="AutoSaveIcon" unique_id=816407239 instance=ExtResource("9_5ghna")]

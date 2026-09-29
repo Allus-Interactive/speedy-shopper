@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://f6yg2r3jjmkb" path="res://game/screens/loading_overlay/loading_overlay.gd" id="1_gf1ab"]
 [ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="2_joy1p"]
+[ext_resource type="PackedScene" uid="uid://cltj41kafypvn" path="res://game/autosave/autosave_spinner.tscn" id="3_sotf0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joy1p"]
 bg_color = Color(0.827451, 0.827451, 0.827451, 1)
@@ -16,13 +17,14 @@ script = ExtResource("1_gf1ab")
 custom_minimum_size = Vector2(1280, 720)
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
+color = Color(0.98039216, 0.92941177, 0.83137256, 1)
 
 [node name="LoadingText" type="Label" parent="LoadingScreen" unique_id=1770498066]
-custom_minimum_size = Vector2(1280, 720)
+custom_minimum_size = Vector2(1280, 120)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = 260.0
+offset_right = 1280.0
+offset_bottom = 380.0
 theme = ExtResource("2_joy1p")
 theme_override_font_sizes/font_size = 96
 text = "LOADING..."
@@ -33,9 +35,17 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(640, 50)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 432.0
+offset_top = 368.0
 offset_right = 960.0
-offset_bottom = 482.0
+offset_bottom = 418.0
 theme_override_styles/background = SubResource("StyleBoxFlat_joy1p")
 theme_override_styles/fill = SubResource("StyleBoxFlat_gf1ab")
 show_percentage = false
+
+[node name="AutosaveSpinner" parent="." unique_id=816407239 instance=ExtResource("3_sotf0")]
+custom_minimum_size = Vector2(500, 50)
+offset_left = 390.0
+offset_top = 645.0
+offset_right = 890.0
+offset_bottom = 695.0
+display_spinner_label = true
