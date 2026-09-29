@@ -21,8 +21,9 @@ func interact(_p: Player) -> void:
 			get_tree().change_scene_to_file(Constants.TITLE_SCREEN)
 	else:
 		if is_in_shop:
-			GameManager.thread_load_scene(Constants.DRIVING_SCENE)
 			GameManager.previous_scene = "Shop"
+			GameManager.thread_load_scene(Constants.DRIVING_SCENE)
+			
 		else:
 			if GameTimeManager.hour >= 10 and GameTimeManager.hour <= 22:
 				GameManager.thread_load_scene(Constants.SHOP_SCENE)

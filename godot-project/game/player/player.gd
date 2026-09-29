@@ -89,11 +89,6 @@ func _ready() -> void:
 	# Hide Autosave spinner
 	auto_save_icon.visible = false
 	
-	# use saved player position if entering scene from title screen
-	if GameManager.previous_scene == "Title":
-		self.global_position = GameManager.player_position
-		self.global_rotation = GameManager.player_rotation
-	
 	tooltip_panel.hide()
 	
 	GameManager.tutorial_panel = tutorial_panel
