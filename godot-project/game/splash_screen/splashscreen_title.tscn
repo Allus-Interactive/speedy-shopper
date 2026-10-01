@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cqrtqecdid4j4"]
+
+[ext_resource type="Script" uid="uid://bal2o2c15b40c" path="res://game/splash_screen/splashscreen_title.gd" id="1_65hb1"]
+[ext_resource type="Texture2D" uid="uid://ec4cskwfcsea" path="res://assets/splash_screen/splashscreen_title_expo.png" id="2_65hb1"]
+
+[node name="Splashscreen_Title" type="Control" unique_id=1428401989]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65hb1")
+
+[node name="Splashscreen" type="TextureRect" parent="." unique_id=681782331]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_65hb1")

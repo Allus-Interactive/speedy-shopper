@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dxv1xk7adrchu"]
+
+[ext_resource type="Script" uid="uid://ckt6emylmlqb4" path="res://game/splash_screen/splashscreen_allus.gd" id="1_88mh0"]
+[ext_resource type="Texture2D" uid="uid://cgf6t7275wmj0" path="res://assets/splash_screen/splashscreen_allus.png" id="1_lsc6u"]
+
+[node name="Splashscreen_Allus" type="Control" unique_id=1428401989]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_88mh0")
+
+[node name="Splashscreen" type="TextureRect" parent="." unique_id=681782331]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_lsc6u")

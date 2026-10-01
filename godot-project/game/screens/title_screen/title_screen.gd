@@ -14,6 +14,7 @@ var sfx_bus : int = GameManager.sfx_bus
 func _ready() -> void:
 	load_settings()
 	SaveLoadManager.load_game_data()
+	SceneTransition.fade_in(1.5)
 
 func load_settings() -> void:
 	if config.load("user://speedy_shopper_settings.cfg") == OK:
@@ -69,4 +70,6 @@ func _on_credits_button_pressed() -> void:
 	get_tree().change_scene_to_file(Constants.CREDITS_SCREEN)
 
 func _on_exit_button_pressed() -> void:
+	SceneTransition.fade_out(1.0)
+	await get_tree().create_timer(1).timeout
 	get_tree().quit()

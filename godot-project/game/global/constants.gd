@@ -5,6 +5,9 @@ const DRIVING_SCENE: String = "uid://hdoipf1qndch"
 
 const TUTORIAL_SCENE: String = "uid://d3pjk0siutk0r"
 
+const SPLASHSCREEN_ALLUS = "uid://dxv1xk7adrchu"
+const SPLASHSCREEN_TITLE = "uid://cqrtqecdid4j4"
+
 const TITLE_SCREEN: String = "uid://by64gyav16ry7"
 const SETTINGS_SCREEN: String = "uid://bvnccs7ugunpy"
 const STATS_SCREEN: String = "uid://ch1vbujua1g7t"
