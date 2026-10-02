@@ -10,6 +10,8 @@ func _ready() -> void:
 	player.global_position = Vector3(-5.5, 0, 0)
 	player.global_rotation = Vector3.ZERO
 	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	GameManager.previous_scene = "Shop"
 	
 	GameManager.crate_hold_point = crate_hold_point

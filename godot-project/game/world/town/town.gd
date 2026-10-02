@@ -8,6 +8,8 @@ class_name Town
 func _ready() -> void:
 	LoadingOverlay.toggle_loading(false)
 	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	player.auto_save_icon.visible = true
 	
 	# Use Player position if not (0,0,0) and loading from title screen
