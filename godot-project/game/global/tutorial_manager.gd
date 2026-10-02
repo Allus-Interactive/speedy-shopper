@@ -20,7 +20,7 @@ var current_step: Step = Step.MOVE
 var tutorial_enabled = false
 
 func next_step() -> void:
-	current_step += 1
+	current_step = (current_step + 1) as Step
 	update_ui()
 
 func update_ui() -> void:

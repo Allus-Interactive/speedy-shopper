@@ -40,7 +40,7 @@ func reset_game_data() -> void:
 	GameManager.daily_earnings = 0
 	GameTimeManager.hour = 10
 	GameTimeManager.minute = 0
-	GameTimeManager.day = 0
+	GameTimeManager.day = GameTimeManager.Day.MONDAY
 	GameManager.player_position = Vector3(22.5, 0.431, 13.75)
 	GameManager.player_rotation = Vector3.ZERO
 	GameManager.van_position = Vector3(22.0, 0.0, 5.0)

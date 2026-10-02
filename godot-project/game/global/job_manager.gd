@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func generate_order() -> void:
 	var no_of_orders_to_generate = randi_range(1, 4)
-	#var no_of_orders_to_generate = 1
+	# var no_of_orders_to_generate = 1
 	# Get all products
 	var all_products_in_shop: Array[Item] = ProductManager.all_products
 	# group by category
@@ -27,7 +27,7 @@ func generate_order() -> void:
 		var products_in_order: Array[OrderItemData] = []
 		var no_of_categories: int = Item.CATEGORY.size()
 		var no_of_items_in_order: int = randi_range(2, no_of_categories)
-		#var no_of_items_in_order: int = randi_range(1, 2)
+		# var no_of_items_in_order: int = randi_range(1, 2)
 		
 		# Basic Order Generation
 		for i in no_of_items_in_order:

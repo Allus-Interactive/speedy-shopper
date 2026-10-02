@@ -42,12 +42,12 @@ func advance_minute() -> void:
 		advance_day()
 
 func advance_day() -> void:
-	day = (day + 1) % 7
+	day = ((day + 1) % 7) as Day
 	day_changed.emit()
 	_update_player_stats()
 
 func rest() -> void:
-	day = (day + 1) % 7
+	day = ((day + 1) % 7) as Day
 	hour = 9
 	minute = 30
 	day_changed.emit()

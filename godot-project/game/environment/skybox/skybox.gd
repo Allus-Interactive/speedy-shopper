@@ -487,10 +487,12 @@ func update_stars():
 		transition_hours
 	)
 	
-	var dawn_end: float = (
-		dawn_time +
-		transition_hours
-	)
+	# Warning given, this isn't used
+	# Should it be?
+	#var dawn_end: float = (
+		#dawn_time +
+		#transition_hours
+	#)
 	
 	var star_alpha: float
 	# --------------------------------------------------
