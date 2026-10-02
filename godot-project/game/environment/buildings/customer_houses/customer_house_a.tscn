@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://4blug1akt4c6" path="res://game/environment/buildings/customer_houses/customer_house.gd" id="1_k3ugt"]
 [ext_resource type="ArrayMesh" uid="uid://cjfhnkt8ocmo5" path="res://assets/environment/buildings/residential/house_g.tres" id="1_o5dfo"]
 [ext_resource type="Script" uid="uid://bd81qqjbqx8b5" path="res://game/environment/buildings/customer_houses/customer_house_interaction.gd" id="2_o5dfo"]
+[ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="4_1500a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_my2p8"]
 size = Vector3(4, 3, 0.25)
@@ -55,3 +56,5 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlantColliderRight" unique_id=1250214875]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5005938, 0)
 shape = SubResource("BoxShape3D_oxha2")
+
+[node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("4_1500a")]

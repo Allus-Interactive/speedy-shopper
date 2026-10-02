@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bw5rwejnjhw31"]
 
 [ext_resource type="Script" uid="uid://pwa4to07qojx" path="res://game/world/exit_entry/exit_entry.gd" id="1_25fki"]
+[ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="2_tx1hf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ja0sq"]
 size = Vector3(4, 3, 0.25)
@@ -12,3 +13,5 @@ script = ExtResource("1_25fki")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("BoxShape3D_ja0sq")
 debug_color = Color(0.8284457, 0.50202274, 0.2541949, 0.41960785)
+
+[node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_tx1hf")]

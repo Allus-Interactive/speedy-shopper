@@ -10,6 +10,7 @@ func _ready() -> void:
 	player.global_position = Vector3(-5.5, 0, 0)
 	player.global_rotation = Vector3.ZERO
 	
+	SceneTransition.fade_in(1.5)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	GameManager.previous_scene = "Shop"

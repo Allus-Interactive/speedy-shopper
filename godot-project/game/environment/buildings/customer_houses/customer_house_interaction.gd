@@ -2,6 +2,10 @@ extends StaticBody3D
 
 @export var customer_house: CustomerHouse
 
+@onready var sfx_player: SfxPlayer = $"../SFXPlayer"
+
+@onready var door_knock: AudioStream = preload("res://assets/sfx/door_knock.mp3")
+
 func get_interaction_tooltip(_player: Player) -> String:
 	return "Press E to Knock"
 
@@ -18,6 +22,8 @@ func interact(player: Player) -> void:
 	
 	if address == order_address:
 		GameManager.notification_ui.show_message("Order successfully delivered!", true)
+		sfx_player.play_sfx(door_knock)
+		await get_tree().create_timer(0.5).timeout
 		player.complete_delivery()
 	else:
 		GameManager.notification_ui.show_message("Wrong Address!", false)
