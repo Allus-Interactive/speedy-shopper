@@ -29,7 +29,6 @@ func _ready() -> void:
 	
 	LoadingOverlay.toggle_loading(false)
 
-
 func play_the_tutorial():
 	JobManager.generate_tutorial_order()
 	

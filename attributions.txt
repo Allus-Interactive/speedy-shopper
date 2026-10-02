@@ -4,3 +4,7 @@ SFX:
 - UI button press: https://www.zapsplat.com/music/bright-button-click-2/
 - shop door: https://www.zapsplat.com/music/small-bell-ring-shop-door-type-2/
 - door knock: https://www.zapsplat.com/music/person-knocking-on-a-wooden-door-on-the-outside-version-1/
+
+Music:
+- Intimate Rhodes Piano and Soft Jazz Guitar: https://pixabay.com/music/beats-intimate-rhodes-piano-and-soft-jazz-guitar-416018/
+- Intimate Rhodes Piano and Soft Jazz Guitar with Brushed Percussion: https://pixabay.com/music/beats-intimate-rhodes-piano-and-soft-jazz-guitar-with-brushed-percussion-416015/

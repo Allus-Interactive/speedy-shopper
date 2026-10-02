@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://27douiywqnbl" path="res://game/world/directional_arrow/directional_arrow.tscn" id="8_2uabk"]
 [ext_resource type="ArrayMesh" uid="uid://dx0gs5qpntloy" path="res://assets/vehicles/van/kenney_van_body.tres" id="8_qqfut"]
 [ext_resource type="Texture2D" uid="uid://licm1vq5h52e" path="res://assets/ui/driving/driving.png" id="9_qqfut"]
+[ext_resource type="AudioStream" uid="uid://swphhdash1so" path="res://assets/music/juraganvisi-intimate-rhodes-piano-and-soft-jazz-guitar-with-brushed-percussion-416015.mp3" id="11_2uabk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mm2gk"]
 size = Vector3(2.277, 1.569, 1.359)
@@ -140,6 +141,12 @@ shape = SubResource("BoxShape3D_xaafv")
 [node name="RearBumper" type="CollisionShape3D" parent="Van" unique_id=1344459511]
 transform = Transform3D(4.3711385e-08, 0.99999976, -8.742277e-08, 1, -4.37114e-08, 0, -3.8213684e-15, -8.742277e-08, -0.99999976, 0.0013190495, 0.4120211, -2.6713035)
 shape = SubResource("CapsuleShape3D_7kmqy")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Van" unique_id=1419919635]
+transform = Transform3D(1.0000004, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0.005597116, 1.4048333, 1.3824459)
+stream = ExtResource("11_2uabk")
+bus = &"Music"
+parameters/looping = false
 
 [node name="DirectionalArrow" parent="Van" unique_id=1286428228 instance=ExtResource("8_2uabk")]
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0, 5, 0)

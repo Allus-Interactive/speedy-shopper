@@ -45,6 +45,9 @@ var van_rotation : Vector3 = Vector3.ZERO
 
 var previous_scene : String = ""
 
+# Audio
+var vehicle_audio_position: float = 0.0
+
 func thread_load_scene(scene_id: String) -> void:
 	LoadingOverlay.toggle_loading(true)
 

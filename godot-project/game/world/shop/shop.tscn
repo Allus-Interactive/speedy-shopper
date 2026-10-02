@@ -166,6 +166,7 @@
 [ext_resource type="PackedScene" uid="uid://bw5rwejnjhw31" path="res://game/world/exit_entry/exit_entry.tscn" id="163_l8ad3"]
 [ext_resource type="ArrayMesh" uid="uid://dy2fug1cqrweh" path="res://assets/environment/buildings/industrial/shop.tres" id="164_f71ri"]
 [ext_resource type="PackedScene" uid="uid://bl7vmn0oj4ckt" path="res://game/environment/footstool/footstool.tscn" id="165_teebb"]
+[ext_resource type="AudioStream" uid="uid://bqbfcqy3vu8uf" path="res://assets/music/juraganvisi-intimate-rhodes-piano-and-soft-jazz-guitar-416018.mp3" id="167_7ash6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -415,3 +416,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6.5)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/EastBoundary" unique_id=747271644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 1)
 shape = SubResource("BoxShape3D_m2va7")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1919323170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 6, -5)
+stream = ExtResource("167_7ash6")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

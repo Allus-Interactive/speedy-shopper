@@ -31,6 +31,9 @@ var park_icon : CompressedTexture2D = preload("res://assets/ui/driving/park.png"
 # directional arrow
 @onready var directional_arrow: DirectionalArrow = $DirectionalArrow
 
+# Music
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
+
 func _ready() -> void:
 	speed_label.text = "0"
 	speedometer.visible = false
@@ -147,12 +150,15 @@ func interact(p: Player) -> void:
 	p.enter_vehicle(self)
 	speedometer.visible = true
 	_show_directional_arrow()
+	audio_stream_player_3d.play(GameManager.vehicle_audio_position)
 
 func exit_vehicle() -> void:
 	if player:
 		player.exit_vehicle(self)
 		speedometer.visible = false
 		directional_arrow.disable()
+		GameManager.vehicle_audio_position = audio_stream_player_3d.get_playback_position()
+		audio_stream_player_3d.stop()
 
 func _show_directional_arrow() -> void:
 	if GameManager.use_directional_arrow and OrderManager.active_delivery != null and GameManager.is_in_vehicle:
