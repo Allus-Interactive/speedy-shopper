@@ -141,42 +141,41 @@ shape = SubResource("BoxShape3D_2jkdo")
 
 [node name="RoadBend" type="MeshInstance3D" parent="." unique_id=732865526]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
-visible = false
 mesh = ExtResource("4_v14t3")
 
 [node name="RoadBend" type="StaticBody3D" parent="RoadBend" unique_id=15563774]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoadBend/RoadBend" unique_id=544225264]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0)
 shape = SubResource("BoxShape3D_m8ulg")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="RoadBend/RoadBend" unique_id=1609222939]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0.15, 6.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0, 6.75)
 shape = SubResource("BoxShape3D_ho61t")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="RoadBend/RoadBend" unique_id=1750444590]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 6, 0.15, 4)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 6, 0, 4)
 shape = SubResource("BoxShape3D_hcdqc")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="RoadBend/RoadBend" unique_id=1817080953]
-transform = Transform3D(0.8045725, 0, 0.5938543, 0, 1, 0, -0.5938543, 0, 0.8045725, 3.330473, 0.15, -1.4251693)
+transform = Transform3D(0.8045725, 0, 0.5938543, 0, 1, 0, -0.5938543, 0, 0.8045725, 3.33, 0, -1.425)
 shape = SubResource("BoxShape3D_hcdqc")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="RoadBend/RoadBend" unique_id=760412518]
-transform = Transform3D(0.39326808, 0, 0.91942394, 0, 1, 0, -0.91942394, 0, 0.39326808, -2.353035, 0.15, -5.730856)
+transform = Transform3D(0.39326808, 0, 0.91942394, 0, 1, 0, -0.91942394, 0, 0.39326808, -2.353, 0, -5.731)
 shape = SubResource("BoxShape3D_hcdqc")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="RoadBend/RoadBend" unique_id=1461789054]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -6.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.75)
 shape = SubResource("BoxShape3D_8awij")
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="RoadBend/RoadBend" unique_id=549895526]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.75, 0.15, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.75, 0, 0)
 shape = SubResource("BoxShape3D_8awij")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="RoadBend/RoadBend" unique_id=1337883547]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 4, 0.15, -4)
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 4, 0, -4)
 shape = SubResource("BoxShape3D_2jkdo")
 
 [node name="RoadEnd_Kenney" type="MeshInstance3D" parent="." unique_id=1934883111]
@@ -299,6 +298,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("BoxShape3D_v14t3")
 
 [node name="Grass" type="MeshInstance3D" parent="." unique_id=193073319]
+visible = false
 mesh = ExtResource("10_vnplk")
 skeleton = NodePath("Grass")
 
