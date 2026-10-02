@@ -17,17 +17,15 @@ func _ready() -> void:
 	
 	if TutorialManager.tutorial_enabled:
 		play_the_tutorial()
+	else:
+		# Save the Game
+		player.auto_save_icon.visible = true
+		SaveLoadManager.save_game_data()
+		await get_tree().create_timer(2.0).timeout
+		player.auto_save_icon.visible = false
 	
 	LoadingOverlay.toggle_loading(false)
-	
-	player.auto_save_icon.visible = true
-	
-	# Save Data
-	SaveLoadManager.save_game_data()
-	
-	await get_tree().create_timer(2.0).timeout
 
-	player.auto_save_icon.visible = false
 
 func play_the_tutorial():
 	JobManager.generate_tutorial_order()

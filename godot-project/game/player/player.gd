@@ -447,6 +447,9 @@ func load_order_into_van() -> void:
 	# TODO: animations for crate, load into van etc.
 	reset_crate()
 	
+	if TutorialManager.current_step == TutorialManager.Step.LOADING_TRAY:
+		TutorialManager.next_step()
+	
 	# Mark order as complete
 	OrderManager.active_order.is_picked = true
 	# store order in completed_orders array before clearing active order

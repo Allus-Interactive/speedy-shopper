@@ -29,3 +29,5 @@ func _pressed() -> void:
 		self.disabled = true
 		OrderManager.active_delivery = delivery
 		SignalManager.new_delivery_accepted.emit()
+		if TutorialManager.current_step == TutorialManager.Step.SET_DELIVERY:
+			TutorialManager.next_step()

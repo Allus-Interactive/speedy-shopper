@@ -10,6 +10,8 @@ enum Step {
 	PICK_LAST_ITEM,
 	PICK_UP_TRAY,
 	RETURN_TO_COUNTER,
+	LOADING_TRAY,
+	SET_DELIVERY,
 	COMPLETE,
 	FINISHED
 }
@@ -40,6 +42,10 @@ func update_ui() -> void:
 		Step.PICK_UP_TRAY:
 			GameManager.tutorial_label.text = "You picked the order, well done! Return to the front of the shop and pick up the blue tray."
 		Step.RETURN_TO_COUNTER:
-			GameManager.tutorial_label.text = "This is a Pickup order, you may have noticed that on the scanner. For those, you simply need to drop the tray off at the Kiosk in the corner."
+			GameManager.tutorial_label.text = "Once you have picked an order, you need to drop the tray off at the Kiosk in the corner. It is loaded into your van for you."
+		Step.LOADING_TRAY:
+			GameManager.tutorial_label.text = "Let's have a breather while the tray is loaded."
+		Step.SET_DELIVERY:
+			GameManager.tutorial_label.text = "Great, now that the tray is loaded let's open the scanner again. Once all your current orders are picked, you see the list of addresses. Select an address with Space to mark it as ready for delivery."
 		Step.COMPLETE:
-			GameManager.tutorial_label.text = "Congratulations, you completed your first order! You'll find most orders require you to actually deliver it, but I'll leave that for you to explore. Good Luck!\nFeel free to leave the shop, and I'll see you soon!"
+			GameManager.tutorial_label.text = "Great, now you're ready to make your first delivery! When you get to the address, knock on the door and complete the order. Remember, you can't actually deliver an order until it is marked for delivery.\nFeel free to leave the shop, and I'll see you soon!"
