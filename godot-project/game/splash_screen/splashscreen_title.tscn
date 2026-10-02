@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqrtqecdid4j4"]
 
 [ext_resource type="Script" uid="uid://bal2o2c15b40c" path="res://game/splash_screen/splashscreen_title.gd" id="1_65hb1"]
-[ext_resource type="Texture2D" uid="uid://ec4cskwfcsea" path="res://assets/splash_screen/splashscreen_title_expo.png" id="2_65hb1"]
+[ext_resource type="Texture2D" uid="uid://cg02mh61f02af" path="res://assets/splash_screen/splashscreen_title.png" id="2_65hb1"]
 
 [node name="Splashscreen_Title" type="Control" unique_id=1428401989]
 layout_mode = 3
