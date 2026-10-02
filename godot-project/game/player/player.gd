@@ -170,8 +170,8 @@ func _physics_process(delta: float) -> void:
 	update_crouch(delta)
 	
 	# TODO: revisit and improve camera switching
-	if Input.is_action_just_pressed("switch camera"):
-		switch_camera()
+	#if Input.is_action_just_pressed("switch camera"):
+		#switch_camera()
 	
 	var movement_speed = CROUCH_SPEED if is_crouching else WALK_SPEED
 	
