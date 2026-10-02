@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_4kk1w"]
 [ext_resource type="Resource" uid="uid://jhn0c04pidnn" path="res://game/resources/item/resources/fresh/cooked_meat/smoked_ham.tres" id="2_4kk1w"]
-[ext_resource type="PackedScene" uid="uid://b82rw7mp00nml" path="res://assets/products/fresh/cooked_meat/smoked_ham.glb" id="2_txbm0"]
+[ext_resource type="PackedScene" uid="uid://cy51axokxch01" path="res://assets/products/fresh/cooked_meat/smoked_ham.glb" id="2_txbm0"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_mb2w1"]
 
 [resource]

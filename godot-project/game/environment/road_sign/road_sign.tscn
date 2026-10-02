@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8gv0kco8bu08"]
 
 [ext_resource type="Script" uid="uid://dwxxc7o6dsy1r" path="res://game/environment/road_sign/road_sign.gd" id="1_38ouy"]
-[ext_resource type="ArrayMesh" uid="uid://dapqfvf4c640k" path="res://assets/environment/road_signs/road_sign.tres" id="1_t0gsh"]
+[ext_resource type="ArrayMesh" uid="uid://ksmixe5p3xar" path="res://assets/environment/road_signs/road_sign.tres" id="1_t0gsh"]
 
 [node name="RoadSign" type="Node3D" unique_id=574591718]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_jis0q"]
 [ext_resource type="Resource" uid="uid://bv03exnrwyn35" path="res://game/resources/item/resources/fresh/cooked_meat/honey_roast_ham.tres" id="2_qu8pl"]
-[ext_resource type="PackedScene" uid="uid://b3pgdjs73tgq4" path="res://assets/products/fresh/cooked_meat/honey_roast_ham.glb" id="2_wf6in"]
+[ext_resource type="PackedScene" uid="uid://brr5hdbkkhkj5" path="res://assets/products/fresh/cooked_meat/honey_roast_ham.glb" id="2_wf6in"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_7s7k2"]
 
 [resource]

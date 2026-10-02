@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://n5rta5y5njne" path="res://assets/barcodes/barcode.png" id="1_c4yd2"]
 [ext_resource type="Resource" uid="uid://buat24jqeb2y6" path="res://game/resources/item/resources/fresh/cooked_meat/roast_chicken.tres" id="2_c4yd2"]
-[ext_resource type="PackedScene" uid="uid://yhiugtkm2ay7" path="res://assets/products/fresh/cooked_meat/roast_chicken.glb" id="2_y7brb"]
+[ext_resource type="PackedScene" uid="uid://dua8q2etn7trr" path="res://assets/products/fresh/cooked_meat/roast_chicken.glb" id="2_y7brb"]
 [ext_resource type="Script" uid="uid://c485xiqer6nrc" path="res://game/resources/products/product.gd" id="3_d70i5"]
 
 [resource]
