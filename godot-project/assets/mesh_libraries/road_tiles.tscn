@@ -9,6 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://damng3bf7jyyi" path="res://assets/environment/roads_kenney/empty_tile.tres" id="5_7asxu"]
 [ext_resource type="ArrayMesh" uid="uid://fvfc4dlxrdp0" path="res://assets/environment/roads/coloured/end/road_end_coloured.tres" id="6_8awij"]
 [ext_resource type="ArrayMesh" uid="uid://br7wschubofts" path="res://assets/environment/roads/coloured/three_way_junction/road_3_way_junction_coloured.tres" id="8_2jkdo"]
+[ext_resource type="ArrayMesh" uid="uid://drs5mrbgwykln" path="res://assets/environment/roads/coloured/four_way_junction/road_4_way_junction_coloured.tres" id="9_v14t3"]
 [ext_resource type="ArrayMesh" uid="uid://q56tk81atf2j" path="res://assets/environment/roads/coloured/grass/grass_coloured.tres" id="10_vnplk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7asxu"]
@@ -141,6 +142,7 @@ shape = SubResource("BoxShape3D_2jkdo")
 
 [node name="RoadBend" type="MeshInstance3D" parent="." unique_id=732865526]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = ExtResource("4_v14t3")
 
 [node name="RoadBend" type="StaticBody3D" parent="RoadBend" unique_id=15563774]
@@ -286,6 +288,33 @@ shape = SubResource("BoxShape3D_ho61t")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="RoadThreeWayJunction/RoadIntersection" unique_id=1264214288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.75)
 shape = SubResource("BoxShape3D_e2mav")
+
+[node name="RoadFourWayJunction" type="MeshInstance3D" parent="." unique_id=112968333]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("9_v14t3")
+
+[node name="RoadIntersection" type="StaticBody3D" parent="RoadFourWayJunction" unique_id=1662268406]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadFourWayJunction/RoadIntersection" unique_id=1764972529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0)
+shape = SubResource("BoxShape3D_vnplk")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RoadFourWayJunction/RoadIntersection" unique_id=74109215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0, 6.75)
+shape = SubResource("BoxShape3D_ho61t")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RoadFourWayJunction/RoadIntersection" unique_id=2004441105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0, 6.75)
+shape = SubResource("BoxShape3D_ho61t")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RoadFourWayJunction/RoadIntersection" unique_id=1616538840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0, -6.75)
+shape = SubResource("BoxShape3D_ho61t")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="RoadFourWayJunction/RoadIntersection" unique_id=77896610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0, -6.75)
+shape = SubResource("BoxShape3D_ho61t")
 
 [node name="Pavement" type="MeshInstance3D" parent="." unique_id=122686006]
 visible = false

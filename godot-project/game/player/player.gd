@@ -648,7 +648,7 @@ func _input(event: InputEvent) -> void:
 				_zoom_product(1)
 	#if event.is_action_pressed("screenshot"):
 		#take_screenshot()
-
+#
 #func take_screenshot():
 	#await RenderingServer.frame_post_draw
 	#
