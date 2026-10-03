@@ -25,8 +25,6 @@ func render_label_display(required_qty: int, scanned_qty: int, price: float) -> 
 	quantity_label.text = "%d/%d Items Picked" % [scanned_qty, required_qty]
 	
 	label_background.color = Color.TRANSPARENT
-	if scanned_qty >= required_qty:
-		self.disabled = true
 
 func calculate_price(price: float, required_qty: int) -> String:
 	var total_price = price * required_qty
@@ -46,6 +44,7 @@ func set_availibility() -> void:
 func _pressed() -> void:
 	for item in OrderManager.active_order.items:
 		if item.product_info.product_name == current_item_name:
+			var original_qty = item.required_quantity
 			if item.scanned_quantity == 0 and not item.is_unavailable:
 				item.is_unavailable = true
 				unavailable_label.visible = true
@@ -55,3 +54,8 @@ func _pressed() -> void:
 					OrderManager.active_order.set("is_picked", true)
 				if TutorialManager.current_step == TutorialManager.Step.PICK_THIRD_ITEM:
 					TutorialManager.next_step()
+			elif item.is_unavailable:
+				item.is_unavailable = false
+				unavailable_label.visible = false
+				item.required_quantity = original_qty
+				render_label_display(item.required_quantity, item.scanned_quantity, item.product_info.product_price)
