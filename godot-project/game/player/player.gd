@@ -242,9 +242,10 @@ func pick_up_product(product: ProductObject) -> void:
 	# reset inspect distance
 	reset_inspect_distance()
 	
+	# Leave scanner open when picking up items?
 	# if scanner is open, close it
-	if GameManager.is_scanner_open:
-		scanner_ui.toggle_scanner()
+	# if GameManager.is_scanner_open:
+		# scanner_ui.toggle_scanner()
 	
 	held_product = product
 	held_product_original_parent = product.get_parent()
