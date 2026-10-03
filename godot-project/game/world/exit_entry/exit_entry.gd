@@ -37,5 +37,8 @@ func interact(_p: Player) -> void:
 			# Remove time constraints on shop entry, reintroduce with day/night cycle
 			#if GameTimeManager.hour >= 10 and GameTimeManager.hour <= 22:
 			sfx_player.play_sfx(shop_door)
+			# store player position
+			GameManager.player_position = self.global_position
+			GameManager.player_rotation = self.global_rotation
 			await get_tree().create_timer(0.25).timeout
 			GameManager.thread_load_scene(Constants.SHOP_SCENE)
