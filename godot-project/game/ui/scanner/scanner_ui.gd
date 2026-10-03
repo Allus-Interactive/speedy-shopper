@@ -187,7 +187,12 @@ func _rebuild_available_items_list(items: Array[OrderData]) -> void:
 		
 		var order_number: int = item.order_id
 		var products: Array[OrderItemData] = item.items
-		var item_qty: int = products.size()
+		#TODO: get all quantities of products
+		var total_qty: int = 0
+		for product in products:
+			total_qty += product.required_quantity
+		var item_qty: int = total_qty
+		#var item_qty: int = products.size()
 		var price: float = item.price
 		
 		# Add label to items list
