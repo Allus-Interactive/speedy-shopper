@@ -34,6 +34,8 @@ func _on_play_button_pressed() -> void:
 
 	await get_tree().create_timer(0.1).timeout
 	
+	TutorialManager.tutorial_enabled = false
+	
 	GameManager.thread_load_scene(Constants.DRIVING_SCENE)
 
 func _on_tutorial_button_pressed() -> void:
