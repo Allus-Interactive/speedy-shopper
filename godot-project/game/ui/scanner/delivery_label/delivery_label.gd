@@ -25,9 +25,10 @@ func focus_on_button() -> void:
 	self.grab_focus()
 
 func _pressed() -> void:
-	if OrderManager.active_delivery == null:
-		self.disabled = true
-		OrderManager.active_delivery = delivery
-		SignalManager.new_delivery_accepted.emit()
-		if TutorialManager.current_step == TutorialManager.Step.SET_DELIVERY:
-			TutorialManager.next_step()
+	if GameManager.is_scanner_open:
+		if OrderManager.active_delivery == null:
+			self.disabled = true
+			OrderManager.active_delivery = delivery
+			SignalManager.new_delivery_accepted.emit()
+			if TutorialManager.current_step == TutorialManager.Step.SET_DELIVERY:
+				TutorialManager.next_step()

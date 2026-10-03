@@ -42,20 +42,21 @@ func set_availibility() -> void:
 				unavailable_label.visible = true
 
 func _pressed() -> void:
-	for item in OrderManager.active_order.items:
-		if item.product_info.product_name == current_item_name:
-			var original_qty = item.required_quantity
-			if item.scanned_quantity == 0 and not item.is_unavailable:
-				item.is_unavailable = true
-				unavailable_label.visible = true
-				item.required_quantity = 0
-				render_label_display(item.required_quantity, item.scanned_quantity, item.product_info.product_price)
-				if OrderManager.is_active_order_fully_picked():
-					OrderManager.active_order.set("is_picked", true)
-				if TutorialManager.current_step == TutorialManager.Step.PICK_THIRD_ITEM:
-					TutorialManager.next_step()
-			elif item.is_unavailable:
-				item.is_unavailable = false
-				unavailable_label.visible = false
-				item.required_quantity = original_qty
-				render_label_display(item.required_quantity, item.scanned_quantity, item.product_info.product_price)
+	if GameManager.is_scanner_open:
+		for item in OrderManager.active_order.items:
+			if item.product_info.product_name == current_item_name:
+				var original_qty = item.required_quantity
+				if item.scanned_quantity == 0 and not item.is_unavailable:
+					item.is_unavailable = true
+					unavailable_label.visible = true
+					item.required_quantity = 0
+					render_label_display(item.required_quantity, item.scanned_quantity, item.product_info.product_price)
+					if OrderManager.is_active_order_fully_picked():
+						OrderManager.active_order.set("is_picked", true)
+					if TutorialManager.current_step == TutorialManager.Step.PICK_THIRD_ITEM:
+						TutorialManager.next_step()
+				elif item.is_unavailable:
+					item.is_unavailable = false
+					unavailable_label.visible = false
+					item.required_quantity = original_qty
+					render_label_display(item.required_quantity, item.scanned_quantity, item.product_info.product_price)

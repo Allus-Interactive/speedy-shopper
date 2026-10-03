@@ -25,6 +25,7 @@ func focus_on_button() -> void:
 	self.grab_focus()
 
 func _pressed() -> void:
-	JobManager.select_order_by_id(order_id)
-	if TutorialManager.current_step == TutorialManager.Step.ACCEPT_ORDER:
-		TutorialManager.next_step()
+	if GameManager.is_scanner_open:
+		JobManager.select_order_by_id(order_id)
+		if TutorialManager.current_step == TutorialManager.Step.ACCEPT_ORDER:
+			TutorialManager.next_step()
