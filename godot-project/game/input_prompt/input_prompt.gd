@@ -15,6 +15,9 @@ func hide_prompt() -> void:
 	self.visible = false
 
 func display_prompt(input_action: String, text: String) -> void:
+	if GameManager.disable_prompts:
+		return
+	
 	action = input_action
 	label.text = text
 	

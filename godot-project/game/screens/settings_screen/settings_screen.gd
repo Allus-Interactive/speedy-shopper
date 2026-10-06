@@ -9,6 +9,8 @@ class_name SettingsScreen#
 @onready var arrow_navigation_button: CheckButton = $ArrowNavigationButton
 @onready var confirmation_popup_overlay: ColorRect = $ConfirmationPopupOverlay
 @onready var delete_confirm_label: Label = $DeleteConfirmLabel
+@onready var disable_prompts_label: Label = $DisablePromptsLabel
+@onready var disable_prompts_button: CheckButton = $DisablePromptsButton
 
 @onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
@@ -29,12 +31,14 @@ func _ready() -> void:
 	sfx_slider.value = GameManager.sfx_volume
 	time_check_button.button_pressed = GameManager.use_24_hour
 	arrow_navigation_button.button_pressed = GameManager.use_directional_arrow
+	disable_prompts_button.button_pressed = GameManager.disable_prompts
 
 func save_settings() -> void:
 	config.set_value("audio", "music", music_slider.value)
 	config.set_value("audio", "sfx", sfx_slider.value)
 	config.set_value("button", "time", time_check_button.button_pressed)
 	config.set_value("button", "arrow", arrow_navigation_button.button_pressed)
+	config.set_value("button", "prompts", disable_prompts_button.button_pressed)
 	config.save("user://speedy_shopper_settings.cfg")
 
 func load_settings() -> void:
@@ -43,6 +47,7 @@ func load_settings() -> void:
 		sfx_slider.value = config.get_value("audio", "sfx", 0)
 		time_check_button.button_pressed = config.get_value("button", "time", 0)
 		arrow_navigation_button.button_pressed = config.get_value("button", "arrow", 0)
+		disable_prompts_button.button_pressed = config.get_value("button", "prompts", 0)
 
 func _on_music_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(music_bus, value)
@@ -54,6 +59,12 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 
 func _on_time_check_button_toggled(toggled_on: bool) -> void:
 	GameManager.use_24_hour = toggled_on
+
+func _on_arrow_navigation_button_toggled(toggled_on: bool) -> void:
+	GameManager.use_directional_arrow = toggled_on
+
+func _on_disable_prompts_button_toggled(toggled_on: bool) -> void:
+	GameManager.disable_prompts = toggled_on
 
 func _on_delete_data_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)

@@ -139,13 +139,38 @@ offset_bottom = 427.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
 
+[node name="DisablePromptsLabel" type="Label" parent="." unique_id=997800267]
+custom_minimum_size = Vector2(640, 32)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 452.0
+offset_right = 960.0
+offset_bottom = 495.0
+theme = ExtResource("2_gc4gq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Disable Input Prompts
+"
+vertical_alignment = 1
+
+[node name="DisablePromptsButton" type="CheckButton" parent="." unique_id=1571379]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 439.0
+offset_right = 564.0
+offset_bottom = 463.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_gc4gq")
+text = "
+"
+
 [node name="DeleteLabel" type="Label" parent="." unique_id=678791393]
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 463.0
+offset_top = 499.0
 offset_right = 960.0
-offset_bottom = 506.0
+offset_bottom = 542.0
 theme = ExtResource("2_gc4gq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
@@ -156,9 +181,9 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(200, 33.35)
 layout_mode = 0
 offset_left = 549.0
-offset_top = 466.0
+offset_top = 502.0
 offset_right = 749.0
-offset_bottom = 499.35
+offset_bottom = 535.35
 texture_normal = ExtResource("4_aqdlb")
 texture_pressed = ExtResource("5_tjwro")
 texture_hover = ExtResource("6_7i408")
@@ -169,9 +194,9 @@ stretch_mode = 4
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 500.0
+offset_top = 536.0
 offset_right = 960.0
-offset_bottom = 543.0
+offset_bottom = 579.0
 theme = ExtResource("2_gc4gq")
 theme_override_colors/font_color = Color(0.7647059, 0.0627451, 0.078431375, 1)
 theme_override_font_sizes/font_size = 16
@@ -261,7 +286,8 @@ stretch_mode = 4
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="SfxSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="TimeCheckButton" to="." method="_on_time_check_button_toggled"]
-[connection signal="toggled" from="ArrowNavigationButton" to="." method="_on_time_check_button_toggled"]
+[connection signal="toggled" from="ArrowNavigationButton" to="." method="_on_arrow_navigation_button_toggled"]
+[connection signal="toggled" from="DisablePromptsButton" to="." method="_on_disable_prompts_button_toggled"]
 [connection signal="pressed" from="DeleteDataButton" to="." method="_on_delete_data_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ConfirmationPopupOverlay/ConfirmationPopup/ConfirmButton" to="." method="_on_confirm_button_pressed"]

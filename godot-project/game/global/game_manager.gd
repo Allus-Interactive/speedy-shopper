@@ -28,7 +28,7 @@ var music_volume : float = 0.0
 var sfx_volume : float = 0.0
 var use_24_hour : bool = true
 var use_directional_arrow : bool = true
-var display_directional_arrow : bool = false
+var disable_prompts : bool = false
 
 # Player Stats
 var orders_delivered : int = 0
