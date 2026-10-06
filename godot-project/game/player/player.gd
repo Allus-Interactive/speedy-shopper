@@ -192,7 +192,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	is_crouching = Input.is_action_pressed("crouch")
+	if Input.is_action_just_pressed("crouch"):
+		is_crouching = !is_crouching
 	
 	update_crouch(delta)
 	
