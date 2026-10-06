@@ -3,10 +3,30 @@
 [ext_resource type="Script" uid="uid://beaynf7opuj6a" path="res://game/screens/controls_screen/controls_screen.gd" id="1_1uf0h"]
 [ext_resource type="Texture2D" uid="uid://bd47gx27yglwh" path="res://assets/backgrounds/title_screen_logoless.png" id="2_ad3a4"]
 [ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="3_el5nh"]
+[ext_resource type="Texture2D" uid="uid://q7dtjo3ccbq6" path="res://assets/input_icons/xbox/LS.svg" id="4_8uvav"]
 [ext_resource type="Texture2D" uid="uid://bt327e87vcc0j" path="res://assets/buttons/back/back.png" id="4_f0yqh"]
 [ext_resource type="Texture2D" uid="uid://bn6d88n03fhwq" path="res://assets/buttons/back/back_pressed.png" id="5_kefsj"]
+[ext_resource type="Texture2D" uid="uid://waj8pxltueub" path="res://assets/input_icons/ps/L3.svg" id="5_vvytr"]
+[ext_resource type="Texture2D" uid="uid://c5ckbem1aqc5m" path="res://assets/input_icons/xbox/LS_press.svg" id="6_4ni1u"]
 [ext_resource type="Texture2D" uid="uid://y6jrh2g7iate" path="res://assets/buttons/back/back_hover.png" id="6_ff2oh"]
+[ext_resource type="Texture2D" uid="uid://dmfq88oqtuuf" path="res://assets/input_icons/ps/L3_press.svg" id="7_6gwfu"]
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="7_ip4nh"]
+[ext_resource type="Texture2D" uid="uid://di1fwxb761bve" path="res://assets/input_icons/keyboard_mouse/lmb.svg" id="8_0uasu"]
+[ext_resource type="Texture2D" uid="uid://v0qfa7abovil" path="res://assets/input_icons/xbox/A.svg" id="9_a1b5w"]
+[ext_resource type="Texture2D" uid="uid://dpeemsjkq6n51" path="res://assets/input_icons/ps/cross.svg" id="10_ys4jr"]
+[ext_resource type="Texture2D" uid="uid://vlajgdmx2cwg" path="res://assets/input_icons/xbox/Y.svg" id="11_dibj8"]
+[ext_resource type="Texture2D" uid="uid://dh6wef1v8ybcw" path="res://assets/input_icons/ps/triangle.svg" id="12_37adn"]
+[ext_resource type="Texture2D" uid="uid://c1n4ydcwkkhwl" path="res://assets/input_icons/xbox/RT.svg" id="13_0im4m"]
+[ext_resource type="Texture2D" uid="uid://bs87f1msns44t" path="res://assets/input_icons/ps/R2.svg" id="14_enrxl"]
+[ext_resource type="Texture2D" uid="uid://bhk75mwplms3a" path="res://assets/input_icons/xbox/LT.svg" id="15_7aju8"]
+[ext_resource type="Texture2D" uid="uid://c75xw21h3df5j" path="res://assets/input_icons/ps/L2.svg" id="16_2fglw"]
+[ext_resource type="Texture2D" uid="uid://ignrc47frrif" path="res://assets/input_icons/keyboard_mouse/rmb.svg" id="17_fplqk"]
+[ext_resource type="Texture2D" uid="uid://dgpnj0ol0moww" path="res://assets/input_icons/xbox/B.svg" id="18_oiuh4"]
+[ext_resource type="Texture2D" uid="uid://bl261sir85eq6" path="res://assets/input_icons/ps/circle.svg" id="19_g23c4"]
+[ext_resource type="Texture2D" uid="uid://c83wtakkx7ks5" path="res://assets/input_icons/xbox/X.svg" id="20_chinx"]
+[ext_resource type="Texture2D" uid="uid://ihphwxondr2w" path="res://assets/input_icons/ps/square.svg" id="21_8q0vh"]
+[ext_resource type="Texture2D" uid="uid://wm6uy0mh86y5" path="res://assets/input_icons/xbox/dpad.svg" id="22_lb7ik"]
+[ext_resource type="Texture2D" uid="uid://cyl8427hqdp1r" path="res://assets/input_icons/ps/dpad.svg" id="23_1sx3c"]
 
 [node name="ControlsScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -35,102 +55,502 @@ text = "CONTROLS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ControlLabel" type="Label" parent="." unique_id=848461063]
-custom_minimum_size = Vector2(250, 32)
+[node name="VBoxContainerWalking" type="VBoxContainer" parent="." unique_id=845010880]
 layout_mode = 0
-offset_left = 435.0
-offset_top = 129.0
-offset_right = 685.0
-offset_bottom = 586.0
+offset_left = 328.0
+offset_top = 130.0
+offset_right = 640.0
+offset_bottom = 342.0
+
+[node name="HBoxMovement" type="HBoxContainer" parent="VBoxContainerWalking" unique_id=440469432]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerWalking/HBoxMovement" unique_id=1383254356]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
 theme = ExtResource("3_el5nh")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "WALKING
-Movement
-Crouch
-Interact
-Open/Close PDA
-
-DRIVING
-Drive
-Enter/Exit Vehicle
-Parking Brake
-
-INTERACTING WITH PRODUCTS
-Rotate
-Scan
-Zoom
-Exit Interaction
-
-UI
-Navigate PDA
-Select UI Element"
+text = "Movement"
 vertical_alignment = 1
 
-[node name="KeyboardControls" type="Label" parent="." unique_id=2079065856]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 0
-offset_left = 685.0
-offset_top = 129.0
-offset_right = 845.0
-offset_bottom = 586.0
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxMovement" unique_id=910903993]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerWalking/HBoxMovement" unique_id=1365936931]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_8uvav")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxMovement" unique_id=1638977021]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_vvytr")
+expand_mode = 2
+
+[node name="HBoxCrouch" type="HBoxContainer" parent="VBoxContainerWalking" unique_id=1407776699]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerWalking/HBoxCrouch" unique_id=1283890078]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
 theme = ExtResource("3_el5nh")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "KEYBOARD
-WASD
-C/Ctrl
-E
-T
-
-
-WASD
-E
-P
-
-
-WASD
-Left Mouse Click
-Mouse Wheel
-R
-
-
-Arrow Keys
-Space"
+text = "Crouch"
 vertical_alignment = 1
 
-[node name="GamepadControls" type="Label" parent="." unique_id=1690265964]
-visible = false
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 0
-offset_left = 845.0
-offset_top = 129.0
-offset_right = 1005.0
-offset_bottom = 586.0
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxCrouch" unique_id=259911249]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerWalking/HBoxCrouch" unique_id=304826194]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("6_4ni1u")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxCrouch" unique_id=2006035807]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("7_6gwfu")
+expand_mode = 2
+
+[node name="HBoxInteract" type="HBoxContainer" parent="VBoxContainerWalking" unique_id=806316653]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerWalking/HBoxInteract" unique_id=801259736]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
 theme = ExtResource("3_el5nh")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "GAMEPAD
-Left Stick
-Left Trigger
-A
-D-Pad Up
-
-
-Left Stick
-A
-X
-
-
-Left Stick
-A
-Left/Right Triggers
-B
-
-
-D-Pad
-Y"
+text = "Interact"
 vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxInteract" unique_id=2116928084]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("8_0uasu")
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerWalking/HBoxInteract" unique_id=1824444968]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("9_a1b5w")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxInteract" unique_id=1910994084]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("10_ys4jr")
+expand_mode = 2
+
+[node name="HBoxPDA" type="HBoxContainer" parent="VBoxContainerWalking" unique_id=740703639]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerWalking/HBoxPDA" unique_id=1422883298]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Open/CLose PDA"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxPDA" unique_id=1641846946]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerWalking/HBoxPDA" unique_id=1783711957]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("11_dibj8")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxPDA" unique_id=2024133279]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("12_37adn")
+expand_mode = 2
+
+[node name="VBoxContainerDriving" type="VBoxContainer" parent="." unique_id=280670623]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 342.0
+offset_right = 728.0
+offset_bottom = 608.0
+
+[node name="HBoxDrive" type="HBoxContainer" parent="VBoxContainerDriving" unique_id=898373347]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerDriving/HBoxDrive" unique_id=2145061613]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Drive"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxDrive" unique_id=1103936481]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerDriving/HBoxDrive" unique_id=697097714]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("13_0im4m")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxDrive" unique_id=1430321883]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("14_enrxl")
+expand_mode = 2
+
+[node name="HBoxBrakeReverse" type="HBoxContainer" parent="VBoxContainerDriving" unique_id=1907970661]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerDriving/HBoxBrakeReverse" unique_id=1179327354]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Brake/Reverse"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxBrakeReverse" unique_id=954049202]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerDriving/HBoxBrakeReverse" unique_id=1999089473]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("15_7aju8")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxBrakeReverse" unique_id=218576742]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("16_2fglw")
+expand_mode = 2
+
+[node name="HBoxEnter" type="HBoxContainer" parent="VBoxContainerDriving" unique_id=899806820]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerDriving/HBoxEnter" unique_id=827729365]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Enter Vehicle"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxEnter" unique_id=928288410]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("8_0uasu")
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerDriving/HBoxEnter" unique_id=192246658]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("9_a1b5w")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxEnter" unique_id=498224245]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("10_ys4jr")
+expand_mode = 2
+
+[node name="HBoxExit" type="HBoxContainer" parent="VBoxContainerDriving" unique_id=2057537788]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerDriving/HBoxExit" unique_id=733128597]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Exit Vehicle"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxExit" unique_id=1730828446]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("17_fplqk")
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerDriving/HBoxExit" unique_id=597218107]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("18_oiuh4")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxExit" unique_id=1267690222]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("19_g23c4")
+expand_mode = 2
+
+[node name="HBoxParking" type="HBoxContainer" parent="VBoxContainerDriving" unique_id=543008443]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerDriving/HBoxParking" unique_id=2107639435]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Parking Brake"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxParking" unique_id=31987340]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerDriving/HBoxParking" unique_id=1287431290]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("20_chinx")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxParking" unique_id=1242512694]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("21_8q0vh")
+expand_mode = 2
+
+[node name="VBoxContainerShopping" type="VBoxContainer" parent="." unique_id=483708996]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 130.0
+offset_right = 1067.0
+offset_bottom = 396.0
+
+[node name="HBoxRotate" type="HBoxContainer" parent="VBoxContainerShopping" unique_id=1213226780]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerShopping/HBoxRotate" unique_id=993953792]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Rotate Products"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxRotate" unique_id=139296560]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerShopping/HBoxRotate" unique_id=1203749000]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_8uvav")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxRotate" unique_id=328706168]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_vvytr")
+expand_mode = 2
+
+[node name="HBoxScan" type="HBoxContainer" parent="VBoxContainerShopping" unique_id=613002534]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerShopping/HBoxScan" unique_id=1169652457]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Scan Barcode"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxScan" unique_id=1952803062]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("8_0uasu")
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerShopping/HBoxScan" unique_id=639855424]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("9_a1b5w")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxScan" unique_id=644032560]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("10_ys4jr")
+expand_mode = 2
+
+[node name="HBoxZoomIn" type="HBoxContainer" parent="VBoxContainerShopping" unique_id=700831481]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerShopping/HBoxZoomIn" unique_id=1929102977]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Zoom In"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomIn" unique_id=1575092582]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomIn" unique_id=1907174256]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("13_0im4m")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomIn" unique_id=685973353]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("14_enrxl")
+expand_mode = 2
+
+[node name="HBoxZoomOut" type="HBoxContainer" parent="VBoxContainerShopping" unique_id=53554306]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerShopping/HBoxZoomOut" unique_id=1573987293]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Zoom Out"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomOut" unique_id=798277038]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomOut" unique_id=108819017]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("15_7aju8")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomOut" unique_id=733676058]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("16_2fglw")
+expand_mode = 2
+
+[node name="HBoxPutDown" type="HBoxContainer" parent="VBoxContainerShopping" unique_id=1433584573]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerShopping/HBoxPutDown" unique_id=1070926158]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Drop Product"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxPutDown" unique_id=1962862818]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("17_fplqk")
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerShopping/HBoxPutDown" unique_id=817519815]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("18_oiuh4")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxPutDown" unique_id=340444931]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("19_g23c4")
+expand_mode = 2
+
+[node name="VBoxContainerUI" type="VBoxContainer" parent="." unique_id=1813651413]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 395.0
+offset_right = 1067.0
+offset_bottom = 607.0
+
+[node name="HBoxNavigatePDA" type="HBoxContainer" parent="VBoxContainerUI" unique_id=671633744]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerUI/HBoxNavigatePDA" unique_id=1770967355]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Navigate PDA"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerUI/HBoxNavigatePDA" unique_id=281422165]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerUI/HBoxNavigatePDA" unique_id=1487190318]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("22_lb7ik")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerUI/HBoxNavigatePDA" unique_id=433439438]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("23_1sx3c")
+expand_mode = 2
+
+[node name="HBoxSelectPDA" type="HBoxContainer" parent="VBoxContainerUI" unique_id=466387361]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainerUI/HBoxSelectPDA" unique_id=849973534]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+theme = ExtResource("3_el5nh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Select PDA"
+vertical_alignment = 1
+
+[node name="MK_Icon" type="TextureRect" parent="VBoxContainerUI/HBoxSelectPDA" unique_id=417462807]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="XB_icon" type="TextureRect" parent="VBoxContainerUI/HBoxSelectPDA" unique_id=1947744320]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("20_chinx")
+expand_mode = 2
+
+[node name="PS_Icon" type="TextureRect" parent="VBoxContainerUI/HBoxSelectPDA" unique_id=1022877557]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("21_8q0vh")
+expand_mode = 2
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=1941135018]
 custom_minimum_size = Vector2(300, 50)
