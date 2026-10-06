@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bf6jhkire3mtt"]
+
+[ext_resource type="Script" uid="uid://ykk3o21wj1u1" path="res://game/input_prompt/input_prompt.gd" id="1_nnirn"]
+[ext_resource type="Texture2D" uid="uid://di1fwxb761bve" path="res://assets/input_icons/keyboard_mouse/lmb.svg" id="2_udlmh"]
+
+[node name="InputPrompt" type="CanvasLayer" unique_id=1446215784]
+script = ExtResource("1_nnirn")
+
+[node name="TooltipPanel" type="Panel" parent="." unique_id=2053067007]
+custom_minimum_size = Vector2(350, 75)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 30.0
+offset_right = 20.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TooltipPanel" unique_id=1645785546]
+custom_minimum_size = Vector2(325, 50)
+custom_maximum_size = Vector2(350, -1)
+layout_mode = 0
+offset_top = 5.0
+offset_right = 350.0
+offset_bottom = 70.0
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="TooltipPanel/HBoxContainer" unique_id=121128827]
+layout_mode = 2
+texture = ExtResource("2_udlmh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TooltipPanel/HBoxContainer" unique_id=11402754]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Inspect"
+horizontal_alignment = 1
+vertical_alignment = 1
