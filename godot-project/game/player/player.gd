@@ -81,6 +81,8 @@ var is_inspecting_product: bool = false
 # Autosave Spinner
 @onready var auto_save_icon: CanvasLayer = $AutoSaveIcon
 
+@export var controller_look_sensitivity: float = 3.0
+
 func _ready() -> void:
 	# Initialize earnings label
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
@@ -122,6 +124,34 @@ func handle_player_look_input(event: InputEvent) -> void:
 			third_person_camera.rotate_x(-event.relative.y * 0.01)
 			# clamp rotation
 			third_person_camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-45), deg_to_rad(45))
+
+func handle_controller_look(delta: float) -> void:
+	var look_x := Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
+	var look_y := Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
+
+	# Deadzone
+	if abs(look_x) < 0.15:
+		look_x = 0.0
+
+	if abs(look_y) < 0.15:
+		look_y = 0.0
+
+	neck.rotate_y(-look_x * controller_look_sensitivity * delta)
+	model.rotate_y(-look_x * controller_look_sensitivity * delta)
+
+	camera.rotate_x(-look_y * controller_look_sensitivity * delta)
+	camera.rotation.x = clamp(
+		camera.rotation.x,
+		deg_to_rad(-45),
+		deg_to_rad(45)
+	)
+
+	third_person_camera.rotate_x(-look_y * controller_look_sensitivity * delta)
+	third_person_camera.rotation.x = clamp(
+		third_person_camera.rotation.x,
+		deg_to_rad(-45),
+		deg_to_rad(45)
+	)
 
 func handle_product_inspection_input(delta: float) -> void:
 	if held_product == null:
@@ -192,6 +222,9 @@ func _process(delta: float) -> void:
 		ui_panel.visible = true
 	
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
+	
+	if not is_inspecting_product:
+		handle_controller_look(delta)
 	
 	if is_inspecting_product:
 		handle_product_inspection_input(delta)
