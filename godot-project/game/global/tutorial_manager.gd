@@ -28,7 +28,7 @@ func update_ui() -> void:
 		Step.MOVE:
 			GameManager.tutorial_label.text = "Hello there, and welcome to Speedy Shopper!\nUse WASD to move and the mouse to look around."
 		Step.OPEN_SCANNER:
-			GameManager.tutorial_label.text = "Press T to open your scanner."
+			GameManager.tutorial_label.text = "Press Tab to open your PDA."
 		Step.ACCEPT_ORDER:
 			GameManager.tutorial_label.text = "At the moment, you only have one order. Press Space to accept it\nWhen you have mulitple orders, choose between them with the arrow keys."
 		Step.PICK_FIRST_ITEM:

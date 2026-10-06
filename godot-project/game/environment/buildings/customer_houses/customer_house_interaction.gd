@@ -6,8 +6,8 @@ extends StaticBody3D
 
 @onready var door_knock: AudioStream = preload("res://assets/sfx/door_knock.mp3")
 
-func get_interaction_tooltip(_player: Player) -> String:
-	return "Press E to Knock"
+func show_input_prompt(prompt: InputPrompt) -> void:
+	prompt.display_prompt("interact", "Knock")
 
 func interact(player: Player) -> void:
 	# TODO: 

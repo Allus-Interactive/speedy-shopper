@@ -1,7 +1,7 @@
 extends StaticBody3D
 
-func get_interaction_tooltip(_player: Player) -> String:
-	return "Press E to Rest Until Tomorrow"
+func show_input_prompt(prompt: InputPrompt) -> void:
+	prompt.display_prompt("interact", "Rest Until Tomorrow")
 
 func interact(player: Player) -> void:
 	player.fade_out()

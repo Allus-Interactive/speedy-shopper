@@ -77,7 +77,7 @@ func _physics_process(delta):
 	_process_gears()
 
 func process_accel(_delta):
-	if Input.is_action_pressed("forwards"):
+	if Input.is_action_pressed("drive"):
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		#if forward_speed >= -1:
 			#if speed < 30 and speed != 0:
@@ -89,7 +89,7 @@ func process_accel(_delta):
 		engine_force = engine_force_value
 		return
 	
-	if Input.is_action_pressed("backwards"):
+	if Input.is_action_pressed("brake"):
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		#if speed < 20 and speed != 0:
 			#engine_force = -clamp(engine_force_value * 3 / speed, 0, 300)
@@ -139,11 +139,12 @@ func _process(_delta: float) -> void:
 	if !is_player_inside:
 		return
 	
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("replace"):
 		exit_vehicle()
 
-func get_interaction_tooltip(_player: Player) -> String:
-	return self.name + "\nPress E to Enter"
+func show_input_prompt(prompt: InputPrompt) -> void:
+	if !is_player_inside:
+		prompt.display_prompt("interact", "Enter")
 
 func interact(p: Player) -> void:
 	player = p

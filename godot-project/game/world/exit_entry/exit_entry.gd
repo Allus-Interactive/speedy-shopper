@@ -8,15 +8,14 @@ class_name ExitEntry
 
 @onready var shop_door: AudioStream = preload("res://assets/sfx/shop_door_bell.mp3")
 
-func get_interaction_tooltip(_player: Player) -> String:
+func show_input_prompt(prompt: InputPrompt) -> void:
 	if TutorialManager.tutorial_enabled and TutorialManager.current_step != TutorialManager.Step.COMPLETE:
-		return "Please complete the Tutorial\nbefore leaving"
-	if GameTimeManager.hour > 22 and GameTimeManager.hour < 10:
-		return "The Store is Closed"
-	if is_in_shop:
-		return "Press E to Leave"
+		prompt.display_prompt("none", "Please complete the Tutorial\nbefore leaving")
 	else:
-		return "Press E to Enter"
+		if is_in_shop:
+			prompt.display_prompt("interact", "Leave")
+		else:
+			prompt.display_prompt("interact", "Enter")
 
 func interact(_p: Player) -> void:
 	if TutorialManager.tutorial_enabled:

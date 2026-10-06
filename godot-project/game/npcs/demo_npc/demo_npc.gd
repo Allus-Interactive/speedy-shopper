@@ -9,5 +9,5 @@ func interact(player: Player) -> void:
 	DialogManager.dialog_ui.set_text("Hi hi! You must be new, welcome!")
 	# TODO: work on dialog system
 
-func get_interaction_tooltip(_player: Player) -> String:
-	return "Press E - Speak to NPC"
+func show_input_prompt(prompt: InputPrompt) -> void:
+	prompt.display_prompt("interact", "Speak to NPC")

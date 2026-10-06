@@ -10,16 +10,19 @@ func interact(player: Player) -> void:
 		if TutorialManager.current_step == TutorialManager.Step.RETURN_TO_COUNTER:
 			TutorialManager.next_step()
 
-func get_interaction_tooltip(player: Player) -> String:
+func show_input_prompt(prompt: InputPrompt) -> void:
 	var active_order = OrderManager.active_order
+	var player: Player = prompt.get_parent()
+	
 	if active_order:
 		if active_order.delivery_address == "Pickup" and player.is_carrying_crate:
 			# Pickup order, order is complete when dropped at kiosk
-			return "Press E to Complete the Order"
+			prompt.display_prompt("interact", "Complete Order")
 		elif player.is_carrying_crate:
 			# Delivery order, order is complete when delivered to address
-			return "Press E to Load into the Van"
-	return "Delivery Kiosk"
+			prompt.display_prompt("interact", "Load into the Van")
+	else:
+		prompt.display_prompt("none", "Delivery Kiosk")
 
 func _order_is_picked() -> bool:
 	var active_order = OrderManager.active_order

@@ -9,10 +9,11 @@ func interact(player: Player) -> void:
 			if TutorialManager.current_step == TutorialManager.Step.PICK_UP_TRAY:
 				TutorialManager.next_step()
 
-func get_interaction_tooltip(_player: Player) -> String:
+func show_input_prompt(prompt: InputPrompt) -> void:
 	if _order_is_picked():
-		return "Press E to Pick Up"
-	return "Delivery Crate"
+		prompt.display_prompt("interact", "Pick Up")
+	else:
+		prompt.display_prompt("none", "Delivery Crate")
 
 func _order_is_picked() -> bool:
 	var active_order = OrderManager.active_order

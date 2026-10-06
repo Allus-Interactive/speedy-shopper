@@ -19,17 +19,18 @@ func interact(player: Player) -> void:
 		else:
 			player.pick_up_footstool(self)
 
-func get_interaction_tooltip(player: Player) -> String:
+func show_input_prompt(prompt: InputPrompt) -> void:
 	# Get the player's interaction raycast.
+	var player: Player = prompt.get_parent()
 	var raycast = player.ray_cast_3d
 	
 	var local_hit: Vector3 = _get_local_hit_point(raycast)
 	# If the player is looking at the top section of the stool, offer to stand on it.
 	# Otherwise, they're looking at the lower section, so offer to pick it up instead.
 	if local_hit.y > height_split:
-		return "Press E - Stand on Footstool"
+		prompt.display_prompt("interact", "Stand on Stool")
 	else:
-		return "Press E - Pick up Footstool"
+		prompt.display_prompt("interact", "Pick up Stool")
 
 func _get_local_hit_point(raycast) -> Vector3:
 	# Only continue if the raycast is currently hitting this footstool.

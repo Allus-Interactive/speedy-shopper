@@ -51,8 +51,7 @@ var is_inspecting_product: bool = false
 
 # UI
 @onready var crosshair: ColorRect = $CanvasLayer/Control/Crosshair
-@onready var tooltip_panel: Panel = $CanvasLayer/Control/TooltipPanel
-@onready var tooltip_label: Label = $CanvasLayer/Control/TooltipPanel/TooltipLabel
+@onready var input_prompt: InputPrompt = $InputPrompt
 
 # Tutorial UI
 @onready var tutorial_panel: Panel = $TutorialPanel
@@ -82,14 +81,14 @@ var is_inspecting_product: bool = false
 # Autosave Spinner
 @onready var auto_save_icon: CanvasLayer = $AutoSaveIcon
 
+@export var controller_look_sensitivity: float = 3.0
+
 func _ready() -> void:
 	# Initialize earnings label
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
 	
 	# Hide Autosave spinner
 	auto_save_icon.visible = false
-	
-	tooltip_panel.hide()
 	
 	GameManager.tutorial_panel = tutorial_panel
 	GameManager.tutorial_label = tutorial_label
@@ -125,6 +124,34 @@ func handle_player_look_input(event: InputEvent) -> void:
 			third_person_camera.rotate_x(-event.relative.y * 0.01)
 			# clamp rotation
 			third_person_camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-45), deg_to_rad(45))
+
+func handle_controller_look(delta: float) -> void:
+	var look_x := Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
+	var look_y := Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
+
+	# Deadzone
+	if abs(look_x) < 0.15:
+		look_x = 0.0
+
+	if abs(look_y) < 0.15:
+		look_y = 0.0
+
+	neck.rotate_y(-look_x * controller_look_sensitivity * delta)
+	model.rotate_y(-look_x * controller_look_sensitivity * delta)
+
+	camera.rotate_x(-look_y * controller_look_sensitivity * delta)
+	camera.rotation.x = clamp(
+		camera.rotation.x,
+		deg_to_rad(-45),
+		deg_to_rad(45)
+	)
+
+	third_person_camera.rotate_x(-look_y * controller_look_sensitivity * delta)
+	third_person_camera.rotation.x = clamp(
+		third_person_camera.rotation.x,
+		deg_to_rad(-45),
+		deg_to_rad(45)
+	)
 
 func handle_product_inspection_input(delta: float) -> void:
 	if held_product == null:
@@ -169,10 +196,6 @@ func _physics_process(delta: float) -> void:
 	
 	update_crouch(delta)
 	
-	# TODO: revisit and improve camera switching
-	#if Input.is_action_just_pressed("switch camera"):
-		#switch_camera()
-	
 	var movement_speed = CROUCH_SPEED if is_crouching else WALK_SPEED
 	
 	var input_dir := Input.get_vector("left", "right", "forwards", "backwards")
@@ -199,6 +222,9 @@ func _process(delta: float) -> void:
 		ui_panel.visible = true
 	
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
+	
+	if not is_inspecting_product:
+		handle_controller_look(delta)
 	
 	if is_inspecting_product:
 		handle_product_inspection_input(delta)
@@ -268,9 +294,11 @@ func pick_up_product(product: ProductObject) -> void:
 	# Make the mouse visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	# Hide the crosshair and tooltip
+	# Hide the crosshair and previous prompt
 	crosshair.hide()
-	tooltip_panel.hide()
+	input_prompt.hide_prompt()
+	
+	input_prompt.display_prompt("drop", "Put %s Back" % product.product_data.product_info.product_name)
 	
 	product.disable_barcode_hitbox(false)
 
@@ -494,9 +522,8 @@ func return_held_product() -> void:
 	# Confine Mouse to screen
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	# Show the crosshair and tooltip
+	# Show the crosshair
 	crosshair.show()
-	tooltip_panel.show()
 	
 	held_product = null
 	held_product_original_parent = null
@@ -548,13 +575,12 @@ func scan_barcode() -> void:
 func update_tooltip() -> void:
 	# If on the stool and there is no object
 	if is_on_stool and not ray_cast_3d.is_colliding():
-		tooltip_label.text = "Press E - Get off Stool"
-		tooltip_panel.show()
+		input_prompt.display_prompt("interact", "Get off Stool")
 		return
 	
 	# If there is no object
 	if not ray_cast_3d.is_colliding():
-		tooltip_panel.hide()
+		input_prompt.hide_prompt()
 		crosshair.modulate = Color.WHITE
 		return
 	
@@ -562,16 +588,14 @@ func update_tooltip() -> void:
 	
 	# if the object is null
 	if obj == null:
-		tooltip_panel.hide()
+		input_prompt.hide_prompt()
 		crosshair.modulate = Color.WHITE
 		return
 	
-	# If the object has the 'get_interaction_tooltip' function
-	if obj.has_method("get_interaction_tooltip"):
-		tooltip_label.text = obj.get_interaction_tooltip(self)
-		if tooltip_label.text != "":
-			tooltip_panel.show()
-			crosshair.modulate = Color.DARK_GREEN
+	# If the object has the 'show_input_prompt' function
+	if obj.has_method("show_input_prompt"):
+		obj.show_input_prompt(input_prompt)
+		crosshair.modulate = Color.DARK_GREEN
 		return
 	
 	# if the object has the 'interact' function
@@ -582,14 +606,6 @@ func update_tooltip() -> void:
 func update_crouch(delta: float) -> void:
 	var target_neck_y = crouching_neck_height if is_crouching else standing_neck_height
 	neck.position.y = lerp(neck.position.y, target_neck_y, crouch_lerp_speed * delta)
-
-func switch_camera() -> void:
-	if camera.current:
-		third_person_camera.current = true
-		camera.current = false
-	else:
-		camera.current = true
-		third_person_camera.current = false
 
 func enter_vehicle(v: Vehicle) -> void:
 	GameManager.is_in_vehicle = true
