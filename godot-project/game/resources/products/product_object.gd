@@ -20,12 +20,6 @@ func set_product_data(data: Product) -> void:
 	product_data = data
 	_rebuild()
 
-#func get_interaction_tooltip(_player: Player) -> String:
-	#if product_data == null:
-		#return "Press E to inspect"
-	#
-	#return "%s\nPress E to inspect" % product_data.product_info.product_name
-
 func show_input_prompt(prompt: InputPrompt) -> void:
 	var label: String = "%s\nInspect" % product_data.product_info.product_name
 	prompt.display_prompt("interact", label)
