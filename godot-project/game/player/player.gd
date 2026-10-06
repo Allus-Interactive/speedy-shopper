@@ -53,6 +53,7 @@ var is_inspecting_product: bool = false
 @onready var crosshair: ColorRect = $CanvasLayer/Control/Crosshair
 @onready var tooltip_panel: Panel = $CanvasLayer/Control/TooltipPanel
 @onready var tooltip_label: Label = $CanvasLayer/Control/TooltipPanel/TooltipLabel
+@onready var input_prompt: InputPrompt = $InputPrompt
 
 # Tutorial UI
 @onready var tutorial_panel: Panel = $TutorialPanel
@@ -169,10 +170,6 @@ func _physics_process(delta: float) -> void:
 	
 	update_crouch(delta)
 	
-	# TODO: revisit and improve camera switching
-	#if Input.is_action_just_pressed("switch camera"):
-		#switch_camera()
-	
 	var movement_speed = CROUCH_SPEED if is_crouching else WALK_SPEED
 	
 	var input_dir := Input.get_vector("left", "right", "forwards", "backwards")
@@ -271,6 +268,7 @@ func pick_up_product(product: ProductObject) -> void:
 	# Hide the crosshair and tooltip
 	crosshair.hide()
 	tooltip_panel.hide()
+	input_prompt.hide_prompt()
 	
 	product.disable_barcode_hitbox(false)
 
@@ -555,6 +553,7 @@ func update_tooltip() -> void:
 	# If there is no object
 	if not ray_cast_3d.is_colliding():
 		tooltip_panel.hide()
+		input_prompt.hide_prompt()
 		crosshair.modulate = Color.WHITE
 		return
 	
@@ -563,6 +562,7 @@ func update_tooltip() -> void:
 	# if the object is null
 	if obj == null:
 		tooltip_panel.hide()
+		input_prompt.hide_prompt()
 		crosshair.modulate = Color.WHITE
 		return
 	
@@ -574,6 +574,12 @@ func update_tooltip() -> void:
 			crosshair.modulate = Color.DARK_GREEN
 		return
 	
+	# If the object has the 'show_input_prompt' function
+	if obj.has_method("show_input_prompt"):
+		obj.show_input_prompt(input_prompt)
+		crosshair.modulate = Color.DARK_GREEN
+		return
+	
 	# if the object has the 'interact' function
 	if obj.has_method("interact"):
 		crosshair.modulate = Color.DARK_GREEN
@@ -582,14 +588,6 @@ func update_tooltip() -> void:
 func update_crouch(delta: float) -> void:
 	var target_neck_y = crouching_neck_height if is_crouching else standing_neck_height
 	neck.position.y = lerp(neck.position.y, target_neck_y, crouch_lerp_speed * delta)
-
-func switch_camera() -> void:
-	if camera.current:
-		third_person_camera.current = true
-		camera.current = false
-	else:
-		camera.current = true
-		third_person_camera.current = false
 
 func enter_vehicle(v: Vehicle) -> void:
 	GameManager.is_in_vehicle = true

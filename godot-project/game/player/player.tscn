@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://cvwv36djqy7es" path="res://assets/themes/player_ui.tres" id="2_8soms"]
 [ext_resource type="PackedScene" uid="uid://c6m46wgh7wbdt" path="res://game/ui/scanner/scanner_ui.tscn" id="2_b2mth"]
 [ext_resource type="PackedScene" uid="uid://c5mty81xoue3a" path="res://game/ui/notification_ui/notification_ui.tscn" id="4_a4w0n"]
+[ext_resource type="PackedScene" uid="uid://bf6jhkire3mtt" path="res://game/input_prompt/input_prompt.tscn" id="4_j0mij"]
 [ext_resource type="PackedScene" uid="uid://gnqq0wgbnm5k" path="res://game/ui/dialog_ui/dialog_ui.tscn" id="6_4ste8"]
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="7_anr75"]
 [ext_resource type="Script" uid="uid://d31w4nmmoip68" path="res://game/player/fade_to_black.gd" id="8_epvkq"]
@@ -150,6 +151,8 @@ theme_override_font_sizes/font_size = 20
 text = "Press E to Complete the Order"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="InputPrompt" parent="." unique_id=1446215784 instance=ExtResource("4_j0mij")]
 
 [node name="ScannerUI" parent="." unique_id=267252903 instance=ExtResource("2_b2mth")]
 offset = Vector2(900, 0)
