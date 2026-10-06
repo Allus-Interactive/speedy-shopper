@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://c5vkpj1dvmnh7" path="res://assets/environment/roads/coloured/straight/road_straight_coloured_road_straight_coloured.png" id="1_u27hw"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u27hw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aesv5"]
 resource_name = "Material"
 cull_mode = 2
 albedo_texture = ExtResource("1_u27hw")
 roughness = 0.5
 metadata/_gltf_primary_texture_coord = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_aesv5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mjm3v"]
 _surfaces = [{
 "aabb": AABB(-7.5, -0.15, -7.5, 15, 0.3, 15),
 "format": 34896613377,
@@ -31,7 +31,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 84,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABwAFAAQABQAHAAgACAAHAAkACAAJAAoACAAKAAsADAANAA4ADAAPAA0AEAARABIAEAATABEAEwAQABQAFAAQABUAFAAVABYAFAAWABcAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
-"material": SubResource("StandardMaterial3D_u27hw"),
+"material": SubResource("StandardMaterial3D_aesv5"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -39,4 +39,4 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNVl5v//AAD/////AAAAAP///////wAA//9l5v9/AAD//wAAAAAAAP//mRn/fwAA//+ZGf//AAD//wAA//8AAP////8AAAAAVNX///////9U1f////8AAFTV//8AAP//VNWZGf9/////vwAA//////+/mRn//////78AAAAA////v///AAD///+/Zeb/f////79l5v//////v/////////+/AAAAAAAAVNX//wAA//9U1f//AAAAAFTVAAAAAP//VNWZGf//AAD//wAA////////AAD//wAA//+ZGf///////2Xm/////////////wAA/////////////2Xm//8AAP//mRn/f///VNWZGf//AABU1ZkZ/38AAFTVmRn/////VNVl5v9/AABU1WXm/////1TVZeb/f///VNVl5v//AABU1ZkZ/38AAP//Zeb/f/////+ZGf9//////2Xm/38AAP//VFWqqlRVqqpUVaqqVFWqqv+//7//v/+//7//v/+//7//v/+//7//v/+//7//v/+/qiqqKqoqqiqqKqoqqiqqKv//////////////////////////////////////////qipU1aoqVNWqKlTVqipU1f9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+/qiqqKqoqqiqqKqoqqiqqKlRVqqpUVaqqVFWqqlRVqqr/f/+//3//v/9//7//f/+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_aesv5")
+shadow_mesh = SubResource("ArrayMesh_mjm3v")
