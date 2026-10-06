@@ -17,7 +17,11 @@ func display_prompt(input_action: String, text: String) -> void:
 	action = input_action
 	label.text = text
 	
-	_update_icon()
+	if input_action == "none":
+		icon.visible = false
+	else:
+		icon.visible = true
+		_update_icon()
 	
 	self.visible = true
 

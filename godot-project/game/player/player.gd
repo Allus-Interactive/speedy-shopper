@@ -51,8 +51,6 @@ var is_inspecting_product: bool = false
 
 # UI
 @onready var crosshair: ColorRect = $CanvasLayer/Control/Crosshair
-@onready var tooltip_panel: Panel = $CanvasLayer/Control/TooltipPanel
-@onready var tooltip_label: Label = $CanvasLayer/Control/TooltipPanel/TooltipLabel
 @onready var input_prompt: InputPrompt = $InputPrompt
 
 # Tutorial UI
@@ -89,8 +87,6 @@ func _ready() -> void:
 	
 	# Hide Autosave spinner
 	auto_save_icon.visible = false
-	
-	tooltip_panel.hide()
 	
 	GameManager.tutorial_panel = tutorial_panel
 	GameManager.tutorial_label = tutorial_label
@@ -265,10 +261,11 @@ func pick_up_product(product: ProductObject) -> void:
 	# Make the mouse visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	# Hide the crosshair and tooltip
+	# Hide the crosshair and previous prompt
 	crosshair.hide()
-	tooltip_panel.hide()
 	input_prompt.hide_prompt()
+	
+	input_prompt.display_prompt("drop", "Put %s Back" % product.product_data.product_info.product_name)
 	
 	product.disable_barcode_hitbox(false)
 
@@ -492,9 +489,8 @@ func return_held_product() -> void:
 	# Confine Mouse to screen
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	# Show the crosshair and tooltip
+	# Show the crosshair
 	crosshair.show()
-	tooltip_panel.show()
 	
 	held_product = null
 	held_product_original_parent = null
@@ -546,13 +542,11 @@ func scan_barcode() -> void:
 func update_tooltip() -> void:
 	# If on the stool and there is no object
 	if is_on_stool and not ray_cast_3d.is_colliding():
-		tooltip_label.text = "Press E - Get off Stool"
-		tooltip_panel.show()
+		input_prompt.display_prompt("interact", "Get off Stool")
 		return
 	
 	# If there is no object
 	if not ray_cast_3d.is_colliding():
-		tooltip_panel.hide()
 		input_prompt.hide_prompt()
 		crosshair.modulate = Color.WHITE
 		return
@@ -561,17 +555,8 @@ func update_tooltip() -> void:
 	
 	# if the object is null
 	if obj == null:
-		tooltip_panel.hide()
 		input_prompt.hide_prompt()
 		crosshair.modulate = Color.WHITE
-		return
-	
-	# If the object has the 'get_interaction_tooltip' function
-	if obj.has_method("get_interaction_tooltip"):
-		tooltip_label.text = obj.get_interaction_tooltip(self)
-		if tooltip_label.text != "":
-			tooltip_panel.show()
-			crosshair.modulate = Color.DARK_GREEN
 		return
 	
 	# If the object has the 'show_input_prompt' function

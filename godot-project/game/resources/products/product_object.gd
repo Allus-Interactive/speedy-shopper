@@ -21,7 +21,8 @@ func set_product_data(data: Product) -> void:
 	_rebuild()
 
 func show_input_prompt(prompt: InputPrompt) -> void:
-	var label: String = "%s\nInspect" % product_data.product_info.product_name
+	#var label: String = "%s\nInspect" % product_data.product_info.product_name
+	var label: String = "Pick up %s" % product_data.product_info.product_name
 	prompt.display_prompt("interact", label)
 
 func on_barcode_clicked() -> bool:

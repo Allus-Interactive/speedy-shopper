@@ -7,8 +7,8 @@ func interact(player: Player) -> void:
 		var place_point: Vector3 = player.ray_cast_3d.get_collision_point()
 		player.put_down_footstool(self, place_point)
 
-func get_interaction_tooltip(player: Player) -> String:
-	if player.is_carrying_stool:
-		return "Press E - Put down Stool"
+func show_input_prompt(prompt: InputPrompt) -> void:
+	var player: Player = prompt.get_parent()
 	
-	return ""
+	if player.is_carrying_stool:
+		prompt.display_prompt("interact", "Put Down Stool")

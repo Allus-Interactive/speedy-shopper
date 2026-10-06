@@ -139,11 +139,12 @@ func _process(_delta: float) -> void:
 	if !is_player_inside:
 		return
 	
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("replace"):
 		exit_vehicle()
 
-func get_interaction_tooltip(_player: Player) -> String:
-	return self.name + "\nPress E to Enter"
+func show_input_prompt(prompt: InputPrompt) -> void:
+	if !is_player_inside:
+		prompt.display_prompt("interact", "Enter")
 
 func interact(p: Player) -> void:
 	player = p
