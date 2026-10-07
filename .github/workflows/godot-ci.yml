@@ -11,8 +11,8 @@ env:
   PROJECT_PATH: godot-project
 
 jobs:
-  export-web:
-    name: Web Export
+  export-windows:
+    name: Windows Export
     runs-on: ubuntu-22.04
     container:
       image: barichello/godot-ci:4.7.1
@@ -25,19 +25,31 @@ jobs:
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
-      - name: Web Build
+      - name: Get Game Version
         run: |
-          mkdir -v -p build/web
-          EXPORT_DIR="$(readlink -f build)"
+          VERSION=$(grep '^config/version=' "$PROJECT_PATH/project.godot" | cut -d'"' -f2)
+          echo "GAME_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "Game version: $VERSION"
+      - name: Windows Build
+        run: |
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
+          godot --headless --verbose --export-release "Windows Desktop"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: web
-          path: build/web
+          name: windows
+          path: builds/playtest
       - name: Deploy
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         run: |
-          butler push ./build/web ${{ vars.ITCHIO_USERNAME }}/${{ vars.ITCHIO_GAME }}:web
+          butler push ./builds/playtest ${{ vars.ITCHIO_USERNAME }}/${{ vars.ITCHIO_GAME }}:windows
+      - name: Announce Release
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -H "Content-Type: application/json" \
+            -d "{
+              \"content\": \"🎮 **Speedy Shopper has been updated!**\n\n**v$GAME_VERSION** is now available to download from itch.io!\n\nhttps://${{ vars.ITCHIO_USERNAME }}.itch.io/${{ vars.ITCHIO_GAME }}\"
+            }" \
+            "$DISCORD_WEBHOOK_URL"
