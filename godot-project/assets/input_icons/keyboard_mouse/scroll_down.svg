@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-871.78,-910.59)">
+        <g id="Mouse-Wheel-Down" serif:id="Mouse Wheel Down" transform="matrix(1,0,0,1,871.78,910.59)">
+            <rect x="0" y="0" width="256" height="256" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="0" y="0" width="256" height="256"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g id="Mouse" transform="matrix(1.11977,0,0,1.11977,-29.514,-30.1796)">
+                    <path d="M140.493,251.82C136.963,252.124 80.219,256.047 70.404,195.855L70.404,87.535C70.404,87.535 79.595,31.911 127.941,31.261L153.391,31.261C201.737,31.911 210.928,87.535 210.928,87.535L210.928,195.855C200.797,257.985 140.666,251.805 140.666,251.805L140.493,251.82Z" style="fill:none;stroke:black;stroke-width:7.44px;"/>
+                    <path d="M70.404,128L210.928,128" style="fill:none;stroke:black;stroke-width:7.44px;"/>
+                    <path d="M140.666,128L140.666,31.261" style="fill:none;stroke:black;stroke-width:7.44px;"/>
+                    <g id="Mouse-Wheel" serif:id="Mouse Wheel">
+                        <path d="M140.666,103.563L145.553,103.563C145.553,103.563 152.715,102.864 154.214,93.952L154.214,82.245L140.666,103.563ZM140.666,103.563L136.097,103.563C136.097,103.563 129.401,102.864 128,93.952L128,82.245L140.666,103.563ZM140.666,61.926L145.553,61.926C145.553,61.926 152.715,62.592 154.214,71.086L154.214,82.245L140.666,61.926ZM140.666,61.926L136.097,61.926C136.097,61.926 129.401,62.592 128,71.086L128,82.245L140.666,61.926Z"/>
+                        <path d="M131.88,66.961L140.666,61.926L149.446,68.155L154.221,82.24L150.384,95.016L140.749,103.116L129.834,91.605L128.014,82.228L132.404,66.661L131.88,66.961Z"/>
+                    </g>
+                </g>
+                <g id="Mouse-Wheel1" serif:id="Mouse Wheel" transform="matrix(0.832766,0,0,0.898675,10.4879,-11.885)">
+                    <path d="M140.666,103.563L145.553,103.563C145.553,103.563 152.715,102.864 154.214,93.952L154.214,82.245L140.666,103.563ZM140.666,103.563L136.097,103.563C136.097,103.563 129.401,102.864 128,93.952L128,82.245L140.666,103.563ZM140.666,61.926L145.553,61.926C145.553,61.926 152.715,62.592 154.214,71.086L154.214,82.245L140.666,61.926ZM140.666,61.926L136.097,61.926C136.097,61.926 129.401,62.592 128,71.086L128,82.245L140.666,61.926Z" style="fill:rgb(255,244,36);"/>
+                    <path d="M131.88,66.961L140.666,61.926L149.446,68.155L154.221,82.24L150.384,95.016L140.749,103.116L129.834,91.605L128.014,82.228L132.404,66.661L131.88,66.961Z" style="fill:rgb(255,244,36);"/>
+                </g>
+                <g transform="matrix(-1.30457,1.59764e-16,-1.95731e-16,-1.59826,294.993,312.725)">
+                    <g transform="matrix(1,0,0,1,-0.041338,-0.543805)">
+                        <path d="M128,65.523L128,105.577L128,65.523Z" style="fill:none;stroke:black;stroke-width:2.86px;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-0.041338,-0.543805)">
+                        <path d="M108.553,85.55L128,65.523L147.53,85.053" style="fill:none;stroke:black;stroke-width:2.86px;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

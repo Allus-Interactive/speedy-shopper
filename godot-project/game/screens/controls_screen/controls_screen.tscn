@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://beaynf7opuj6a" path="res://game/screens/controls_screen/controls_screen.gd" id="1_1uf0h"]
 [ext_resource type="Texture2D" uid="uid://bd47gx27yglwh" path="res://assets/backgrounds/title_screen_logoless.png" id="2_ad3a4"]
 [ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="3_el5nh"]
+[ext_resource type="Texture2D" uid="uid://cejhfmlslce4m" path="res://assets/input_icons/keyboard_mouse/wasd.svg" id="4_0im4m"]
 [ext_resource type="Texture2D" uid="uid://q7dtjo3ccbq6" path="res://assets/input_icons/xbox/LS.svg" id="4_8uvav"]
 [ext_resource type="Texture2D" uid="uid://bt327e87vcc0j" path="res://assets/buttons/back/back.png" id="4_f0yqh"]
 [ext_resource type="Texture2D" uid="uid://bn6d88n03fhwq" path="res://assets/buttons/back/back_pressed.png" id="5_kefsj"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c5ckbem1aqc5m" path="res://assets/input_icons/xbox/LS_press.svg" id="6_4ni1u"]
 [ext_resource type="Texture2D" uid="uid://y6jrh2g7iate" path="res://assets/buttons/back/back_hover.png" id="6_ff2oh"]
 [ext_resource type="Texture2D" uid="uid://dmfq88oqtuuf" path="res://assets/input_icons/ps/L3_press.svg" id="7_6gwfu"]
+[ext_resource type="Texture2D" uid="uid://pm7ftosk6y8v" path="res://assets/input_icons/keyboard_mouse/c.svg" id="7_enrxl"]
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="7_ip4nh"]
 [ext_resource type="Texture2D" uid="uid://di1fwxb761bve" path="res://assets/input_icons/keyboard_mouse/lmb.svg" id="8_0uasu"]
 [ext_resource type="Texture2D" uid="uid://v0qfa7abovil" path="res://assets/input_icons/xbox/A.svg" id="9_a1b5w"]
@@ -17,16 +19,23 @@
 [ext_resource type="Texture2D" uid="uid://vlajgdmx2cwg" path="res://assets/input_icons/xbox/Y.svg" id="11_dibj8"]
 [ext_resource type="Texture2D" uid="uid://dh6wef1v8ybcw" path="res://assets/input_icons/ps/triangle.svg" id="12_37adn"]
 [ext_resource type="Texture2D" uid="uid://c1n4ydcwkkhwl" path="res://assets/input_icons/xbox/RT.svg" id="13_0im4m"]
+[ext_resource type="Texture2D" uid="uid://c18xlv332nl1g" path="res://assets/input_icons/keyboard_mouse/tab.svg" id="13_7aju8"]
 [ext_resource type="Texture2D" uid="uid://bs87f1msns44t" path="res://assets/input_icons/ps/R2.svg" id="14_enrxl"]
 [ext_resource type="Texture2D" uid="uid://bhk75mwplms3a" path="res://assets/input_icons/xbox/LT.svg" id="15_7aju8"]
 [ext_resource type="Texture2D" uid="uid://c75xw21h3df5j" path="res://assets/input_icons/ps/L2.svg" id="16_2fglw"]
 [ext_resource type="Texture2D" uid="uid://ignrc47frrif" path="res://assets/input_icons/keyboard_mouse/rmb.svg" id="17_fplqk"]
+[ext_resource type="Texture2D" uid="uid://bod5pseqmpcs1" path="res://assets/input_icons/keyboard_mouse/s.svg" id="18_2fglw"]
 [ext_resource type="Texture2D" uid="uid://dgpnj0ol0moww" path="res://assets/input_icons/xbox/B.svg" id="18_oiuh4"]
 [ext_resource type="Texture2D" uid="uid://bl261sir85eq6" path="res://assets/input_icons/ps/circle.svg" id="19_g23c4"]
 [ext_resource type="Texture2D" uid="uid://c83wtakkx7ks5" path="res://assets/input_icons/xbox/X.svg" id="20_chinx"]
 [ext_resource type="Texture2D" uid="uid://ihphwxondr2w" path="res://assets/input_icons/ps/square.svg" id="21_8q0vh"]
 [ext_resource type="Texture2D" uid="uid://wm6uy0mh86y5" path="res://assets/input_icons/xbox/dpad.svg" id="22_lb7ik"]
 [ext_resource type="Texture2D" uid="uid://cyl8427hqdp1r" path="res://assets/input_icons/ps/dpad.svg" id="23_1sx3c"]
+[ext_resource type="Texture2D" uid="uid://d2x80ihtbr0oy" path="res://assets/input_icons/keyboard_mouse/p.svg" id="24_fplqk"]
+[ext_resource type="Texture2D" uid="uid://dluil62t8o4j2" path="res://assets/input_icons/keyboard_mouse/scroll_up.svg" id="27_oiuh4"]
+[ext_resource type="Texture2D" uid="uid://cqwvjtg4ar6xn" path="res://assets/input_icons/keyboard_mouse/scroll_down.svg" id="28_g23c4"]
+[ext_resource type="Texture2D" uid="uid://bk2gwwcanxj0n" path="res://assets/input_icons/keyboard_mouse/arrow_keys.svg" id="29_chinx"]
+[ext_resource type="Texture2D" uid="uid://dbyp5fki6gw46" path="res://assets/input_icons/keyboard_mouse/space.svg" id="32_8q0vh"]
 
 [node name="ControlsScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -77,6 +86,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxMovement" unique_id=910903993]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("4_0im4m")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerWalking/HBoxMovement" unique_id=1365936931]
@@ -106,6 +116,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxCrouch" unique_id=259911249]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("7_enrxl")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerWalking/HBoxCrouch" unique_id=304826194]
@@ -165,6 +176,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerWalking/HBoxPDA" unique_id=1641846946]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("13_7aju8")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerWalking/HBoxPDA" unique_id=1783711957]
@@ -201,6 +213,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxDrive" unique_id=1103936481]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("4_0im4m")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerDriving/HBoxDrive" unique_id=697097714]
@@ -230,6 +243,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxBrakeReverse" unique_id=954049202]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("18_2fglw")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerDriving/HBoxBrakeReverse" unique_id=1999089473]
@@ -319,6 +333,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerDriving/HBoxParking" unique_id=31987340]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("24_fplqk")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerDriving/HBoxParking" unique_id=1287431290]
@@ -355,6 +370,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxRotate" unique_id=139296560]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("4_0im4m")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerShopping/HBoxRotate" unique_id=1203749000]
@@ -414,6 +430,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomIn" unique_id=1575092582]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("27_oiuh4")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomIn" unique_id=1907174256]
@@ -443,6 +460,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomOut" unique_id=798277038]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("28_g23c4")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerShopping/HBoxZoomOut" unique_id=108819017]
@@ -509,6 +527,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerUI/HBoxNavigatePDA" unique_id=281422165]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("29_chinx")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerUI/HBoxNavigatePDA" unique_id=1487190318]
@@ -538,6 +557,7 @@ vertical_alignment = 1
 [node name="MK_Icon" type="TextureRect" parent="VBoxContainerUI/HBoxSelectPDA" unique_id=417462807]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+texture = ExtResource("32_8q0vh")
 expand_mode = 2
 
 [node name="XB_icon" type="TextureRect" parent="VBoxContainerUI/HBoxSelectPDA" unique_id=1947744320]
