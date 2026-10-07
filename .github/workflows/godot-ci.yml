@@ -32,8 +32,8 @@ jobs:
           echo "Game version: $VERSION"
       - name: Windows Build
         run: |
-          mkdir -v -p ../builds/playtest
           cd $PROJECT_PATH
+          mkdir -v -p ../builds/playtest
           godot --headless --verbose --export-release "Windows Desktop"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
