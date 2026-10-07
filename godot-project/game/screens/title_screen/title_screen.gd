@@ -3,6 +3,7 @@ extends Control
 class_name TitleScreen
 
 @onready var sfx_player: SfxPlayer = $SFXPlayer
+@onready var version_label: Label = $VersionLabel
 
 @onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
@@ -16,6 +17,7 @@ func _ready() -> void:
 	SaveLoadManager.load_game_data()
 	SceneTransition.fade_in(1.5)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	version_label.text = "v" + ProjectSettings.get_setting("application/config/version")
 
 func load_settings() -> void:
 	if config.load("user://speedy_shopper_settings.cfg") == OK:

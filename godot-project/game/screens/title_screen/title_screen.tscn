@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://2ly6ixeyepdn" path="res://assets/buttons/credits/credits.png" id="19_fvqoh"]
 [ext_resource type="Texture2D" uid="uid://mlryddygu4xp" path="res://assets/buttons/credits/credits_pressed.png" id="20_cj0x8"]
 [ext_resource type="Texture2D" uid="uid://b0dbinnh638n0" path="res://assets/buttons/credits/credits_hover.png" id="21_atp2w"]
+[ext_resource type="Theme" uid="uid://b1kte54hw4ql0" path="res://assets/themes/game_ui.tres" id="26_cj0x8"]
 
 [node name="TitleScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -129,6 +130,17 @@ texture_hover = ExtResource("17_26f05")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_kxwh2")]
 position = Vector2(490, 560)
+
+[node name="VersionLabel" type="Label" parent="." unique_id=317050808]
+layout_mode = 0
+offset_left = 1170.0
+offset_top = 690.0
+offset_right = 1270.0
+offset_bottom = 713.0
+theme = ExtResource("26_cj0x8")
+theme_override_colors/font_color = Color(0.9882353, 0.95686275, 0.89411765, 1)
+text = "v1.0.0"
+horizontal_alignment = 2
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
