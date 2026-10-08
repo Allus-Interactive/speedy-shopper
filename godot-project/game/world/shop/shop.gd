@@ -31,5 +31,3 @@ func _ready() -> void:
 
 func play_the_tutorial():
 	JobManager.generate_tutorial_order()
-	
-	# TODO: Dialogue that takes player through basics of picking orders
