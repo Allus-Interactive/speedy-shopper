@@ -113,9 +113,9 @@ vertical_alignment = 1
 
 [node name="TimeCheckButton" type="CheckButton" parent="." unique_id=1730348406]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 367.0
-offset_right = 564.0
+offset_left = 544.0
+offset_top = 375.0
+offset_right = 576.0
 offset_bottom = 391.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
@@ -136,10 +136,10 @@ vertical_alignment = 1
 
 [node name="ArrowNavigationButton" type="CheckButton" parent="." unique_id=86736144]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 403.0
-offset_right = 564.0
-offset_bottom = 427.0
+offset_left = 544.0
+offset_top = 410.0
+offset_right = 576.0
+offset_bottom = 426.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
 
@@ -159,14 +159,12 @@ vertical_alignment = 1
 
 [node name="DisablePromptsButton" type="CheckButton" parent="." unique_id=1571379]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 439.0
-offset_right = 564.0
-offset_bottom = 463.0
+offset_left = 544.0
+offset_top = 445.0
+offset_right = 576.0
+offset_bottom = 461.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
-text = "
-"
 
 [node name="DeleteLabel" type="Label" parent="." unique_id=678791393]
 custom_minimum_size = Vector2(640, 32)
