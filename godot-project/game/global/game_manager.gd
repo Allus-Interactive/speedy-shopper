@@ -15,6 +15,7 @@ var tutorial_label: Label = null
 
 var order_id: int = 1
 
+var is_inspecting_product: bool = false
 var is_in_game: bool = false
 var is_in_vehicle: bool = false
 var handbrake_engaged: bool = true

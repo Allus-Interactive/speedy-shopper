@@ -17,6 +17,13 @@ func toggle_pause(is_paused: bool) -> void:
 	GameManager.is_paused = !is_paused
 	visible = !is_paused
 	get_tree().paused = !is_paused
+	if GameManager.is_paused:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		if GameManager.is_inspecting_product:
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_resume_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
