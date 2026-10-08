@@ -582,6 +582,7 @@ offset_bottom = 670.0
 texture_normal = ExtResource("4_f0yqh")
 texture_pressed = ExtResource("5_kefsj")
 texture_hover = ExtResource("6_ff2oh")
+texture_focused = ExtResource("5_kefsj")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("7_ip4nh")]
 

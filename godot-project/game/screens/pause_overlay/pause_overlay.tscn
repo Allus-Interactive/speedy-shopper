@@ -36,18 +36,22 @@ offset_left = 315.0
 offset_top = 460.0
 offset_right = 615.0
 offset_bottom = 510.0
+focus_neighbor_right = NodePath("../MenuButton")
 texture_normal = ExtResource("3_ose60")
 texture_pressed = ExtResource("4_c11nu")
 texture_hover = ExtResource("5_43uck")
+texture_focused = ExtResource("4_c11nu")
 
 [node name="MenuButton" type="TextureButton" parent="." unique_id=443484111]
 offset_left = 665.0
 offset_top = 460.0
 offset_right = 965.0
 offset_bottom = 510.0
+focus_neighbor_left = NodePath("../ResumeButton")
 texture_normal = ExtResource("6_5pnhv")
 texture_pressed = ExtResource("7_74oun")
 texture_hover = ExtResource("8_indy0")
+texture_focused = ExtResource("7_74oun")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_07km2")]
 

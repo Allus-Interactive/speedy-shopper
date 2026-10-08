@@ -8,10 +8,11 @@ class_name SettingsScreen#
 @onready var time_check_button: CheckButton = $TimeCheckButton
 @onready var arrow_navigation_button: CheckButton = $ArrowNavigationButton
 @onready var confirmation_popup_overlay: ColorRect = $ConfirmationPopupOverlay
+@onready var cancel_button: TextureButton = $ConfirmationPopupOverlay/ConfirmationPopup/CancelButton
 @onready var delete_confirm_label: Label = $DeleteConfirmLabel
 @onready var disable_prompts_label: Label = $DisablePromptsLabel
 @onready var disable_prompts_button: CheckButton = $DisablePromptsButton
-
+@onready var back_button: TextureButton = $BackButton
 @onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
 var music_bus : int = GameManager.music_bus
@@ -32,6 +33,8 @@ func _ready() -> void:
 	time_check_button.button_pressed = GameManager.use_24_hour
 	arrow_navigation_button.button_pressed = GameManager.use_directional_arrow
 	disable_prompts_button.button_pressed = GameManager.disable_prompts
+	
+	back_button.grab_focus()
 
 func save_settings() -> void:
 	config.set_value("audio", "music", music_slider.value)
@@ -69,6 +72,7 @@ func _on_disable_prompts_button_toggled(toggled_on: bool) -> void:
 func _on_delete_data_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
 	confirmation_popup_overlay.visible = true
+	cancel_button.grab_focus()
 
 func _on_back_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
@@ -86,3 +90,4 @@ func _on_confirm_button_pressed() -> void:
 func _on_cancel_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
 	confirmation_popup_overlay.visible = false
+	back_button.grab_focus()

@@ -187,6 +187,7 @@ offset_bottom = 535.35
 texture_normal = ExtResource("4_aqdlb")
 texture_pressed = ExtResource("5_tjwro")
 texture_hover = ExtResource("6_7i408")
+texture_focused = ExtResource("5_tjwro")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -213,6 +214,7 @@ offset_bottom = 670.0
 texture_normal = ExtResource("4_vwcgb")
 texture_pressed = ExtResource("5_kthwt")
 texture_hover = ExtResource("6_3s7ga")
+texture_focused = ExtResource("5_kthwt")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_4ph8p")]
 
@@ -267,6 +269,7 @@ offset_bottom = 193.35
 texture_normal = ExtResource("11_ba7ur")
 texture_pressed = ExtResource("12_k4l08")
 texture_hover = ExtResource("13_5o7uj")
+texture_focused = ExtResource("12_k4l08")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -280,6 +283,7 @@ offset_bottom = 193.35
 texture_normal = ExtResource("14_8eb85")
 texture_pressed = ExtResource("15_a1wwx")
 texture_hover = ExtResource("16_u2akl")
+texture_focused = ExtResource("15_a1wwx")
 ignore_texture_size = true
 stretch_mode = 4
 

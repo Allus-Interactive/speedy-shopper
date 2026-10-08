@@ -53,7 +53,7 @@ custom_minimum_size = Vector2(128, 32)
 layout_mode = 0
 offset_left = 640.0
 offset_top = 248.0
-offset_right = 672.0
+offset_right = 768.0
 offset_bottom = 280.0
 theme = ExtResource("3_l3t6t")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -79,7 +79,7 @@ custom_minimum_size = Vector2(128, 32)
 layout_mode = 0
 offset_left = 640.0
 offset_top = 280.0
-offset_right = 672.0
+offset_right = 768.0
 offset_bottom = 312.0
 theme = ExtResource("3_l3t6t")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -105,7 +105,7 @@ custom_minimum_size = Vector2(128, 32)
 layout_mode = 0
 offset_left = 640.0
 offset_top = 312.0
-offset_right = 689.0
+offset_right = 768.0
 offset_bottom = 344.0
 theme = ExtResource("3_l3t6t")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -123,6 +123,7 @@ offset_bottom = 670.0
 texture_normal = ExtResource("4_adkyy")
 texture_pressed = ExtResource("5_82qlm")
 texture_hover = ExtResource("6_ipdbh")
+texture_focused = ExtResource("5_82qlm")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("7_3sdf8")]
 
