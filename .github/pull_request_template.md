@@ -1,6 +1,6 @@
 ## 📝 Description
 
-## 📋 Build Notes
+## Build Notes
 
 ✨ Changes
 
