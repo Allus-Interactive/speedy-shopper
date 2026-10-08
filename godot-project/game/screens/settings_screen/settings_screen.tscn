@@ -10,12 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://cx4abk04togfr" path="res://assets/buttons/delete/delete_pressed.png" id="5_tjwro"]
 [ext_resource type="Texture2D" uid="uid://y6jrh2g7iate" path="res://assets/buttons/back/back_hover.png" id="6_3s7ga"]
 [ext_resource type="Texture2D" uid="uid://c8vnj7sp0qi10" path="res://assets/buttons/delete/delete_hover.png" id="6_7i408"]
+[ext_resource type="Texture2D" uid="uid://df781mafdjgi4" path="res://assets/buttons/delete/delete_focus.png" id="7_a1wwx"]
+[ext_resource type="Texture2D" uid="uid://bllnik7bg3p43" path="res://assets/buttons/back/back_focus.png" id="10_8eb85"]
 [ext_resource type="Texture2D" uid="uid://df7co0g1uu05v" path="res://assets/buttons/yes/yes.png" id="11_ba7ur"]
 [ext_resource type="Texture2D" uid="uid://vt5ukvytnl4v" path="res://assets/buttons/yes/yes_pressed.png" id="12_k4l08"]
 [ext_resource type="Texture2D" uid="uid://b8hgt4bt1ga1x" path="res://assets/buttons/yes/yes_hover.png" id="13_5o7uj"]
+[ext_resource type="Texture2D" uid="uid://bogea605bsgka" path="res://assets/buttons/yes/yes_focus.png" id="14_5o7uj"]
 [ext_resource type="Texture2D" uid="uid://c8eiwxkh1rqy8" path="res://assets/buttons/no/no.png" id="14_8eb85"]
 [ext_resource type="Texture2D" uid="uid://c61qrek148o6n" path="res://assets/buttons/no/no_pressed.png" id="15_a1wwx"]
 [ext_resource type="Texture2D" uid="uid://b5b2qkid3vugv" path="res://assets/buttons/no/no_hover.png" id="16_u2akl"]
+[ext_resource type="Texture2D" uid="uid://dgxf84t5tg5lm" path="res://assets/buttons/no/no_focus.png" id="18_8eb85"]
 
 [node name="SettingsScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -187,7 +191,7 @@ offset_bottom = 535.35
 texture_normal = ExtResource("4_aqdlb")
 texture_pressed = ExtResource("5_tjwro")
 texture_hover = ExtResource("6_7i408")
-texture_focused = ExtResource("5_tjwro")
+texture_focused = ExtResource("7_a1wwx")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -214,7 +218,7 @@ offset_bottom = 670.0
 texture_normal = ExtResource("4_vwcgb")
 texture_pressed = ExtResource("5_kthwt")
 texture_hover = ExtResource("6_3s7ga")
-texture_focused = ExtResource("5_kthwt")
+texture_focused = ExtResource("10_8eb85")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_4ph8p")]
 
@@ -266,10 +270,16 @@ offset_left = 10.0
 offset_top = 160.0
 offset_right = 210.0
 offset_bottom = 193.35
+focus_neighbor_left = NodePath("../CancelButton")
+focus_neighbor_top = NodePath("../CancelButton")
+focus_neighbor_right = NodePath("../CancelButton")
+focus_neighbor_bottom = NodePath("../CancelButton")
+focus_next = NodePath("../CancelButton")
+focus_previous = NodePath("../CancelButton")
 texture_normal = ExtResource("11_ba7ur")
 texture_pressed = ExtResource("12_k4l08")
 texture_hover = ExtResource("13_5o7uj")
-texture_focused = ExtResource("12_k4l08")
+texture_focused = ExtResource("14_5o7uj")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -280,10 +290,16 @@ offset_left = 220.0
 offset_top = 160.0
 offset_right = 420.0
 offset_bottom = 193.35
+focus_neighbor_left = NodePath("../ConfirmButton")
+focus_neighbor_top = NodePath("../ConfirmButton")
+focus_neighbor_right = NodePath("../ConfirmButton")
+focus_neighbor_bottom = NodePath("../ConfirmButton")
+focus_next = NodePath("../ConfirmButton")
+focus_previous = NodePath("../ConfirmButton")
 texture_normal = ExtResource("14_8eb85")
 texture_pressed = ExtResource("15_a1wwx")
 texture_hover = ExtResource("16_u2akl")
-texture_focused = ExtResource("15_a1wwx")
+texture_focused = ExtResource("18_8eb85")
 ignore_texture_size = true
 stretch_mode = 4
 

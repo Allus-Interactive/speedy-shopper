@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bn6d88n03fhwq" path="res://assets/buttons/back/back_pressed.png" id="5_82qlm"]
 [ext_resource type="Texture2D" uid="uid://y6jrh2g7iate" path="res://assets/buttons/back/back_hover.png" id="6_ipdbh"]
 [ext_resource type="PackedScene" uid="uid://bf4tucw5wl0wb" path="res://game/sfx_player/sfx_player.tscn" id="7_3sdf8"]
+[ext_resource type="Texture2D" uid="uid://bllnik7bg3p43" path="res://assets/buttons/back/back_focus.png" id="7_6wb13"]
 
 [node name="StatsScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -123,7 +124,7 @@ offset_bottom = 670.0
 texture_normal = ExtResource("4_adkyy")
 texture_pressed = ExtResource("5_82qlm")
 texture_hover = ExtResource("6_ipdbh")
-texture_focused = ExtResource("5_82qlm")
+texture_focused = ExtResource("7_6wb13")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("7_3sdf8")]
 
