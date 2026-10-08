@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var sfx_player: SfxPlayer = $SFXPlayer
-
+@onready var resume_button: TextureButton = $ResumeButton
 @onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
 func _ready() -> void:
@@ -17,6 +17,14 @@ func toggle_pause(is_paused: bool) -> void:
 	GameManager.is_paused = !is_paused
 	visible = !is_paused
 	get_tree().paused = !is_paused
+	if GameManager.is_paused:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		resume_button.grab_focus()
+	else:
+		if GameManager.is_inspecting_product:
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_resume_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)

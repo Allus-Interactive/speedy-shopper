@@ -33,13 +33,15 @@ var is_speaking_to_npc: bool = false
 var held_product: ProductObject = null
 var held_product_original_parent: Node = null
 var held_product_original_transform: Transform3D
-var is_inspecting_product: bool = false
+var current_barcode: Dictionary
+@export var controller_look_sensitivity: float = 3.0
 @export var inspect_rotation_speed: float = 2.0
 @export var default_inspect_distance: float = 0.3
 @export var inspect_distance: float = 0.3
 @export var inspect_min_distance: float = 0.1
 @export var inspect_max_distance: float = 0.5
 @export var inspect_zoom_speed: float = 0.02
+@export var cursor_speed: float = 600.0
 @onready var hold_point: Marker3D = $Neck/FirstPersonCamera/HoldPoint
 @onready var crate_hold_point: Marker3D = $Neck/FirstPersonCamera/CrateHoldPoint
 
@@ -81,7 +83,8 @@ var is_inspecting_product: bool = false
 # Autosave Spinner
 @onready var auto_save_icon: CanvasLayer = $AutoSaveIcon
 
-@export var controller_look_sensitivity: float = 3.0
+# BarcodeScanning UI
+@onready var inspection_ui: InspectionUI = $InspectionUI
 
 func _ready() -> void:
 	# Initialize earnings label
@@ -100,7 +103,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Capture mouse input when not inspecting a product
-	if not is_inspecting_product:
+	if not GameManager.is_inspecting_product:
 		if event is InputEventMouseButton:
 			# Confine Mouse to screen
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -109,8 +112,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	# Listen to mouse motion if not inspecting product
-	if not is_inspecting_product:
+	if not GameManager.is_inspecting_product:
 		handle_player_look_input(event)
+	
+	if GameManager.is_inspecting_product:
+		if event is InputEventMouseMotion:
+			inspection_ui.cursor.position = event.position
+		if event.is_action_pressed("cursor_interact"):
+			if current_barcode:
+				scan_barcode(current_barcode)
 
 func handle_player_look_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -178,8 +188,54 @@ func handle_product_inspection_input(delta: float) -> void:
 	held_product.rotate_x(pitch * inspect_rotation_speed * delta)
 	held_product.rotate_z(roll * inspect_rotation_speed * delta)
 
+func handle_cursor_movement(delta: float) -> void:
+	if held_product == null:
+		return
+	
+	var input = Input.get_vector(
+		"cursor_left", 
+		"cursor_right", 
+		"cursor_up", 
+		"cursor_down"
+	)
+	
+	inspection_ui.cursor.position += input * cursor_speed * delta
+	var viewport_size := get_viewport().get_visible_rect().size
+
+	inspection_ui.cursor.position.x = clamp(
+		inspection_ui.cursor.position.x,
+		0.0,
+		viewport_size.x
+	)
+
+	inspection_ui.cursor.position.y = clamp(
+		inspection_ui.cursor.position.y,
+		0.0,
+		viewport_size.y
+	)
+	
+	var from = camera.project_ray_origin(inspection_ui.cursor.position)
+	var direction = camera.project_ray_normal(inspection_ui.cursor.position)
+
+	var to = from + direction * 10.0
+	
+	var query := PhysicsRayQueryParameters3D.create(
+		from,
+		to
+	)
+
+	var result := get_world_3d().direct_space_state.intersect_ray(query)
+	
+	# clear the stored barcode in case the cursor has moved away
+	current_barcode = {}
+	
+	if result:
+		var object = result.collider
+		if object.is_in_group("barcode"):
+			current_barcode = result
+
 func _physics_process(delta: float) -> void:
-	if is_inspecting_product:
+	if GameManager.is_inspecting_product:
 		return
 	
 	# Update the interaction tooltip, even when on the stool
@@ -224,21 +280,18 @@ func _process(delta: float) -> void:
 	
 	earnings_label.text = "Today's Earnings: £" + "%0.2f" % GameManager.daily_earnings
 	
-	if not is_inspecting_product:
+	if not GameManager.is_inspecting_product:
 		handle_controller_look(delta)
 	
-	if is_inspecting_product:
+	if GameManager.is_inspecting_product:
 		handle_product_inspection_input(delta)
+		handle_cursor_movement(delta)
 	
 	# If holding product, replace on shelf
-	if is_inspecting_product and Input.is_action_pressed("replace"):
+	if GameManager.is_inspecting_product and Input.is_action_pressed("replace"):
 		return_held_product()
 	
-	# Scan the barcode when clicked
-	if is_inspecting_product and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		scan_barcode()
-	
-	if not is_inspecting_product and Input.is_action_just_pressed("toggle_scanner"):
+	if not GameManager.is_inspecting_product and Input.is_action_just_pressed("toggle_scanner"):
 		scanner_ui.toggle_scanner()
 		if TutorialManager.current_step == TutorialManager.Step.OPEN_SCANNER:
 			TutorialManager.next_step()
@@ -252,18 +305,19 @@ func _process(delta: float) -> void:
 			GameManager.scroll_container.scroll_vertical += 40
 	
 	# Check raycast for interactable object
-	if Input.is_action_just_released("interact"):
-		if ray_cast_3d.is_colliding():
-			var obj = ray_cast_3d.get_collider()
-			print("Player interacts with: ", obj)
-			if obj.has_method("interact"):
-				obj.interact(self)
-		else:
-			if is_on_stool:
-				get_off_footstool()
+	if not GameManager.is_inspecting_product:
+		if Input.is_action_just_released("interact"):
+			if ray_cast_3d.is_colliding():
+				var obj = ray_cast_3d.get_collider()
+				print("Player interacts with: ", obj)
+				if obj.has_method("interact"):
+					obj.interact(self)
+			else:
+				if is_on_stool:
+					get_off_footstool()
 
 func pick_up_product(product: ProductObject) -> void:
-	if is_inspecting_product:
+	if GameManager.is_inspecting_product:
 		return
 	
 	# reset inspect distance
@@ -274,10 +328,16 @@ func pick_up_product(product: ProductObject) -> void:
 	# if GameManager.is_scanner_open:
 		# scanner_ui.toggle_scanner()
 	
+	# display scanning ui and hide mouse
+	inspection_ui.show_cursor()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
+	product.barcode_hitbox.add_to_group("barcode")
+	
 	held_product = product
 	held_product_original_parent = product.get_parent()
 	held_product_original_transform = product.global_transform
-	is_inspecting_product = true
+	GameManager.is_inspecting_product = true
 	
 	# disable collision shape to avoid interference with raycasts or clipping
 	if product.has_node("CollisionShape3D"):
@@ -291,9 +351,6 @@ func pick_up_product(product: ProductObject) -> void:
 	
 	# Set hold points position for zoom
 	held_product.position.z = -inspect_distance
-	
-	# Make the mouse visible
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	# Hide the crosshair and previous prompt
 	crosshair.hide()
@@ -512,6 +569,11 @@ func return_held_product() -> void:
 	if held_product == null:
 		return
 	
+	# hide scanning UI
+	inspection_ui.hide_cursor()
+	
+	held_product.barcode_hitbox.remove_from_group("barcode")
+	
 	held_product.reparent(held_product_original_parent)
 	held_product.global_transform = held_product_original_transform
 	held_product.disable_barcode_hitbox(true)
@@ -528,7 +590,9 @@ func return_held_product() -> void:
 	
 	held_product = null
 	held_product_original_parent = null
-	is_inspecting_product = false
+	GameManager.is_inspecting_product = false
+	
+	current_barcode = {}
 
 func collect_held_product() -> void:
 	if held_product == null:
@@ -542,22 +606,22 @@ func collect_held_product() -> void:
 	product_to_remove.visible = false
 	product_to_remove.collision_shape.disabled = true
 	ProductManager.items_to_restock.append(product_to_remove)
+	current_barcode = {}
 
-func scan_barcode() -> void:
+func scan_barcode(result: Dictionary) -> void:
 	if held_product == null:
 		return
 	
-	var mouse_pos := get_viewport().get_mouse_position()
-	
-	var from = camera.project_ray_origin(mouse_pos)
-	var to = from + camera.project_ray_normal(mouse_pos) * 10.0
-	
-	var query := PhysicsRayQueryParameters3D.create(from, to)
-	query.collide_with_areas = true
-	query.collide_with_bodies = true
-	
-	var result := get_world_3d().direct_space_state.intersect_ray(query)
-	
+	#var mouse_pos := get_viewport().get_mouse_position()
+	#
+	#var from = camera.project_ray_origin(mouse_pos)
+	#var to = from + camera.project_ray_normal(mouse_pos) * 10.0
+	#
+	#var query := PhysicsRayQueryParameters3D.create(from, to)
+	#query.collide_with_areas = true
+	#query.collide_with_bodies = true
+	#
+	#var result := get_world_3d().direct_space_state.intersect_ray(query)
 	if result.is_empty():
 		return
 	
@@ -658,9 +722,12 @@ func exit_vehicle(v: Vehicle) -> void:
 
 # TEMPORARY SCREENSHOT LOGIC
 func _input(event: InputEvent) -> void:
-	if is_inspecting_product:
+	if GameManager.is_inspecting_product:
 		if event is InputEventMouseButton:
-			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				if current_barcode:
+					scan_barcode(current_barcode)
+			elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				_zoom_product(-1)
 			elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				_zoom_product(1)

@@ -48,8 +48,6 @@ func _input(event: InputEvent) -> void:
 func detect_controller(device: int) -> void:
 	var joy_name: String = Input.get_joy_name(device).to_lower()
 	
-	print("Detect Controller: " + joy_name)
-	
 	if "xbox" in joy_name or "xinput" in joy_name:
 		set_input_type(InputType.XBOX)
 	elif "playstation" in joy_name \

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bdp6gimlys1sv"]
+
+[ext_resource type="Script" uid="uid://uulqs2a35ro6" path="res://game/inspection_ui/inspection_ui.gd" id="1_mmkcd"]
+
+[node name="InspectionUI" type="CanvasLayer" unique_id=1417303671]
+script = ExtResource("1_mmkcd")
+
+[node name="Cursor" type="Control" parent="." unique_id=284665238]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 20.0
+offset_bottom = 20.0
+mouse_filter = 2
+
+[node name="Crosshair" type="ColorRect" parent="Cursor" unique_id=993892588]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7647059, 0.0627451, 0.078431375, 0.49803922)

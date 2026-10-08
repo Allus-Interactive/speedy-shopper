@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://cqwvjtg4ar6xn" path="res://assets/input_icons/keyboard_mouse/scroll_down.svg" id="28_g23c4"]
 [ext_resource type="Texture2D" uid="uid://bk2gwwcanxj0n" path="res://assets/input_icons/keyboard_mouse/arrow_keys.svg" id="29_chinx"]
 [ext_resource type="Texture2D" uid="uid://dbyp5fki6gw46" path="res://assets/input_icons/keyboard_mouse/space.svg" id="32_8q0vh"]
+[ext_resource type="Texture2D" uid="uid://bllnik7bg3p43" path="res://assets/buttons/back/back_focus.png" id="36_enrxl"]
 
 [node name="ControlsScreen" type="Control" unique_id=585573657]
 layout_mode = 3
@@ -582,6 +583,7 @@ offset_bottom = 670.0
 texture_normal = ExtResource("4_f0yqh")
 texture_pressed = ExtResource("5_kefsj")
 texture_hover = ExtResource("6_ff2oh")
+texture_focused = ExtResource("36_enrxl")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("7_ip4nh")]
 

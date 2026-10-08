@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cf6xu5lf2jkuq" path="res://assets/buttons/resume/resume_pressed.png" id="4_c11nu"]
 [ext_resource type="Texture2D" uid="uid://i0bo3aqd6jmx" path="res://assets/buttons/resume/resume_hover.png" id="5_43uck"]
 [ext_resource type="Texture2D" uid="uid://bhbc61l42xwco" path="res://assets/buttons/quit/quit.png" id="6_5pnhv"]
+[ext_resource type="Texture2D" uid="uid://4wc3p27fcm3v" path="res://assets/buttons/resume/resume_focus.png" id="6_43uck"]
 [ext_resource type="Texture2D" uid="uid://c3vvai3xb6b5q" path="res://assets/buttons/quit/quit_pressed.png" id="7_74oun"]
 [ext_resource type="Texture2D" uid="uid://ds1vyc7cske06" path="res://assets/buttons/quit/quit_hover.png" id="8_indy0"]
+[ext_resource type="Texture2D" uid="uid://brae6g4po26i1" path="res://assets/buttons/quit/quit_focus.png" id="10_5pnhv"]
 
 [node name="PauseOverlay" type="CanvasLayer" unique_id=45473407]
 script = ExtResource("1_lmqod")
@@ -36,18 +38,22 @@ offset_left = 315.0
 offset_top = 460.0
 offset_right = 615.0
 offset_bottom = 510.0
+focus_neighbor_right = NodePath("../MenuButton")
 texture_normal = ExtResource("3_ose60")
 texture_pressed = ExtResource("4_c11nu")
 texture_hover = ExtResource("5_43uck")
+texture_focused = ExtResource("6_43uck")
 
 [node name="MenuButton" type="TextureButton" parent="." unique_id=443484111]
 offset_left = 665.0
 offset_top = 460.0
 offset_right = 965.0
 offset_bottom = 510.0
+focus_neighbor_left = NodePath("../ResumeButton")
 texture_normal = ExtResource("6_5pnhv")
 texture_pressed = ExtResource("7_74oun")
 texture_hover = ExtResource("8_indy0")
+texture_focused = ExtResource("10_5pnhv")
 
 [node name="SFXPlayer" parent="." unique_id=1842495908 instance=ExtResource("2_07km2")]
 

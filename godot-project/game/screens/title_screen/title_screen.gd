@@ -4,7 +4,7 @@ class_name TitleScreen
 
 @onready var sfx_player: SfxPlayer = $SFXPlayer
 @onready var version_label: Label = $VersionLabel
-
+@onready var play_button: TextureButton = $PlayButton
 @onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
 # Settings
@@ -18,6 +18,7 @@ func _ready() -> void:
 	SceneTransition.fade_in(1.5)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	version_label.text = "v" + ProjectSettings.get_setting("application/config/version")
+	play_button.grab_focus()
 
 func load_settings() -> void:
 	if config.load("user://speedy_shopper_settings.cfg") == OK:

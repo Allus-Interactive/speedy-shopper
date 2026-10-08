@@ -1,11 +1,11 @@
 extends Control
 
 @onready var sfx_player: SfxPlayer = $SFXPlayer
-
+@onready var back_button: TextureButton = $BackButton
 @onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
 func _ready() -> void:
-	pass
+	back_button.grab_focus()
 
 func _on_back_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)

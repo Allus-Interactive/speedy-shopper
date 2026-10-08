@@ -32,7 +32,7 @@ width = 200.0
 
 [node name="BarcodeHitbox" type="StaticBody3D" parent="." unique_id=656772963]
 
-[node name="BarcodeCollider" type="CollisionShape3D" parent="BarcodeHitbox" unique_id=1856214725]
+[node name="BarcodeCollider" type="CollisionShape3D" parent="BarcodeHitbox" unique_id=1856214725 groups=["barcode"]]
 shape = SubResource("BoxShape3D_vyu40")
 disabled = true
 debug_color = Color(0.3470626, 0.6133478, 0.27347213, 0.41960785)
