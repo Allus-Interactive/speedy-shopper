@@ -11,6 +11,10 @@
 [ext_resource type="ArrayMesh" uid="uid://dx0gs5qpntloy" path="res://assets/vehicles/van/kenney_van_body.tres" id="8_qqfut"]
 [ext_resource type="Texture2D" uid="uid://licm1vq5h52e" path="res://assets/ui/driving/driving.png" id="9_qqfut"]
 [ext_resource type="AudioStream" uid="uid://swphhdash1so" path="res://assets/music/juraganvisi-intimate-rhodes-piano-and-soft-jazz-guitar-with-brushed-percussion-416015.mp3" id="11_2uabk"]
+[ext_resource type="Texture2D" uid="uid://dqqff40hsvcxp" path="res://assets/ui/driving/icons/sidelights_off.png" id="12_uwfdr"]
+[ext_resource type="Texture2D" uid="uid://jsgj6brg1n8q" path="res://assets/ui/driving/icons/headlights_off.png" id="13_3go0f"]
+[ext_resource type="Texture2D" uid="uid://cdfusjdvu13yo" path="res://assets/ui/driving/icons/full_beam_off.png" id="14_2ydfw"]
+[ext_resource type="Texture2D" uid="uid://ssorefavilrv" path="res://assets/ui/driving/icons/handbrake_off.png" id="15_aqnr3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mm2gk"]
 size = Vector3(2.277, 1.569, 1.359)
@@ -189,3 +193,34 @@ offset_right = 221.0
 offset_bottom = 117.0
 texture = ExtResource("9_qqfut")
 expand_mode = 4
+
+[node name="Icons" type="HBoxContainer" parent="CanvasLayer/Speedometer" unique_id=670231492]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 116.0
+offset_right = 205.0
+offset_bottom = 156.0
+
+[node name="Sidelights" type="TextureRect" parent="CanvasLayer/Speedometer/Icons" unique_id=1624930722]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("12_uwfdr")
+expand_mode = 2
+
+[node name="Headlights" type="TextureRect" parent="CanvasLayer/Speedometer/Icons" unique_id=22797919]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("13_3go0f")
+expand_mode = 2
+
+[node name="FullBeam" type="TextureRect" parent="CanvasLayer/Speedometer/Icons" unique_id=1121002535]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("14_2ydfw")
+expand_mode = 2
+
+[node name="Handbrake" type="TextureRect" parent="CanvasLayer/Speedometer/Icons" unique_id=1323698298]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("15_aqnr3")
+expand_mode = 2

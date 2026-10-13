@@ -5,6 +5,11 @@ class_name Vehicle
 @onready var speedometer: TextureRect = $"../CanvasLayer/Speedometer"
 @onready var speed_label: Label = $"../CanvasLayer/Speedometer/Speed"
 @onready var gears: TextureRect = $"../CanvasLayer/Speedometer/Gears"
+# Icons
+@onready var sidelights: TextureRect = $"../CanvasLayer/Speedometer/Icons/Sidelights"
+@onready var headlights: TextureRect = $"../CanvasLayer/Speedometer/Icons/Headlights"
+@onready var full_beam: TextureRect = $"../CanvasLayer/Speedometer/Icons/FullBeam"
+@onready var handbrake: TextureRect = $"../CanvasLayer/Speedometer/Icons/Handbrake"
 
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.4
@@ -23,11 +28,26 @@ const MAX_SPEED: float = 30.0
 var is_player_inside = false
 var player : Player = null
 
+# Lights
+enum Lights { OFF, SIDELIGHTS, HEADLIGHTS }
+var lights: Lights = Lights.OFF
+var is_fullbeam: bool = false
+
+# Gear Icons
 var drive_icon : CompressedTexture2D = preload("res://assets/ui/driving/driving.png")
 var reverse_icon : CompressedTexture2D = preload("res://assets/ui/driving/reverse.png")
 var neutral_icon : CompressedTexture2D = preload("res://assets/ui/driving/neutral.png")
 var park_icon : CompressedTexture2D = preload("res://assets/ui/driving/park.png")
 
+# Icons
+var handbrake_on : CompressedTexture2D = preload("res://assets/ui/driving/icons/handbrake_on.png")
+var handbrake_off : CompressedTexture2D = preload("res://assets/ui/driving/icons/handbrake_off.png")
+var sidelights_on : CompressedTexture2D = preload("res://assets/ui/driving/icons/sidelights_on.png")
+var sidelights_off : CompressedTexture2D = preload("res://assets/ui/driving/icons/sidelights_off.png")
+var headlights_on : CompressedTexture2D = preload("res://assets/ui/driving/icons/headlights_on.png")
+var headlights_off : CompressedTexture2D = preload("res://assets/ui/driving/icons/headlights_off.png")
+var fullbeam_on : CompressedTexture2D = preload("res://assets/ui/driving/icons/full_beam_on.png")
+var fullbeam_off : CompressedTexture2D = preload("res://assets/ui/driving/icons/full_beam_off.png")
 # directional arrow
 @onready var directional_arrow: DirectionalArrow = $DirectionalArrow
 
@@ -38,12 +58,21 @@ func _ready() -> void:
 	speed_label.text = "0"
 	speedometer.visible = false
 	SignalManager.new_delivery_accepted.connect(_show_directional_arrow)
+	
+	if GameManager.handbrake_engaged:
+		handbrake.texture = handbrake_on
+	else:
+		handbrake.texture = handbrake_off
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("park"):
-		GameManager.handbrake_engaged = !GameManager.handbrake_engaged
+		_engage_parking_break()
 	if event.is_action_pressed("speed_limiter"):
 		GameManager.is_speed_limiter_active = !GameManager.is_speed_limiter_active
+	if event.is_action_pressed("vehicle_lights"):
+		_cycle_lights()
+	if event.is_action_pressed("full_beam_lights"):
+		_toggle_full_beam()
 
 func _physics_process(delta):
 	if not is_player_inside:
@@ -164,3 +193,37 @@ func exit_vehicle() -> void:
 func _show_directional_arrow() -> void:
 	if GameManager.use_directional_arrow and OrderManager.active_delivery != null and GameManager.is_in_vehicle:
 		directional_arrow.initialize_arrow()
+
+func _engage_parking_break() -> void:
+	GameManager.handbrake_engaged = !GameManager.handbrake_engaged
+	
+	if GameManager.handbrake_engaged:
+		handbrake.texture = handbrake_on
+	else:
+		handbrake.texture = handbrake_off
+
+func _cycle_lights() -> void:
+	lights = ((lights + 1) % 3) as Lights
+	
+	if lights == Lights.OFF:
+		is_fullbeam = false
+		sidelights.texture = sidelights_off
+		headlights.texture = headlights_off
+		full_beam.texture = fullbeam_off
+	elif lights == Lights.SIDELIGHTS:
+		sidelights.texture = sidelights_on
+	elif lights == Lights.HEADLIGHTS:
+		headlights.texture = headlights_on
+
+func _toggle_full_beam() -> void:
+	if lights == Lights.HEADLIGHTS:
+		if is_fullbeam:
+			# turn full beam off
+			is_fullbeam = false
+			headlights.texture = headlights_on
+			full_beam.texture = fullbeam_off
+		else:
+			# turn full beam on
+			is_fullbeam = true
+			headlights.texture = headlights_off
+			full_beam.texture = fullbeam_on
