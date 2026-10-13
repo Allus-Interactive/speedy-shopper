@@ -294,7 +294,7 @@ func _process(delta: float) -> void:
 	if GameManager.is_inspecting_product and Input.is_action_pressed("replace"):
 		return_held_product()
 	
-	if not GameManager.is_inspecting_product and Input.is_action_just_pressed("toggle_scanner"):
+	if not GameManager.is_inspecting_product and not GameManager.is_in_vehicle and Input.is_action_just_pressed("toggle_scanner"):
 		scanner_ui.toggle_scanner()
 		if TutorialManager.current_step == TutorialManager.Step.OPEN_SCANNER:
 			TutorialManager.next_step()
@@ -694,19 +694,23 @@ func enter_vehicle(v: Vehicle) -> void:
 	
 	# switch camera
 	var look = v.get_node("look")
-	#var van_camera = look.get_node("ThirdPersonCam")
-	#if look.get_node("ThirdPersonCam"):
-		#camera.current = false
-		#van_camera.current = true
-	#else:
-		#push_error("No Van Camera found")
 	
-	var van_camera = look.get_node("FirstPersonCam")
-	if look.get_node("FirstPersonCam"):
-		camera.current = false
-		van_camera.current = true
+	if GameManager.default_first_person_driving:
+		var van_camera = look.get_node("FirstPersonCam")
+		if look.get_node("FirstPersonCam"):
+			camera.current = false
+			van_camera.current = true
+		else:
+			push_error("No Van Camera found")
 	else:
-		push_error("No Van Camera found")
+		var van_camera = look.get_node("ThirdPersonCam")
+		if look.get_node("ThirdPersonCam"):
+			camera.current = false
+			van_camera.current = true
+		else:
+			push_error("No Van Camera found")
+	
+	
 
 func exit_vehicle(v: Vehicle) -> void:
 	GameManager.is_in_vehicle = false
