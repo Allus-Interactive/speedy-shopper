@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://v230atw28dsh" path="res://assets/materials/rear_light.tres" id="8_3go0f"]
 [ext_resource type="ArrayMesh" uid="uid://dx0gs5qpntloy" path="res://assets/vehicles/van/kenney_van_body.tres" id="8_qqfut"]
 [ext_resource type="Material" uid="uid://b8rp6vxy8pccd" path="res://assets/materials/front_light.tres" id="9_2ydfw"]
+[ext_resource type="Script" uid="uid://cqx1bigj55ps4" path="res://game/vehicle/camera/steady_camera.gd" id="9_aqnr3"]
 [ext_resource type="Texture2D" uid="uid://licm1vq5h52e" path="res://assets/ui/driving/driving.png" id="9_qqfut"]
 [ext_resource type="AudioStream" uid="uid://swphhdash1so" path="res://assets/music/juraganvisi-intimate-rhodes-piano-and-soft-jazz-guitar-with-brushed-percussion-416015.mp3" id="11_2uabk"]
 [ext_resource type="Texture2D" uid="uid://dqqff40hsvcxp" path="res://assets/ui/driving/icons/sidelights_off.png" id="12_uwfdr"]
@@ -140,6 +141,7 @@ current = false
 
 [node name="FirstPersonCam" type="Camera3D" parent="Van/look" unique_id=1688295641]
 transform = Transform3D(-1.0000004, -1.4393882e-08, -8.918691e-08, -3.550545e-08, 0.9704038, 0.24148825, 8.307136e-08, 0.24148846, -0.9704041, -7.8234066e-08, 0.2532996, 1.3125504)
+script = ExtResource("9_aqnr3")
 
 [node name="KenneyVanBody" type="MeshInstance3D" parent="Van" unique_id=516243549]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.318, 0)

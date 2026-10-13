@@ -114,7 +114,7 @@ func _update_camera_position(delta: float) -> void:
 	var target: Vector3 = follow_this.global_position
 	
 	var rotation_basis: Basis = Basis.from_euler(
-		Vector3(-deg_to_rad(pitch), current_yaw, 0.0)
+		Vector3(-deg_to_rad(pitch), current_yaw + PI, 0.0)
 	)
 	
 	var offset: Vector3 = rotation_basis * Vector3(
