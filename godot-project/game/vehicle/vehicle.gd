@@ -30,6 +30,11 @@ var player : Player = null
 
 var is_braking: bool = false
 
+# Cameras
+@onready var first_person_cam: Camera3D = $look/FirstPersonCam
+@onready var third_person_cam: Camera3D = $look/ThirdPersonCam
+var is_first_person: bool = true
+
 # Lights
 enum Lights { OFF, SIDELIGHTS, HEADLIGHTS }
 var lights: Lights = Lights.OFF
@@ -92,6 +97,12 @@ func _input(event: InputEvent) -> void:
 		_cycle_lights()
 	if event.is_action_pressed("full_beam_lights"):
 		_toggle_full_beam()
+	
+	if event.is_action_pressed("toggle_camera"):
+		if is_first_person:
+			_switch_to_third_person_camera()
+		else:
+			_switch_to_first_person_camera()
 
 func _physics_process(delta):
 	if not is_player_inside:
@@ -280,10 +291,10 @@ func _toggle_full_beam() -> void:
 			front_light_material.emission_energy_multiplier = 1.0
 			left_light_beam.spot_range = 15.0
 			left_light_beam.spot_attenuation = 1.0
-			left_light_beam.spot_angle = 20.0
+			left_light_beam.spot_angle = 40.0
 			right_light_beam.spot_range = 15.0
 			right_light_beam.spot_attenuation = 1.0
-			right_light_beam.spot_angle = 20.0
+			right_light_beam.spot_angle = 40.0
 		else:
 			# turn full beam on
 			is_fullbeam = true
@@ -292,12 +303,22 @@ func _toggle_full_beam() -> void:
 			front_light_material.emission_energy_multiplier = 2.0
 			left_light_beam.spot_range = 25.0
 			left_light_beam.spot_attenuation = 2.0
-			left_light_beam.spot_angle = 30.0
+			left_light_beam.spot_angle = 50.0
 			right_light_beam.spot_range = 25.0
 			right_light_beam.spot_attenuation = 2.0
-			right_light_beam.spot_angle = 30.0
+			right_light_beam.spot_angle = 50.0
 			
 
 func _brake_lights_on() -> void:
 	rear_light_material.emission_enabled = true
 	rear_light_material.emission_energy_multiplier = 3.0
+
+func _switch_to_first_person_camera() -> void:
+	third_person_cam.current = false
+	first_person_cam.current = true
+	is_first_person = true
+
+func _switch_to_third_person_camera() -> void:
+	first_person_cam.current = false
+	third_person_cam.current = true
+	is_first_person = false

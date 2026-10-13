@@ -241,6 +241,9 @@ func _physics_process(delta: float) -> void:
 	# Update the interaction tooltip, even when on the stool
 	update_tooltip()
 	
+	if GameManager.is_in_vehicle:
+		return
+	
 	if is_on_stool:
 		return
 	
@@ -691,8 +694,15 @@ func enter_vehicle(v: Vehicle) -> void:
 	
 	# switch camera
 	var look = v.get_node("look")
-	var van_camera = look.get_node("ThirdPersonCam")
-	if look.get_node("ThirdPersonCam"):
+	#var van_camera = look.get_node("ThirdPersonCam")
+	#if look.get_node("ThirdPersonCam"):
+		#camera.current = false
+		#van_camera.current = true
+	#else:
+		#push_error("No Van Camera found")
+	
+	var van_camera = look.get_node("FirstPersonCam")
+	if look.get_node("FirstPersonCam"):
 		camera.current = false
 		van_camera.current = true
 	else:
