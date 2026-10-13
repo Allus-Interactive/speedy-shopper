@@ -94,6 +94,7 @@ func _on_confirm_button_pressed() -> void:
 	SaveLoadManager.reset_game_data()
 	delete_confirm_label.visible = true
 	confirmation_popup_overlay.visible = false
+	back_button.grab_focus()
 
 func _on_cancel_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
