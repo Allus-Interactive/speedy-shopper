@@ -93,6 +93,9 @@ func _ready() -> void:
 	# Hide Autosave spinner
 	auto_save_icon.visible = false
 	
+	# Set flag for in vehicle to false
+	GameManager.is_in_vehicle = false
+	
 	GameManager.tutorial_panel = tutorial_panel
 	GameManager.tutorial_label = tutorial_label
 	
