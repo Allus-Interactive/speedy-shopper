@@ -48,7 +48,7 @@ func advance_day() -> void:
 
 func rest() -> void:
 	day = ((day + 1) % 7) as Day
-	hour = 1
+	hour = 10
 	minute = 0
 	day_changed.emit()
 	_update_player_stats()
