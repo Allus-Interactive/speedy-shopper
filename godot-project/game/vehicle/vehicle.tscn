@@ -8,13 +8,24 @@
 [ext_resource type="ArrayMesh" uid="uid://p0celopgg8yr" path="res://assets/vehicles/van/van_wheel_back_right.tres" id="6_2uabk"]
 [ext_resource type="Texture2D" uid="uid://dclc0ebpejsnl" path="res://assets/ui/driving/digital_speedo_no_gears.png" id="8_1wjtb"]
 [ext_resource type="PackedScene" uid="uid://27douiywqnbl" path="res://game/world/directional_arrow/directional_arrow.tscn" id="8_2uabk"]
+[ext_resource type="Material" uid="uid://v230atw28dsh" path="res://assets/materials/rear_light.tres" id="8_3go0f"]
 [ext_resource type="ArrayMesh" uid="uid://dx0gs5qpntloy" path="res://assets/vehicles/van/kenney_van_body.tres" id="8_qqfut"]
+[ext_resource type="Material" uid="uid://b8rp6vxy8pccd" path="res://assets/materials/front_light.tres" id="9_2ydfw"]
 [ext_resource type="Texture2D" uid="uid://licm1vq5h52e" path="res://assets/ui/driving/driving.png" id="9_qqfut"]
 [ext_resource type="AudioStream" uid="uid://swphhdash1so" path="res://assets/music/juraganvisi-intimate-rhodes-piano-and-soft-jazz-guitar-with-brushed-percussion-416015.mp3" id="11_2uabk"]
 [ext_resource type="Texture2D" uid="uid://dqqff40hsvcxp" path="res://assets/ui/driving/icons/sidelights_off.png" id="12_uwfdr"]
 [ext_resource type="Texture2D" uid="uid://jsgj6brg1n8q" path="res://assets/ui/driving/icons/headlights_off.png" id="13_3go0f"]
 [ext_resource type="Texture2D" uid="uid://cdfusjdvu13yo" path="res://assets/ui/driving/icons/full_beam_off.png" id="14_2ydfw"]
 [ext_resource type="Texture2D" uid="uid://ssorefavilrv" path="res://assets/ui/driving/icons/handbrake_off.png" id="15_aqnr3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t2dwb"]
+size = Vector3(0.2753601, 0.09945679, 0.023864746)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m2va7"]
+size = Vector3(0.20898438, 0.047851563, 0.1015625)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oxha2"]
+size = Vector3(0.20898438, 0.087646484, 0.08154297)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mm2gk"]
 size = Vector3(2.277, 1.569, 1.359)
@@ -43,6 +54,8 @@ linear_damp = 0.1
 angular_damp = 4.0
 script = ExtResource("1_6tmgj")
 STEER_LIMIT = 0.5
+rear_light_material = ExtResource("8_3go0f")
+front_light_material = ExtResource("9_2ydfw")
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="Van" unique_id=2026192383]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.911, 0.331, 1.337)
@@ -129,6 +142,48 @@ current = false
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.318, 0)
 mesh = ExtResource("8_qqfut")
 skeleton = NodePath("../..")
+
+[node name="LeftRearLight" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=406970534]
+transform = Transform3D(0.9999194, 0, 0, 0, 1, 0, 0, 0, 0.9999194, 0.4127318, 0.44961882, -1.4394691)
+material_override = ExtResource("8_3go0f")
+mesh = SubResource("BoxMesh_t2dwb")
+skeleton = NodePath("../RightRearLight")
+
+[node name="RightRearLight" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=725579940]
+transform = Transform3D(0.99995977, 0, 0, 0, 1, 0, 0, 0, 0.99995977, -0.41331834, 0.44961882, -1.4394692)
+material_override = ExtResource("8_3go0f")
+mesh = SubResource("BoxMesh_t2dwb")
+
+[node name="LeftFrontLight_Lower" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=679826049]
+transform = Transform3D(0.99998033, 0, 0, 0, 1, 0, 0, 0, 0.99998033, 0.44749668, 0.42378342, 1.1003033)
+material_override = ExtResource("9_2ydfw")
+mesh = SubResource("BoxMesh_m2va7")
+
+[node name="LeftFrontLight_Upper" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=585510208]
+transform = Transform3D(0.9999643, 0, 0, 0, 0.7909763, 0.61183417, 0, -0.6118462, 0.7909533, 0.44749627, 0.45774645, 1.0917256)
+material_override = ExtResource("9_2ydfw")
+mesh = SubResource("BoxMesh_oxha2")
+
+[node name="RightFrontLight_Lower" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=207820103]
+transform = Transform3D(0.99998015, 0, 0, 0, 1, 0, 0, 0, 0.99998015, -0.4494744, 0.42378342, 1.1003029)
+material_override = ExtResource("9_2ydfw")
+mesh = SubResource("BoxMesh_m2va7")
+
+[node name="RightFrontLight_Upper" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=500710244]
+transform = Transform3D(0.9999641, 0, 0, 0, 0.7909763, 0.61183417, 0, -0.6118462, 0.7909531, -0.4494748, 0.45774645, 1.0917252)
+material_override = ExtResource("9_2ydfw")
+mesh = SubResource("BoxMesh_oxha2")
+
+[node name="LeftLightBeam" type="SpotLight3D" parent="Van/KenneyVanBody" unique_id=1998443606]
+transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, 0.4524545, 0.45553255, 1.0926625)
+light_color = Color(0.74509805, 0.67058825, 0.23529412, 1)
+spot_range = 15.0
+spot_angle = 20.0
+
+[node name="RightLightBeam" type="SpotLight3D" parent="Van/KenneyVanBody" unique_id=1628851888]
+transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, -0.4562291, 0.45553255, 1.0926627)
+light_color = Color(0.74509805, 0.67058825, 0.23529412, 1)
+spot_angle = 20.0
 
 [node name="Cab" type="CollisionShape3D" parent="Van" unique_id=1114515280]
 transform = Transform3D(-0.9999999, 0, -8.940699e-08, 0, 1, 0, 8.940699e-08, 0, -0.9999999, -0.0020990395, 1.7253846, 0.8345831)

@@ -28,10 +28,16 @@ const MAX_SPEED: float = 30.0
 var is_player_inside = false
 var player : Player = null
 
+var is_braking: bool = false
+
 # Lights
 enum Lights { OFF, SIDELIGHTS, HEADLIGHTS }
 var lights: Lights = Lights.OFF
 var is_fullbeam: bool = false
+@export var rear_light_material: StandardMaterial3D
+@export var front_light_material: StandardMaterial3D
+@onready var left_light_beam: SpotLight3D = $KenneyVanBody/LeftLightBeam
+@onready var right_light_beam: SpotLight3D = $KenneyVanBody/RightLightBeam
 
 # Gear Icons
 var drive_icon : CompressedTexture2D = preload("res://assets/ui/driving/driving.png")
@@ -63,6 +69,19 @@ func _ready() -> void:
 		handbrake.texture = handbrake_on
 	else:
 		handbrake.texture = handbrake_off
+	
+	left_light_beam.visible = false
+	right_light_beam.visible = false
+	
+	if rear_light_material:
+		rear_light_material.emission_enabled = false
+	else:
+		push_error("No material assigned to Rear Lights")
+	
+	if front_light_material:
+		front_light_material.emission_enabled = false
+	else:
+		push_error("No material assigned to Front Lights")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("park"):
@@ -116,6 +135,7 @@ func process_accel(_delta):
 		#engine_force = engine_force * gear_multiplicator
 		#return
 		engine_force = engine_force_value
+		is_braking = false
 		return
 	
 	if Input.is_action_pressed("brake"):
@@ -126,7 +146,10 @@ func process_accel(_delta):
 			#engine_force = -engine_force_value
 		#return
 		engine_force = -engine_force_value
+		is_braking = true
 		return
+	
+	is_braking = false
 	
 	engine_force = 0
 	brake = 0
@@ -170,6 +193,8 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("replace"):
 		exit_vehicle()
+	
+	_show_lights()
 
 func show_input_prompt(prompt: InputPrompt) -> void:
 	if !is_player_inside:
@@ -204,16 +229,46 @@ func _engage_parking_break() -> void:
 
 func _cycle_lights() -> void:
 	lights = ((lights + 1) % 3) as Lights
-	
-	if lights == Lights.OFF:
-		is_fullbeam = false
-		sidelights.texture = sidelights_off
-		headlights.texture = headlights_off
-		full_beam.texture = fullbeam_off
-	elif lights == Lights.SIDELIGHTS:
-		sidelights.texture = sidelights_on
-	elif lights == Lights.HEADLIGHTS:
-		headlights.texture = headlights_on
+
+func _show_lights() -> void:
+	if is_braking:
+		_brake_lights_on()
+		if lights == Lights.OFF:
+			is_fullbeam = false
+			sidelights.texture = sidelights_off
+			headlights.texture = headlights_off
+			full_beam.texture = fullbeam_off
+			front_light_material.emission_enabled = false
+			left_light_beam.visible = false
+			right_light_beam.visible = false
+		elif lights == Lights.SIDELIGHTS:
+			sidelights.texture = sidelights_on
+		elif lights == Lights.HEADLIGHTS:
+			headlights.texture = headlights_on
+			front_light_material.emission_enabled = true
+			front_light_material.emission_energy_multiplier = 1.0
+			left_light_beam.visible = true
+			right_light_beam.visible = true
+	else:
+		if lights == Lights.OFF:
+			is_fullbeam = false
+			sidelights.texture = sidelights_off
+			headlights.texture = headlights_off
+			full_beam.texture = fullbeam_off
+			rear_light_material.emission_enabled = false
+			front_light_material.emission_enabled = false
+			left_light_beam.visible = false
+			right_light_beam.visible = false
+		elif lights == Lights.SIDELIGHTS:
+			sidelights.texture = sidelights_on
+			rear_light_material.emission_enabled = true
+			rear_light_material.emission_energy_multiplier = 1.0
+		elif lights == Lights.HEADLIGHTS:
+			headlights.texture = headlights_on
+			front_light_material.emission_enabled = true
+			front_light_material.emission_energy_multiplier = 1.0
+			left_light_beam.visible = true
+			right_light_beam.visible = true
 
 func _toggle_full_beam() -> void:
 	if lights == Lights.HEADLIGHTS:
@@ -222,8 +277,27 @@ func _toggle_full_beam() -> void:
 			is_fullbeam = false
 			headlights.texture = headlights_on
 			full_beam.texture = fullbeam_off
+			front_light_material.emission_energy_multiplier = 1.0
+			left_light_beam.spot_range = 15.0
+			left_light_beam.spot_attenuation = 1.0
+			left_light_beam.spot_angle = 20.0
+			right_light_beam.spot_range = 15.0
+			right_light_beam.spot_attenuation = 1.0
+			right_light_beam.spot_angle = 20.0
 		else:
 			# turn full beam on
 			is_fullbeam = true
 			headlights.texture = headlights_off
 			full_beam.texture = fullbeam_on
+			front_light_material.emission_energy_multiplier = 2.0
+			left_light_beam.spot_range = 25.0
+			left_light_beam.spot_attenuation = 2.0
+			left_light_beam.spot_angle = 30.0
+			right_light_beam.spot_range = 25.0
+			right_light_beam.spot_attenuation = 2.0
+			right_light_beam.spot_angle = 30.0
+			
+
+func _brake_lights_on() -> void:
+	rear_light_material.emission_enabled = true
+	rear_light_material.emission_energy_multiplier = 3.0
