@@ -13,6 +13,9 @@ func _process(_delta: float) -> void:
 		van.global_position.z
 	)
 	
+	# Size is used on Orthogonal (2D) camera
+	camera_3d.size = GameManager.minimap_zoom_level * -1
+	
 	if not GameManager.static_minimap:
 		# Set camera rotation to rotate minimap
 		camera_3d.rotation_degrees = Vector3(
