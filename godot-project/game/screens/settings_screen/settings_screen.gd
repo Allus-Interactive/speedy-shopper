@@ -16,6 +16,8 @@ class_name SettingsScreen#
 @onready var vehicle_camera_button: CheckButton = $VehicleCameraButton
 @onready var static_minimap_label: Label = $StaticMinimapLabel
 @onready var static_minimap_button: CheckButton = $StaticMinimapButton
+@onready var minimap_zoom_label: Label = $MinimapZoomLabel
+@onready var minimap_zoom_slider: HSlider = $MinimapZoomSlider
 @onready var back_button: TextureButton = $BackButton
 @onready var button_press_sfx: AudioStream = preload("res://assets/sfx/button_press.mp3")
 
@@ -39,6 +41,7 @@ func _ready() -> void:
 	disable_prompts_button.button_pressed = GameManager.disable_prompts
 	vehicle_camera_button.button_pressed = GameManager.default_first_person_driving
 	static_minimap_button.button_pressed = GameManager.static_minimap
+	minimap_zoom_slider.value = GameManager.minimap_zoom_level
 	
 	back_button.grab_focus()
 
@@ -49,7 +52,8 @@ func save_settings() -> void:
 	config.set_value("button", "arrow", arrow_navigation_button.button_pressed)
 	config.set_value("button", "prompts", disable_prompts_button.button_pressed)
 	config.set_value("button", "driving_camera", vehicle_camera_button.button_pressed)
-	config.set_value("button", "static_minimap", static_minimap_button.button_pressed)
+	config.set_value("minimap", "static_minimap", static_minimap_button.button_pressed)
+	config.set_value("minimap", "zoom_level", minimap_zoom_slider.value)
 	config.save("user://speedy_shopper_settings.cfg")
 
 func load_settings() -> void:
@@ -60,7 +64,8 @@ func load_settings() -> void:
 		arrow_navigation_button.button_pressed = config.get_value("button", "arrow", 0)
 		disable_prompts_button.button_pressed = config.get_value("button", "prompts", 0)
 		vehicle_camera_button.button_pressed = config.get_value("button", "driving_camera", 0)
-		static_minimap_button.button_pressed = config.get_value("button", "static_minimap", 0)
+		static_minimap_button.button_pressed = config.get_value("minimap", "static_minimap", 0)
+		minimap_zoom_slider.value = config.get_value("minimap", "zoom_level", -50.0)
 
 func _on_music_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(music_bus, value)
@@ -84,6 +89,9 @@ func _on_vehicle_camera_button_toggled(toggled_on: bool) -> void:
 
 func _on_static_minimap_button_toggled(toggled_on: bool) -> void:
 	GameManager.static_minimap = toggled_on
+
+func _on_minimap_zoom_slider_value_changed(value: float) -> void:
+	GameManager.minimap_zoom_level = value
 
 func _on_delete_data_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)

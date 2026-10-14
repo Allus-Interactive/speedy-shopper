@@ -29,7 +29,8 @@ func load_settings() -> void:
 		GameManager.use_directional_arrow = config.get_value("button", "arrow", 0)
 		GameManager.disable_prompts = config.get_value("button", "prompts", 0)
 		GameManager.default_first_person_driving = config.get_value("button", "driving_camera", 0)
-		GameManager.static_minimap = config.get_value("button", "static_minimap", 0)
+		GameManager.static_minimap = config.get_value("minimap", "static_minimap", 0)
+		GameManager.minimap_zoom_level = config.get_value("minimap", "zoom_level", -50.0)
 		
 		AudioServer.set_bus_volume_db(music_bus, GameManager.music_volume)
 		AudioServer.set_bus_volume_db(sfx_bus, GameManager.sfx_volume)

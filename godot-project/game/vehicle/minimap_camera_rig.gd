@@ -7,7 +7,9 @@ func _process(_delta: float) -> void:
 	# Set Camera position to follow van
 	camera_3d.global_position = Vector3(
 		van.global_position.x, 
-		GameManager.minimap_zoom_level, 
+		# Zoom level slider goes from -80 to -20. 
+		# Value needs to be multiplied by -1 to get positive value
+		GameManager.minimap_zoom_level * -1, 
 		van.global_position.z
 	)
 	
