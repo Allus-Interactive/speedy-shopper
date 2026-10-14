@@ -2,14 +2,15 @@ extends VehicleBody3D
 
 class_name Vehicle
 
-@onready var speedometer: TextureRect = $"../CanvasLayer/Speedometer"
-@onready var speed_label: Label = $"../CanvasLayer/Speedometer/Speed"
-@onready var gears: TextureRect = $"../CanvasLayer/Speedometer/Gears"
+@onready var driving_ui: CanvasLayer = $"../DrivingUI"
+@onready var speedometer: TextureRect = $"../DrivingUI/Speedometer"
+@onready var speed_label: Label = $"../DrivingUI/Speedometer/Speed"
+@onready var gears: TextureRect = $"../DrivingUI/Speedometer/Gears"
 # Icons
-@onready var sidelights: TextureRect = $"../CanvasLayer/Speedometer/Icons/Sidelights"
-@onready var headlights: TextureRect = $"../CanvasLayer/Speedometer/Icons/Headlights"
-@onready var full_beam: TextureRect = $"../CanvasLayer/Speedometer/Icons/FullBeam"
-@onready var handbrake: TextureRect = $"../CanvasLayer/Speedometer/Icons/Handbrake"
+@onready var sidelights: TextureRect = $"../DrivingUI/Speedometer/Icons/Sidelights"
+@onready var headlights: TextureRect = $"../DrivingUI/Speedometer/Icons/Headlights"
+@onready var full_beam: TextureRect = $"../DrivingUI/Speedometer/Icons/FullBeam"
+@onready var handbrake: TextureRect = $"../DrivingUI/Speedometer/Icons/Handbrake"
 
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.4
@@ -68,7 +69,7 @@ var fullbeam_off : CompressedTexture2D = preload("res://assets/ui/driving/icons/
 
 func _ready() -> void:
 	speed_label.text = "0"
-	speedometer.visible = false
+	driving_ui.visible = false
 	SignalManager.new_delivery_accepted.connect(_show_directional_arrow)
 	
 	if GameManager.handbrake_engaged:
@@ -215,14 +216,14 @@ func show_input_prompt(prompt: InputPrompt) -> void:
 func interact(p: Player) -> void:
 	player = p
 	p.enter_vehicle(self)
-	speedometer.visible = true
+	driving_ui.visible = true
 	_show_directional_arrow()
 	audio_stream_player_3d.play(GameManager.vehicle_audio_position)
 
 func exit_vehicle() -> void:
 	if player:
 		player.exit_vehicle(self)
-		speedometer.visible = false
+		driving_ui.visible = false
 		directional_arrow.disable()
 		GameManager.vehicle_audio_position = audio_stream_player_3d.get_playback_position()
 		audio_stream_player_3d.stop()

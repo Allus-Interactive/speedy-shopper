@@ -31,6 +31,7 @@ var use_24_hour : bool = true
 var use_directional_arrow : bool = true
 var disable_prompts : bool = false
 var default_first_person_driving : bool = false
+var static_minimap : bool = true
 
 # Player Stats
 var orders_delivered : int = 0

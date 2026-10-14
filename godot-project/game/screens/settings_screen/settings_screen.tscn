@@ -52,9 +52,9 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 248.0
+offset_top = 163.0
 offset_right = 960.0
-offset_bottom = 280.0
+offset_bottom = 195.0
 theme = ExtResource("2_gc4gq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
@@ -65,9 +65,9 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 280.0
+offset_top = 195.0
 offset_right = 960.0
-offset_bottom = 312.0
+offset_bottom = 227.0
 theme = ExtResource("2_gc4gq")
 min_value = -40.0
 max_value = 0.0
@@ -77,9 +77,9 @@ step = 0.1
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 312.0
+offset_top = 227.0
 offset_right = 960.0
-offset_bottom = 344.0
+offset_bottom = 259.0
 theme = ExtResource("2_gc4gq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
@@ -90,9 +90,9 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 344.0
+offset_top = 259.0
 offset_right = 960.0
-offset_bottom = 376.0
+offset_bottom = 291.0
 theme = ExtResource("2_gc4gq")
 min_value = -40.0
 max_value = 0.0
@@ -102,9 +102,9 @@ step = 0.1
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 376.0
+offset_top = 291.0
 offset_right = 960.0
-offset_bottom = 408.0
+offset_bottom = 323.0
 theme = ExtResource("2_gc4gq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
@@ -114,9 +114,9 @@ vertical_alignment = 1
 [node name="TimeCheckButton" type="CheckButton" parent="." unique_id=1730348406]
 layout_mode = 0
 offset_left = 544.0
-offset_top = 375.0
+offset_top = 290.0
 offset_right = 576.0
-offset_bottom = 391.0
+offset_bottom = 306.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
 
@@ -124,9 +124,9 @@ theme = ExtResource("2_gc4gq")
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 416.0
+offset_top = 331.0
 offset_right = 960.0
-offset_bottom = 459.0
+offset_bottom = 374.0
 theme = ExtResource("2_gc4gq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
@@ -137,9 +137,9 @@ vertical_alignment = 1
 [node name="ArrowNavigationButton" type="CheckButton" parent="." unique_id=86736144]
 layout_mode = 0
 offset_left = 544.0
-offset_top = 410.0
+offset_top = 325.0
 offset_right = 576.0
-offset_bottom = 426.0
+offset_bottom = 341.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
 
@@ -147,9 +147,9 @@ theme = ExtResource("2_gc4gq")
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 452.0
+offset_top = 367.0
 offset_right = 960.0
-offset_bottom = 495.0
+offset_bottom = 410.0
 theme = ExtResource("2_gc4gq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
@@ -160,9 +160,9 @@ vertical_alignment = 1
 [node name="DisablePromptsButton" type="CheckButton" parent="." unique_id=1571379]
 layout_mode = 0
 offset_left = 544.0
-offset_top = 445.0
+offset_top = 360.0
 offset_right = 576.0
-offset_bottom = 461.0
+offset_bottom = 376.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
 
@@ -170,9 +170,9 @@ theme = ExtResource("2_gc4gq")
 custom_minimum_size = Vector2(640, 32)
 layout_mode = 0
 offset_left = 320.0
-offset_top = 476.0
+offset_top = 391.0
 offset_right = 960.0
-offset_bottom = 519.0
+offset_bottom = 434.0
 theme = ExtResource("2_gc4gq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
@@ -182,9 +182,31 @@ vertical_alignment = 1
 [node name="VehicleCameraButton" type="CheckButton" parent="." unique_id=2121665732]
 layout_mode = 0
 offset_left = 544.0
-offset_top = 480.0
+offset_top = 395.0
 offset_right = 576.0
-offset_bottom = 496.0
+offset_bottom = 411.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_gc4gq")
+
+[node name="StaticMinimapLabel" type="Label" parent="." unique_id=193884130]
+custom_minimum_size = Vector2(640, 32)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 427.0
+offset_right = 960.0
+offset_bottom = 470.0
+theme = ExtResource("2_gc4gq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Static Minimap"
+vertical_alignment = 1
+
+[node name="StaticMinimapButton" type="CheckButton" parent="." unique_id=684802653]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 431.0
+offset_right = 576.0
+offset_bottom = 447.0
 scale = Vector2(2, 2)
 theme = ExtResource("2_gc4gq")
 
@@ -329,6 +351,7 @@ stretch_mode = 4
 [connection signal="toggled" from="ArrowNavigationButton" to="." method="_on_arrow_navigation_button_toggled"]
 [connection signal="toggled" from="DisablePromptsButton" to="." method="_on_disable_prompts_button_toggled"]
 [connection signal="toggled" from="VehicleCameraButton" to="." method="_on_vehicle_camera_button_toggled"]
+[connection signal="toggled" from="StaticMinimapButton" to="." method="_on_static_minimap_button_toggled"]
 [connection signal="pressed" from="DeleteDataButton" to="." method="_on_delete_data_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ConfirmationPopupOverlay/ConfirmationPopup/ConfirmButton" to="." method="_on_confirm_button_pressed"]
