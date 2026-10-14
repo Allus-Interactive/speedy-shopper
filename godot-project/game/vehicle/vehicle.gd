@@ -60,7 +60,8 @@ var headlights_off : CompressedTexture2D = preload("res://assets/ui/driving/icon
 var fullbeam_on : CompressedTexture2D = preload("res://assets/ui/driving/icons/full_beam_on.png")
 var fullbeam_off : CompressedTexture2D = preload("res://assets/ui/driving/icons/full_beam_off.png")
 # directional arrow
-@onready var directional_arrow: DirectionalArrow = $DirectionalArrow
+#@onready var directional_arrow: DirectionalArrow = $DirectionalArrow
+@onready var directional_arrow: DirectionalArrow = $look/ThirdPersonCam/DirectionalArrow
 
 # Music
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
@@ -98,7 +99,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("full_beam_lights"):
 		_toggle_full_beam()
 	
-	if event.is_action_pressed("toggle_camera"):
+	if event.is_action_pressed("toggle_camera") and GameManager.is_in_vehicle:
 		if is_first_person:
 			_switch_to_third_person_camera()
 		else:

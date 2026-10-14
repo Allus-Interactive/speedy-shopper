@@ -139,6 +139,9 @@ transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 1.740
 transform = Transform3D(-1, 1.9665846e-08, -8.518214e-08, 0, 0.97437006, 0.22495104, 8.742278e-08, 0.22495104, -0.97437006, 0, 3.814, -7.074)
 current = false
 
+[node name="DirectionalArrow" parent="Van/look/ThirdPersonCam" unique_id=1286428228 instance=ExtResource("8_2uabk")]
+transform = Transform3D(-0.99999934, 0, 8.742272e-08, 1.9665832e-08, 0.97437006, 0.2249509, -8.518208e-08, 0.22495104, -0.9743694, 6.184287e-07, 4.2084618, -6.288475)
+
 [node name="FirstPersonCam" type="Camera3D" parent="Van/look" unique_id=1688295641]
 transform = Transform3D(-1.0000004, -1.4393882e-08, -8.918691e-08, -3.550545e-08, 0.9704038, 0.24148825, 8.307136e-08, 0.24148846, -0.9704041, -7.8234066e-08, 0.2532996, 1.3125504)
 script = ExtResource("9_aqnr3")
@@ -211,9 +214,6 @@ transform = Transform3D(1.0000004, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0.005597116, 
 stream = ExtResource("11_2uabk")
 bus = &"Music"
 parameters/looping = true
-
-[node name="DirectionalArrow" parent="Van" unique_id=1286428228 instance=ExtResource("8_2uabk")]
-transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0, 5, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1392315928]
 
