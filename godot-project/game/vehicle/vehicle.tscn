@@ -8,9 +8,26 @@
 [ext_resource type="ArrayMesh" uid="uid://p0celopgg8yr" path="res://assets/vehicles/van/van_wheel_back_right.tres" id="6_2uabk"]
 [ext_resource type="Texture2D" uid="uid://dclc0ebpejsnl" path="res://assets/ui/driving/digital_speedo_no_gears.png" id="8_1wjtb"]
 [ext_resource type="PackedScene" uid="uid://27douiywqnbl" path="res://game/world/directional_arrow/directional_arrow.tscn" id="8_2uabk"]
+[ext_resource type="Material" uid="uid://v230atw28dsh" path="res://assets/materials/rear_light.tres" id="8_3go0f"]
 [ext_resource type="ArrayMesh" uid="uid://dx0gs5qpntloy" path="res://assets/vehicles/van/kenney_van_body.tres" id="8_qqfut"]
+[ext_resource type="Material" uid="uid://b8rp6vxy8pccd" path="res://assets/materials/front_light.tres" id="9_2ydfw"]
+[ext_resource type="Script" uid="uid://cqx1bigj55ps4" path="res://game/vehicle/camera/steady_camera.gd" id="9_aqnr3"]
 [ext_resource type="Texture2D" uid="uid://licm1vq5h52e" path="res://assets/ui/driving/driving.png" id="9_qqfut"]
 [ext_resource type="AudioStream" uid="uid://swphhdash1so" path="res://assets/music/juraganvisi-intimate-rhodes-piano-and-soft-jazz-guitar-with-brushed-percussion-416015.mp3" id="11_2uabk"]
+[ext_resource type="Texture2D" uid="uid://dqqff40hsvcxp" path="res://assets/ui/driving/icons/sidelights_off.png" id="12_uwfdr"]
+[ext_resource type="Texture2D" uid="uid://jsgj6brg1n8q" path="res://assets/ui/driving/icons/headlights_off.png" id="13_3go0f"]
+[ext_resource type="Script" uid="uid://cjritarrduu6b" path="res://game/vehicle/minimap_camera_rig.gd" id="13_i43m5"]
+[ext_resource type="Texture2D" uid="uid://cdfusjdvu13yo" path="res://assets/ui/driving/icons/full_beam_off.png" id="14_2ydfw"]
+[ext_resource type="Texture2D" uid="uid://ssorefavilrv" path="res://assets/ui/driving/icons/handbrake_off.png" id="15_aqnr3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t2dwb"]
+size = Vector3(0.2753601, 0.09945679, 0.023864746)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m2va7"]
+size = Vector3(0.20898438, 0.047851563, 0.1015625)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oxha2"]
+size = Vector3(0.20898438, 0.087646484, 0.08154297)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mm2gk"]
 size = Vector3(2.277, 1.569, 1.359)
@@ -26,6 +43,9 @@ size = Vector3(0.542, 2.499, 5.15)
 radius = 0.363529
 height = 2.5
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_t2dwb"]
+viewport_path = NodePath("Van/MinimapCameraRig/SubViewport")
+
 [node name="Vehicle" type="Node3D" unique_id=1457488571]
 
 [node name="Van" type="VehicleBody3D" parent="." unique_id=862733348]
@@ -39,6 +59,8 @@ linear_damp = 0.1
 angular_damp = 4.0
 script = ExtResource("1_6tmgj")
 STEER_LIMIT = 0.5
+rear_light_material = ExtResource("8_3go0f")
+front_light_material = ExtResource("9_2ydfw")
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="Van" unique_id=2026192383]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.911, 0.331, 1.337)
@@ -121,10 +143,59 @@ transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 1.740
 transform = Transform3D(-1, 1.9665846e-08, -8.518214e-08, 0, 0.97437006, 0.22495104, 8.742278e-08, 0.22495104, -0.97437006, 0, 3.814, -7.074)
 current = false
 
+[node name="DirectionalArrow" parent="Van/look/ThirdPersonCam" unique_id=1286428228 instance=ExtResource("8_2uabk")]
+transform = Transform3D(-0.99999934, 0, 8.742272e-08, 1.9665832e-08, 0.97437006, 0.2249509, -8.518208e-08, 0.22495104, -0.9743694, 6.184287e-07, 4.2084618, -6.288475)
+
+[node name="FirstPersonCam" type="Camera3D" parent="Van/look" unique_id=1688295641]
+transform = Transform3D(-1.0000004, -1.4393882e-08, -8.918691e-08, -3.550545e-08, 0.9704038, 0.24148825, 8.307136e-08, 0.24148846, -0.9704041, -7.8234066e-08, 0.2532996, 1.3125504)
+script = ExtResource("9_aqnr3")
+
 [node name="KenneyVanBody" type="MeshInstance3D" parent="Van" unique_id=516243549]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.318, 0)
 mesh = ExtResource("8_qqfut")
 skeleton = NodePath("../..")
+
+[node name="LeftRearLight" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=406970534]
+transform = Transform3D(0.9999194, 0, 0, 0, 1, 0, 0, 0, 0.9999194, 0.4127318, 0.44961882, -1.4394691)
+material_override = ExtResource("8_3go0f")
+mesh = SubResource("BoxMesh_t2dwb")
+skeleton = NodePath("../RightRearLight")
+
+[node name="RightRearLight" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=725579940]
+transform = Transform3D(0.99995977, 0, 0, 0, 1, 0, 0, 0, 0.99995977, -0.41331834, 0.44961882, -1.4394692)
+material_override = ExtResource("8_3go0f")
+mesh = SubResource("BoxMesh_t2dwb")
+
+[node name="LeftFrontLight_Lower" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=679826049]
+transform = Transform3D(0.99998033, 0, 0, 0, 1, 0, 0, 0, 0.99998033, 0.44749668, 0.42378342, 1.1003033)
+material_override = ExtResource("9_2ydfw")
+mesh = SubResource("BoxMesh_m2va7")
+
+[node name="LeftFrontLight_Upper" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=585510208]
+transform = Transform3D(0.9999643, 0, 0, 0, 0.7909763, 0.61183417, 0, -0.6118462, 0.7909533, 0.44749627, 0.45774645, 1.0917256)
+material_override = ExtResource("9_2ydfw")
+mesh = SubResource("BoxMesh_oxha2")
+
+[node name="RightFrontLight_Lower" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=207820103]
+transform = Transform3D(0.99998015, 0, 0, 0, 1, 0, 0, 0, 0.99998015, -0.4494744, 0.42378342, 1.1003029)
+material_override = ExtResource("9_2ydfw")
+mesh = SubResource("BoxMesh_m2va7")
+
+[node name="RightFrontLight_Upper" type="MeshInstance3D" parent="Van/KenneyVanBody" unique_id=500710244]
+transform = Transform3D(0.9999641, 0, 0, 0, 0.7909763, 0.61183417, 0, -0.6118462, 0.7909531, -0.4494748, 0.45774645, 1.0917252)
+material_override = ExtResource("9_2ydfw")
+mesh = SubResource("BoxMesh_oxha2")
+
+[node name="LeftLightBeam" type="SpotLight3D" parent="Van/KenneyVanBody" unique_id=1998443606]
+transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, 0.4524545, 0.45553255, 1.0926625)
+light_color = Color(0.74509805, 0.67058825, 0.23529412, 1)
+spot_range = 15.0
+spot_angle = 40.0
+
+[node name="RightLightBeam" type="SpotLight3D" parent="Van/KenneyVanBody" unique_id=1628851888]
+transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, -0.4562291, 0.45553255, 1.0926627)
+light_color = Color(0.74509805, 0.67058825, 0.23529412, 1)
+spot_angle = 40.0
 
 [node name="Cab" type="CollisionShape3D" parent="Van" unique_id=1114515280]
 transform = Transform3D(-0.9999999, 0, -8.940699e-08, 0, 1, 0, 8.940699e-08, 0, -0.9999999, -0.0020990395, 1.7253846, 0.8345831)
@@ -146,14 +217,23 @@ shape = SubResource("CapsuleShape3D_7kmqy")
 transform = Transform3D(1.0000004, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0.005597116, 1.4048333, 1.3824459)
 stream = ExtResource("11_2uabk")
 bus = &"Music"
-parameters/looping = false
+parameters/looping = true
 
-[node name="DirectionalArrow" parent="Van" unique_id=1286428228 instance=ExtResource("8_2uabk")]
-transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0, 5, 0)
+[node name="MinimapCameraRig" type="Node3D" parent="Van" unique_id=562517881]
+script = ExtResource("13_i43m5")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1392315928]
+[node name="SubViewport" type="SubViewport" parent="Van/MinimapCameraRig" unique_id=1887647651]
+render_target_update_mode = 4
 
-[node name="Speedometer" type="TextureRect" parent="CanvasLayer" unique_id=584707467]
+[node name="Camera3D" type="Camera3D" parent="Van/MinimapCameraRig/SubViewport" unique_id=741633117]
+transform = Transform3D(-4.371139e-08, 1, -3.821371e-15, -4.371139e-08, 1.9106855e-15, 1, 1, 4.371139e-08, 4.371139e-08, 0, 50, 0)
+cull_mask = 1048543
+projection = 1
+size = 80.0
+
+[node name="DrivingUI" type="CanvasLayer" parent="." unique_id=1392315928]
+
+[node name="Speedometer" type="TextureRect" parent="DrivingUI" unique_id=584707467]
 offset_left = 1015.0
 offset_top = 515.0
 offset_right = 1255.0
@@ -161,7 +241,7 @@ offset_bottom = 695.0
 texture = ExtResource("8_1wjtb")
 expand_mode = 2
 
-[node name="Speed" type="Label" parent="CanvasLayer/Speedometer" unique_id=1456141107]
+[node name="Speed" type="Label" parent="DrivingUI/Speedometer" unique_id=1456141107]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 23.0
@@ -172,7 +252,7 @@ text = "50"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Units" type="Label" parent="CanvasLayer/Speedometer" unique_id=257089080]
+[node name="Units" type="Label" parent="DrivingUI/Speedometer" unique_id=257089080]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 93.0
@@ -181,7 +261,7 @@ offset_bottom = 116.0
 text = "MPH"
 horizontal_alignment = 1
 
-[node name="Gears" type="TextureRect" parent="CanvasLayer/Speedometer" unique_id=832223235]
+[node name="Gears" type="TextureRect" parent="DrivingUI/Speedometer" unique_id=832223235]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 31.0
@@ -189,3 +269,43 @@ offset_right = 221.0
 offset_bottom = 117.0
 texture = ExtResource("9_qqfut")
 expand_mode = 4
+
+[node name="Icons" type="HBoxContainer" parent="DrivingUI/Speedometer" unique_id=670231492]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 116.0
+offset_right = 205.0
+offset_bottom = 156.0
+
+[node name="Sidelights" type="TextureRect" parent="DrivingUI/Speedometer/Icons" unique_id=1624930722]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("12_uwfdr")
+expand_mode = 2
+
+[node name="Headlights" type="TextureRect" parent="DrivingUI/Speedometer/Icons" unique_id=22797919]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("13_3go0f")
+expand_mode = 2
+
+[node name="FullBeam" type="TextureRect" parent="DrivingUI/Speedometer/Icons" unique_id=1121002535]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("14_2ydfw")
+expand_mode = 2
+
+[node name="Handbrake" type="TextureRect" parent="DrivingUI/Speedometer/Icons" unique_id=1323698298]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("15_aqnr3")
+expand_mode = 2
+
+[node name="Minimap" type="TextureRect" parent="DrivingUI" unique_id=2119234952]
+custom_minimum_size = Vector2(200, 200)
+offset_left = 1080.0
+offset_right = 1280.0
+offset_bottom = 200.0
+texture = SubResource("ViewportTexture_t2dwb")
+expand_mode = 1
+stretch_mode = 5

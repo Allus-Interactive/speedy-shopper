@@ -13,6 +13,7 @@ var music_bus : int = GameManager.music_bus
 var sfx_bus : int = GameManager.sfx_bus
 
 func _ready() -> void:
+	# TODO: call load_settings() from settings_screen when it becomes a global overlay
 	load_settings()
 	SaveLoadManager.load_game_data()
 	SceneTransition.fade_in(1.5)
@@ -26,6 +27,10 @@ func load_settings() -> void:
 		GameManager.sfx_volume = config.get_value("audio", "sfx", 0)
 		GameManager.use_24_hour = config.get_value("button", "time", 0)
 		GameManager.use_directional_arrow = config.get_value("button", "arrow", 0)
+		GameManager.disable_prompts = config.get_value("button", "prompts", 0)
+		GameManager.default_first_person_driving = config.get_value("button", "driving_camera", 0)
+		GameManager.static_minimap = config.get_value("minimap", "static_minimap", 0)
+		GameManager.minimap_zoom_level = config.get_value("minimap", "zoom_level", -50.0)
 		
 		AudioServer.set_bus_volume_db(music_bus, GameManager.music_volume)
 		AudioServer.set_bus_volume_db(sfx_bus, GameManager.sfx_volume)
