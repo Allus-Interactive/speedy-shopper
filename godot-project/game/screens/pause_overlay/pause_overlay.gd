@@ -34,4 +34,5 @@ func _on_menu_button_pressed() -> void:
 	sfx_player.play_sfx(button_press_sfx)
 	await get_tree().create_timer(0.1).timeout
 	toggle_pause(GameManager.is_paused)
+	TutorialManager.end_tutorial()
 	get_tree().change_scene_to_file(Constants.TITLE_SCREEN)

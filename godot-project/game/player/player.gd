@@ -103,6 +103,10 @@ func _ready() -> void:
 		ui_panel.visible = false
 	else:
 		tutorial_panel.visible = false
+	
+	# Generate next orders if no available orders or orders to be delivered
+	if JobManager.available_orders.size() == 0 and JobManager.picked_orders.size() == 0:
+		JobManager.generate_order()
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Capture mouse input when not inspecting a product

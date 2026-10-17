@@ -49,3 +49,21 @@ func update_ui() -> void:
 			GameManager.tutorial_label.text = "Great, now that the tray is loaded let's open the scanner again. Once all your current orders are picked, you see the list of addresses. Select an address with Space to mark it as ready for delivery."
 		Step.COMPLETE:
 			GameManager.tutorial_label.text = "Great, now you're ready to make your first delivery! When you get to the address, knock on the door and complete the order. Remember, you can't actually deliver an order until it is marked for delivery.\nAnd that's it! Leave the shop to end the tutorial. Happy Trails!"
+
+func end_tutorial() -> void:
+	# disable tutorial mode
+	tutorial_enabled = false
+	# reset current_step to Step.Move
+	current_step = Step.MOVE
+	if OrderManager.active_order:
+		# clear active order if exists
+		OrderManager.active_order = null
+	if OrderManager.active_delivery:
+		# clear active delivery if exists 
+		OrderManager.active_delivery = null
+	if JobManager.available_orders.size() > 0:
+		# Clear available orders array if at least one order exists 
+		JobManager.available_orders.clear()
+	if JobManager.picked_orders.size() > 0:
+		# Clear picked orders array is at east one order is picked/ready to be delivered
+		JobManager.picked_orders.clear()

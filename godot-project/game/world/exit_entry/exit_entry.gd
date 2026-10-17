@@ -20,11 +20,8 @@ func show_input_prompt(prompt: InputPrompt) -> void:
 func interact(_p: Player) -> void:
 	if TutorialManager.tutorial_enabled:
 		if TutorialManager.current_step == TutorialManager.Step.COMPLETE:
-			TutorialManager.next_step()
+			TutorialManager.end_tutorial()
 			get_tree().change_scene_to_file(Constants.TITLE_SCREEN)
-			# TODO: clean order after tutorial
-			OrderManager.active_order = null
-			OrderManager.active_delivery = null
 	else:
 		if is_in_shop:
 			sfx_player.play_sfx(shop_door)
